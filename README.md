@@ -25,7 +25,9 @@ My front-end boilerplate based on [grunt-boilerplate](https://github.com/orlovma
 │   │       └── jquery.js // libs sources
 │   ├── styles
 │   │   └── screen.sass, screen.scss, screen.less // preprocessor styles
-│   └── fonts //font sources
+│   ├── fonts //font sources
+│   ├── devtools //some dev tools, like live.js or pixel-perfect helpers
+│   └── layout // psd layout
 │
 └── www
     ├── index.html // minified html file
@@ -58,6 +60,7 @@ If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out th
 * ["grunt-bower-concat"](https://github.com/sapegin/grunt-bower-concat)
 * ["grunt-bowercopy"](https://github.com/timmywil/grunt-bowercopy)
 * ["grunt-combine-media-queries"](https://github.com/buildingblocks/grunt-combine-media-queries)
+* ["grunt-contrib-clean"](https://github.com/gruntjs/grunt-contrib-clean)
 * ["grunt-contrib-concat"](https://github.com/gruntjs/grunt-contrib-concat)
 * ["grunt-contrib-haml"](https://github.com/jhchen/grunt-contrib-haml)
 * ["grunt-contrib-htmlmin"](https://github.com/gruntjs/grunt-contrib-htmlmin)
@@ -69,6 +72,7 @@ If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out th
 * ["grunt-contrib-watch"](https://github.com/gruntjs/grunt-contrib-watch)
 * ["grunt-csso"](https://github.com/t32k/grunt-csso)
 * ["grunt-newer"](https://github.com/tschaub/grunt-newer)
+* ["grunt-preprocess"](https://github.com/jsoverson/grunt-preprocess#getting-started)
 
 ##Bower
 From the version 1.2.0 this boilerplate ready for work with [Bower](https://github.com/bower/bower). So at the root was created `bower.json` file with project dependencies. To install dependencies you need globally instaled Bower. 
@@ -89,6 +93,13 @@ Please note, that this tasks need to be specified according to packages that wer
 More details about this tasks you can read here:
 * ["grunt-bower-concat"](https://github.com/sapegin/grunt-bower-concat)
 * ["grunt-bowercopy"](https://github.com/timmywil/grunt-bowercopy)
+
+Also `bower-dev` task run ["grunt-contrib-clean"](https://github.com/gruntjs/grunt-contrib-clean) to delete all those pesky .gitkeep files. If you don't use bower - just run `grunt clean`. 
+
+##Build task
+Recently, I've added build task, that allows us to clean our code from dev references and code-helpers, like livereload script. Also we're able to add some code snippets, like message for outdated browsers or link to minified source just before build. Thanks to ["grunt-preprocess"](https://github.com/jsoverson/grunt-preprocess#getting-started)
+
+Just type `grunt build` and it will process your files and execute rules inside conditional comments, than all files will be minified and placed to appropriate folders.
 
 ## Changelog
 * v1.0.0 (September 29, 2014)

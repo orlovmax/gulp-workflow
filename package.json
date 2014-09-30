@@ -17,6 +17,7 @@
     "grunt-bower-concat": "^0.3.0",
     "grunt-bowercopy": "^1.1.0",
     "grunt-combine-media-queries": "^1.0.19",
+    "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-concat": "^0.5.0",
     "grunt-contrib-haml": "^0.2.0",
     "grunt-contrib-htmlmin": "^0.3.0",
@@ -27,7 +28,8 @@
     "grunt-contrib-uglify": "^0.6.0",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-csso": "^0.6.3",
-    "grunt-newer": "^0.7.0"
+    "grunt-newer": "^0.7.0",
+    "grunt-preprocess": "^4.0.0"
   },
   "license": "MIT"
 }

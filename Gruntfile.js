@@ -40,7 +40,7 @@ module.exports = function(grunt) {
             files: [{
               expand: true,
               cwd: 'dev/styles',
-              src: ['*.{sass, scss}'],
+              src: ['*.{sass,scss}'],
               dest: 'dev/css',
               ext: '.css'
             }]
@@ -86,6 +86,9 @@ module.exports = function(grunt) {
 
       //Minify and organize *.css files  
         csso: {
+          options: {
+            keepSpecialComments: '*'
+          },
           files: {
             expand: true,
             cwd: 'dev/css/',
@@ -181,6 +184,33 @@ module.exports = function(grunt) {
           }
         },
 
+      //Delete .gitkeep files. If you don't use Bower - just run `grunt clean`  
+        clean: {
+          gitkeep: ["dev/**/.gitkeep", "www/**/.gitkeep"]
+        },
+
+      //Delete some dev code and references from files        
+        preprocess : {
+          html : {
+            src : [ 'dev/*.html' ],
+            options: {
+              inline : true
+            }
+          },
+          css : {
+            src : [ 'dev/css/*.css' ],
+            options: {
+              inline : true
+            }
+          },
+          js : {
+            src : [ 'dev/js/*.js' ],
+            options: {
+              inline : true
+            }
+          }
+        },
+
       //Watch for changes    
         watch: {
           all: {
@@ -216,6 +246,9 @@ module.exports = function(grunt) {
 
     grunt.loadNpmTasks('grunt-bowercopy');
     grunt.loadNpmTasks('grunt-bower-concat');
+    grunt.loadNpmTasks('grunt-contrib-clean');
+
+    grunt.loadNpmTasks('grunt-preprocess');
 
     grunt.registerTask('default', ['newer:concat', 
                                    'newer:uglify', 
@@ -232,6 +265,13 @@ module.exports = function(grunt) {
     ]);
 
     grunt.registerTask('bower-dev', ['bowercopy',
-                                     'bower_concat'
+                                     'bower_concat',
+                                     'clean'
+    ]);
+
+    grunt.registerTask('build', ['preprocess',
+                                 'newer:uglify',
+                                 'newer:csso',
+                                 'newer:htmlmin'
     ]);
 };
