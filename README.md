@@ -13,18 +13,22 @@ My front-end boilerplate based on [grunt-boilerplate](https://github.com/orlovma
 ├── dev
 │   ├── index.html // compiled markup html file
 │   ├── css
-│   │   └── screen.css // compiled css with autoprefixer processing
+│   │   ├── screen.css // compiled css with autoprefixer processing
+│   │   └── screen_noscript.css // compiled css with autoprefixer processing
 │   ├── img
 │   │   └── *.png, *.jpg, *.gif //image sources
 │   ├── markup
-│   │   └── index.haml, index.jade // marrkup templates sources
+│   │   ├── index.haml, index.jade // marrkup templates sources
+│   │   └── components
 │   ├── js
 │   │   ├── custom.js // custom scripts and plugins sources
 │   │   └── vendor
 │   │       ├── vendor.js // concatenated vendor scripts
 │   │       └── jquery.js // libs sources
 │   ├── styles
-│   │   └── screen.sass, screen.scss, screen.less // preprocessor styles
+│   │   ├── screen.scss, screen.less // preprocessor styles
+│   │   ├── screen_noscript.scss, screen_noscript.less // preprocessor styles
+│   │   └── components
 │   ├── fonts //font sources
 │   ├── devtools //some dev tools, like live.js or pixel-perfect helpers
 │   └── layout // psd layout
@@ -32,7 +36,8 @@ My front-end boilerplate based on [grunt-boilerplate](https://github.com/orlovma
 └── www
     ├── index.html // minified html file
     ├── css
-    │   └── screen.min.css // minified styles
+    │   ├── screen.min.css // minified styles
+    │   └── screen_noscript.min.css // minified noscript styles
     ├── img
     │   └── *.png, *.jpg, *.gif // minified images
     ├── js
@@ -95,6 +100,9 @@ More details about this tasks you can read here:
 * ["grunt-bowercopy"](https://github.com/timmywil/grunt-bowercopy)
 
 Also `bower-dev` task run ["grunt-contrib-clean"](https://github.com/gruntjs/grunt-contrib-clean) to delete all those pesky .gitkeep files. If you don't use bower - just run `grunt clean`. 
+
+##Clean task
+There is one clean task, but with some properties. It was created to delete unnecessary files, like styles or markup. When you've chosen some languages, ex. scss and jade, then you should to delete less and haml boilerplate files. Just run `grunt clean:less` and `grunt clean:haml`. Voila, Our scaffold is totally clean and ready for development.
 
 ##Build task
 Recently, I've added build task, that allows us to clean our code from dev references and code-helpers, like livereload script. Also we're able to add some code snippets, like message for outdated browsers or link to minified source just before build. Thanks to ["grunt-preprocess"](https://github.com/jsoverson/grunt-preprocess#getting-started)

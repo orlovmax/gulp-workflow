@@ -1,0 +1,45 @@
+!!! 5
+%html.no-js{:lang => "en"}
+    %head
+        %meta{:charset => "utf-8"}
+        %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}
+        %title
+        %meta{:content => "", :name => "description"}
+        %meta{:content => "", :name => "keywords"}
+        %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
+        <!--Opengraph-->
+        %meta{:content => "website", :property => "og:type"}
+        %meta{:content => "", :property => "og:title"}
+        %meta{:content => "", :property => "og:description"}
+        %meta{:content => "/img/card.jpg", :property => "og:image"}
+        %meta{:content => "", :property => "og:url"}
+        <!--TwitterCard-->
+        %meta{:content => "summary", :name => "twitter:card"}
+        %meta{:content => "", :name => "twitter:title"}
+        %meta{:content => "", :name => "twitter:description"}
+        %meta{:content => "/img/card.jpg", :name => "twitter:image:src"}
+        %meta{:content => "@orlovmax_im", :name => "twitter:creator"}
+        %meta{:content => "@orlovmax_im", :name => "twitter:site"}
+        %meta{:content => "", :name => "twitter:url"}
+        %link{:href => "favicon.ico", :rel => "shortcut icon"}
+        %link{:href => "/img/ico/favicon.png", :rel => "shortcut icon", :type => "image/x-icon"}
+        %link{:href => "/img/ico/apple-touch-icon-144x144-precomposed.png", :rel => "apple-touch-icon-precomposed", :sizes => "144x144"}
+        %link{:href => "/img/ico/apple-touch-icon-114x114-precomposed.png", :rel => "apple-touch-icon-precomposed", :sizes => "114x114"}
+        %link{:href => "/img/ico/apple-touch-icon-72x72-precomposed.png", :rel => "apple-touch-icon-precomposed", :sizes => "72x72"}
+        %link{:href => "/img/ico/apple-touch-icon-precomposed.png", :rel => "apple-touch-icon-precomposed"}
+        <!--[if lt IE 9]><link rel="stylesheet" href="/css/ie-out.min.css"><![endif]-->
+        :javascript
+            document.documentElement.className = document.documentElement.className.replace("no-js","js");
+
+        %link{:href => "/css/screen.min.css", :rel => "stylesheet"}  
+        %noscript
+            %link{:href => "/css/screen_noscript.min.css", :rel => "stylesheet"}
+
+    %body   
+
+        <!--@include devtools/ie-out/eng.html-->
+        %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"}
+
+        :javascript
+            window.jQuery || document.write('<script src="/js/vendor/jquery.min.js"><\\/script>')
+        %script{:src => "/js/assembled.min.js"}

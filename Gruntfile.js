@@ -179,14 +179,18 @@ module.exports = function(grunt) {
                 destPrefix: 'dev/js/vendor'
             },
             files: {
-              
+              'jquery': 'jquery/dist/jquery.js'
             },
           }
         },
 
       //Delete .gitkeep files. If you don't use Bower - just run `grunt clean`  
         clean: {
-          gitkeep: ["dev/**/.gitkeep", "www/**/.gitkeep"]
+          gitkeep: ["dev/**/.gitkeep", "www/**/.gitkeep"],
+          less: "dev/**/*.less",
+          sass: "dev/**/*.scss",
+          haml: "dev/**/*.haml",
+          jade: "dev/**/*.jade" 
         },
 
       //Delete some dev code and references from files        
@@ -265,8 +269,8 @@ module.exports = function(grunt) {
     ]);
 
     grunt.registerTask('bower-dev', ['bowercopy',
-                                     'bower_concat',
-                                     'clean'
+                                     // 'bower_concat',
+                                     'clean:gitkeep'
     ]);
 
     grunt.registerTask('build', ['preprocess',

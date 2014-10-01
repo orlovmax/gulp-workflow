@@ -1,6 +1,6 @@
 /* =========================================================
    Pretty weird less mixins library but useful in css coding
-   More at https://github.com/orlovmax/layout-tools-less
+   More at https://github.com/orlovmax/layout-tools
    ========================================================= */
 /**
 * First mixin called regular-graph-paper, it creates lines similar to regular graphing paper using linear gradients above your markup, so you can see sizes of elements and margins between them.
@@ -32,26 +32,30 @@
 		top: 0;
 		left: 0;
 		z-index: 999;
-		background:		-webkit-linear-gradient(left, darken(@line-color, 25%) 1px, transparent 1px),
-						 -webkit-linear-gradient(top, darken(@line-color, 25%) 1px, transparent 1px),
+		background:		-webkit-linear-gradient(left, darken(@line-color, 25%) 1px, transparent 2px),
+						 -webkit-linear-gradient(top, darken(@line-color, 25%) 1px, transparent 2px),
 									 -webkit-linear-gradient(left, @line-color 0px, transparent 1px),
 									  -webkit-linear-gradient(top, @line-color 0px, transparent 1px);                              
 		background:        -moz-linear-gradient(left, darken(@line-color, 25%) 1px, transparent 0px),
 							-moz-linear-gradient(top, darken(@line-color, 25%) 1px, transparent 0px),
 										-moz-linear-gradient(left, @line-color 0px, transparent 1px),
 										 -moz-linear-gradient(top, @line-color 0px, transparent 1px);
+										 
 		background:			-ms-linear-gradient(left, darken(@line-color, 25%) 1px, transparent 1px),
 							 -ms-linear-gradient(top, darken(@line-color, 25%) 1px, transparent 1px),
 										 -ms-linear-gradient(left, @line-color 0px, transparent 1px),
 										  -ms-linear-gradient(top, @line-color 0px, transparent 1px);
+										  
 		background:			 -o-linear-gradient(left, darken(@line-color, 25%) 1px, transparent 1px),
 							  -o-linear-gradient(top, darken(@line-color, 25%) 1px, transparent 1px),
 										  -o-linear-gradient(left, @line-color 0px, transparent 1px),
 										   -o-linear-gradient(top, @line-color 0px, transparent 1px);
+										   
 		background:				linear-gradient(left, darken(@line-color, 25%) 1px, transparent 1px),
 								 linear-gradient(top, darken(@line-color, 25%) 1px, transparent 1px),
 											 linear-gradient(left, @line-color 0px, transparent 1px),
 											  linear-gradient(top, @line-color 0px, transparent 1px);
+											  
 		-webkit-background-size: @cell-width @cell-height,
 								 @cell-width @cell-height,
 								 @cell-width*5 @cell-height*5,
@@ -60,8 +64,10 @@
 								 @cell-width*5 @cell-height*5,
 								 @cell-width @cell-height,
 								 @cell-width @cell-height;
+								 
 		background-position: 1px 1px,
 							 1px 1px;
+							 
 		-webkit-opacity: @grid-opacity;
 		-khtml-opacity:  @grid-opacity;
 		-moz-opacity:    @grid-opacity;
@@ -71,8 +77,8 @@
 
 
 /* layout mixin*/
-.layout(@layout-url: "../img/layout.jpg", @layout-width:100%, @layout-opacity: .5, @grid-opacity:0, @cell-width:10px, @cell-height:10px, @line-color:#fff){
 
+.layout(@layout-url: "../img/layout.jpg", @layout-width: 100%, @layout-opacity: .5, @grid-opacity: 0, @cell-width: 10px, @cell-height: 10px, @line-color: #fff){
 	max-width: @layout-width;
 	margin: 0 auto;
 	
@@ -88,7 +94,7 @@
 		-webkit-opacity: @layout-opacity;
 		-khtml-opacity:  @layout-opacity;
 		-moz-opacity:    @layout-opacity;
-		opacity:         @layout-opacity;
+		opacity:         @layout-opacity;	
 	}	
 	.regular-graph-paper( @grid-opacity, @cell-width, @cell-height, @line-color);
 }
