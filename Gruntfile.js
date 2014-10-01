@@ -172,7 +172,8 @@ module.exports = function(grunt) {
       //Copy bower components to the custom folder   
         bowercopy: {
           options: {
-            clean: false
+            clean: true,
+            ignore: ['modernizr']
           },          
           jquery: {
             options: {
@@ -248,8 +249,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-newer');
 
-    grunt.loadNpmTasks('grunt-bowercopy');
     grunt.loadNpmTasks('grunt-bower-concat');
+    grunt.loadNpmTasks('grunt-bowercopy');
     grunt.loadNpmTasks('grunt-contrib-clean');
 
     grunt.loadNpmTasks('grunt-preprocess');
@@ -268,8 +269,8 @@ module.exports = function(grunt) {
                                    'watch'
     ]);
 
-    grunt.registerTask('bower-dev', ['bowercopy',
-                                     // 'bower_concat',
+    grunt.registerTask('bower-dev', ['bower_concat',
+                                     'bowercopy',
                                      'clean:gitkeep'
     ]);
 

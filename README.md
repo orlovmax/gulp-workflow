@@ -59,7 +59,7 @@ If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out th
 * Now go to this project folder in terminal. Once you're familiar with grunt installation process, you may install all this things with this command: `npm install`.This will create `node_moduldes` folder, that's normal.
 * Run `grunt`, and it will watch for all the changes.
 
-##Package.json dependencies 
+###Package.json dependencies 
 * ["grunt"](https://github.com/gruntjs)
 * ["grunt-autoprefixer"](https://github.com/nDmitry/grunt-autoprefixer)
 * ["grunt-bower-concat"](https://github.com/sapegin/grunt-bower-concat)
@@ -100,6 +100,10 @@ More details about this tasks you can read here:
 * ["grunt-bowercopy"](https://github.com/timmywil/grunt-bowercopy)
 
 Also `bower-dev` task run ["grunt-contrib-clean"](https://github.com/gruntjs/grunt-contrib-clean) to delete all those pesky .gitkeep files. If you don't use bower - just run `grunt clean`. 
+
+###bower.json dependencies 
+* "jquery"
+* "modernizr"
 
 ##Clean task
 There is one clean task, but with some properties. It was created to delete unnecessary files, like styles or markup. When you've chosen some languages, ex. scss and jade, then you should to delete less and haml boilerplate files. Just run `grunt clean:less` and `grunt clean:haml`. Voila, Our scaffold is totally clean and ready for development.
