@@ -24,7 +24,8 @@ My front-end boilerplate based on [grunt-boilerplate](https://github.com/orlovma
 │   │   ├── custom.js // custom scripts and plugins sources
 │   │   └── vendor
 │   │       ├── vendor.js // concatenated vendor scripts
-│   │       └── jquery.js // libs sources
+│   │       └── jquery
+│   │           └── jquery.js // libs sources
 │   ├── styles
 │   │   ├── screen.scss, screen.less // preprocessor styles
 │   │   ├── screen_noscript.scss, screen_noscript.less // preprocessor styles
@@ -45,7 +46,8 @@ My front-end boilerplate based on [grunt-boilerplate](https://github.com/orlovma
     │   ├── assembled.min.js // minified assembled custom scripts and plugins
     │   └── vendor
     │       ├── vendor.min.js // concatenated and minified vendor scripts
-    │       └── jquery.min.js // minified vendor libs
+    │       └── jquery
+    │           └── jquery.min.js // minified vendor libs
     └── fonts // @font-face-ready webfonts
 
 ```        
