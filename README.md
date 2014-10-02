@@ -113,6 +113,9 @@ Recently, I've added build task, that allows us to clean our code from dev refer
 
 Just type `grunt build` and it will process your files and execute rules inside conditional comments, than all files will be minified and placed to appropriate folders.
 
+##Live reload 
+For this project I use live.js, that was connected from awesome [www.jsdelivr.com](http://www.jsdelivr.com/#!livejs). After build task link to this script will be removed from final html.
+
 ## Changelog
 * v1.0.0 (September 29, 2014)
     * Initial commit
