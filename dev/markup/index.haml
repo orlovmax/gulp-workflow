@@ -28,21 +28,20 @@
         %link{:href => "/img/ico/apple-touch-icon-72x72-precomposed.png", :rel => "apple-touch-icon-precomposed", :sizes => "72x72"}
         %link{:href => "/img/ico/apple-touch-icon-precomposed.png", :rel => "apple-touch-icon-precomposed"}
         <!--[if lt IE 9]><link rel="stylesheet" href="/css/ie-out.min.css"><![endif]-->
-        :javascript
-            document.documentElement.className = document.documentElement.className.replace("no-js","js");
-
-        %link{:href => "/css/screen.min.css", :rel => "stylesheet"}  
+        <!--@exclude-->
+        %link{:href => "/css/screen.css", :rel => "stylesheet"}  
         %noscript
-            %link{:href => "/css/screen_noscript.min.css", :rel => "stylesheet"}
-        <!--@exclude-->    
-        %script{:src => "//cdn.jsdelivr.net/livejs/4/live.js"}
+            %link{:href => "/css/screen_noscript.css", :rel => "stylesheet"}            
+        %script{:src => "js/live.min.js"}
         <!--@endexclude-->
+        <!-- @echo '<link rel="stylesheet" href="css/screen.min.css">' -->
+        <!-- @echo '<noscript><link rel="stylesheet" href="/css/screen_noscript.min.css"></noscript>' -->
     %body   
 
-        <!--@include devtools/ie-out/eng.html-->
-        %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"}
-
-        :javascript
-            window.jQuery || document.write('<script src="/js/vendor/jquery/jquery.min.js"><\\/script>')
-        %script{:src => "/js/vendor/vendor.min.js"}    
-        %script{:src => "/js/assembled.min.js"}
+        = File.read "components/ie-out/eng.html"
+        %script{:src => "/js/vendor/jquery/jquery.min.js"}
+        %script{:src => "/js/vendor/vendor.min.js"}
+        <!--@exclude-->    
+        %script{:src => "/js/assembled.js"}
+        <!--@endexclude-->        
+        <!-- @echo '<script src="/js/assembled.min.js"></script>' -->
