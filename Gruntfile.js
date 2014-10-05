@@ -3,36 +3,45 @@ module.exports = function(grunt) {
 
       //Assemble *.js files
         concat: {
-          all: {
+          main: {
               src: ['dev/js/*.js', '!dev/js/assembled.js'],
               dest: 'dev/js/assembled.js'
+          },
+          debug: {
+              src: ['dev/js/*.js', '!dev/js/assembled.js'],
+              dest: 'www/js/assembled.js'
           }
         },
 
       //Uglify assembled *.js file    
         uglify: {
-            options: {
-              mangle: false
-            },
-            vendor: {
-              files: [{
-                  expand: true,
-                  cwd: 'dev/js/vendor',
-                  src: '**/*.js',
-                  dest: 'www/js/vendor',
-                  ext: '.min.js'
-              }]
-            },
-            main: {
-                files: {
-                    'www/js/assembled.min.js': '<%= concat.all.dest %>'
-                }
+          options: {
+            mangle: false
+          },
+          vendor: {
+            files: [{
+                expand: true,
+                cwd: 'dev/js/vendor',
+                src: '**/*.js',
+                dest: 'www/js/vendor',
+                ext: '.min.js'
+            }]
+          },
+          main: {
+              files: {
+                  'www/js/assembled.min.js': '<%= concat.main.dest %>'
+              }
+          },
+          liveJs: {
+            files: {
+                'www/js/live.min.js': 'dev/devtools/live.js'
             }
+          }
         },
 
       //Compile *.scss files  
         sass: {
-          all: { 
+          main: { 
             options: {
               style: 'expanded',
               sourcemap: 'none'
@@ -44,16 +53,36 @@ module.exports = function(grunt) {
               dest: 'dev/css',
               ext: '.css'
             }]
+          },
+          debug: { 
+            options: {
+              style: 'expanded',
+              sourcemap: 'none'
+            },
+            files: [{
+              expand: true,
+              cwd: 'dev/styles',
+              src: ['*.{sass,scss}'],
+              dest: 'www/css',
+              ext: '.css'
+            }]
           }
-         },
+        },
 
       //Compile *.less files
         less: {
-          files: {
+          main: {
              expand: true,
              cwd: 'dev/styles',
              src: ['*.less'],
              dest: 'dev/css',
+             ext: '.css'
+          },
+          debug: {
+             expand: true,
+             cwd: 'dev/styles',
+             src: ['*.less'],
+             dest: 'www/css',
              ext: '.css'
           }          
         },  
@@ -63,7 +92,7 @@ module.exports = function(grunt) {
           options: {
             log: false
           },
-          your_target: {
+          main: {
             files: {
               'dev/css': ['dev/css/*.css']
             }
@@ -76,7 +105,7 @@ module.exports = function(grunt) {
             browsers: ['last 2 versions', 'ie 8', 'ie 9'] 
             //By default >1%, last 2 versions, Firefox ESR, Opera 12.1;
           },           
-          files: {
+          main: {
             expand: true,
             flatten: true,
             src: 'dev/css/*.css',
@@ -89,7 +118,7 @@ module.exports = function(grunt) {
           options: {
             keepSpecialComments: '*'
           },
-          files: {
+          main: {
             expand: true,
             cwd: 'dev/css/',
             src: ['*.css', '!*.min.css'],
@@ -100,7 +129,7 @@ module.exports = function(grunt) {
 
       //Compile *.jade files  
         jade: {
-          compile: {
+          main: {
             options: {
                 client: false,
                 pretty: true
@@ -117,7 +146,7 @@ module.exports = function(grunt) {
 
       //Compile *.haml files  
         haml: {
-          compile: {
+          main: {
             files: [ {
               cwd: "dev/markup",
               src: "*.haml",
@@ -130,7 +159,7 @@ module.exports = function(grunt) {
 
       //Minify *.html files 
         htmlmin: {  
-            all: {     
+            main: {     
               options: {             
                 collapseWhitespace: true,
                 minifyJS: true,
@@ -148,7 +177,7 @@ module.exports = function(grunt) {
 
       //Minify image files   
         imagemin: {
-          all: { 
+          main: { 
             options: { 
               optimizationLevel: 7
             },              
@@ -163,7 +192,7 @@ module.exports = function(grunt) {
 
       //Assemble bower components in right order 
         bower_concat: {
-          all: {
+          main: {
             dest: 'dev/js/vendor/vendor.js',
             exclude: 'jquery'
           }
@@ -187,11 +216,16 @@ module.exports = function(grunt) {
 
       //Delete .gitkeep files. If you don't use Bower - just run `grunt clean`  
         clean: {
-          gitkeep: ["dev/**/.gitkeep", "www/**/.gitkeep"],
-          less: "dev/**/*.less",
-          sass: "dev/**/*.scss",
-          haml: "dev/**/*.haml",
-          jade: "dev/**/*.jade" 
+          gitkeep: ['dev/**/.gitkeep', 'www/**/.gitkeep'],
+          less: 'dev/**/*.less',
+          sass: 'dev/**/*.scss',
+          haml: 'dev/**/*.haml',
+          jade: 'dev/**/*.jade',
+          debug: ['www/js/assembled.js', 
+                '!www/js/assembled.min.js', 
+                'www/js/live.min.js', 
+                'www/css/*.css',
+                '!www/css/*.min.css'] 
         },
 
       //Delete some dev code and references from files        
@@ -277,6 +311,7 @@ module.exports = function(grunt) {
     grunt.registerTask('build', ['preprocess',
                                  'newer:uglify',
                                  'newer:csso',
-                                 'newer:htmlmin'
+                                 'newer:htmlmin',                                     
+                                 'clean:debug'
     ]);
 };
