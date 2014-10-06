@@ -1,0 +1,28 @@
+/* ==============================
+   $Contents
+   ==============================*/
+/**
+* Contents......................Here we are!
+* Custom mixins and vars........Project's custom mixins and variables
+* 
+* General styles................Abstract styles
+*  
+* Media queries................Media queries section
+*/
+
+
+/* ==============================
+   $Custom mixins and vars
+   ============================== */   
+@import "components/_variables.scss";   
+   
+/* ==============================
+   $General styles
+   ==============================*/
+@import "components/_general.scss";   
+
+
+/* ==============================
+   $Media queries
+   ============================== */  
+@import "components/_media.scss";   
