@@ -101,7 +101,7 @@ More details about this tasks you can read here:
 * ["grunt-bower-concat"](https://github.com/sapegin/grunt-bower-concat)
 * ["grunt-bowercopy"](https://github.com/timmywil/grunt-bowercopy)
 
-Also `bower-dev` task run ["grunt-contrib-clean"](https://github.com/gruntjs/grunt-contrib-clean) to delete all those pesky .gitkeep files. If you don't use bower - just run `grunt clean`. 
+Also `bower-dev` task run ["grunt-contrib-clean"](https://github.com/gruntjs/grunt-contrib-clean) to delete all those pesky .gitkeep files. If you don't use bower - just run `grunt clean:gitkeep`. Please remember, `grunt.clean` task have other subtasks to process unnecessary files, so be careful while using this.
 
 ###bower.json dependencies 
 * "jquery"
