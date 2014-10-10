@@ -193,26 +193,25 @@ module.exports = function(grunt) {
       //Assemble bower components in right order 
         bower_concat: {
           main: {
-            dest: 'dev/js/vendor/vendor.js',
-            exclude: 'jquery'
+            dest: 'dev/js/vendor/vendor.js'
           }
         },
 
       //Copy bower components to the custom folder   
-        bowercopy: {
-          options: {
-            clean: true,
-            ignore: ['modernizr']
-          },          
-          jquery: {
-            options: {
-                destPrefix: 'dev/js/vendor'
-            },
-            files: {
-              'jquery': 'jquery/dist/jquery.js'
-            },
-          }
-        },
+        // bowercopy: {
+        //   options: {
+        //     clean: true,
+        //     ignore: ['modernizr']
+        //   },          
+        //   jquery: {
+        //     options: {
+        //         destPrefix: 'dev/js/vendor'
+        //     },
+        //     files: {
+        //       'jquery': 'jquery/dist/jquery.js'
+        //     },
+        //   }
+        // },
 
       //Delete .gitkeep files. If you don't use Bower - just run `grunt clean`  
         clean: {
@@ -225,7 +224,8 @@ module.exports = function(grunt) {
                 '!www/js/assembled.min.js', 
                 'www/js/live.min.js', 
                 'www/css/*.css',
-                '!www/css/*.min.css'] 
+                '!www/css/*.min.css'],
+          bower: 'bower_components'   
         },
 
       //Delete some dev code and references from files        
@@ -273,8 +273,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-less');
-    // grunt.loadNpmTasks('grunt-combine-media-queries');
-    // grunt.loadNpmTasks('grunt-autoprefixer');
+    grunt.loadNpmTasks('grunt-combine-media-queries');
+    grunt.loadNpmTasks('grunt-autoprefixer');
     grunt.loadNpmTasks('grunt-csso');
     grunt.loadNpmTasks('grunt-contrib-jade');
     grunt.loadNpmTasks('grunt-contrib-haml');
@@ -284,7 +284,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-newer');
 
     grunt.loadNpmTasks('grunt-bower-concat');
-    grunt.loadNpmTasks('grunt-bowercopy');
+    // grunt.loadNpmTasks('grunt-bowercopy');
     grunt.loadNpmTasks('grunt-contrib-clean');
 
     grunt.loadNpmTasks('grunt-preprocess');
@@ -292,9 +292,7 @@ module.exports = function(grunt) {
     grunt.registerTask('default', ['newer:concat', 
                                    'newer:uglify', 
                                    'newer:sass', 
-                                   'newer:less',
-                                   // 'newer:cmq',
-                                   // 'newer:autoprefixer', 
+                                   'newer:less', 
                                    'newer:csso',
                                    'newer:jade',
                                    'newer:haml',
@@ -304,11 +302,14 @@ module.exports = function(grunt) {
     ]);
 
     grunt.registerTask('bower-dev', ['bower_concat',
-                                     'bowercopy',
-                                     'clean:gitkeep'
+                                     // 'bowercopy',
+                                     'clean:gitkeep',
+                                     'clean:bower'
     ]);
 
     grunt.registerTask('build', ['preprocess',
+                                 'newer:cmq',
+                                 'newer:autoprefixer',
                                  'newer:uglify',
                                  'newer:csso',
                                  'newer:htmlmin',                                     

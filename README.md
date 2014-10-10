@@ -137,6 +137,7 @@ There is one clean task, but with some properties. It was created to delete unne
 
 ###Build task
 Recently, I've added build task, that allows us to clean our code from dev references and code-helpers, like livereload script. Also we're able to add some code snippets, like message for outdated browsers or link to minified source just before build. Thanks to ["grunt-preprocess"](https://github.com/jsoverson/grunt-preprocess#getting-started)
+Also this task contains `combine-media-queries` and `autoprefixer` tasks, cause in default task they make reminifying of css without changes. As development process passes in modern browser and combined media queries - just for performance, we should run these tasks only for final build.
 
 Just type `grunt build` and it will process your files and execute rules inside conditional comments, than all files will be minified and placed to appropriate folders.
 
@@ -149,6 +150,8 @@ For this project I use live.js which minified version and  and link to this scri
 * make YO template based on this stuff
 
 ## Changelog
+* v1.0.2
+    - moved autoprefixer and cmq tasks to build task
 * v1.0.1
     -  added debug files, modified readme
 * v1.0.0 (September 29, 2014)
