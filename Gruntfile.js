@@ -190,6 +190,18 @@ module.exports = function(grunt) {
           }
         },
 
+      //Copy some folders or files (ex. *.php) from dev to www
+        copy: {
+          main: {
+            files: [{
+              expand: true, 
+              cwd: 'dev/php/',
+              src: '**', 
+              dest: 'www/php/'
+            }]
+          }
+        },   
+
       //Assemble bower components in right order 
         bower_concat: {
           main: {
@@ -259,7 +271,8 @@ module.exports = function(grunt) {
                     'dev/js/*.js',  
                     'dev/js/**/*.js', 
                     'dev/img/*.{png,jpg,gif}',
-                    'dev/markup/*.{haml,jade}' ],
+                    'dev/markup/*.{haml,jade}',
+                    'dev/php/*.php' ],
             tasks: ['default'],
             options: {
               spawn: false,
@@ -280,6 +293,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-haml');
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
+    grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-newer');
 
@@ -298,6 +312,7 @@ module.exports = function(grunt) {
                                    'newer:haml',
                                    'newer:htmlmin',
                                    'newer:imagemin',
+                                   'newer:copy',
                                    'watch'
     ]);
 

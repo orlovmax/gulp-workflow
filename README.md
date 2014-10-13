@@ -42,6 +42,8 @@ My front-end boilerplate based on [grunt-boilerplate](https://github.com/orlovma
 │   │       ├── vendor.js // concatenated vendor scripts
 │   │       └── jquery
 │   │           └── jquery.js // libs sources
+│   ├── php
+│   │   └── script.php // *.php scripts
 │   ├── styles
 │   │   ├── screen.scss, screen.less // preprocessor styles
 │   │   ├── screen_noscript.scss, screen_noscript.less // preprocessor styles
@@ -64,6 +66,8 @@ My front-end boilerplate based on [grunt-boilerplate](https://github.com/orlovma
     │       ├── vendor.min.js // concatenated and minified vendor scripts
     │       └── jquery
     │           └── jquery.min.js // minified vendor libs
+    ├── php
+    │   └── script.php // *.php scripts
     └── fonts // @font-face-ready webfonts
 
 ```        
@@ -85,6 +89,7 @@ If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out th
 * ["grunt-combine-media-queries"](https://github.com/buildingblocks/grunt-combine-media-queries)
 * ["grunt-contrib-clean"](https://github.com/gruntjs/grunt-contrib-clean)
 * ["grunt-contrib-concat"](https://github.com/gruntjs/grunt-contrib-concat)
+* ["grunt-contrib-copy"](https://github.com/gruntjs/grunt-contrib-copy)
 * ["grunt-contrib-haml"](https://github.com/jhchen/grunt-contrib-haml)
 * ["grunt-contrib-htmlmin"](https://github.com/gruntjs/grunt-contrib-htmlmin)
 * ["grunt-contrib-imagemin"](https://github.com/gruntjs/grunt-contrib-imagemin)
@@ -127,7 +132,7 @@ Also `bower-dev` task run ["grunt-contrib-clean"](https://github.com/gruntjs/gru
 Here comes groups of grunt tasks with some explanations
 
 ###Default task
-Compiles styles, markup templates, minifies images. While using grunt watch, it will be done once and than grunt watch will check for changes and process only changed files.
+Compiles styles, markup templates, minifies images, copy updated *.php scripts to build folder. While using grunt watch, it will be done once and than grunt watch will check for changes and process only changed files.
 
 ###Bower dev task
 I've talked about this task above, it will remove .gitkeep files, copy and concat bower files to your dev directories.
@@ -150,6 +155,8 @@ For this project I use live.js which minified version and  and link to this scri
 * make YO template based on this stuff
 
 ## Changelog
+* v1.0.3
+    - added copy task for *.php scripts
 * v1.0.2
     - moved autoprefixer and cmq tasks to build task
 * v1.0.1
