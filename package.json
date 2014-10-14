@@ -20,7 +20,6 @@
     "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-concat": "^0.5.0",
     "grunt-contrib-copy": "^0.6.0",
-    "grunt-contrib-haml": "^0.2.0",
     "grunt-contrib-htmlmin": "^0.3.0",
     "grunt-contrib-imagemin": "^0.8.1",
     "grunt-contrib-jade": "^0.12.0",
@@ -29,6 +28,7 @@
     "grunt-contrib-uglify": "^0.6.0",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-csso": "^0.6.3",
+    "grunt-haml2html": "^0.3.0",
     "grunt-newer": "^0.7.0",
     "grunt-preprocess": "^4.0.0"
   },

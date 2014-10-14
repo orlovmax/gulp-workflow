@@ -90,7 +90,7 @@ If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out th
 * ["grunt-contrib-clean"](https://github.com/gruntjs/grunt-contrib-clean)
 * ["grunt-contrib-concat"](https://github.com/gruntjs/grunt-contrib-concat)
 * ["grunt-contrib-copy"](https://github.com/gruntjs/grunt-contrib-copy)
-* ["grunt-contrib-haml"](https://github.com/jhchen/grunt-contrib-haml)
+* ["grunt-haml2html"](https://github.com/jhchen/grunt-haml2html)
 * ["grunt-contrib-htmlmin"](https://github.com/gruntjs/grunt-contrib-htmlmin)
 * ["grunt-contrib-imagemin"](https://github.com/gruntjs/grunt-contrib-imagemin)
 * ["grunt-contrib-jade"](https://github.com/gruntjs/grunt-contrib-jade)

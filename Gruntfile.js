@@ -290,7 +290,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-autoprefixer');
     grunt.loadNpmTasks('grunt-csso');
     grunt.loadNpmTasks('grunt-contrib-jade');
-    grunt.loadNpmTasks('grunt-contrib-haml');
+    grunt.loadNpmTasks('grunt-haml2html');
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-contrib-copy');
