@@ -38,10 +38,10 @@ My front-end boilerplate based on [grunt-boilerplate](https://github.com/orlovma
 │   │   └── components
 │   ├── js
 │   │   ├── custom.js // custom scripts and plugins sources
+│   │   ├── head
+│   │   │   └── head.js // concatenated head scripts
 │   │   └── vendor
-│   │       ├── vendor.js // concatenated vendor scripts
-│   │       └── jquery
-│   │           └── jquery.js // libs sources
+│   │       └── vendor.js // concatenated vendor scripts
 │   ├── php
 │   │   └── script.php // *.php scripts
 │   ├── styles
@@ -52,7 +52,7 @@ My front-end boilerplate based on [grunt-boilerplate](https://github.com/orlovma
 │   ├── devtools //some dev tools, like live.js or pixel-perfect helpers
 │   └── layout // psd layout
 │
-└── www
+└── build
     ├── index.html // minified html file
     ├── css
     │   ├── screen.min.css // minified styles
@@ -60,12 +60,11 @@ My front-end boilerplate based on [grunt-boilerplate](https://github.com/orlovma
     ├── img
     │   └── *.png, *.jpg, *.gif // minified images
     ├── js
-    │   ├── assembled.js // assembled custom scripts and plugins
     │   ├── assembled.min.js // minified assembled custom scripts and plugins
+    │   ├── head
+    │   │   └── head.min.js // concatenated head scripts
     │   └── vendor
-    │       ├── vendor.min.js // concatenated and minified vendor scripts
-    │       └── jquery
-    │           └── jquery.min.js // minified vendor libs
+    │       └── vendor.min.js // concatenated and minified vendor scripts
     ├── php
     │   └── script.php // *.php scripts
     └── fonts // @font-face-ready webfonts
@@ -155,6 +154,8 @@ For this project I use live.js which minified version and  and link to this scri
 * make YO template based on this stuff
 
 ## Changelog
+* v1.1.0
+    - rename www to build, added head scripts and copy task
 * v1.0.3
     - added copy task for *.php scripts
 * v1.0.2

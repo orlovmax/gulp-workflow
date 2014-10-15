@@ -29,11 +29,14 @@
         %link{:href => "/img/ico/apple-touch-icon-precomposed.png", :rel => "apple-touch-icon-precomposed"}
         <!--[if lt IE 9]><link rel="stylesheet" href="/css/ie-out.min.css"><![endif]-->
         <!--@exclude-->
+        %script{:src => "js/head/head.js"}
         %link{:href => "/css/screen.css", :rel => "stylesheet"}  
         %noscript
             %link{:href => "/css/screen_noscript.css", :rel => "stylesheet"}            
-        %script{:src => "js/live.min.js"}
+        %script{:src => "js/live.js"}
         <!--@endexclude-->
+
+        <!-- @echo '<script src="/js/head/head.min.js"></script>' -->
         <!-- @echo '<link rel="stylesheet" href="css/screen.min.css">' -->
         <!-- @echo '<noscript><link rel="stylesheet" href="/css/screen_noscript.min.css"></noscript>' -->
     %body   

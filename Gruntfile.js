@@ -7,9 +7,9 @@ module.exports = function(grunt) {
               src: ['dev/js/*.js', '!dev/js/assembled.js'],
               dest: 'dev/js/assembled.js'
           },
-          debug: {
-              src: ['dev/js/*.js', '!dev/js/assembled.js'],
-              dest: 'www/js/assembled.js'
+          head: {
+              src: ['dev/js/head/*.js', '!dev/js/head/head.js'],
+              dest: 'dev/js/head/head.js'
           }
         },
 
@@ -23,18 +23,18 @@ module.exports = function(grunt) {
                 expand: true,
                 cwd: 'dev/js/vendor',
                 src: '**/*.js',
-                dest: 'www/js/vendor',
+                dest: 'build/js/vendor',
                 ext: '.min.js'
             }]
           },
           main: {
               files: {
-                  'www/js/assembled.min.js': '<%= concat.main.dest %>'
+                  'build/js/assembled.min.js': '<%= concat.main.dest %>'
               }
           },
-          liveJs: {
+          head: {
             files: {
-                'www/js/live.min.js': 'dev/devtools/live.js'
+                'build/js/head/head.min.js': '<%= concat.head.dest %>'
             }
           }
         },
@@ -53,19 +53,6 @@ module.exports = function(grunt) {
               dest: 'dev/css',
               ext: '.css'
             }]
-          },
-          debug: { 
-            options: {
-              style: 'expanded',
-              sourcemap: 'none'
-            },
-            files: [{
-              expand: true,
-              cwd: 'dev/styles',
-              src: ['*.{sass,scss}'],
-              dest: 'www/css',
-              ext: '.css'
-            }]
           }
         },
 
@@ -77,14 +64,7 @@ module.exports = function(grunt) {
              src: ['*.less'],
              dest: 'dev/css',
              ext: '.css'
-          },
-          debug: {
-             expand: true,
-             cwd: 'dev/styles',
-             src: ['*.less'],
-             dest: 'www/css',
-             ext: '.css'
-          }          
+          }       
         },  
 
       //Combine media queries in result *.css files   
@@ -122,7 +102,7 @@ module.exports = function(grunt) {
             expand: true,
             cwd: 'dev/css/',
             src: ['*.css', '!*.min.css'],
-            dest: 'www/css/',
+            dest: 'build/css/',
             ext: '.min.css'
           }
         },
@@ -168,7 +148,7 @@ module.exports = function(grunt) {
               files: [ {
                 cwd: "dev/",
                 src: "*.html",
-                dest: "www/",
+                dest: "build/",
                 expand: true,
                 ext: ".html"
               } ]
@@ -185,19 +165,47 @@ module.exports = function(grunt) {
               expand: true,      
               cwd: 'dev/img',            
               src: ['*.{png,jpg,gif}'], 
-              dest: 'www/img/'            
+              dest: 'build/img/'            
             }]
           }
         },
 
-      //Copy some folders or files (ex. *.php) from dev to www
+      //Copy some folders or files (ex. *.php) from dev to build
         copy: {
           main: {
             files: [{
               expand: true, 
               cwd: 'dev/php/',
               src: '**', 
-              dest: 'www/php/'
+              dest: 'build/php/'
+            }]
+          },
+          js: {
+            files: [{
+              expand: true, 
+              cwd: 'dev/js/',
+              src: [
+                '**/assembled.js', 
+                '**/vendor.js', 
+                '**/head.js'],
+              dest: 'build/js/'
+            }]
+          },  
+          livejs: {
+            files: [{
+              expand: true, 
+              cwd: 'dev/devtools/',
+              src: '**/live.js',
+              dest: 'build/js/'
+            }]
+          },        
+          css: {
+            files: [{
+              expand: true, 
+              cwd: 'dev/css',
+              src: [
+                '**/*.css'],
+              dest: 'build/css/'
             }]
           }
         },   
@@ -227,16 +235,15 @@ module.exports = function(grunt) {
 
       //Delete .gitkeep files. If you don't use Bower - just run `grunt clean`  
         clean: {
-          gitkeep: ['dev/**/.gitkeep', 'www/**/.gitkeep'],
+          gitkeep: ['dev/**/.gitkeep', 'build/**/.gitkeep'],
           less: 'dev/**/*.less',
           sass: 'dev/**/*.scss',
           haml: 'dev/**/*.haml',
           jade: 'dev/**/*.jade',
-          debug: ['www/js/assembled.js', 
-                '!www/js/assembled.min.js', 
-                'www/js/live.min.js', 
-                'www/css/*.css',
-                '!www/css/*.min.css'],
+          debug: ['build/js/**/*.js', 
+                  '!build/js/**/*.min.js', 
+                  'build/css/**/*.css',
+                  '!build/css/**/*.min.css'],
           bower: 'bower_components'   
         },
 
