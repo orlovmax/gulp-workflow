@@ -48,9 +48,9 @@ html.no-js(lang='en')
 	body
 
 		include components/ie-out/eng.html
-		script(src='/js/vendor/jquery/jquery.min.js')
-		script(src='/js/vendor/vendor.min.js')
-		<!-- @echo '<script src="/js/assembled.min.js"></script>' -->
+		<!-- @echo '<script src="js/assembled.min.js"></script>' -->
+		<!-- @echo '<script src="js/vendor/vendor.min.js"></script>' -->
 		<!--@exclude-->
-		script(src='/js/assembled.js')
+		script(src='js/assembled.js')
+		script(src='js/vendor/vendor.js')
 		<!--@endexclude-->

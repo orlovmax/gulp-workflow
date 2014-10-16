@@ -42,9 +42,10 @@
     %body   
 
         = File.read "components/ie-out/eng.html"
-        %script{:src => "/js/vendor/jquery/jquery.min.js"}
-        %script{:src => "/js/vendor/vendor.min.js"}
+       
         <!--@exclude-->    
-        %script{:src => "/js/assembled.js"}
+        %script{:src => "js/assembled.js"}
+         %script{:src => "js/vendor/vendor.js"}
         <!--@endexclude-->        
-        <!-- @echo '<script src="/js/assembled.min.js"></script>' -->
+        <!-- @echo '<script src="js/assembled.min.js"></script>' -->
+        <!-- @echo '<script src="js/vendor/vendor.min.js"></script>' -->
