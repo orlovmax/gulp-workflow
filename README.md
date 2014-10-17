@@ -2,13 +2,13 @@
 
 My front-end boilerplate based on [grunt-boilerplate](https://github.com/orlovmax/grunt-boilerplate), have the same folder structure but have predefined dependencies for Bower and boileplate-files for styles, markup and javascript
 
-##Contents
+## Contents
 * [Folder structure](#folder-and-file-structure)
 * [How to start](#how-to-start)
     - [Package.json dependencies](#packagejson-dependencies)
-* [Bower](#Bower)
+* [Bower](#bower)
     - [bower.json dependencies](#bowerjson-dependencies)
-* [Tasks](#Tasks)
+* [Tasks](#tasks)
     - [Default task](#default-task)
     - [Bower dev task](#bower-dev-task)
     - [Clean task](#clean-task)
@@ -80,7 +80,7 @@ If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out th
 * Now go to this project folder in terminal. Once you're familiar with grunt installation process, you may install all this things with this command: `npm install`.This will create `node_moduldes` folder, that's normal.
 * Run `grunt`, and it will compile your files and watch for all changes. See [Tasks](#Tasks) chapter for more details.
 
-###Package.json dependencies 
+### Package.json dependencies 
 * ["grunt"](https://github.com/gruntjs)
 * ["grunt-autoprefixer"](https://github.com/nDmitry/grunt-autoprefixer)
 * ["grunt-bower-concat"](https://github.com/sapegin/grunt-bower-concat)
@@ -101,7 +101,7 @@ If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out th
 * ["grunt-newer"](https://github.com/tschaub/grunt-newer)
 * ["grunt-preprocess"](https://github.com/jsoverson/grunt-preprocess#getting-started)
 
-##Bower
+## Bower
 From the version 1.2.0 this boilerplate ready for work with [Bower](https://github.com/bower/bower). So at the root was created `bower.json` file with project dependencies. To install dependencies you need globally instaled Bower. 
 Bower depends on [Node.js](http://nodejs.org/) and [npm](http://npmjs.org/). Also make sure that [git](http://git-scm.com/) is installed as some bower
 packages require it to be fetched and installed. To install Bower - just run this `$ npm install -g bower`.
@@ -123,32 +123,32 @@ More details about this tasks you can read here:
 
 Also `bower-dev` task run ["grunt-contrib-clean"](https://github.com/gruntjs/grunt-contrib-clean) to delete all those pesky .gitkeep files. If you don't use bower - just run `grunt clean:gitkeep`. Please remember, `grunt.clean` task have other subtasks to process unnecessary files, so be careful while using this.
 
-###bower.json dependencies 
+### bower.json dependencies 
 * "jquery"
 * "modernizr"
 
-##Tasks
+## Tasks
 Here comes groups of grunt tasks with some explanations
 
-###Default task
+### Default task
 Compiles styles, markup templates, minifies images, copy updated *.php scripts to build folder. While using grunt watch, it will be done once and than grunt watch will check for changes and process only changed files.
 
-###Bower dev task
+### Bower dev task
 I've talked about this task above, it will remove .gitkeep files, copy and concat bower files to your dev directories.
 
-###Clean task
+### Clean task
 There is one clean task, but with some properties. It was created to delete unnecessary files, like styles or markup. When you've chosen some languages, ex. scss and jade, then you should to delete less and haml boilerplate files. Just run `grunt clean:less` and `grunt clean:haml`. Voila, Our scaffold is totally clean and ready for development.
 
-###Build task
+### Build task
 Recently, I've added build task, that allows us to clean our code from dev references and code-helpers, like livereload script. Also we're able to add some code snippets, like message for outdated browsers or link to minified source just before build. Thanks to ["grunt-preprocess"](https://github.com/jsoverson/grunt-preprocess#getting-started)
 Also this task contains `combine-media-queries` and `autoprefixer` tasks, cause in default task they make reminifying of css without changes. As development process passes in modern browser and combined media queries - just for performance, we should run these tasks only for final build.
 
 Just type `grunt build` and it will process your files and execute rules inside conditional comments, than all files will be minified and placed to appropriate folders.
 
-##Live reload 
+## Live reload 
 For this project I use live.js which minified version and  and link to this script in final html will be removed after running build task.
 
-##TODO
+## TODO
 * Coffeescript
 * JSHint
 * make YO template based on this stuff

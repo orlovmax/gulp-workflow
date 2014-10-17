@@ -30,22 +30,22 @@
         <!--[if lt IE 9]><link rel="stylesheet" href="/css/ie-out.min.css"><![endif]-->
         <!--@exclude-->
         %script{:src => "js/head/head.js"}
-        %link{:href => "/css/screen.css", :rel => "stylesheet"}  
+        %link{:href => "css/screen.css", :rel => "stylesheet"}  
         %noscript
-            %link{:href => "/css/screen_noscript.css", :rel => "stylesheet"}            
+            %link{:href => "css/screen_noscript.css", :rel => "stylesheet"}            
         %script{:src => "js/live.js"}
         <!--@endexclude-->
 
-        <!-- @echo '<script src="/js/head/head.min.js"></script>' -->
+        <!-- @echo '<script src="js/head/head.min.js"></script>' -->
         <!-- @echo '<link rel="stylesheet" href="css/screen.min.css">' -->
-        <!-- @echo '<noscript><link rel="stylesheet" href="/css/screen_noscript.min.css"></noscript>' -->
+        <!-- @echo '<noscript><link rel="stylesheet" href="css/screen_noscript.min.css"></noscript>' -->
     %body   
 
         = File.read "components/ie-out/eng.html"
        
         <!--@exclude-->    
+        %script{:src => "js/vendor/vendor.js"}
         %script{:src => "js/assembled.js"}
-         %script{:src => "js/vendor/vendor.js"}
         <!--@endexclude-->        
-        <!-- @echo '<script src="js/assembled.min.js"></script>' -->
         <!-- @echo '<script src="js/vendor/vendor.min.js"></script>' -->
+        <!-- @echo '<script src="js/assembled.min.js"></script>' -->
