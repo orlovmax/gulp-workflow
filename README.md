@@ -50,7 +50,7 @@ My front-end boilerplate based on [grunt-boilerplate](https://github.com/orlovma
 │   │   └── components
 │   ├── fonts //font sources
 │   ├── devtools //some dev tools, like live.js or pixel-perfect helpers
-│   └── layout // psd layout
+│   └── design // psd layout
 │
 └── build
     ├── index.html // minified html file
