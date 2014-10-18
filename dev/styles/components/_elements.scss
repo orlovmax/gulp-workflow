@@ -166,7 +166,7 @@
 }
 
 
-@mixin animation($animation-name:first, $animation-duration:1s, $animation-tfunction:linear, $animation-delay:0, $animation-iteration:infinite, $animation-direction:normal, $animation-play-state:running){
+@mixin animation($animation-name:first, $animation-duration:1s, $animation-tfunction:linear, $animation-delay:0s, $animation-iteration:infinite, $animation-direction:normal, $animation-play-state:running){
 	-webkit-animation: $animation-name $animation-duration $animation-tfunction $animation-delay $animation-iteration $animation-direction;
 			animation: $animation-name $animation-duration $animation-tfunction $animation-delay $animation-iteration $animation-direction;
 	-webkit-animation-play-state: $animation-play-state;
@@ -266,7 +266,7 @@
 }
 
 
-@mixin transition($property: all, $duration: .5s, $tfunction: ease, $delay: 0){ 
+@mixin transition($property: all, $duration: .5s, $tfunction: ease, $delay: 0s){ 
 	-webkit-transition: $property $duration $tfunction $delay;
 	-moz-transition:    $property $duration $tfunction $delay;
 	-ms-transition:     $property $duration $tfunction $delay;

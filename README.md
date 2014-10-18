@@ -154,6 +154,8 @@ For this project I use live.js which minified version and  and link to this scri
 * make YO template based on this stuff
 
 ## Changelog
+* v1.1.1
+    - fonts copy task added, imagemin task set to recursive execute
 * v1.1.0
     - rename www to build, added head scripts and copy task
 * v1.0.3

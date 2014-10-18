@@ -164,7 +164,7 @@ module.exports = function(grunt) {
             files: [{
               expand: true,      
               cwd: 'dev/img',            
-              src: ['*.{png,jpg,gif}'], 
+              src: ['**/*.{png,jpg,gif}'], 
               dest: 'build/img/'            
             }]
           }
@@ -172,12 +172,20 @@ module.exports = function(grunt) {
 
       //Copy some folders or files (ex. *.php) from dev to build
         copy: {
-          main: {
+          php: {
             files: [{
               expand: true, 
               cwd: 'dev/php/',
               src: '**', 
               dest: 'build/php/'
+            }]
+          },
+          fonts: {
+            files: [{
+              expand: true, 
+              cwd: 'dev/fonts/',
+              src: ['**/*.{eot,svg,ttf,woff}'], 
+              dest: 'build/fonts/'
             }]
           },
           js: {
@@ -273,13 +281,13 @@ module.exports = function(grunt) {
         watch: {
           all: {
             files: ['dev/*.html', 
-                    'dev/styles/*.{scss,less}', 
-                    'dev/css/*.css', 
-                    'dev/js/*.js',  
+                    'dev/styles/**/*.{scss,less}', 
+                    'dev/css/*.css',
                     'dev/js/**/*.js', 
-                    'dev/img/*.{png,jpg,gif}',
-                    'dev/markup/*.{haml,jade}',
-                    'dev/php/*.php' ],
+                    'dev/img/**/*.{png,jpg,gif}',
+                    'dev/markup/**/*.{haml,jade}',
+                    'dev/php/**/*.php',
+                    'dev/fonts/**/*.{eot,svg,ttf,woff}'],
             tasks: ['default'],
             options: {
               spawn: false,
