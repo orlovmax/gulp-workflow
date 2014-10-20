@@ -319,13 +319,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-preprocess');
 
     grunt.registerTask('default', ['newer:concat', 
-                                   'newer:uglify', 
                                    'newer:sass', 
                                    'newer:less', 
-                                   'newer:csso',
                                    'newer:jade',
                                    'newer:haml',
-                                   'newer:htmlmin',
                                    'newer:imagemin',
                                    'newer:copy',
                                    'watch'
