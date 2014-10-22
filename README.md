@@ -27,7 +27,6 @@ My front-end boilerplate based on [grunt-boilerplate](https://github.com/orlovma
 ├── bower.json
 ├── README.md
 ├── dev
-│   ├── index.html // compiled markup html file
 │   ├── css
 │   │   ├── screen.css // compiled css with autoprefixer processing
 │   │   └── screen_noscript.css // compiled css with autoprefixer processing
@@ -48,6 +47,8 @@ My front-end boilerplate based on [grunt-boilerplate](https://github.com/orlovma
 │   │   ├── screen.scss, screen.less // preprocessor styles
 │   │   ├── screen_noscript.scss, screen_noscript.less // preprocessor styles
 │   │   └── components
+│   ├── html
+│   │   └── index.html // compiled markup html file
 │   ├── fonts //font sources
 │   ├── devtools //some dev tools, like live.js or pixel-perfect helpers
 │   └── design // psd layout

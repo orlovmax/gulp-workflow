@@ -5,12 +5,14 @@ module.exports = function(grunt) {
         concat: {
           main: {
             files: [{
+              expand: true,
               src: ['dev/js/*.js', '!dev/js/assembled.js'],
               dest: 'dev/js/assembled.js'
             }]
           },
           head: {
             files: [{
+              expand: true,
               src: ['dev/js/head/*.js', '!dev/js/head/head.js'],
               dest: 'dev/js/head/head.js'
             }]
@@ -127,7 +129,7 @@ module.exports = function(grunt) {
             files: [ {
               cwd: "dev/markup",
               src: "*.jade",
-              dest: "dev/",
+              dest: "dev/html/",
               expand: true,
               ext: ".html"
             } ]
@@ -140,7 +142,7 @@ module.exports = function(grunt) {
             files: [ {
               cwd: "dev/markup",
               src: "*.haml",
-              dest: "dev/",
+              dest: "dev/html/",
               expand: true,
               ext: ".html"
             } ]
@@ -156,7 +158,7 @@ module.exports = function(grunt) {
                 minifyCSS: true
               },
               files: [ {
-                cwd: "dev/",
+                cwd: "dev/html",
                 src: "*.html",
                 dest: "build/",
                 expand: true,
@@ -221,9 +223,16 @@ module.exports = function(grunt) {
             files: [{
               expand: true, 
               cwd: 'dev/css',
-              src: [
-                '**/*.css'],
+              src: ['**/*.css'],
               dest: 'build/css/'
+            }]
+          },        
+          html: {
+            files: [{
+              expand: true, 
+              cwd: 'dev/html',
+              src: ['**/*.html'],
+              dest: 'build/'
             }]
           }
         },   
@@ -268,7 +277,7 @@ module.exports = function(grunt) {
       //Delete some dev code and references from files        
         preprocess : {
           html : {
-            src : [ 'dev/*.html' ],
+            src : [ 'dev/html/*.html' ],
             options: {
               inline : true
             }
@@ -290,7 +299,7 @@ module.exports = function(grunt) {
       //Watch for changes    
         watch: {
           all: {
-            files: ['dev/*.html', 
+            files: ['dev/html/**/*.html', 
                     'dev/styles/**/*.{scss,less}', 
                     'dev/css/*.css',
                     'dev/js/**/*.js', 
