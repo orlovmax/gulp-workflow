@@ -4,12 +4,16 @@ module.exports = function(grunt) {
       //Assemble *.js files
         concat: {
           main: {
+            files: [{
               src: ['dev/js/*.js', '!dev/js/assembled.js'],
               dest: 'dev/js/assembled.js'
+            }]
           },
           head: {
+            files: [{
               src: ['dev/js/head/*.js', '!dev/js/head/head.js'],
               dest: 'dev/js/head/head.js'
+            }]
           }
         },
 
@@ -29,12 +33,12 @@ module.exports = function(grunt) {
           },
           main: {
               files: {
-                  'build/js/assembled.min.js': '<%= concat.main.dest %>'
+                  'build/js/assembled.min.js': 'dev/js/assembled.js'
               }
           },
           head: {
             files: {
-                'build/js/head/head.min.js': '<%= concat.head.dest %>'
+                'build/js/head/head.min.js': 'dev/js/head/head.js'
             }
           }
         },
@@ -59,11 +63,13 @@ module.exports = function(grunt) {
       //Compile *.less files
         less: {
           main: {
-             expand: true,
-             cwd: 'dev/styles',
-             src: ['*.less'],
-             dest: 'dev/css',
-             ext: '.css'
+            files: [{
+              expand: true,
+              cwd: 'dev/styles',
+              src: ['*.less'],
+              dest: 'dev/css',
+              ext: '.css'
+            }]
           }       
         },  
 
@@ -86,10 +92,12 @@ module.exports = function(grunt) {
             //By default >1%, last 2 versions, Firefox ESR, Opera 12.1;
           },           
           main: {
-            expand: true,
-            flatten: true,
-            src: 'dev/css/*.css',
-            dest: 'dev/css/'
+            files:[{
+              expand: true,
+              flatten: true,
+              src: 'dev/css/*.css',
+              dest: 'dev/css/'
+            }]
           }
         },
 
@@ -99,11 +107,13 @@ module.exports = function(grunt) {
             keepSpecialComments: '*'
           },
           main: {
-            expand: true,
-            cwd: 'dev/css/',
-            src: ['*.css', '!*.min.css'],
-            dest: 'build/css/',
-            ext: '.min.css'
+            files:[{
+              expand: true,
+              cwd: 'dev/css/',
+              src: ['*.css', '!*.min.css'],
+              dest: 'build/css/',
+              ext: '.min.css'
+            }]  
           }
         },
 
@@ -335,11 +345,11 @@ module.exports = function(grunt) {
     ]);
 
     grunt.registerTask('build', ['preprocess',
-                                 'newer:cmq',
-                                 'newer:autoprefixer',
-                                 'newer:uglify',
-                                 'newer:csso',
-                                 'newer:htmlmin',                                     
+                                 'cmq',
+                                 'autoprefixer',
+                                 'uglify',
+                                 'csso',
+                                 'htmlmin',                                     
                                  'clean:debug'
     ]);
 };
