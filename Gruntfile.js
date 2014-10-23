@@ -232,6 +232,14 @@ module.exports = function(grunt) {
               src: ['**/*.html'],
               dest: 'build/'
             }]
+          },   
+          helpers: {
+            files: [{
+              expand: true,
+              cwd: 'dev/main/helpers',
+              src: ['**/*.*', '**/.htaccess'],
+              dest: 'build'
+            }]
           }
         },   
 

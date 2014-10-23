@@ -49,6 +49,8 @@ My front-end boilerplate based on [grunt-boilerplate](https://github.com/orlovma
 │   │   └── components
 │   ├── html
 │   │   └── index.html // compiled markup html file
+│   ├── helpers
+│   │   └── *.* // helper files like favicon, .htaccess etc
 │   ├── fonts //font sources
 │   ├── devtools //some dev tools, like live.js or pixel-perfect helpers
 │   └── design // psd layout
