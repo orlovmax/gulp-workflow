@@ -53,7 +53,7 @@ module.exports = function(grunt) {
             files: [{
               expand: true,
               cwd: 'dev/styles',
-              src: ['*.{sass,scss}'],
+              src: ['**/*.{sass,scss}', '!components/**/*.*'],
               dest: 'dev/css',
               ext: '.css'
             }]
@@ -66,7 +66,7 @@ module.exports = function(grunt) {
             files: [{
               expand: true,
               cwd: 'dev/styles',
-              src: ['*.less'],
+              src: ['**/*.less', '!components/**/*.*'],
               dest: 'dev/css',
               ext: '.css'
             }]
@@ -126,7 +126,7 @@ module.exports = function(grunt) {
             },
             files: [ {
               cwd: "dev/markup",
-              src: "*.jade",
+              src: ['**/*.jade', '!components/**/*.*'],
               dest: "dev/html/",
               expand: true,
               ext: ".html"
@@ -139,7 +139,7 @@ module.exports = function(grunt) {
           main: {
             files: [ {
               cwd: "dev/markup",
-              src: "*.haml",
+              src: ['**/*.haml', '!components/**/*.*'],
               dest: "dev/html/",
               expand: true,
               ext: ".html"
@@ -288,19 +288,19 @@ module.exports = function(grunt) {
             }
           },
           html : {
-            src : [ 'dev/html/*.html' ],
+            src : [ 'dev/html/**/*.html' ],
             options: {
               inline : true
             }
           },
           css : {
-            src : [ 'dev/css/*.css' ],
+            src : [ 'dev/css/**/*.css' ],
             options: {
               inline : true
             }
           },
           js : {
-            src : [ 'dev/js/*.js' ],
+            src : [ 'dev/js/**/*.js' ],
             options: {
               inline : true
             }
