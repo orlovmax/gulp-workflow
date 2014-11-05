@@ -353,6 +353,7 @@ module.exports = function(grunt) {
                                    'newer:less', 
                                    'newer:jade',
                                    'newer:haml',
+                                   'preprocess', 
                                    'newer:imagemin',
                                    'newer:copy',
                                    'watch'
