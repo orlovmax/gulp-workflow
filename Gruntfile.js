@@ -281,28 +281,10 @@ module.exports = function(grunt) {
         },
 
       //Delete some dev code and references from files        
-        preprocess : {
-          options: {
-            context : {
-              BUILD: true
-            }
-          },
-          html : {
-            src : [ 'dev/html/**/*.html' ],
-            options: {
-              inline : true
-            }
-          },
-          css : {
-            src : [ 'dev/css/**/*.css' ],
-            options: {
-              inline : true
-            }
-          },
-          js : {
-            src : [ 'dev/js/**/*.js' ],
-            options: {
-              inline : true
+        processhtml: {
+          dist: {
+            files: {
+              'dev/html/index.html': 'dev/html/index.html'
             }
           }
         },
@@ -365,7 +347,7 @@ module.exports = function(grunt) {
                                      'clean:bower'
     ]);
 
-    grunt.registerTask('build', ['preprocess',
+    grunt.registerTask('build', ['processhtml',
                                  'cmq',
                                  'autoprefixer',
                                  'uglify',

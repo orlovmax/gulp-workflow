@@ -31,26 +31,30 @@ html.no-js(lang='en')
 
 		<!--[if lt IE 9]><link rel="stylesheet" href="/css/ie-out.min.css"><![endif]-->
 
-		<!--@exclude-->    
+		<!-- build:js js/head/head.min.js -->
 		script(src='js/head/head.js')
+		<!-- /build -->
 
+		<!-- build:css css/screen.min.css -->
 		link(rel='stylesheet', href='css/screen.css')
+		<!-- /build -->
 
 		noscript
+		<!-- build:css css/screen_noscript.min.css -->
 			link(rel='stylesheet', href='css/screen_noscript.css')
-
+		<!-- /build -->
+			
+		<!-- build:remove -->
 		script(src='js/live.js')
-		<!--@endexclude--> 
-		
-		<!-- @echo '<script src="js/head/head.min.js"></script>' -->      
-		<!-- @echo '<link rel="stylesheet" href="css/screen.min.css">' -->
-		<!-- @echo '<noscript><link rel="stylesheet" href="css/screen_noscript.min.css"></noscript>' -->
+		<!-- /build -->
 	body
 
 		include components/ie-out/eng.html
-		<!-- @echo '<script src="js/vendor/vendor.min.js"></script>' -->
-		<!-- @echo '<script src="js/assembled.min.js"></script>' -->
-		<!--@exclude-->
+		<!-- build:js js/vendor/vendor.min.js --> 
 		script(src='js/vendor/vendor.js')
+		<!-- /build -->
+
+		<!-- build:js js/assembled.min.js --> 
 		script(src='js/assembled.js')
+		<!-- /build -->
 		<!--@endexclude-->

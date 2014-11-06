@@ -102,7 +102,7 @@ If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out th
 * ["grunt-contrib-watch"](https://github.com/gruntjs/grunt-contrib-watch)
 * ["grunt-csso"](https://github.com/t32k/grunt-csso)
 * ["grunt-newer"](https://github.com/tschaub/grunt-newer)
-* ["grunt-preprocess"](https://github.com/jsoverson/grunt-preprocess#getting-started)
+* ["grunt-processhtml"](https://github.com/dciccale/grunt-processhtml)
 
 ## Bower
 From the version 1.2.0 this boilerplate ready for work with [Bower](https://github.com/bower/bower). So at the root was created `bower.json` file with project dependencies. To install dependencies you need globally instaled Bower. 
