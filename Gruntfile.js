@@ -283,9 +283,13 @@ module.exports = function(grunt) {
       //Delete some dev code and references from files        
         processhtml: {
           dist: {
-            files: {
-              'dev/html/index.html': 'dev/html/index.html'
-            }
+            files: [{
+              expand: true,
+              cwd: 'dev/html',
+              src: ['**/*.html'],
+              dest: 'dev/html',
+              ext: '.html'
+            }],
           }
         },
 
@@ -328,7 +332,7 @@ module.exports = function(grunt) {
     // grunt.loadNpmTasks('grunt-bowercopy');
     grunt.loadNpmTasks('grunt-contrib-clean');
 
-    grunt.loadNpmTasks('grunt-preprocess');
+    grunt.loadNpmTasks('grunt-processhtml');
 
     grunt.registerTask('default', ['newer:concat', 
                                    'newer:sass', 
