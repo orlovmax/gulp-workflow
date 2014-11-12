@@ -1,18 +1,41 @@
 module.exports = function(grunt) {
     grunt.initConfig({
+      // Dev paths
+      dev: {
+        main: 'dev',
+        js: 'dev/js',
+        markup: 'dev/markup',
+        styles: 'dev/styles',
+        css: 'dev/css',
+        html: 'dev/html',
+        img: 'dev/img',
+        fonts: 'dev/fonts',
+        helpers: 'dev/helpers',
+        php: 'dev/php',
+        devtools: 'dev/devtools'
+      },
+      // Build paths
+      build: {
+        main: 'build',
+        css: 'build/css',
+        fonts: 'build/fonts',
+        img: 'build/img',
+        php: 'build/php',
+        js: 'build/js'
+      },
 
       //Assemble *.js files
         concat: {
           main: {
             files: [{
-              src: ['dev/js/*.js', '!dev/js/assembled.js'],
-              dest: 'dev/js/assembled.js'
+              src: ['<%= dev.js %>/*.js', '!<%= dev.js %>/assembled.js'],
+              dest: '<%= dev.js %>/assembled.js'
             }]
           },
           head: {
             files: [{
-              src: ['dev/js/head/*.js', '!dev/js/head/head.js'],
-              dest: 'dev/js/head/head.js'
+              src: ['<%= dev.js %>/head/*.js', '!<%= dev.js %>/head/head.js'],
+              dest: '<%= dev.js %>/head/head.js'
             }]
           }
         },
@@ -25,20 +48,20 @@ module.exports = function(grunt) {
           vendor: {
             files: [{
                 expand: true,
-                cwd: 'dev/js/vendor',
+                cwd: '<%= dev.js %>/vendor',
                 src: '**/*.js',
-                dest: 'build/js/vendor',
+                dest: '<%= build.js %>/vendor',
                 ext: '.min.js'
             }]
           },
           main: {
               files: {
-                  'build/js/assembled.min.js': 'dev/js/assembled.js'
+                  '<%= build.js %>/assembled.min.js': '<%= dev.js %>/assembled.js'
               }
           },
           head: {
             files: {
-                'build/js/head/head.min.js': 'dev/js/head/head.js'
+                '<%= build.js %>/head/head.min.js': '<%= dev.js %>/head/head.js'
             }
           }
         },
@@ -52,9 +75,9 @@ module.exports = function(grunt) {
             },
             files: [{
               expand: true,
-              cwd: 'dev/styles',
+              cwd: '<%= dev.styles %>',
               src: ['**/*.{sass,scss}', '!components/**/*.*'],
-              dest: 'dev/css',
+              dest: '<%= dev.css %>',
               ext: '.css'
             }]
           }
@@ -65,9 +88,9 @@ module.exports = function(grunt) {
           main: {
             files: [{
               expand: true,
-              cwd: 'dev/styles',
+              cwd: '<%= dev.styles %>',
               src: ['**/*.less', '!components/**/*.*'],
-              dest: 'dev/css',
+              dest: '<%= dev.css %>',
               ext: '.css'
             }]
           }       
@@ -80,7 +103,7 @@ module.exports = function(grunt) {
           },
           main: {
             files: {
-              'dev/css': ['dev/css/*.css']
+              '<%= dev.css %>': ['<%= dev.css %>/*.css']
             }
           }
         },
@@ -95,8 +118,8 @@ module.exports = function(grunt) {
             files:[{
               expand: true,
               flatten: true,
-              src: 'dev/css/*.css',
-              dest: 'dev/css/'
+              src: '<%= dev.css %>/*.css',
+              dest: '<%= dev.css %>/'
             }]
           }
         },
@@ -109,9 +132,9 @@ module.exports = function(grunt) {
           main: {
             files:[{
               expand: true,
-              cwd: 'dev/css/',
+              cwd: '<%= dev.css %>/',
               src: ['*.css', '!*.min.css'],
-              dest: 'build/css/',
+              dest: '<%= build.css %>/',
               ext: '.min.css'
             }]  
           }
@@ -125,9 +148,9 @@ module.exports = function(grunt) {
                 pretty: true
             },
             files: [ {
-              cwd: "dev/markup",
+              cwd: "<%= dev.markup %>",
               src: ['**/*.jade', '!components/**/*.*'],
-              dest: "dev/html/",
+              dest: "<%= dev.html %>/",
               expand: true,
               ext: ".html"
             } ]
@@ -138,9 +161,9 @@ module.exports = function(grunt) {
         haml: {
           main: {
             files: [ {
-              cwd: "dev/markup",
+              cwd: "<%= dev.markup %>",
               src: ['**/*.haml', '!components/**/*.*'],
-              dest: "dev/html/",
+              dest: "<%= dev.html %>/",
               expand: true,
               ext: ".html"
             } ]
@@ -156,9 +179,9 @@ module.exports = function(grunt) {
                 minifyCSS: true
               },
               files: [ {
-                cwd: "dev/html",
+                cwd: "<%= dev.html %>",
                 src: "*.html",
-                dest: "build/",
+                dest: "<%= build.main %>",
                 expand: true,
                 ext: ".html"
               } ]
@@ -173,9 +196,9 @@ module.exports = function(grunt) {
             },              
             files: [{
               expand: true,      
-              cwd: 'dev/img',            
+              cwd: '<%= dev.img %>',            
               src: ['**/*.{png,jpg,gif}'], 
-              dest: 'build/img/'            
+              dest: '<%= build.img %>'            
             }]
           }
         },
@@ -185,60 +208,60 @@ module.exports = function(grunt) {
           php: {
             files: [{
               expand: true, 
-              cwd: 'dev/php/',
+              cwd: '<%= dev.php %>/',
               src: '**', 
-              dest: 'build/php/'
+              dest: '<%= build.php %>'
             }]
           },
           fonts: {
             files: [{
               expand: true, 
-              cwd: 'dev/fonts/',
+              cwd: '<%= dev.fonts %>/',
               src: ['**/*.{eot,svg,ttf,woff}'], 
-              dest: 'build/fonts/'
+              dest: '<%= build.fonts %>'
             }]
           },
           js: {
             files: [{
               expand: true, 
-              cwd: 'dev/js/',
+              cwd: '<%= dev.js %>/',
               src: [
                 '**/assembled.js', 
                 '**/vendor.js', 
                 '**/head.js'],
-              dest: 'build/js/'
+              dest: '<%= build.js %>/'
             }]
           },  
           livejs: {
             files: [{
               expand: true, 
-              cwd: 'dev/devtools/',
+              cwd: '<%= dev.devtools %>/',
               src: '**/live.js',
-              dest: 'build/js/'
+              dest: '<%= build.js %>/'
             }]
           },        
           css: {
             files: [{
               expand: true, 
-              cwd: 'dev/css',
+              cwd: '<%= dev.css %>',
               src: ['**/*.css'],
-              dest: 'build/css/'
+              dest: '<%= build.css %>/'
             }]
           },        
           html: {
             files: [{
               expand: true, 
-              cwd: 'dev/html',
+              cwd: '<%= dev.html %>',
               src: ['**/*.html'],
-              dest: 'build/'
+              dest: '<%= build.main %>'
             }]
           },   
           helpers: {
             files: [{
               expand: true,
-              cwd: 'dev/main/helpers',
+              cwd: '<%= dev.helpers %>',
               src: ['**/*.*', '**/.htaccess'],
-              dest: 'build'
+              dest: '<%= build.main %>'
             }]
           }
         },   
@@ -246,7 +269,7 @@ module.exports = function(grunt) {
       //Assemble bower components in right order 
         bower_concat: {
           main: {
-            dest: 'dev/js/vendor/vendor.js'
+            dest: '<%= dev.js %>/vendor/vendor.js'
           }
         },
 
@@ -258,7 +281,7 @@ module.exports = function(grunt) {
         //   },          
         //   jquery: {
         //     options: {
-        //         destPrefix: 'dev/js/vendor'
+        //         destPrefix: '<%= dev.js %>/vendor'
         //     },
         //     files: {
         //       'jquery': 'jquery/dist/jquery.js'
@@ -268,15 +291,15 @@ module.exports = function(grunt) {
 
       //Delete .gitkeep files. If you don't use Bower - just run `grunt clean`  
         clean: {
-          gitkeep: ['dev/**/.gitkeep', 'build/**/.gitkeep'],
-          less: 'dev/**/*.less',
-          sass: 'dev/**/*.scss',
-          haml: 'dev/**/*.haml',
-          jade: 'dev/**/*.jade',
-          debug: ['build/js/**/*.js', 
-                  '!build/js/**/*.min.js', 
-                  'build/css/**/*.css',
-                  '!build/css/**/*.min.css'],
+          gitkeep: ['<%= dev.main %>/**/.gitkeep', '<%= build.main %>/**/.gitkeep'],
+          less: '<%= dev.styles %>/**/*.less',
+          sass: '<%= dev.styles %>/**/*.scss',
+          haml: '<%= dev.markup %>/**/*.haml',
+          jade: '<%= dev.markup %>/**/*.jade',
+          debug: ['<%= build.js %>/**/*.js', 
+                  '!<%= build.js %>/**/*.min.js', 
+                  '<%= build.css %>/**/*.css',
+                  '!<%= build.css %>/**/*.min.css'],
           bower: 'bower_components'   
         },
 
@@ -285,9 +308,9 @@ module.exports = function(grunt) {
           dist: {
             files: [{
               expand: true,
-              cwd: 'dev/html',
+              cwd: '<%= dev.html %>',
               src: ['**/*.html'],
-              dest: 'dev/html',
+              dest: '<%= dev.html %>',
               ext: '.html'
             }],
           }
@@ -296,21 +319,20 @@ module.exports = function(grunt) {
       //Watch for changes    
         watch: {
           all: {
-            files: ['dev/html/**/*.html', 
-                    'dev/styles/**/*.{scss,less}', 
-                    'dev/css/*.css',
-                    'dev/js/**/*.js', 
-                    'dev/img/**/*.{png,jpg,gif}',
-                    'dev/markup/**/*.{haml,jade}',
-                    'dev/php/**/*.php',
-                    'dev/fonts/**/*.{eot,svg,ttf,woff}'],
+            files: ['<%= dev.html %>/**/*.html', 
+                    '<%= dev.styles %>/**/*.{scss,less}', 
+                    '<%= dev.css %>/*.css',
+                    '<%= dev.js %>/**/*.js', 
+                    '<%= dev.img %>/**/*.{png,jpg,gif}',
+                    '<%= dev.markup %>/**/*.{haml,jade}',
+                    '<%= dev.php %>/**/*.php',
+                    '<%= dev.fonts %>/**/*.{eot,svg,ttf,woff}'],
             tasks: ['default'],
             options: {
               spawn: false,
             },
           },
         }
-
     });
     
     grunt.loadNpmTasks('grunt-contrib-concat');
@@ -339,7 +361,6 @@ module.exports = function(grunt) {
                                    'newer:less', 
                                    'newer:jade',
                                    'newer:haml',
-                                   'preprocess', 
                                    'newer:imagemin',
                                    'newer:copy',
                                    'watch'
