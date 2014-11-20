@@ -98,6 +98,7 @@ If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out th
 * ["grunt-contrib-jade"](https://github.com/gruntjs/grunt-contrib-jade)
 * ["grunt-contrib-less"](https://github.com/gruntjs/grunt-contrib-less)
 * ["grunt-contrib-sass"](https://github.com/gruntjs/grunt-contrib-sass)
+* ["grunt-contrib-stylus"](https://github.com/gruntjs/grunt-contrib-stylus)
 * ["grunt-contrib-uglify"](https://github.com/gruntjs/grunt-contrib-uglify)
 * ["grunt-contrib-watch"](https://github.com/gruntjs/grunt-contrib-watch)
 * ["grunt-csso"](https://github.com/t32k/grunt-csso)
@@ -157,6 +158,8 @@ For this project I use live.js which minified version and  and link to this scri
 * make YO template based on this stuff
 
 ## Changelog
+* v1.1.3
+    - stylus task added
 * v1.1.2
     - added path variables
 * v1.1.1

@@ -94,7 +94,24 @@ module.exports = function(grunt) {
               ext: '.css'
             }]
           }       
-        },  
+        }, 
+
+       //Compile *.styl files
+        stylus: {
+          main: {
+            options: {
+              linenos: false,
+              compress: false
+            },
+            files: [{
+              expand: true,
+              cwd: '<%= dev.styles %>',
+              src: [ '**/*.styl', '!components/**/*.*' ],
+              dest: '<%= dev.css %>',
+              ext: '.css'
+            }]
+          }
+        },    
 
       //Combine media queries in result *.css files   
         cmq: {
@@ -294,6 +311,7 @@ module.exports = function(grunt) {
           gitkeep: ['<%= dev.main %>/**/.gitkeep', '<%= build.main %>/**/.gitkeep'],
           less: '<%= dev.styles %>/**/*.less',
           sass: '<%= dev.styles %>/**/*.scss',
+          stylus: '<%= dev.styles %>/**/*.styl',
           haml: '<%= dev.markup %>/**/*.haml',
           jade: '<%= dev.markup %>/**/*.jade',
           debug: ['<%= build.js %>/**/*.js', 
@@ -320,7 +338,7 @@ module.exports = function(grunt) {
         watch: {
           all: {
             files: ['<%= dev.html %>/**/*.html', 
-                    '<%= dev.styles %>/**/*.{scss,less}', 
+                    '<%= dev.styles %>/**/*.{scss,less,styl}', 
                     '<%= dev.css %>/*.css',
                     '<%= dev.js %>/**/*.js', 
                     '<%= dev.img %>/**/*.{png,jpg,gif}',
@@ -339,6 +357,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-less');
+    grunt.loadNpmTasks('grunt-contrib-stylus');
     grunt.loadNpmTasks('grunt-combine-media-queries');
     grunt.loadNpmTasks('grunt-autoprefixer');
     grunt.loadNpmTasks('grunt-csso');
@@ -359,6 +378,7 @@ module.exports = function(grunt) {
     grunt.registerTask('default', ['newer:concat', 
                                    'newer:sass', 
                                    'newer:less', 
+                                   'newer:stylus', 
                                    'newer:jade',
                                    'newer:haml',
                                    'newer:imagemin',
