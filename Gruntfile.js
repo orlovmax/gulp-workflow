@@ -3,6 +3,7 @@ module.exports = function(grunt) {
       // Dev paths
       dev: {
         main: 'dev',
+        coffee: 'dev/coffee',
         js: 'dev/js',
         markup: 'dev/markup',
         styles: 'dev/styles',
@@ -22,6 +23,18 @@ module.exports = function(grunt) {
         img: 'build/img',
         php: 'build/php',
         js: 'build/js'
+      },
+
+      // Compile CoffeeScript
+      coffee: {
+        main: {
+          expand: true,
+          flatten: true,
+          cwd: '<%= dev.coffee %>',
+          src: ['**/*.coffee', '!components/**/*.*'],
+          dest: '<%= dev.js %>',
+          ext: '.js'
+        }
       },
 
       //Assemble *.js files
@@ -68,7 +81,7 @@ module.exports = function(grunt) {
 
       //Compile *.scss files  
         sass: {
-          main: { 
+          main: {
             options: {
               style: 'expanded',
               sourcemap: 'none'
@@ -93,8 +106,8 @@ module.exports = function(grunt) {
               dest: '<%= dev.css %>',
               ext: '.css'
             }]
-          }       
-        }, 
+          }
+        },
 
        //Compile *.styl files
         stylus: {
@@ -111,7 +124,7 @@ module.exports = function(grunt) {
               ext: '.css'
             }]
           }
-        },    
+        },
 
       //Combine media queries in result *.css files   
         cmq: {
@@ -128,9 +141,9 @@ module.exports = function(grunt) {
       //Autoprefixer  
         autoprefixer: {
           options: {
-            browsers: ['last 2 versions', 'ie 8', 'ie 9'] 
+            browsers: ['last 2 versions', 'ie 8', 'ie 9']
             //By default >1%, last 2 versions, Firefox ESR, Opera 12.1;
-          },           
+          },
           main: {
             files:[{
               expand: true,
@@ -153,7 +166,7 @@ module.exports = function(grunt) {
               src: ['*.css', '!*.min.css'],
               dest: '<%= build.css %>/',
               ext: '.min.css'
-            }]  
+            }]
           }
         },
 
@@ -188,9 +201,9 @@ module.exports = function(grunt) {
         },
 
       //Minify *.html files 
-        htmlmin: {  
-            main: {     
-              options: {             
+        htmlmin: {
+            main: {
+              options: {
                 collapseWhitespace: true,
                 minifyJS: true,
                 minifyCSS: true
@@ -207,15 +220,15 @@ module.exports = function(grunt) {
 
       //Minify image files   
         imagemin: {
-          main: { 
-            options: { 
+          main: {
+            options: {
               optimizationLevel: 7
-            },              
+            },
             files: [{
-              expand: true,      
-              cwd: '<%= dev.img %>',            
-              src: ['**/*.{png,jpg,gif}'], 
-              dest: '<%= build.img %>'            
+              expand: true,
+              cwd: '<%= dev.img %>',
+              src: ['**/*.{png,jpg,gif}'],
+              dest: '<%= build.img %>'
             }]
           }
         },
@@ -224,55 +237,55 @@ module.exports = function(grunt) {
         copy: {
           php: {
             files: [{
-              expand: true, 
+              expand: true,
               cwd: '<%= dev.php %>/',
-              src: '**', 
+              src: '**',
               dest: '<%= build.php %>'
             }]
           },
           fonts: {
             files: [{
-              expand: true, 
+              expand: true,
               cwd: '<%= dev.fonts %>/',
-              src: ['**/*.{eot,svg,ttf,woff}'], 
+              src: ['**/*.{eot,svg,ttf,woff}'],
               dest: '<%= build.fonts %>'
             }]
           },
           js: {
             files: [{
-              expand: true, 
+              expand: true,
               cwd: '<%= dev.js %>/',
               src: [
-                '**/assembled.js', 
-                '**/vendor.js', 
+                '**/assembled.js',
+                '**/vendor.js',
                 '**/head.js'],
               dest: '<%= build.js %>/'
             }]
-          },  
+          },
           livejs: {
             files: [{
-              expand: true, 
+              expand: true,
               cwd: '<%= dev.devtools %>/',
               src: '**/live.js',
               dest: '<%= build.js %>/'
             }]
-          },        
+          },
           css: {
             files: [{
-              expand: true, 
+              expand: true,
               cwd: '<%= dev.css %>',
               src: ['**/*.css'],
               dest: '<%= build.css %>/'
             }]
-          },        
+          },
           html: {
             files: [{
-              expand: true, 
+              expand: true,
               cwd: '<%= dev.html %>',
               src: ['**/*.html'],
               dest: '<%= build.main %>'
             }]
-          },   
+          },
           helpers: {
             files: [{
               expand: true,
@@ -281,7 +294,7 @@ module.exports = function(grunt) {
               dest: '<%= build.main %>'
             }]
           }
-        },   
+        },
 
       //Assemble bower components in right order 
         bower_concat: {
@@ -314,11 +327,11 @@ module.exports = function(grunt) {
           stylus: '<%= dev.styles %>/**/*.styl',
           haml: '<%= dev.markup %>/**/*.haml',
           jade: '<%= dev.markup %>/**/*.jade',
-          debug: ['<%= build.js %>/**/*.js', 
-                  '!<%= build.js %>/**/*.min.js', 
+          debug: ['<%= build.js %>/**/*.js',
+                  '!<%= build.js %>/**/*.min.js',
                   '<%= build.css %>/**/*.css',
                   '!<%= build.css %>/**/*.min.css'],
-          bower: 'bower_components'   
+          bower: 'bower_components'
         },
 
       //Delete some dev code and references from files        
@@ -337,10 +350,11 @@ module.exports = function(grunt) {
       //Watch for changes    
         watch: {
           all: {
-            files: ['<%= dev.html %>/**/*.html', 
-                    '<%= dev.styles %>/**/*.{scss,less,styl}', 
+            files: ['<%= dev.html %>/**/*.html',
+                    '<%= dev.styles %>/**/*.{scss,sass,less,styl}',
                     '<%= dev.css %>/*.css',
-                    '<%= dev.js %>/**/*.js', 
+                    '<%= dev.coffee %>/**/*.coffee',
+                    '<%= dev.js %>/**/*.js',
                     '<%= dev.img %>/**/*.{png,jpg,gif}',
                     '<%= dev.markup %>/**/*.{haml,jade}',
                     '<%= dev.php %>/**/*.php',
@@ -353,6 +367,7 @@ module.exports = function(grunt) {
         }
     });
     
+    grunt.loadNpmTasks('grunt-contrib-coffee');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-sass');
@@ -375,10 +390,11 @@ module.exports = function(grunt) {
 
     grunt.loadNpmTasks('grunt-processhtml');
 
-    grunt.registerTask('default', ['newer:concat', 
-                                   'newer:sass', 
-                                   'newer:less', 
-                                   'newer:stylus', 
+    grunt.registerTask('default', ['newer:coffee',
+                                   'newer:concat',
+                                   'newer:sass',
+                                   'newer:less',
+                                   'newer:stylus',
                                    'newer:jade',
                                    'newer:haml',
                                    'newer:imagemin',
@@ -397,7 +413,7 @@ module.exports = function(grunt) {
                                  'autoprefixer',
                                  'uglify',
                                  'csso',
-                                 'htmlmin',                                     
+                                 'htmlmin',
                                  'clean:debug'
     ]);
 };

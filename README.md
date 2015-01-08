@@ -27,6 +27,8 @@ My front-end boilerplate based on [grunt-boilerplate](https://github.com/orlovma
 ├── bower.json
 ├── README.md
 ├── dev
+|   ├── coffee
+│   │   └── script.coffee // *.coffee scripts
 │   ├── css
 │   │   ├── screen.css // compiled css with autoprefixer processing
 │   │   └── screen_noscript.css // compiled css with autoprefixer processing
@@ -36,6 +38,7 @@ My front-end boilerplate based on [grunt-boilerplate](https://github.com/orlovma
 │   │   ├── index.haml, index.jade // marrkup templates sources
 │   │   └── components
 │   ├── js
+│   │   ├── compiled.js // compiled coffee scripts
 │   │   ├── custom.js // custom scripts and plugins sources
 │   │   ├── head
 │   │   │   └── head.js // concatenated head scripts
@@ -91,6 +94,7 @@ If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out th
 * ["grunt-combine-media-queries"](https://github.com/buildingblocks/grunt-combine-media-queries)
 * ["grunt-contrib-clean"](https://github.com/gruntjs/grunt-contrib-clean)
 * ["grunt-contrib-concat"](https://github.com/gruntjs/grunt-contrib-concat)
+* ["grunt-contrib-coffee"](https://github.com/gruntjs/grunt-contrib-coffee)
 * ["grunt-contrib-copy"](https://github.com/gruntjs/grunt-contrib-copy)
 * ["grunt-haml2html"](https://github.com/jhchen/grunt-haml2html)
 * ["grunt-contrib-htmlmin"](https://github.com/gruntjs/grunt-contrib-htmlmin)
@@ -153,11 +157,12 @@ Just type `grunt build` and it will process your files and execute rules inside 
 For this project I use live.js which minified version and  and link to this script in final html will be removed after running build task.
 
 ## TODO
-* Coffeescript
 * JSHint
 * make YO template based on this stuff
 
 ## Changelog
+* v1.1.4
+    - coffeescript task added
 * v1.1.3
     - stylus task added
 * v1.1.2
