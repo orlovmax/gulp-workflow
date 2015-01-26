@@ -158,7 +158,8 @@ module.exports = function(grunt) {
       //Minify and organize *.css files  
         csso: {
           options: {
-            keepSpecialComments: '*'
+            keepSpecialComments: '*',
+            restructure: false            
           },
           main: {
             files:[{
