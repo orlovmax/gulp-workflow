@@ -325,7 +325,8 @@ module.exports = function(grunt) {
         clean: {
           gitkeep: ['<%= dev.main %>/**/.gitkeep', '<%= build.main %>/**/.gitkeep'],
           less: '<%= dev.styles %>/**/*.less',
-          sass: '<%= dev.styles %>/**/*.scss',
+          scss: '<%= dev.styles %>/**/*.scss',
+          sass: '<%= dev.styles %>/**/*.sass',
           stylus: '<%= dev.styles %>/**/*.styl',
           haml: '<%= dev.markup %>/**/*.haml',
           jade: '<%= dev.markup %>/**/*.jade',

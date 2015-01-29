@@ -18,38 +18,38 @@
 /* ==============================
    $Reset
    ==============================*/
-@import "components/_reset.scss";
+@import "components/_reset";
 
 
 /* ==============================
    $Fonts
    ==============================*/
-@import "components/_fonts.scss";
+@import "components/_fonts";
 
 /* ==============================
    $Elements lib
    ==============================*/
-@import "components/_elements.scss"; 
+@import "components/_elements"; 
 
 
 /* ==============================
    $Layout tools
    ==============================*/
-@import "../devtools/_layout-tools.scss";
+@import "../devtools/_layout-tools";
 
 
 /* ==============================
    $Custom mixins and vars
    ============================== */   
-@import "components/_variables.scss";   
+@import "components/_variables";   
    
 /* ==============================
    $General styles
    ==============================*/
-@import "components/_general.scss";   
+@import "components/_general";   
 
 
 /* ==============================
    $Media queries
    ============================== */  
-@import "components/_media.scss";   
+@import "components/_media";   

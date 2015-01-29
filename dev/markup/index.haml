@@ -48,7 +48,9 @@
         <!-- /build -->
     %body   
 
+        / Browser update screen start here
         = File.read "components/ie-out/eng.html"
+        / Browser update screen end
        
         <!-- build:js js/vendor/vendor.min.js --> 
         %script{:src => "js/vendor/vendor.js"}
