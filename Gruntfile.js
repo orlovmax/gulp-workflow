@@ -77,6 +77,11 @@ module.exports = function(grunt) {
             files: {
                 '<%= build.js %>/head/head.min.js': '<%= dev.js %>/head/head.js'
             }
+          },
+          ie: {
+            files: {
+                '<%= build.js %>/ie/ie.min.js': '<%= dev.js %>/ie/ie.js'
+            }
           }
         },
 
@@ -260,7 +265,8 @@ module.exports = function(grunt) {
               src: [
                 '**/assembled.js',
                 '**/vendor.js',
-                '**/head.js'],
+                '**/head.js',
+                '**/ie.js'],
               dest: '<%= build.js %>/'
             }]
           },
@@ -300,8 +306,16 @@ module.exports = function(grunt) {
 
       //Assemble bower components in right order 
         bower_concat: {
-          main: {
-            dest: '<%= dev.js %>/vendor/vendor.js'
+          vendor: {
+            dest: '<%= dev.js %>/vendor/vendor.js',
+            exclude: ['respond', 'html5shiv']
+          },
+          ie: {
+            dest: '<%= dev.js %>/ie/ie.js',
+            exclude: ['jquery'],
+            mainFiles: {
+              'html5shiv': 'dist/html5shiv-printshiv.js'
+            }
           }
         },
 
