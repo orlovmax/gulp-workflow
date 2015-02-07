@@ -425,6 +425,17 @@ module.exports = function(grunt) {
                                      'clean:bower'
     ]);
 
+    grunt.registerTask('regen', ['coffee',
+                                 'concat',
+                                 'sass',
+                                 'less',
+                                 'stylus',
+                                 'jade',
+                                 'haml',
+                                 'copy',
+                                 'watch'
+    ]);
+
     grunt.registerTask('build', ['processhtml',
                                  'cmq',
                                  'autoprefixer',

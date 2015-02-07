@@ -1,67 +1,70 @@
 !!! 5
 %html.no-js{:lang => "en"}
-    %head
-        %meta{:charset => "utf-8"}
-        %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}
-        %title
-        %meta{:content => "", :name => "description"}
-        %meta{:content => "", :name => "keywords"}
-        %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
-        <!--Opengraph-->
-        %meta{:content => "website", :property => "og:type"}
-        %meta{:content => "", :property => "og:title"}
-        %meta{:content => "", :property => "og:description"}
-        %meta{:content => "/img/card.jpg", :property => "og:image"}
-        %meta{:content => "", :property => "og:url"}
-        <!--TwitterCard-->
-        %meta{:content => "summary", :name => "twitter:card"}
-        %meta{:content => "", :name => "twitter:title"}
-        %meta{:content => "", :name => "twitter:description"}
-        %meta{:content => "/img/card.jpg", :name => "twitter:image:src"}
-        %meta{:content => "@orlovmax_im", :name => "twitter:creator"}
-        %meta{:content => "@orlovmax_im", :name => "twitter:site"}
-        %meta{:content => "", :name => "twitter:url"}
-        %link{:href => "favicon.ico", :rel => "shortcut icon"}
-        %link{:href => "/img/ico/favicon.png", :rel => "shortcut icon", :type => "image/x-icon"}
-        %link{:href => "/img/ico/apple-touch-icon-144x144-precomposed.png", :rel => "apple-touch-icon-precomposed", :sizes => "144x144"}
-        %link{:href => "/img/ico/apple-touch-icon-114x114-precomposed.png", :rel => "apple-touch-icon-precomposed", :sizes => "114x114"}
-        %link{:href => "/img/ico/apple-touch-icon-72x72-precomposed.png", :rel => "apple-touch-icon-precomposed", :sizes => "72x72"}
-        %link{:href => "/img/ico/apple-touch-icon-precomposed.png", :rel => "apple-touch-icon-precomposed"}
-        
-        <!--[if lt IE 9]><script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv-printshiv.min.js"></script><script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script><![endif]-->
+	%head
+		%meta{:charset => "utf-8"}
+		%meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}
+		%title ===title===
+		%meta{:content => "===description===", :name => "description"}
+		%meta{:content => "===keywords===", :name => "keywords"}
+		%meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
+		<!--Opengraph-->
+		%meta{:content => "website", :property => "og:type"}
+		%meta{:content => "===title===", :property => "og:title"}
+		%meta{:content => "===description===", :property => "og:description"}
+		%meta{:content => "/img/card.jpg", :property => "og:image"}
+		%meta{:content => "===url===", :property => "og:url"}
+		<!--TwitterCard-->
+		%meta{:content => "summary", :name => "twitter:card"}
+		%meta{:content => "===title===", :name => "twitter:title"}
+		%meta{:content => "===description===", :name => "twitter:description"}
+		%meta{:content => "/img/card.jpg", :name => "twitter:image:src"}
+		%meta{:content => "===twittercard-validation-account===", :name => "twitter:creator"}
+		%meta{:content => "===twitter-url===", :name => "twitter:site"}
+		%meta{:content => "===url===", :name => "twitter:url"}
+		%link{:href => "favicon.ico", :rel => "shortcut icon"}
+		%link{:href => "/img/ico/favicon.png", :rel => "shortcut icon", :type => "image/x-icon"}
+		%link{:href => "/img/ico/apple-touch-icon-144x144-precomposed.png", :rel => "apple-touch-icon-precomposed", :sizes => "144x144"}
+		%link{:href => "/img/ico/apple-touch-icon-114x114-precomposed.png", :rel => "apple-touch-icon-precomposed", :sizes => "114x114"}
+		%link{:href => "/img/ico/apple-touch-icon-72x72-precomposed.png", :rel => "apple-touch-icon-precomposed", :sizes => "72x72"}
+		%link{:href => "/img/ico/apple-touch-icon-precomposed.png", :rel => "apple-touch-icon-precomposed"}
+		
+		<!-- build:js js/head/head.min.js -->
+		%script{:src => "js/head/head.js"}
+		<!-- /build -->
 
-        <!-- Or you can use these two scripts from local folder, dont forget for conditional comments for old IE
-        <script src="js/ie/ie.min.js"></script> -->
+		<!-- build:css css/screen.min.css -->
+		%link{:href => "css/screen.css", :rel => "stylesheet"}
+		<!-- /build -->
 
-        <!--[if lt IE 9]><link rel="stylesheet" href="/css/ie-out.min.css"><![endif]-->
-        
-        <!-- build:js js/head/head.min.js -->
-        %script{:src => "js/head/head.js"}
-        <!-- /build -->
+		%noscript
+			<!-- build:css css/screen_noscript.min.css -->
+			%link{:href => "css/screen_noscript.css", :rel => "stylesheet"}
+			<!-- /build -->
 
-        <!-- build:css css/screen.min.css -->
-        %link{:href => "css/screen.css", :rel => "stylesheet"}
+		<!-- build:template <!--[if lt IE 9]><script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv-printshiv.min.js"></script><script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script><![endif]-->
 
-        <!-- /build -->
+		<!-- Or you can use these two scripts from local folder, dont forget for conditional comments for old IE
+		<script src="js/ie/ie.min.js"></script> -->
 
-        %noscript
-        <!-- build:css css/screen_noscript.min.css -->
-        %link{:href => "css/screen_noscript.css", :rel => "stylesheet"}
-        <!-- /build -->
-            
-        <!-- build:remove -->
-        %script{:src => "js/live.js"}
-        <!-- /build -->
-    %body   
+		<!--[if lt IE 9]><link rel="stylesheet" href="/css/ie-out.min.css"><![endif]--> /build -->
+			
+		<!-- build:remove -->
+		<!--[if lt IE 9]><script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv-printshiv.min.js"></script><script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script><![endif]-->
+		<!-- Or you can use these two scripts from local folder, dont forget for conditional comments for old IE
+		<script src="js/ie/ie.js"></script> -->
+		<!--[if lt IE 9]><link rel="stylesheet" href="/css/ie-out.css"><![endif]-->
+		%script{:src => "js/live.js"}
+		<!-- /build -->
+	%body   
 
-        / Browser update screen start here
-        = File.read "components/ie-out/eng.html"
-        / Browser update screen end
-       
-        <!-- build:js js/vendor/vendor.min.js --> 
-        %script{:src => "js/vendor/vendor.js"}
-        <!-- /build -->
+		/ Browser update screen start here
+		= File.read "components/ie-out/eng.html"
+		/ Browser update screen end
+	   
+		<!-- build:js js/vendor/vendor.min.js --> 
+		%script{:src => "js/vendor/vendor.js"}
+		<!-- /build -->
 
-        <!-- build:js js/assembled.min.js --> 
-        %script{:src => "js/assembled.js"}
-        <!-- /build -->
+		<!-- build:js js/assembled.min.js --> 
+		%script{:src => "js/assembled.js"}
+		<!-- /build -->
