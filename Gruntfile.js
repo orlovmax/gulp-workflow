@@ -364,6 +364,13 @@ module.exports = function(grunt) {
           }
         },
 
+      // Run deploy script from Rakefile
+        shell: {
+            deploy: {
+                command: 'rake deploy'
+            }
+        },
+
       //Watch for changes    
         watch: {
           all: {
@@ -406,6 +413,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-clean');
 
     grunt.loadNpmTasks('grunt-processhtml');
+    grunt.loadNpmTasks('grunt-shell');
 
     grunt.registerTask('default', ['newer:coffee',
                                    'newer:concat',
@@ -444,4 +452,6 @@ module.exports = function(grunt) {
                                  'htmlmin',
                                  'clean:debug'
     ]);
+
+    grunt.registerTask('deploy', ['shell:deploy']);
 };

@@ -32,7 +32,8 @@
     "grunt-csso": "^0.6.3",
     "grunt-haml2html": "^0.3.0",
     "grunt-newer": "^0.7.0",
-    "grunt-processhtml": "^0.3.3"
+    "grunt-processhtml": "^0.3.3",
+    "grunt-shell": "^1.1.1"
   },
   "license": "MIT"
 }

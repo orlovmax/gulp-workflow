@@ -4,6 +4,7 @@ My front-end boilerplate based on [grunt-boilerplate](https://github.com/orlovma
 
 ## Contents
 * [Folder structure](#folder-and-file-structure)
+* [Requirements](#requirements)
 * [How to start](#how-to-start)
     - [Package.json dependencies](#packagejson-dependencies)
 * [Bower](#bower)
@@ -26,6 +27,7 @@ My front-end boilerplate based on [grunt-boilerplate](https://github.com/orlovma
 ├── package.json
 ├── bower.json
 ├── README.md
+├── Rakefile
 ├── dev
 |   ├── coffee
 │   │   └── script.coffee // *.coffee scripts
@@ -78,6 +80,13 @@ My front-end boilerplate based on [grunt-boilerplate](https://github.com/orlovma
 ```        
 Source files  placed in `dev` folder, where you should provide your development process.
 
+## Requirements:
+
+- [Ruby](http://www.ruby-lang.org/)
+- [Node.js](http://nodejs.org/)
+- [Grunt](http://gruntjs.com/) (`npm install -g grunt-cli`)
+- [Bower](http://bower.io/) (`npm install -g bower`)
+
 ## How to start
 If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to use [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins.
 
@@ -108,6 +117,7 @@ If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out th
 * ["grunt-csso"](https://github.com/t32k/grunt-csso)
 * ["grunt-newer"](https://github.com/tschaub/grunt-newer)
 * ["grunt-processhtml"](https://github.com/dciccale/grunt-processhtml)
+* ["grunt-shell"](https://github.com/sindresorhus/grunt-shell)
 
 ## Bower
 From the version 1.2.0 this boilerplate ready for work with [Bower](https://github.com/bower/bower). So at the root was created `bower.json` file with project dependencies. To install dependencies you need globally instaled Bower. 
@@ -153,6 +163,9 @@ Also this task contains `combine-media-queries` and `autoprefixer` tasks, cause 
 
 Just type `grunt build` and it will process your files and execute rules inside conditional comments, than all files will be minified and placed to appropriate folders.
 
+###Deploy task
+For this purpose was used grunt-shell task, that runs deploy script from Rakefile. Just customize Rakefile and type in terminal `grunt deploy`. Please note, that running scripts from Rakefile requires `Ruby` and `rubygems`.
+
 ## Live reload 
 For this project I use live.js which minified version and  and link to this script in final html will be removed after running build task.
 
@@ -161,6 +174,8 @@ For this project I use live.js which minified version and  and link to this scri
 * make YO template based on this stuff
 
 ## Changelog
+* v1.1.5
+    - deploy task added
 * v1.1.4
     - coffeescript task added
 * v1.1.3
