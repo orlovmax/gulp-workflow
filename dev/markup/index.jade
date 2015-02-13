@@ -1,71 +1,25 @@
 doctype html
 html.no-js(lang='en')
 	head
-		meta(charset='utf-8')
-		meta(http-equiv='X-UA-Compatible', content='IE=edge')
-		title ===title===
-		meta(name='description', content='===description===')
-		meta(name='keywords', content='===keywords===')
-		meta(name='viewport', content='width=device-width, initial-scale=1')
-		<!--Opengraph-->
-		meta(property='og:type', content='website')
-		meta(property='og:title', content='===title===')
-		meta(property='og:description', content='===description===')
-		meta(property='og:image', content='/img/card.jpg')
-		meta(property='og:url', content='===url===')
-		<!--TwitterCard-->
-		meta(name='twitter:card', content='summary')
-		meta(name='twitter:title', content='===title===')
-		meta(name='twitter:description', content='===description===')
-		meta(name='twitter:image:src', content='/img/card.jpg')
-		meta(name='twitter:creator', content='===twittercard-validation-account===')
-		meta(name='twitter:site', content='===twitter-url===')
-		meta(name='twitter:url', content='===url===')
+		// Meta information start
+		include components/ukr/meta.jade
+		// Meta information end
 
-		link(rel='shortcut icon', href='favicon.ico')
-		link(rel='shortcut icon', href='/img/ico/favicon.png', type='image/x-icon')
-		link(rel='apple-touch-icon-precomposed', sizes='144x144', href='/img/ico/apple-touch-icon-144x144-precomposed.png')
-		link(rel='apple-touch-icon-precomposed', sizes='114x114', href='/img/ico/apple-touch-icon-114x114-precomposed.png')
-		link(rel='apple-touch-icon-precomposed', sizes='72x72', href='/img/ico/apple-touch-icon-72x72-precomposed.png')
-		link(rel='apple-touch-icon-precomposed', href='/img/ico/apple-touch-icon-precomposed.png')		
-
-		<!-- build:js js/head/head.min.js -->
-		script(src='js/head/head.js')
-		<!-- /build -->
-
-		<!-- build:css css/screen.min.css -->
-		link(rel='stylesheet', href='css/screen.css')
-		<!-- /build -->
-
-		noscript
-			<!-- build:css css/screen_noscript.min.css -->
-			link(rel='stylesheet', href='css/screen_noscript.css')
-			<!-- /build -->
-
-		<!-- build:template <!--[if lt IE 9]><script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv-printshiv.min.js"></script><script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script><![endif]-->
-
-		<!-- Or you can use these two scripts from local folder, dont forget for conditional comments for old IE
-		<script src="js/ie/ie.min.js"></script> -->
-
-		<!--[if lt IE 9]><link rel="stylesheet" href="/css/ie-out.min.css"><![endif]--> /build -->
-
-		<!-- build:remove -->
-		<!--[if lt IE 9]><script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv-printshiv.min.js"></script><script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script><![endif]-->
-		<!-- Or you can use these two scripts from local folder, dont forget for conditional comments for old IE
-		<script src="js/ie/ie.js"></script> -->
-		<!--[if lt IE 9]><link rel="stylesheet" href="/css/ie-out.css"><![endif]-->
-		script(src='js/live.js')
-		<!-- /build -->
+		// Head external resources start
+		include components/head_src.jade
+		// Head external resources end
+		
 	body
+		| Coming soon...
 
 		// Browser update screen start here
-		include components/ie-out/eng.html
+		include components/ie-out/end.html
 		// Browser update screen end
-		
-		<!-- build:js js/vendor/vendor.min.js --> 
-		script(src='js/vendor/vendor.js')
-		<!-- /build -->
 
-		<!-- build:js js/assembled.min.js --> 
-		script(src='js/assembled.js')
+		// Body external resources start
+		include components/body_src.jade
+		// Body external resources end
+
+		<!-- build:include ../markup/components/ga.html -->
+		// Here comes google analytics code
 		<!-- /build -->

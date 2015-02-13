@@ -174,6 +174,8 @@ For this project I use live.js which minified version and  and link to this scri
 * make YO template based on this stuff
 
 ## Changelog
+* v1.1.6
+    - dev structure modified
 * v1.1.5
     - deploy task added
 * v1.1.4
