@@ -15,6 +15,7 @@ My front-end boilerplate based on [grunt-boilerplate](https://github.com/orlovma
     - [Clean task](#clean-task)
     - [Build task](#build-task)
 * [Live reload](#live-reload)
+* [Additional things](#additional-things)
 * [TODO](#todo)
 * [Changelog](#changelog)
 * [License](#license)
@@ -169,11 +170,19 @@ For this purpose was used grunt-shell task, that runs deploy script from Rakefil
 ## Live reload 
 For this project I use live.js which minified version and  and link to this script in final html will be removed after running build task.
 
+##Additional things
+In this scaffold were used some third-part components like:
+- browser update screen - message that will appear for old IE
+- parked page stub - simple stub for project init. Useful for new github hosted site when your project in dev. Just remove that include from your index markup file and write some awesome code.
+- useful sass\less elements and simple grid.
+
 ## TODO
 * JSHint
 * make YO template based on this stuff
 
 ## Changelog
+* v1.1.7
+    - parked page stub added
 * v1.1.6
     - dev structure modified
 * v1.1.5
