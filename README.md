@@ -172,15 +172,19 @@ For this project I use live.js which minified version and  and link to this scri
 
 ##Additional things
 In this scaffold were used some third-part components like:
-- browser update screen - message that will appear for old IE
+- [browser update screen](https://github.com/mycodelab/browser-update-screen) - message that will appear for old IE
 - parked page stub - simple stub for project init. Useful for new github hosted site when your project in dev. Just remove that include from your index markup file and write some awesome code.
-- useful sass\less elements and simple grid.
+- [useful sass\less elements](https://github.com/mycodelab/miniature-wookie#elements-lib)
+- [simple grid](https://github.com/mycodelab/miniature-wookie#grid-system)
+- [layout tools](https://github.com/mycodelab/miniature-wookie#layout-tools)
 
 ## TODO
 * JSHint
 * make YO template based on this stuff
 
 ## Changelog
+* v1.1.8
+    - grid system added
 * v1.1.7
     - parked page stub added
 * v1.1.6
