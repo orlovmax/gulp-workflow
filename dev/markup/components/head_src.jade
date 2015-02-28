@@ -5,12 +5,6 @@ link(rel='apple-touch-icon-precomposed', sizes='114x114', href='/img/ico/apple-t
 link(rel='apple-touch-icon-precomposed', sizes='72x72', href='/img/ico/apple-touch-icon-72x72-precomposed.png')
 link(rel='apple-touch-icon-precomposed', href='/img/ico/apple-touch-icon-precomposed.png')		
 
-// CSS3 media queries and HTML5 tags support for old IE
-<!--[if lt IE 9]><script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv-printshiv.min.js"></script><script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script><![endif]-->
-
-<!-- Or you can use these two scripts from local folder, dont forget for conditional comments for old IE
-<script src="js/ie/ie.min.js"></script> -->
-
 // Main stylesheet
 <!-- build:css css/screen.min.css -->
 link(rel='stylesheet', href='css/screen.css')
@@ -24,6 +18,12 @@ noscript
 
 // Browser update screen styles
 <!--[if lt IE 9]><link rel="stylesheet" href="/css/ie-out.min.css"><![endif]-->
+
+// CSS3 media queries and HTML5 tags support for old IE
+<!--[if lt IE 9]><script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv-printshiv.min.js"></script><script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script><![endif]-->
+
+<!-- Or you can use these two scripts from local folder, dont forget for conditional comments for old IE
+<script src="js/ie/ie.min.js"></script> -->
 
 // Head javascript
 <!-- build:js js/head/head.min.js -->
