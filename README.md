@@ -37,9 +37,15 @@ My front-end boilerplate based on [grunt-boilerplate](https://github.com/orlovma
 │   │   └── screen_noscript.css // compiled css with autoprefixer processing
 │   ├── img
 │   │   └── *.png, *.jpg, *.gif //image sources
-│   ├── markup
-│   │   ├── index.haml, index.jade // marrkup templates sources
-│   │   └── components
+│   ├── templates
+│   │   ├── pages
+│   │   │   └── index.{jade, haml} // main pages templates
+│   │   ├── includes
+│   │   │   ├── meta.{jade, haml}, ie-out, parked // page blocks
+│   │   │   └── common
+│   │   │       └── body_src.{jade, haml}, head_src.{jade, haml} // common src
+│   │   └── helpers
+│   │       └── mixins.{jade, haml}, variables.{jade, haml} // mixins and vars
 │   ├── js
 │   │   ├── compiled.js // compiled coffee scripts
 │   │   ├── custom.js // custom scripts and plugins sources
@@ -183,6 +189,8 @@ In this scaffold were used some third-part components like:
 * make YO template based on this stuff
 
 ## Changelog
+* v1.1.9
+    - templates structure modified
 * v1.1.8
     - grid system added
 * v1.1.7

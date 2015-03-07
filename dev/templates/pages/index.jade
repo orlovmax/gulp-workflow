@@ -1,0 +1,28 @@
+- var pageLang = 'en';
+
+//- Here comes the nex mixins:
+//- -outdated browser message (depends of page language)
+include ../helpers/mixins
+
+doctype html
+html.no-js(lang='en')
+	head
+		// Meta information
+		include ../includes/meta.jade
+
+		// Head external resources
+		include ../includes/common/head_src.jade
+
+	body
+		// PARKED PAGE - stub just for project init
+		include ../includes/parked/parked.html
+
+		// Browser update screen
+		+ie-out()
+
+		// Body external resources
+		include ../includes/common/body_src.jade
+
+		<!-- build:include ../templates/includes/common/ga.html -->
+		// Here comes google analytics code
+		<!-- /build -->

@@ -5,7 +5,7 @@ module.exports = function(grunt) {
         main: 'dev',
         coffee: 'dev/coffee',
         js: 'dev/js',
-        markup: 'dev/markup',
+        templates: 'dev/templates/pages',
         styles: 'dev/styles',
         css: 'dev/css',
         html: 'dev/html',
@@ -54,7 +54,7 @@ module.exports = function(grunt) {
           }
         },
 
-      //Uglify assembled *.js file    
+      //Uglify assembled *.js file
         uglify: {
           options: {
             mangle: false
@@ -85,7 +85,7 @@ module.exports = function(grunt) {
           }
         },
 
-      //Compile *.scss files  
+      //Compile *.scss files
         sass: {
           main: {
             options: {
@@ -132,7 +132,7 @@ module.exports = function(grunt) {
           }
         },
 
-      //Combine media queries in result *.css files   
+      //Combine media queries in result *.css files
         cmq: {
           options: {
             log: false
@@ -144,7 +144,7 @@ module.exports = function(grunt) {
           }
         },
 
-      //Autoprefixer  
+      //Autoprefixer
         autoprefixer: {
           options: {
             browsers: ['last 2 versions', 'ie 8', 'ie 9']
@@ -160,11 +160,11 @@ module.exports = function(grunt) {
           }
         },
 
-      //Minify and organize *.css files  
+      //Minify and organize *.css files
         csso: {
           options: {
             keepSpecialComments: '*',
-            restructure: false            
+            restructure: false
           },
           main: {
             files:[{
@@ -177,7 +177,7 @@ module.exports = function(grunt) {
           }
         },
 
-      //Compile *.jade files  
+      //Compile *.jade files
         jade: {
           main: {
             options: {
@@ -185,8 +185,8 @@ module.exports = function(grunt) {
                 pretty: true
             },
             files: [ {
-              cwd: "<%= dev.markup %>",
-              src: ['**/*.jade', '!components/**/*.*'],
+              cwd: "<%= dev.templates %>",
+              src: ['**/*.jade'],
               dest: "<%= dev.html %>/",
               expand: true,
               ext: ".html"
@@ -194,12 +194,12 @@ module.exports = function(grunt) {
           }
         },
 
-      //Compile *.haml files  
+      //Compile *.haml files
         haml: {
           main: {
             files: [ {
-              cwd: "<%= dev.markup %>",
-              src: ['**/*.haml', '!components/**/*.*'],
+              cwd: "<%= dev.templates %>",
+              src: ['**/*.haml'],
               dest: "<%= dev.html %>/",
               expand: true,
               ext: ".html"
@@ -207,7 +207,7 @@ module.exports = function(grunt) {
           }
         },
 
-      //Minify *.html files 
+      //Minify *.html files
         htmlmin: {
             main: {
               options: {
@@ -225,7 +225,7 @@ module.exports = function(grunt) {
             }
         },
 
-      //Minify image files   
+      //Minify image files
         imagemin: {
           main: {
             options: {
@@ -304,7 +304,7 @@ module.exports = function(grunt) {
           }
         },
 
-      //Assemble bower components in right order 
+      //Assemble bower components in right order
         bower_concat: {
           vendor: {
             dest: '<%= dev.js %>/vendor/vendor.js',
@@ -319,12 +319,12 @@ module.exports = function(grunt) {
           }
         },
 
-      //Copy bower components to the custom folder   
+      //Copy bower components to the custom folder
         // bowercopy: {
         //   options: {
         //     clean: true,
         //     ignore: ['modernizr']
-        //   },          
+        //   },
         //   jquery: {
         //     options: {
         //         destPrefix: '<%= dev.js %>/vendor'
@@ -335,15 +335,15 @@ module.exports = function(grunt) {
         //   }
         // },
 
-      //Delete .gitkeep files. If you don't use Bower - just run `grunt clean`  
+      //Delete .gitkeep files. If you don't use Bower - just run `grunt clean`
         clean: {
           gitkeep: ['<%= dev.main %>/**/.gitkeep', '<%= build.main %>/**/.gitkeep'],
           less: '<%= dev.styles %>/**/*.less',
           scss: '<%= dev.styles %>/**/*.scss',
           sass: '<%= dev.styles %>/**/*.sass',
           stylus: '<%= dev.styles %>/**/*.styl',
-          haml: '<%= dev.markup %>/**/*.haml',
-          jade: '<%= dev.markup %>/**/*.jade',
+          haml: '<%= dev.templates %>/**/*.haml',
+          jade: '<%= dev.templates %>/**/*.jade',
           debug: ['<%= build.js %>/**/*.js',
                   '!<%= build.js %>/**/*.min.js',
                   '<%= build.css %>/**/*.css',
@@ -351,7 +351,7 @@ module.exports = function(grunt) {
           bower: 'bower_components'
         },
 
-      //Delete some dev code and references from files        
+      //Delete some dev code and references from files
         processhtml: {
           dist: {
             files: [{
@@ -371,7 +371,7 @@ module.exports = function(grunt) {
             }
         },
 
-      //Watch for changes    
+      //Watch for changes
         watch: {
           all: {
             files: ['<%= dev.html %>/**/*.html',
@@ -380,7 +380,7 @@ module.exports = function(grunt) {
                     '<%= dev.coffee %>/**/*.coffee',
                     '<%= dev.js %>/**/*.js',
                     '<%= dev.img %>/**/*.{png,jpg,gif}',
-                    '<%= dev.markup %>/**/*.{haml,jade}',
+                    '<%= dev.templates %>/**/*.{haml,jade}',
                     '<%= dev.php %>/**/*.php',
                     '<%= dev.fonts %>/**/*.{eot,svg,ttf,woff}'],
             tasks: ['default'],
@@ -390,7 +390,7 @@ module.exports = function(grunt) {
           },
         }
     });
-    
+
     grunt.loadNpmTasks('grunt-contrib-coffee');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');

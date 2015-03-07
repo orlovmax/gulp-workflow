@@ -1,0 +1,22 @@
+!!! 5
+%html.no-js{:lang => "en"}
+	%head
+		/ Meta information
+		= File.read "../includes/meta.haml"
+
+		/ Head external resources
+		= File.read "../includes/common/head_src.haml"
+
+	%body
+		/ PARKED PAGE - stub just for project init
+		= File.read "../includes/parked/parked.html"
+
+		/ Browser update screen here
+		= File.read "../includes/ie-out/eng.html"
+
+		/ Body external resources
+		= File.read "../includes/common/body_src.haml"
+
+		<!-- build:include ../templates/common/ga.haml -->
+		/ Here comes google analytics code
+		<!-- /build -->
