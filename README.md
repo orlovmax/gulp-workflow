@@ -1,4 +1,4 @@
-# Front-end scaffold
+# Grunt Front-end scaffold
 
 My front-end boilerplate based on [grunt-boilerplate](https://github.com/orlovmax/grunt-boilerplate), have the same folder structure but have predefined dependencies for Bower and boileplate-files for styles, markup and javascript
 
@@ -14,6 +14,7 @@ My front-end boilerplate based on [grunt-boilerplate](https://github.com/orlovma
     - [Bower dev task](#bower-dev-task)
     - [Clean task](#clean-task)
     - [Build task](#build-task)
+    - [Deploy task](#deploy-task)
 * [Live reload](#live-reload)
 * [Additional things](#additional-things)
 * [TODO](#todo)
@@ -162,16 +163,18 @@ Compiles styles, markup templates, minifies images, copy updated *.php scripts t
 I've talked about this task above, it will remove .gitkeep files, copy and concat bower files to your dev directories.
 
 ### Clean task
-There is one clean task, but with some properties. It was created to delete unnecessary files, like styles or markup. When you've chosen some languages, ex. scss and jade, then you should to delete less and haml boilerplate files. Just run `grunt clean:less` and `grunt clean:haml`. Voila, Our scaffold is totally clean and ready for development.
+There is one clean task, but with some properties. It was created to delete unnecessary files, like styles or markup. When you've chosen some languages, ex. scss and jade, then you should delete less and haml boilerplate files. Just run `grunt clean:less` and `grunt clean:haml`. Voila, our scaffold is totally clean and ready for further development.
 
 ### Build task
-Recently, I've added build task, that allows us to clean our code from dev references and code-helpers, like livereload script. Also we're able to add some code snippets, like message for outdated browsers or link to minified source just before build. Thanks to ["grunt-preprocess"](https://github.com/jsoverson/grunt-preprocess#getting-started)
-Also this task contains `combine-media-queries` and `autoprefixer` tasks, cause in default task they make reminifying of css without changes. As development process passes in modern browser and combined media queries - just for performance, we should run these tasks only for final build.
+Recently, I've added build task, that allows us to clean our code from dev references and code-helpers, like livereload script. Also we're able to add some code snippets, like message for outdated browsers or link to minified source just before build. Thanks to ["grunt-processhtml"](https://github.com/dciccale/grunt-processhtml)
+Also this task contains `combine-media-queries` and `autoprefixer` tasks, because in default task they make reminifying of css without changes. As development process passes in modern browsers and combined media queries just for performance, we should run these tasks only for final build.
 
 Just type `grunt build` and it will process your files and execute rules inside conditional comments, than all files will be minified and placed to appropriate folders.
 
 ###Deploy task
 For this purpose was used grunt-shell task, that runs deploy script from Rakefile. Just customize Rakefile and type in terminal `grunt deploy`. Please note, that running scripts from Rakefile requires `Ruby` and `rubygems`.
+`grunt deploy` task commit changes and push dev files to master branch and files from build folder to source branch.
+`grunt build-deploy` task commit changes only for build folder and push changes to source branch
 
 ## Live reload 
 For this project I use live.js which minified version and  and link to this script in final html will be removed after running build task.
@@ -186,6 +189,9 @@ In this scaffold were used some third-part components like:
 
 ## TODO
 * JSHint
+* JSCS
+* CSSCOMB
+* Browserify
 * make YO template based on this stuff
 
 ## Changelog
