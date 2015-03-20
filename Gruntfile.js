@@ -368,6 +368,9 @@ module.exports = function(grunt) {
         shell: {
             deploy: {
                 command: 'rake deploy'
+            },
+            buildDeploy: {
+                command: 'rake buildDeploy'
             }
         },
 
@@ -454,4 +457,6 @@ module.exports = function(grunt) {
     ]);
 
     grunt.registerTask('deploy', ['shell:deploy']);
+
+    grunt.registerTask('build-deploy', ['shell:buildDeploy']);
 };

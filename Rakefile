@@ -1,12 +1,14 @@
-# Example of deploy script. It means that dev and build folders are separate repositories 
-# (or in some case different branches of the same repo) and deploy fix changes by commit
-# and push it to the appropriate repos. Note that task called deploy, we call it from our grunt task
+# Example of deploy script. It means that dev and build folders are different branches
+# and deploy will fix changes by committing them and push to the appropriate repos.
+
+# build-deploy task commit and push only build version
+# deploy task commit and push dev version
 
 require "rubygems"
 
-desc "Start Deploy"
+desc "Deploy to Master and Source branch"
 task :deploy do
-  puts "## Deploying dev version"
+  puts "## Commiting source files"
 
   system "git add --all"
 
@@ -15,23 +17,41 @@ task :deploy do
   system "git commit -m \"#{message}\""
 
   puts "## Pushing source files"
-  system "git push origin master"
-  
+  system "git push origin source"
+
   puts "## Source Deploy Complete!"
 
   cd "build" do
-    puts "## Deploying build version"
     system "git add --all"
 
     message = "Site updated at #{Time.now.utc}"
     puts "## Commiting: #{message}"
     system "git commit -m \"#{message}\""
 
-    puts "## Pushing build site"
+    puts "## Pushing generated site"
     system "git push origin master"
 
     cd ".." do
-      puts "## Build Deploy Complete!"
+      puts "## Generated site Deploy Complete!"
+    end
+  end
+end
+
+desc "Deploy only generated site to Master branch"
+task :buildDeploy do
+  puts "## Commiting build website files"
+  cd "build" do
+    system "git add --all"
+
+    message = "Site updated at #{Time.now.utc}"
+    puts "## Commiting: #{message}"
+    system "git commit -m \"#{message}\""
+
+    puts "## Pushing generated site"
+    system "git push origin master"
+
+    cd ".." do
+      puts "## Generated site Deploy Complete!"
     end
   end
 end
