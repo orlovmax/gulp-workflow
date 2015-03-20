@@ -3,56 +3,107 @@
    ==============================*/
 /**
 * Contents......................Here we are!
-*   Fonts.......................Import fonts
-*   Elements lib................Import Scss elements library
-*   Layout tols.................Import Scss layout and graphing grid - just for dev
+* Elements lib..................Import Sass elements library
+* Layout tools...................Import Sass layout and graphing grid - just for dev
 * Custom mixins and vars........Project's custom mixins and variables
-* 
-* Reset.........................Reset defaults 
+*
+* Reset.........................Reset defaults
+* Fonts.........................Fonts
 * General styles................Abstract styles
-*  
+* Header styles.................Header and navigation
+* Section1 styles...............
+* Section2 styles...............
+* Section3 styles...............
+* Section4 styles...............
+* Section5 styles...............
+* Section6 styles...............
+* Section7 styles...............
+* Footer styles.................Footer
+*
 * Media queries................Media queries section
 */
 
 
+/*==============================
+  $Elements lib
+  ==============================*/
+@import "components/_elements.scss";
 
-/* ==============================
-   $Fonts
-   ==============================*/
-@import "components/_fonts.less";
+/*==============================
+  $Grid system
+  ==============================*/
+@import "components/_gs.scss";
 
+/*==============================
+  $Layout tools
+  ==============================*/
+@import "../devtools/layout-tools.scss";
 
-/* ==============================
-   $Elements lib
-   ==============================*/
-@import "components/_elements.less"; 
+/*==============================
+  $Custom mixins and vars
+  ==============================*/
+@import "components/_variables.scss";
 
+/*==============================
+  $Reset
+  ==============================*/
+@import "components/_reset.scss";
 
-/* ==============================
-   $Layout tools
-   ==============================*/
-@import "../devtools/_layout-tools.less";
+/*==============================
+  $Fonts
+  ==============================*/
+@import "components/_fonts.scss";
 
+/*==============================
+  $General styles
+  ==============================*/
+@import "components/_general.scss";
 
-/* ==============================
-   $Custom mixins and vars
-   ============================== */   
-@import "components/_variables.less";   
-  
+/*==============================
+  $Header styles
+  ==============================*/
+@import "components/_header.scss";
 
-/* ==============================
-   $Reset
-   ==============================*/
-@import "components/_reset.less";
+/*==============================
+  $Section1 styles
+  ==============================*/
+@import "components/_section1.scss";
 
+/*==============================
+  $Section2 styles
+  ==============================*/
+@import "components/_section2.scss";
 
-/* ==============================
-   $General styles
-   ==============================*/
-@import "components/_general.less";   
+/*==============================
+  $Section3 styles
+  ==============================*/
+@import "components/_section3.scss";
 
+/*==============================
+  $Section4 styles
+  ==============================*/
+@import "components/_section4.scss";
 
-/* ==============================
-   $Media queries
-   ============================== */  
-@import "components/_media.less";   
+/*==============================
+  $Section5 styles
+  ==============================*/
+@import "components/_section5.scss";
+
+/*==============================
+  $Section6 styles
+  ==============================*/
+@import "components/_section6.scss";
+
+/*==============================
+  $Section7 styles
+  ==============================*/
+@import "components/_section7.scss";
+
+/*==============================
+  $Footer styles
+  ==============================*/
+@import "components/_footer.scss";
+
+/*==============================
+  $Media queries
+  ==============================*/

@@ -41,7 +41,7 @@ My front-end boilerplate based on [grunt-boilerplate](https://github.com/orlovma
 │   ├── templates
 │   │   ├── pages
 │   │   │   └── index.{jade, haml} // main pages templates
-│   │   ├── includes
+│   │   ├── components
 │   │   │   ├── meta.{jade, haml}, ie-out, parked // page blocks
 │   │   │   └── common
 │   │   │       └── body_src.{jade, haml}, head_src.{jade, haml} // common src
@@ -195,6 +195,8 @@ In this scaffold were used some third-part components like:
 * make YO template based on this stuff
 
 ## Changelog
+* v1.2.0
+    - folder structure modified
 * v1.1.9
     - templates structure modified
 * v1.1.8

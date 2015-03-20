@@ -1,22 +1,49 @@
 !!! 5
-%html.no-js{:lang => "en"}
+%html{:lang => "en"}
 	%head
 		/ Meta information
-		= File.read "../includes/meta.haml"
+		= File.read "../components/meta.haml"
 
 		/ Head external resources
-		= File.read "../includes/common/head_src.haml"
+		= File.read "../components/common/head_src.haml"
 
 	%body
 		/ PARKED PAGE - stub just for project init
-		= File.read "../includes/parked/parked.html"
+		= File.read "../components/parked/parked.html"
+
+		/ Header
+		= File.read "../components/header.haml"
+
+		/ 1 section
+		= File.read "../components/section1.haml"
+
+		/ 2 section
+		= File.read "../components/section2.haml"
+
+		/ 3 section
+		= File.read "../components/section3.haml"
+
+		/ 4 section
+		= File.read "../components/section4.haml"
+
+		/ 5 section
+		= File.read "../components/section5.haml"
+
+		/ 6 section
+		= File.read "../components/section6.haml"
+
+		/ 7 section
+		= File.read "../components/section7.haml"
+
+		/ Footer
+		= File.read "../components/footer.haml"
 
 		/ Browser update screen here
-		= File.read "../includes/ie-out/eng.html"
+		= File.read "../components/ie-out/eng.html"
 
 		/ Body external resources
-		= File.read "../includes/common/body_src.haml"
+		= File.read "../components/common/body_src.haml"
 
-		<!-- build:include ../templates/common/ga.haml -->
+		<!-- build:include ../templates/components/common/ga.haml -->
 		/ Here comes google analytics code
 		<!-- /build -->
