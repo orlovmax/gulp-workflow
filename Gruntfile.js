@@ -5,7 +5,7 @@ module.exports = function(grunt) {
         main: 'dev',
         coffee: 'dev/coffee',
         js: 'dev/js',
-        templates: 'dev/templates/pages',
+        templates: 'dev/templates',
         styles: 'dev/styles',
         css: 'dev/css',
         html: 'dev/html',
@@ -185,11 +185,11 @@ module.exports = function(grunt) {
                 pretty: true
             },
             files: [ {
-              cwd: "<%= dev.templates %>",
+              cwd: '<%= dev.templates %>/pages',
               src: ['**/*.jade'],
-              dest: "<%= dev.html %>/",
+              dest: '<%= dev.html %>/',
               expand: true,
-              ext: ".html"
+              ext: '.html'
             } ]
           }
         },
@@ -198,11 +198,11 @@ module.exports = function(grunt) {
         haml: {
           main: {
             files: [ {
-              cwd: "<%= dev.templates %>",
+              cwd: '<%= dev.templates %>/pages',
               src: ['**/*.haml'],
-              dest: "<%= dev.html %>/",
+              dest: '<%= dev.html %>/',
               expand: true,
-              ext: ".html"
+              ext: '.html'
             } ]
           }
         },
@@ -216,11 +216,11 @@ module.exports = function(grunt) {
                 minifyCSS: true
               },
               files: [ {
-                cwd: "<%= dev.html %>",
-                src: "*.html",
-                dest: "<%= build.main %>",
+                cwd: '<%= dev.html %>',
+                src: '*.html',
+                dest: '<%= build.main %>',
                 expand: true,
-                ext: ".html"
+                ext: '.html'
               } ]
             }
         },
@@ -383,7 +383,7 @@ module.exports = function(grunt) {
                     '<%= dev.coffee %>/**/*.coffee',
                     '<%= dev.js %>/**/*.js',
                     '<%= dev.img %>/**/*.{png,jpg,gif}',
-                    '<%= dev.templates %>/**/*.{haml,jade}',
+                    '<%= dev.templates %>/pages/**/*.{haml,jade}',
                     '<%= dev.php %>/**/*.php',
                     '<%= dev.fonts %>/**/*.{eot,svg,ttf,woff}'],
             tasks: ['default'],
