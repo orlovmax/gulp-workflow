@@ -6,6 +6,7 @@ My front-end boilerplate based on [grunt-boilerplate](https://github.com/orlovma
 * [Folder structure](#folder-and-file-structure)
 * [Requirements](#requirements)
 * [How to start](#how-to-start)
+	- [Editorconfig](#editorconfig)
     - [Package.json dependencies](#packagejson-dependencies)
 * [Bower](#bower)
     - [bower.json dependencies](#bowerjson-dependencies)
@@ -85,7 +86,7 @@ My front-end boilerplate based on [grunt-boilerplate](https://github.com/orlovma
     │   └── script.php // *.php scripts
     └── fonts // @font-face-ready webfonts
 
-```        
+```
 Source files  placed in `dev` folder, where you should provide your development process.
 
 ## Requirements:
@@ -102,6 +103,9 @@ If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out th
 * Then you need to download this files. You can chose `Download zip` option or clone this repo to your local maschine.
 * Now go to this project folder in terminal. Once you're familiar with grunt installation process, you may install all this things with this command: `npm install`.This will create `node_moduldes` folder, that's normal.
 * Run `grunt`, and it will compile your files and watch for all changes. See [Tasks](#Tasks) chapter for more details.
+
+### Editorconfig
+This project have .editorconfig file at the root that used by your code editor with editorconfig plugin. It describes codestyle like indent style, trailing whitespaces etc. See more details [here](http://editorconfig.org/) 
 
 ### Package.json dependencies 
 * ["grunt"](https://github.com/gruntjs)
