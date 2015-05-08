@@ -1,110 +1,76 @@
-// ==============================
-// $Contents
-// ==============================
+/////////////////////////////////
+/// $Contents
+/////////////////////////////////
 //
 // Contents......................Here we are!
-// Elements lib..................Import Sass elements library
-// Grid system...................Import Sass grid system
-// Layout tools...................Import Sass layout and graphing grid - just for dev
-// Custom mixins and vars........Project's custom mixins and variables
 //
-// Reset.........................Reset defaults
-// Fonts.........................Fonts
-// General styles................Abstract styles
-// Header styles.................Header and navigation
-// Section1 styles...............
-// Section2 styles...............
-// Section3 styles...............
-// Section4 styles...............
-// Section5 styles...............
-// Section6 styles...............
-// Section7 styles...............
-// Footer styles.................Footer
+// Helpers.......................useful things, mixins, elements
+//   Elements....................External scss mixins
+//   Grid system.................Import fluid gs
 //
-// Media queries................Media queries section
+// General.......................General components and settings
+//   Fonts.......................Offline and online fonts
+//   Reset.......................Reset defaults
+//   Variables...................Settings and variables
+//
+// Layout........................Basic page styles
+//   General.....................Site containers and common layout blocks
+//   Main header.................Site header
+//   Common section..............Page section
+//   Main footer.................Site footer
+//
+// Blocks........................Page blocks
+//
+// Media queries.................Media queries section
 
 
+/////////////////////////////////
+/// $Helpers
+/////////////////////////////////
 
-// ==============================
-// $Elements lib
-// ==============================
-@import components/_elements.sass
+// $Elements
+@import components/helpers/_elements
 
-// ==============================
 // $Grid system
-// ==============================
-@import components/_gs.sass
+@import components/helpers/_gs
 
-// ==============================
-// $Layout tools
-// ==============================
-@import ../devtools/layout-tools.sass
 
-// ==============================
-// $Custom mixins and vars
-// ==============================
-@import components/_variables.sass
+/////////////////////////////////
+/// $General
+/////////////////////////////////
 
-// ==============================
-// $Reset
-// ==============================
-@import components/_reset.sass
-
-// ==============================
 // $Fonts
-// ==============================
-@import components/_fonts.sass
+@import components/general/_fonts
 
-// ==============================
-// $General styles
-// ==============================
-@import components/_general.sass
+// $Reset
+@import components/general/_reset
 
-// ==============================
-// $Header styles
-// ==============================
-@import components/_header.sass
+// $Variables
+@import components/general/_variables
 
-// ==============================
-// $Section1 styles
-// ==============================
-@import components/_section1.sass
 
-// ==============================
-// $Section2 styles
-// ==============================
-@import components/_section2.sass
+/////////////////////////////////
+/// $Layout styles
+/////////////////////////////////
 
-// ==============================
-// $Section3 styles
-// ==============================
-@import components/_section3.sass
+// $General
+@import components/layout/_general
 
-// ==============================
-// $Section4 styles
-// ==============================
-@import components/_section4.sass
+// $Main header
+@import components/layout/_header
 
-// ==============================
-// $Section5 styles
-// ==============================
-@import components/_section5.sass
+// $Common section
+@import components/layout/_section
 
-// ==============================
-// $Section6 styles
-// ==============================
-@import components/_section6.sass
+// $Main footer
+@import components/layout/_footer
 
-// ==============================
-// $Section7 styles
-// ==============================
-@import components/_section7.sass
 
-// ==============================
-// $Footer styles
-// ==============================
-@import components/_footer.sass
+/////////////////////////////////
+/// $Blocks
+/////////////////////////////////
 
-// ==============================
-// $Media queries
-// ==============================
+
+/////////////////////////////////
+/// $Media queries
+/////////////////////////////////

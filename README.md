@@ -7,15 +7,15 @@ My front-end boilerplate based on [grunt-boilerplate](https://github.com/orlovma
 * [Requirements](#requirements)
 * [How to start](#how-to-start)
 	- [Editorconfig](#editorconfig)
-    - [Package.json dependencies](#packagejson-dependencies)
+	- [Package.json dependencies](#packagejson-dependencies)
 * [Bower](#bower)
-    - [bower.json dependencies](#bowerjson-dependencies)
+	- [bower.json dependencies](#bowerjson-dependencies)
 * [Tasks](#tasks)
-    - [Default task](#default-task)
-    - [Bower dev task](#bower-dev-task)
-    - [Clean task](#clean-task)
-    - [Build task](#build-task)
-    - [Deploy task](#deploy-task)
+	- [Default task](#default-task)
+	- [Bower dev task](#bower-dev-task)
+	- [Clean task](#clean-task)
+	- [Build task](#build-task)
+	- [Deploy task](#deploy-task)
 * [Live reload](#live-reload)
 * [Additional things](#additional-things)
 * [TODO](#todo)
@@ -31,60 +31,67 @@ My front-end boilerplate based on [grunt-boilerplate](https://github.com/orlovma
 ├── bower.json
 ├── README.md
 ├── Rakefile
-├── dev
-|   ├── coffee
-│   │   └── script.coffee // *.coffee scripts
-│   ├── css
-│   │   ├── screen.css // compiled css with autoprefixer processing
-│   │   └── screen_noscript.css // compiled css with autoprefixer processing
-│   ├── img
-│   │   └── *.png, *.jpg, *.gif //image sources
-│   ├── templates
-│   │   ├── pages
-│   │   │   └── index.{jade, haml} // main pages templates
-│   │   ├── components
-│   │   │   ├── meta.{jade, haml}, ie-out, parked // page blocks
-│   │   │   └── common
-│   │   │       └── body_src.{jade, haml}, head_src.{jade, haml} // common src
-│   │   └── helpers
-│   │       └── mixins.{jade, haml}, variables.{jade, haml} // mixins and vars
-│   ├── js
-│   │   ├── compiled.js // compiled coffee scripts
-│   │   ├── custom.js // custom scripts and plugins sources
-│   │   ├── head
-│   │   │   └── head.js // concatenated head scripts
-│   │   └── vendor
-│   │       └── vendor.js // concatenated vendor scripts
-│   ├── php
-│   │   └── script.php // *.php scripts
-│   ├── styles
-│   │   ├── screen.scss, screen.less // preprocessor styles
-│   │   ├── screen_noscript.scss, screen_noscript.less // preprocessor styles
+├── grunt                                     //grunt tasks
+|   ├── task.js
+│   └── aliases.yml 
+├── dev                                       // site source
+|   ├── coffee                                // coffee scripts
+│   │   └── script.coffee
+│   ├── css                                   // compiled css
+│   │   ├── screen.css
+│   │   └── screen_noscript.css
+│   ├── img                                   //image sources
+│   │   └── *.png, *.jpg, *.gif 
+│   ├── templates                             // templates
+│   │   ├── pages                             // main pages templates
+│   │   │   └── index.jade
+│   │   ├── components                        // page blocks
+│   │   │   ├── _header.jade
+│   │   │   ├── general                       // common src
+│   │   │   │   └── _meta.jade
+│   │   │   └── parked                        // page stub 
+│   │   │       └── parked.html 
+│   │   ├── layouts                           // page layouts
+│   │   │   └── main.jade
+│   │   └── helpers                           // mixins and vars
+│   │       └── mixins.jade, variables.jade 
+│   ├── js                                    // compiled and source js
+│   │   ├── compiled.js 
+│   │   ├── custom.js
+│   │   ├── head                              // concatenated head scripts
+│   │   │   └── head.js  
+│   │   └── vendor                            // concatenated vendor scripts
+│   │       └── vendor.js
+│   ├── php                                   // *.php scripts
+│   │   └── script.php 
+│   ├── styles                                // preprocessor styles
+│   │   ├── screen.{sass, scss, less, styl}
+│   │   ├── screen_noscript.{sass, scss, less, styl}
 │   │   └── components
-│   ├── html
-│   │   └── index.html // compiled markup html file
-│   ├── helpers
-│   │   └── *.* // helper files like favicon, .htaccess etc
-│   ├── fonts //font sources
-│   ├── devtools //some dev tools, like live.js or pixel-perfect helpers
-│   └── design // psd layout
+│   ├── html                                  // compiled html markup
+│   │   └── index.html
+│   ├── helpers                               // helper files
+│   │   └── *.* 
+│   ├── fonts                                 //font sources
+│   ├── devtools                              //some dev tools
+│   └── design                                // psd layout
 │
-└── build
-    ├── index.html // minified html file
-    ├── css
-    │   ├── screen.min.css // minified styles
-    │   └── screen_noscript.min.css // minified noscript styles
-    ├── img
-    │   └── *.png, *.jpg, *.gif // minified images
-    ├── js
-    │   ├── assembled.min.js // minified assembled custom scripts and plugins
-    │   ├── head
-    │   │   └── head.min.js // concatenated head scripts
-    │   └── vendor
-    │       └── vendor.min.js // concatenated and minified vendor scripts
-    ├── php
-    │   └── script.php // *.php scripts
-    └── fonts // @font-face-ready webfonts
+└── build                                     // built source
+	├── index.html                            // minified html file
+	├── css                                   // minified styles
+	│   ├── screen.min.css
+	│   └── screen_noscript.min.css 
+	├── img                                   // minified images
+	│   └── *.png, *.jpg, *.gif
+	├── js                                    // minified assembled js
+	│   ├── assembled.min.js
+	│   ├── head                              // minified head js
+	│   │   └── head.min.js
+	│   └── vendor                            // minified vendor js
+	│       └── vendor.min.js
+	├── php                                   // *.php scripts
+	│   └── script.php
+	└── fonts                                 // @font-face-ready webfonts
 
 ```
 Source files  placed in `dev` folder, where you should provide your development process.
@@ -117,7 +124,6 @@ This project have .editorconfig file at the root that used by your code editor w
 * ["grunt-contrib-concat"](https://github.com/gruntjs/grunt-contrib-concat)
 * ["grunt-contrib-coffee"](https://github.com/gruntjs/grunt-contrib-coffee)
 * ["grunt-contrib-copy"](https://github.com/gruntjs/grunt-contrib-copy)
-* ["grunt-haml2html"](https://github.com/jhchen/grunt-haml2html)
 * ["grunt-contrib-htmlmin"](https://github.com/gruntjs/grunt-contrib-htmlmin)
 * ["grunt-contrib-imagemin"](https://github.com/gruntjs/grunt-contrib-imagemin)
 * ["grunt-contrib-jade"](https://github.com/gruntjs/grunt-contrib-jade)
@@ -192,6 +198,7 @@ In this scaffold were used some third-part components like:
 - [layout tools](https://github.com/mycodelab/miniature-wookie#layout-tools)
 
 ## TODO
+* Block oriented structure
 * JSHint
 * JSCS
 * CSSCOMB
@@ -199,36 +206,38 @@ In this scaffold were used some third-part components like:
 * make YO template based on this stuff
 
 ## Changelog
+* v1.3.0
+	- Structure modified (now it's more about blocks but separated by techs), *.haml templates disabled
 * v1.2.0
-    - folder structure modified
+	- folder structure modified
 * v1.1.9
-    - templates structure modified
+	- templates structure modified
 * v1.1.8
-    - grid system added
+	- grid system added
 * v1.1.7
-    - parked page stub added
+	- parked page stub added
 * v1.1.6
-    - dev structure modified
+	- dev structure modified
 * v1.1.5
-    - deploy task added
+	- deploy task added
 * v1.1.4
-    - coffeescript task added
+	- coffeescript task added
 * v1.1.3
-    - stylus task added
+	- stylus task added
 * v1.1.2
-    - added path variables
+	- added path variables
 * v1.1.1
-    - fonts copy task added, imagemin task set to recursive execute
+	- fonts copy task added, imagemin task set to recursive execute
 * v1.1.0
-    - rename www to build, added head scripts and copy task
+	- rename www to build, added head scripts and copy task
 * v1.0.3
-    - added copy task for *.php scripts
+	- added copy task for *.php scripts
 * v1.0.2
-    - moved autoprefixer and cmq tasks to build task
+	- moved autoprefixer and cmq tasks to build task
 * v1.0.1
-    -  added debug files, modified readme
+	-  added debug files, modified readme
 * v1.0.0 (September 29, 2014)
-    - Initial commit
+	- Initial commit
 
 ## License
 [MIT](http://opensource.org/licenses/MIT)

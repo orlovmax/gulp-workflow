@@ -1,109 +1,73 @@
-/* ==============================
-   $Contents
-   ==============================*/
-/**
-* Contents......................Here we are!
-* Elements lib..................Import Sass elements library
-* Layout tools...................Import Sass layout and graphing grid - just for dev
-* Custom mixins and vars........Project's custom mixins and variables
-*
-* Reset.........................Reset defaults
-* Fonts.........................Fonts
-* General styles................Abstract styles
-* Header styles.................Header and navigation
-* Section1 styles...............
-* Section2 styles...............
-* Section3 styles...............
-* Section4 styles...............
-* Section5 styles...............
-* Section6 styles...............
-* Section7 styles...............
-* Footer styles.................Footer
-*
-* Media queries................Media queries section
-*/
+/////////////////////////////////
+/// $Contents
+/////////////////////////////////
+//
+// Contents......................Here we are!
+//
+// Helpers.......................useful things, mixins, elements
+//   Elements....................External scss mixins
+//   Grid system.................Import fluid gs
+//
+// General.......................General components and settings
+//   Fonts.......................Offline and online fonts
+//   Reset.......................Reset defaults
+//   Variables...................Settings and variables
+//
+// Layout........................Basic page styles
+//   General.....................Site containers and common layout blocks
+//   Main header.................Site header
+//   Common section..............Page section
+//   Main footer.................Site footer
+//
+// Blocks........................Page blocks
+//
+// Media queries.................Media queries section
 
 
-/*==============================
-  $Elements lib
-  ==============================*/
-@import "components/_elements.scss";
+/////////////////////////////////
+/// $Helpers
+/////////////////////////////////
 
-/*==============================
-  $Grid system
-  ==============================*/
-@import "components/_gs.scss";
+// $Elements
+@import "components/helpers/_elements";
 
-/*==============================
-  $Layout tools
-  ==============================*/
-@import "../devtools/layout-tools.scss";
 
-/*==============================
-  $Custom mixins and vars
-  ==============================*/
-@import "components/_variables.scss";
+/////////////////////////////////
+/// $General
+/////////////////////////////////
 
-/*==============================
-  $Reset
-  ==============================*/
-@import "components/_reset.scss";
+// $Fonts
+@import "components/general/_fonts";
 
-/*==============================
-  $Fonts
-  ==============================*/
-@import "components/_fonts.scss";
+// $Reset
+@import "components/general/_reset";
 
-/*==============================
-  $General styles
-  ==============================*/
-@import "components/_general.scss";
+// $Variables
+@import "components/general/_variables";
 
-/*==============================
-  $Header styles
-  ==============================*/
-@import "components/_header.scss";
 
-/*==============================
-  $Section1 styles
-  ==============================*/
-@import "components/_section1.scss";
+/////////////////////////////////
+/// $Layout styles
+/////////////////////////////////
 
-/*==============================
-  $Section2 styles
-  ==============================*/
-@import "components/_section2.scss";
+// $General
+@import "components/layout/_general";
 
-/*==============================
-  $Section3 styles
-  ==============================*/
-@import "components/_section3.scss";
+// $Main header
+@import "components/layout/_header";
 
-/*==============================
-  $Section4 styles
-  ==============================*/
-@import "components/_section4.scss";
+// $Common section
+@import "components/layout/_section";
 
-/*==============================
-  $Section5 styles
-  ==============================*/
-@import "components/_section5.scss";
+// $Main footer
+@import "components/layout/_footer";
 
-/*==============================
-  $Section6 styles
-  ==============================*/
-@import "components/_section6.scss";
 
-/*==============================
-  $Section7 styles
-  ==============================*/
-@import "components/_section7.scss";
+/////////////////////////////////
+/// $Blocks
+/////////////////////////////////
 
-/*==============================
-  $Footer styles
-  ==============================*/
-@import "components/_footer.scss";
 
-/*==============================
-  $Media queries
-  ==============================*/
+/////////////////////////////////
+/// $Media queries
+/////////////////////////////////

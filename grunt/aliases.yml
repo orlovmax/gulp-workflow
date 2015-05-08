@@ -1,0 +1,53 @@
+default:
+    tasks:
+        - 'newer:coffee'
+        - 'newer:concat'
+        - 'newer:sass'
+        - 'newer:less'
+        - 'newer:stylus'
+        - 'newer:jade'
+        - 'newer:haml'
+        - 'newer:imagemin'
+        - 'newer:copy'
+        - 'watch'
+
+
+bower-dev:
+    tasks:
+        - 'bower_concat'
+        # - 'bowercopy'
+        - 'clean:gitkeep'
+        - 'clean:bower'
+
+
+regen:
+    tasks:
+        - 'coffee'
+        - 'concat'
+        - 'sass'
+        - 'less'
+        - 'stylus'
+        - 'jade'
+        - 'haml'
+        - 'copy'
+        - 'watch'
+
+
+build:
+    tasks:
+        -'processhtml'
+        - 'cmq'
+        - 'autoprefixer'
+        - 'uglify'
+        - 'csso'
+        - 'htmlmin'
+        - 'clean:debug'
+
+
+deploy:
+    tasks:
+        -'shell:deploy'
+
+build-deploy:
+    tasks:
+        -'shell:buildDeploy'
