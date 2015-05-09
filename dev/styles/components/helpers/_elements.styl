@@ -4,6 +4,12 @@ testbg(red = 255, green = 0, blue = 0, alpha = 0.3)
 testout(width = 1px, line-type = solid, color = #0074d9)
 	outline width line-type color
 
+calc(prop, val)
+	{prop} unquote(join('',"-webkit-calc"\(val\)))
+	{prop} unquote(join('',"-moz-calc"\(val\)))
+	{prop} unquote(join('',"calc"\(val\)))
+
+
 hidentext()
 	text-indent 100%
 	white-space nowrap

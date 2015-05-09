@@ -1,5 +1,5 @@
 /* =========================================================
-   Pretty weird scss mixins library but useful in css coding
+   Pretty weird less mixins library but useful in css coding
    More at https://github.com/orlovmax/layout-tools
    ========================================================= */
 /**
@@ -77,18 +77,21 @@
 
 
 /* layout mixin*/
-@mixin layout($layout-url: "../img/layout.jpg", $layout-width:100%, $layout-opacity: .5, $grid-opacity:0, $cell-width:10px, $cell-height:10px, $line-color:#fff){
-	max-width: $layout-width;
+@mixin layout($layout-url: "../img/layout.jpg", $position: auto, $layout-opacity: 0.5, $grid-opacity: 0, $cell-width: 10px, $cell-height: 10px, $line-color: #fff){
+	position: relative;
+	width: 100%;
 	margin: 0 auto;
-	
-	&:before{ 
-		content: url($layout-url); 
-		display: inline-block;	
+	overflow-x: hidden;
+	&:before
+		content: url($layout-url)
 		position: absolute;
-		width: 100%;
-		top: 0;
-		left: 0;
+		@if #{$position} != 'auto'{
+			top: 0;
+			left: $position;
+		}
 		z-index: 100;
+		display: inline-block;
+		width: 100%;
 		text-align: center;
 		-webkit-opacity: $layout-opacity;
 		-khtml-opacity:  $layout-opacity;

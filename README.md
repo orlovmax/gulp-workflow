@@ -206,6 +206,8 @@ In this scaffold were used some third-part components like:
 * make YO template based on this stuff
 
 ## Changelog
+* v1.3.1
+	- Stylus grid generator added
 * v1.3.0
 	- Structure modified (now it's more about blocks but separated by techs), *.haml templates disabled
 * v1.2.0

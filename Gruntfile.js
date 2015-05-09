@@ -2,7 +2,7 @@ module.exports = function(grunt) {
 	require('load-grunt-config')(grunt, {
 		 data: {
 			// Dev paths
-            dev: {
+			dev: {
 				main: 'dev',
 				coffee: 'dev/coffee',
 				js: 'dev/js',
@@ -25,6 +25,6 @@ module.exports = function(grunt) {
 				php: 'build/php',
 				js: 'build/js'
 			}
-        }
+		}
 	});
 };
