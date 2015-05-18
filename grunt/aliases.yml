@@ -6,7 +6,6 @@ default:
         - 'newer:less'
         - 'newer:stylus'
         - 'newer:jade'
-        - 'newer:haml'
         - 'newer:imagemin'
         - 'newer:copy'
         - 'watch'
@@ -28,7 +27,6 @@ regen:
         - 'less'
         - 'stylus'
         - 'jade'
-        - 'haml'
         - 'copy'
         - 'watch'
 
