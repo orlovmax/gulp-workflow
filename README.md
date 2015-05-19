@@ -122,6 +122,7 @@ This project have .editorconfig file at the root that used by your code editor w
 * ["grunt-combine-media-queries"](https://github.com/buildingblocks/grunt-combine-media-queries)
 * ["grunt-contrib-clean"](https://github.com/gruntjs/grunt-contrib-clean)
 * ["grunt-contrib-concat"](https://github.com/gruntjs/grunt-contrib-concat)
+* ["grunt-contrib-compress"](https://github.com/gruntjs/grunt-contrib-compress)
 * ["grunt-contrib-coffee"](https://github.com/gruntjs/grunt-contrib-coffee)
 * ["grunt-contrib-copy"](https://github.com/gruntjs/grunt-contrib-copy)
 * ["grunt-contrib-htmlmin"](https://github.com/gruntjs/grunt-contrib-htmlmin)
