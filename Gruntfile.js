@@ -1,6 +1,6 @@
 module.exports = function(grunt) {
 	require('load-grunt-config')(grunt, {
-		 data: {
+		data: {
 			// Dev paths
 			dev: {
 				main: 'dev',
@@ -24,6 +24,12 @@ module.exports = function(grunt) {
 				img: 'build/img',
 				php: 'build/php',
 				js: 'build/js'
+			},
+			// Zip result
+			archives: {
+				build: 'archives/build-ver.zip',
+				dev: 'archives/dev-ver.zip',
+				all: 'archives/project.zip'
 			}
 		}
 	});

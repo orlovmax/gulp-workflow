@@ -33,7 +33,7 @@ regen:
 
 build:
     tasks:
-        -'processhtml'
+        - 'processhtml'
         - 'cmq'
         - 'autoprefixer'
         - 'uglify'
@@ -44,8 +44,12 @@ build:
 
 deploy:
     tasks:
-        -'shell:deploy'
+        - 'shell:deploy'
 
 build-deploy:
     tasks:
-        -'shell:buildDeploy'
+        - 'shell:buildDeploy'
+
+zip-all:
+    tasks:
+        - 'compress:all'

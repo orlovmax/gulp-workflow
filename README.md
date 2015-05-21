@@ -31,6 +31,8 @@ My front-end boilerplate based on [grunt-boilerplate](https://github.com/orlovma
 ├── bower.json
 ├── README.md
 ├── Rakefile
+├── archives                                  // result *.zip archive
+|   └── project.zip
 ├── grunt                                     //grunt tasks
 |   ├── task.js
 │   └── aliases.yml 
@@ -182,15 +184,18 @@ Also this task contains `combine-media-queries` and `autoprefixer` tasks, becaus
 
 Just type `grunt build` and it will process your files and execute rules inside conditional comments, than all files will be minified and placed to appropriate folders.
 
-###Deploy task
+### Deploy task
 For this purpose was used grunt-shell task, that runs deploy script from Rakefile. Just customize Rakefile and type in terminal `grunt deploy`. Please note, that running scripts from Rakefile requires `Ruby` and `rubygems`.
 `grunt deploy` task commit changes and push dev files to master branch and files from build folder to source branch.
 `grunt build-deploy` task commit changes only for build folder and push changes to source branch
 
+### Compress task
+For some reasons this scaffold has compress task. In general `grunt zip-all` alias runs `compress:all` task and put all files into *.zip archive. Also there are two extra tasks: `compress:build` and `compress:dev`, as you might guess they make archive only for build version or for dev version.
+
 ## Live reload 
 For this project I use live.js which minified version and  and link to this script in final html will be removed after running build task.
 
-##Additional things
+## Additional things
 In this scaffold were used some third-part components like:
 - [browser update screen](https://github.com/mycodelab/browser-update-screen) - message that will appear for old IE
 - parked page stub - simple stub for project init. Useful for new github hosted site when your project in dev. Just remove that include from your index markup file and write some awesome code.
@@ -207,6 +212,8 @@ In this scaffold were used some third-part components like:
 * make YO template based on this stuff
 
 ## Changelog
+* v1.3.2
+	- Compress task added
 * v1.3.1
 	- Stylus grid generator added
 * v1.3.0
