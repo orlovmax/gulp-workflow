@@ -13,9 +13,18 @@ module.exports = {
 		  archive: '<%= archives.dev %>'
 		},
 		files: [
-			{src: ['<%= dev.main %>/**']},
+			{src: ['<%= dev.coffee %>/**',
+				   '<%= dev.js %>/**',
+				   '<%= dev.templates %>/**',
+				   '<%= dev.styles %>/**',
+				   '<%= dev.css %>/**',
+				   '<%= dev.html %>/**',
+				   '<%= dev.img %>/**',
+				   '<%= dev.fonts %>/**',
+				   '<%= dev.helpers %>/**',
+				   '<%= dev.devtools %>/**']},
 			{src: ['grunt/**']},
-			{flatten: true, src: ['./*', '.editorconfig'], filter: 'isFile'}
+			{flatten: true, src: ['./*', '.editorconfig', '.gitignore'], filter: 'isFile'}
 		]
 	},
 	all: {
@@ -23,10 +32,19 @@ module.exports = {
 		  archive: '<%= archives.all %>'
 		},
 		files: [
-			{src: ['<%= dev.main %>/**']},
+			{src: ['<%= dev.coffee %>/**',
+				   '<%= dev.js %>/**',
+				   '<%= dev.templates %>/**',
+				   '<%= dev.styles %>/**',
+				   '<%= dev.css %>/**',
+				   '<%= dev.html %>/**',
+				   '<%= dev.img %>/**',
+				   '<%= dev.fonts %>/**',
+				   '<%= dev.helpers %>/**',
+				   '<%= dev.devtools %>/**']},
 			{src: ['<%= build.main %>/**']},
 			{src: ['grunt/**']},
-			{flatten: true, src: ['./*', '.editorconfig'], filter: 'isFile'}
+			{flatten: true, src: ['./*', '.editorconfig', '.gitignore'], filter: 'isFile'}
 		]
 	}
 }
