@@ -9,7 +9,7 @@ module.exports = {
 				'<%= dev.img %>/**/*.{png,jpg,gif}',
 				'<%= dev.templates %>/pages/**/*.jade',
 				'<%= dev.php %>/**/*.php',
-				'<%= dev.fonts %>/**/*.{eot,svg,ttf,woff}'],
+				'<%= dev.fonts %>/**/*.{eot,svg,ttf,otf,woff,woff2}'],
 		tasks: ['default'],
 		options: {
 			spawn: false,

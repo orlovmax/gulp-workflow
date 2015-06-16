@@ -12,7 +12,7 @@ module.exports = {
 		files: [{
 			expand: true,
 			cwd: '<%= dev.fonts %>/',
-			src: ['**/*.{eot,svg,ttf,woff}'],
+			src: ['**/*.{eot,svg,ttf,otf,woff,woff2}'],
 			dest: '<%= build.fonts %>'
 		}]
 	},
