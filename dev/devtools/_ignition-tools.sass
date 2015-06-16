@@ -1,0 +1,103 @@
+// Draft version of ignition mixin for highlighting specific elements
+// TODO
+//  - create dynamic color map for different elements
+//  - README
+
+
+=ignition($scope: 'g', $target: none, $depth: 0, $bg-color: 'rgba(255,0,0,.3)', $out-color: 'none')
+	
+	// Define rules for highlighting selected elements
+	// Put them into extend. Each level of of nesting might be highlighted
+	// and there is no need to declare each level separately
+	%ignition-action
+		background: #{$bg-color} !important
+		@if $out-color != 'none'
+			outline: 1px solid #{$out-color} !important
+
+	// Settings
+	$selector-level: '> *'
+
+	// By default mixin is inert and has no targets
+	@if $target != 'none'
+		
+		// When mixin activated in global scope use body as start point
+		@if $scope == 'g'
+			@if $target == 'all'
+
+				// If selected all elements - use * selector, rough thing
+				@if $depth == 'all'
+					*
+						@extend %ignition-action
+
+				@else if $depth >= 0
+					// We're on the 'zero level' - highlight only direct childs of body tag
+					// For deeper highlighting, we extend our rules for each next level
+					// and join them into one selector
+					$selector-depth: ''
+					@for $i from 1 through $depth
+						$selector-depth: $selector-depth + $selector-level
+						$selector: #{$selector-depth}
+						body #{$selector}
+							@extend %ignition-action
+
+			@else
+				// Target option sets custom target for highlighting,
+				// it might be specific tag or classname
+
+				// Highlight all specific targets
+				#{$target}
+					@extend %ignition-action
+		
+		@else if $scope == 'l'
+			// When mixin activated in local scope use parent selector as start point
+
+			@if $target == 'all'
+
+				// Highlight all elements inside parent element
+				@if $depth == 'all'
+					& *
+						@extend %ignition-action
+
+				@else if $depth >= 0
+					// Highlight elements inside parent element using depth levels
+					$selector-depth: ''
+					@for $i from 1 through $depth
+						$selector-depth: $selector-depth + $selector-level
+						$selector: #{$selector-depth}
+						& #{$selector}
+							@extend %ignition-action
+
+			@else
+				// Target option sets custom target for highlighting,
+				// it might be specific tag or classname
+
+				// Highlight all specific elements inside parent element
+				& #{$target}
+					@extend %ignition-action
+		
+		@else
+			// Set custom element as scope when mixin called globally
+
+			@if $target == 'all'
+
+				// Highlight all elements inside parent element
+				@if $depth == 'all'
+					#{$scope} *
+						@extend %ignition-action
+
+				@else if $depth >= 0
+					// Highlight elements inside parent element using depth levels
+					$selector-depth: ''
+					@for $i from 1 through $depth
+						$selector-depth: $selector-depth + $selector-level
+						$selector: #{$selector-depth}
+						#{$scope} #{$selector}
+							@extend %ignition-action
+
+			@else
+				// Target option sets custom target for highlighting,
+				// it might be specific tag or classname
+
+				// Highlight all specific elements inside specific parent element
+				#{$scope} #{$target}
+					@extend %ignition-action

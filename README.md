@@ -212,6 +212,8 @@ In this scaffold were used some third-part components like:
 * make YO template based on this stuff
 
 ## Changelog
+* v1.3.3 (June 16, 2015)
+	- _elements lib replaced by _mixins, _ignition-tools added
 * v1.3.2
 	- Compress task added
 * v1.3.1
