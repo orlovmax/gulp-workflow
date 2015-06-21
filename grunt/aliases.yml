@@ -29,6 +29,7 @@ regen:
         - 'jade'
         - 'copy'
         - 'watch'
+        - 'clean:build'
 
 
 build:
