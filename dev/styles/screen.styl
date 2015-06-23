@@ -9,14 +9,14 @@
 // Helpers.......................useful things, mixins, elements
 //   Elements....................External scss mixins
 //   Grid system.................Import fluid gs
-//
-// General.......................General components and settings
-//   Fonts.......................Offline and online fonts
-//   Reset.......................Reset defaults
 //   Variables...................Settings and variables
 //
-// Blocks........................Page blocks
-//   General.....................Site containers and common layout blocks
+//Components.......................Page components
+//   General.......................General components and settings
+//     Fonts.......................Offline and online fonts
+//     Reset.......................Reset defaults
+//     General.....................Site containers and common layout blocks
+//
 //   Main header.................Site header
 //   Common section..............Page section
 //   Main footer.................Site footer
@@ -40,10 +40,13 @@
 /////////////////////////////////
 
 // $Elements
-@import 'components/helpers/_mixins'
+@import 'helpers/_mixins'
 
 // $Grid system
-@import 'components/helpers/_gs'
+@import 'helpers/_gs'
+
+// $Variables
+@import 'general/_variables'
 
 
 /////////////////////////////////
@@ -56,16 +59,13 @@
 // $Reset
 @import 'components/general/_reset'
 
-// $Variables
-@import 'components/general/_variables'
+// $General
+@import 'components/general/_general'
 
 
 /////////////////////////////////
 /// $Blocks
 /////////////////////////////////
-
-// $General
-@import 'components/_general'
 
 // $Main header
 @import 'components/_header'

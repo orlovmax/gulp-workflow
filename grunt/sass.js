@@ -8,7 +8,7 @@ module.exports = {
 		files: [{
 			expand: true,
 			cwd: '<%= dev.styles %>',
-			src: ['**/*.{sass,scss}', '!components/**/*.*'],
+			src: ['**/*.{sass,scss}', '!components/**/*.*', '!helpers/**/*.*'],
 			dest: '<%= dev.css %>',
 			ext: '.css'
 		}]

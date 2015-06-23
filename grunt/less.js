@@ -4,7 +4,7 @@ module.exports = {
 		files: [{
 			expand: true,
 			cwd: '<%= dev.styles %>',
-			src: ['**/*.less', '!components/**/*.*'],
+			src: ['**/*.less', '!components/**/*.*', '!helpers/**/*.*'],
 			dest: '<%= dev.css %>',
 			ext: '.css'
 		}]

@@ -67,9 +67,14 @@ My front-end boilerplate based on [grunt-boilerplate](https://github.com/orlovma
 │   ├── php                                   // *.php scripts
 │   │   └── script.php 
 │   ├── styles                                // preprocessor styles
-│   │   ├── screen.{sass, scss, less, styl}
-│   │   ├── screen_noscript.{sass, scss, less, styl}
-│   │   └── components
+│   │   ├── screen.{sass,scss,less,styl}
+│   │   ├── screen_noscript.{sass,scss,less,styl}
+│   │   ├── components                        // page blocks
+│   │   │   ├── _header.{sass,scss,less,styl}
+│   │   │   └── general                       // general styles
+│   │   │       └── _fonts.{sass,scss,less,styl}
+│   │   └── helpers                           // mixins and vars
+│   │       └── _mixins, _variables, _gs
 │   ├── html                                  // compiled html markup
 │   │   └── index.html
 │   ├── helpers                               // helper files
@@ -212,6 +217,8 @@ In this scaffold were used some third-part components like:
 * make YO template based on this stuff
 
 ## Changelog
+* v1.3.4 (June 23, 2015)
+	- styles structure modified
 * v1.3.3 (June 16, 2015)
 	- _elements lib replaced by _mixins, _ignition-tools added
 * v1.3.2

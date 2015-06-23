@@ -9,14 +9,14 @@
 // Helpers.......................useful things, mixins, elements
 //   Elements....................External scss mixins
 //   Grid system.................Import fluid gs
-//
-// General.......................General components and settings
-//   Fonts.......................Offline and online fonts
-//   Reset.......................Reset defaults
 //   Variables...................Settings and variables
 //
-// Blocks........................Page blocks
-//   General.....................Site containers and common layout blocks
+//Components.......................Page components
+//   General.......................General components and settings
+//     Fonts.......................Offline and online fonts
+//     Reset.......................Reset defaults
+//     General.....................Site containers and common layout blocks
+//
 //   Main header.................Site header
 //   Common section..............Page section
 //   Main footer.................Site footer
@@ -45,36 +45,36 @@
 // $Grid system
 @import "components/helpers/_gs.scss";
 
+// $Variables
+@import "components/helpers/_variables.scss";
+
 
 /////////////////////////////////
 /// $General
 /////////////////////////////////
 
 // $Fonts
-@import "components/general/_fonts.scss";
+@import "general/_fonts.scss";
 
 // $Reset
-@import "components/general/_reset.scss";
+@import "general/_reset.scss";
 
-// $Variables
-@import "components/general/_variables.scss";
+// $General
+@import "general/_general.scss";
 
 
 /////////////////////////////////
 /// $Blocks
 /////////////////////////////////
 
-// $General
-@import "components/layout/_general.scss";
-
 // $Main header
-@import "components/layout/_header.scss";
+@import "components/_header.scss";
 
 // $Common section
-@import "components/layout/_section.scss";
+@import "components/_section.scss";
 
 // $Main footer
-@import "components/layout/_footer.scss";
+@import "components/_footer.scss";
 
 
 /////////////////////////////////
