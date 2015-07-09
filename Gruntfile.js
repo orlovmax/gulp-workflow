@@ -4,33 +4,34 @@ module.exports = function(grunt) {
 			// Dev paths
 			dev: {
 				main: 'dev',
-				coffee: 'dev/coffee',
-				js: 'dev/js',
-				templates: 'dev/templates',
-				styles: 'dev/styles',
-				css: 'dev/css',
-				html: 'dev/html',
-				img: 'dev/img',
-				fonts: 'dev/fonts',
-				helpers: 'dev/helpers',
-				php: 'dev/php',
-				devtools: 'dev/devtools',
-				design: 'dev/design'
+				coffee: '<%= dev.main %>/coffee',
+				js: '<%= dev.main %>/js',
+				templates: '<%= dev.main %>/templates',
+				styles: '<%= dev.main %>/styles',
+				css: '<%= dev.main %>/css',
+				html: '<%= dev.main %>/html',
+				img: '<%= dev.main %>/img',
+				fonts: '<%= dev.main %>/fonts',
+				helpers: '<%= dev.main %>/helpers',
+				php: '<%= dev.main %>/php',
+				devtools: '<%= dev.main %>/devtools',
+				design: '<%= dev.main %>/design'
 			},
 			// Build paths
 			build: {
 				main: 'build',
-				css: 'build/css',
-				fonts: 'build/fonts',
-				img: 'build/img',
-				php: 'build/php',
-				js: 'build/js'
+				css: '<%= build.main %>/css',
+				fonts: '<%= build.main %>/fonts',
+				img: '<%= build.main %>/img',
+				php: '<%= build.main %>/php',
+				js: '<%= build.main %>/js'
 			},
 			// Zip result
 			archives: {
-				build: 'archives/build-ver.zip',
-				dev: 'archives/dev-ver.zip',
-				all: 'archives/project.zip'
+				main: 'archives'
+				build: '<%= archives.main %>/build-ver.zip',
+				dev: '<%= archives.main %>/dev-ver.zip',
+				all: '<%= archives.main %>/project.zip'
 			}
 		}
 	});

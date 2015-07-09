@@ -8,7 +8,8 @@ module.exports = {
 			expand: true,
 			cwd: '<%= build.js %>/',
 			src: ['**/*.js', '!**/*.min.js'],
-			dest: '<%= build.js %>/'
+			dest: '<%= build.js %>/',
+			ext: '.min.js'
 		}]
 	}
 }

@@ -144,6 +144,7 @@ This project have .editorconfig file at the root that used by your code editor w
 * ["grunt-newer"](https://github.com/tschaub/grunt-newer)
 * ["grunt-processhtml"](https://github.com/dciccale/grunt-processhtml)
 * ["grunt-shell"](https://github.com/sindresorhus/grunt-shell)
+* ["grunt-sync"](https://github.com/tomusdrw/grunt-sync)
 
 ## Bower
 From the version 1.2.0 this boilerplate ready for work with [Bower](https://github.com/bower/bower). So at the root was created `bower.json` file with project dependencies. To install dependencies you need globally instaled Bower. 
@@ -217,6 +218,8 @@ In this scaffold were used some third-part components like:
 * make YO template based on this stuff
 
 ## Changelog
+* v1.3.5 (July 09, 2015)
+	- grunt-copy task replaced with grunt-sync
 * v1.3.4 (June 23, 2015)
 	- styles structure modified
 * v1.3.3 (June 16, 2015)

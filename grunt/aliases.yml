@@ -7,7 +7,7 @@ default:
         - 'newer:stylus'
         - 'newer:jade'
         - 'newer:imagemin'
-        - 'newer:copy'
+        - 'sync'
         - 'watch'
 
 
@@ -27,7 +27,7 @@ regen:
         - 'less'
         - 'stylus'
         - 'jade'
-        - 'copy'
+        - 'sync'
         - 'watch'
         - 'clean:build'
 
