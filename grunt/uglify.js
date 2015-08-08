@@ -7,7 +7,7 @@ module.exports = {
 		files:[{
 			expand: true,
 			cwd: '<%= build.js %>/',
-			src: ['**/*.js', '!**/*.min.js'],
+			src: ['**/*.js', '!**/*.min.js', '!live.js'],
 			dest: '<%= build.js %>/',
 			ext: '.min.js'
 		}]
