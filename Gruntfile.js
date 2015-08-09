@@ -28,7 +28,7 @@ module.exports = function(grunt) {
 			},
 			// Zip result
 			archives: {
-				main: 'archives'
+				main: 'archives',
 				build: '<%= archives.main %>/build-ver.zip',
 				dev: '<%= archives.main %>/dev-ver.zip',
 				all: '<%= archives.main %>/project.zip'
