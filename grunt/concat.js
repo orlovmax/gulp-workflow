@@ -11,5 +11,11 @@ module.exports = {
 			src: ['<%= dev.js %>/head/*.js', '!<%= dev.js %>/head/head.js'],
 			dest: '<%= dev.js %>/head/head.js'
 		}]
+	},
+	ie: {
+		files: [{
+			src: ['<%= dev.js %>/ie/*.js', '!<%= dev.js %>/ie/ie.js'],
+			dest: '<%= dev.js %>/ie/ie.js'
+		}]
 	}
 }
