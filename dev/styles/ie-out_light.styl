@@ -1,18 +1,18 @@
-/* ==============================
- * $Contents
- * ==============================
- */
+// ==============================
+// $Contents
+// ==============================
+//
+//
+//
+// Contents......................Here we are!
+// Reset.........................Some necessary reset styles
+// Variables.....................Inner vars
+// General styles................Main styles
 
-/**
- ** Contents......................Here we are!
- ** Reset.........................Some necessary reset styles
- ** Variables.....................Inner vars
- ** General styles................Main styles
 
-/* ==============================
- * $Reset styles
- * ==============================
- */
+// ==============================
+// $Reset styles
+// ==============================
 
 html, body
 	position relative !important
@@ -22,26 +22,26 @@ html, body
 	padding 0 !important
 	overflow hidden !important
 
-/* ==============================
- * $Variables
- * ==============================
- */
+
+// ==============================
+// $Variables
+// ==============================
 
 dark-color = #4a4a4f
-lighten-color = lighten(dark-color, 20%)
+lighter-color = lighten(dark-color, 20)
 
 bg-color = #ecf0f1
-bg-hover = lighten(bg-color, 5%)
+bg-hover = lighten(bg-color, 5)
 
 link-color = #3498db
 
 font-serif = Georgia, Times, "Times New Roman", serif
 font-sans = Tahoma, Verdana, Arial, sans-serif
 
-/* ==============================
- * $General styles
- * ==============================
- */
+
+// ==============================
+// $General styles
+// ==============================
 
 .browser-msg
 	position fixed
@@ -71,7 +71,7 @@ font-sans = Tahoma, Verdana, Arial, sans-serif
 	font-family font-serif
 	font-size 24px
 	line-height 1.2
-	color lighten-color
+	color lighter-color
 	text-align center
 
 .browser-msg__sub
@@ -95,7 +95,7 @@ font-sans = Tahoma, Verdana, Arial, sans-serif
 	height 340px
 	padding 10px
 	margin 0 30px 30px 0
-	border 1px solid lighten-color
+	border 1px solid lighter-color
 	vertical-align top
 	cursor pointer
 	&:hover
@@ -142,7 +142,7 @@ font-sans = Tahoma, Verdana, Arial, sans-serif
 	font-family font-sans
 	font-size 15px
 	line-height 1.2
-	color lighten-color
+	color lighter-color
 	font-style italic
 	text-align left
 
