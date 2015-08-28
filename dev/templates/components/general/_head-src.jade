@@ -6,36 +6,40 @@ link(rel='apple-touch-icon-precomposed', sizes='72x72', href='/img/ico/apple-tou
 link(rel='apple-touch-icon-precomposed', href='/img/ico/apple-touch-icon-precomposed.png')
 
 // Main stylesheet
-<!-- build:css css/screen.min.css -->
-link(rel='stylesheet', href='css/screen.css')
+<!-- build:css /css/screen.min.css -->
+link(rel='stylesheet', href='/css/screen.css')
 <!-- /build -->
 
 // Custom stylesheet
-<!-- build:css css/custom.min.css -->
-link(rel='stylesheet', href='css/custom.css')
+<!-- build:css /css/custom.min.css -->
+link(rel='stylesheet', href='/css/custom.css')
 <!-- /build -->
 
 noscript
 	// Noscript stylesheet
-	<!-- build:css css/screen_noscript.min.css -->
-	link(rel='stylesheet', href='css/screen_noscript.css')
+	<!-- build:css /css/screen_noscript.min.css -->
+	link(rel='stylesheet', href='/css/screen_noscript.css')
 	<!-- /build -->
 
 // Browser update screen styles
+<!-- build:remove -->
+<!--[if lt IE 9]><link rel="stylesheet" href="/css/ie-out_light.css"><![endif]-->
+<!-- /build -->
+
 <!--[if lt IE 9]><link rel="stylesheet" href="/css/ie-out_light.min.css"><![endif]-->
 
 // CSS3 media queries and HTML5 tags support for old IE
 <!--[if lt IE 9]><script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv-printshiv.min.js"></script><script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script><![endif]-->
 
 <!-- Or you can use these two scripts from local folder, dont forget for conditional comments for old IE
-<script src="js/ie/ie.min.js"></script> -->
+<script src="/js/ie/ie.min.js"></script> -->
 
 // Head javascript
-<!-- build:js js/head/head.min.js -->
-script(src='js/head/head.js')
+<!-- build:js /js/head/head.min.js -->
+script(src='/js/head/head.js')
 <!-- /build -->
 
 // Page refresh script for live coding
 <!-- build:remove -->
-script(src='js/live.js')
+script(src='/js/live.js')
 <!-- /build -->

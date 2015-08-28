@@ -28,7 +28,6 @@ regen:
         - 'stylus'
         - 'jade'
         - 'sync'
-        - 'watch'
         - 'clean:build'
 
 

@@ -2,7 +2,7 @@
 module.exports = {
 	all: {
 		files: ['<%= dev.html %>/**/*.html',
-				'<%= dev.styles %>/**/*.{scss,sass,less,styl}',
+				'<%= dev.styles %>/*.{scss,sass,less,styl}',
 				'<%= dev.css %>/*.css',
 				'<%= dev.coffee %>/**/*.coffee',
 				'<%= dev.js %>/**/*.js',
