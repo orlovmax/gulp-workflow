@@ -53,3 +53,7 @@ build-deploy:
 zip-all:
     tasks:
         - 'compress:all'
+
+server:
+    tasks:
+        - 'browserSync'

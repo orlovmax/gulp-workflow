@@ -32,6 +32,10 @@ module.exports = function(grunt) {
 				build: '<%= archives.main %>/build-ver.zip',
 				dev: '<%= archives.main %>/dev-ver.zip',
 				all: '<%= archives.main %>/project.zip'
+			},
+			server: {
+				main: 'build',
+				files: '<%= server.main %>'
 			}
 		}
 	});

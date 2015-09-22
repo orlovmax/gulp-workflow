@@ -126,6 +126,7 @@ This project have .editorconfig file at the root that used by your code editor w
 * ["grunt-autoprefixer"](https://github.com/nDmitry/grunt-autoprefixer)
 * ["grunt-bower-concat"](https://github.com/sapegin/grunt-bower-concat)
 * ["grunt-bowercopy"](https://github.com/timmywil/grunt-bowercopy)
+* ["grunt-browser-sync"](https://github.com/BrowserSync/grunt-browser-sync)
 * ["grunt-combine-media-queries"](https://github.com/buildingblocks/grunt-combine-media-queries)
 * ["grunt-contrib-clean"](https://github.com/gruntjs/grunt-contrib-clean)
 * ["grunt-contrib-concat"](https://github.com/gruntjs/grunt-contrib-concat)
@@ -200,6 +201,9 @@ For some reasons this scaffold has compress task. In general `grunt zip-all` ali
 
 ## Live reload 
 For this project I use live.js which minified version and  and link to this script in final html will be removed after running build task.
+
+## Server
+BrowserSync task to run local server. Maybe in future it will replace live.js, but now there is no need in this feature. Also for now this task is standalone and wasn't included in common dev flow. To run server just type `grunt server`
 
 ## Additional things
 In this scaffold were used some third-part components like:
