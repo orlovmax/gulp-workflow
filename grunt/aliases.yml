@@ -36,6 +36,7 @@ build:
         - 'processhtml'
         - 'cmq'
         - 'autoprefixer'
+        - 'csscomb'
         - 'uglify'
         - 'csso'
         - 'htmlmin'

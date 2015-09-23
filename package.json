@@ -20,6 +20,7 @@
     "grunt-contrib-stylus": "^0.20.0",
     "grunt-contrib-uglify": "^0.6.0",
     "grunt-contrib-watch": "^0.6.1",
+    "grunt-csscomb": "^3.1.0",
     "grunt-csso": "^0.6.3",
     "grunt-newer": "^0.7.0",
     "grunt-processhtml": "^0.3.3",
