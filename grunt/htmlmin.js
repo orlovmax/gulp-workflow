@@ -1,4 +1,4 @@
-//Minify *.html files
+// Minify HTML
 module.exports = {
 	main: {
 		options: {

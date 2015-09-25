@@ -1,4 +1,4 @@
-//Compile *.less files
+// Compile LESS files to CSS
 module.exports = {
 	main: {
 		files: [{

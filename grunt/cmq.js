@@ -1,4 +1,4 @@
-//Combine media queries in result *.css files
+// Combine matching media queries into one media query definition
 module.exports = {
 	options: {
 		log: false

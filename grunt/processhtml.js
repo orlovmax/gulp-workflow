@@ -1,4 +1,4 @@
-//Delete some dev code and references from files
+// Process html files at build time to modify them depending on the release environment
 module.exports = {
 	dist: {
 		files: [{

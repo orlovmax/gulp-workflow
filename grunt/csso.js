@@ -1,4 +1,4 @@
-//Minify and organize *.css files
+// Minify CSS files with CSSO
 module.exports = {
 	options: {
 		keepSpecialComments: '*',

@@ -1,4 +1,4 @@
-//Uglify assembled *.js file
+// Minify files with UglifyJS
 module.exports = {
 	options: {
 		mangle: false

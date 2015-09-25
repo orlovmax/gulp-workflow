@@ -1,4 +1,4 @@
-//Assemble *.js files
+// Concatenate files.
 module.exports = {
 	main: {
 		files: [{

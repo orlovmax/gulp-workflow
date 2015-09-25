@@ -1,4 +1,4 @@
-// Sync folders or files (ex. *.php) from dev to build
+// Grunt.js task providing one-way synchronization of directories
 module.exports = {
 	php: {
 		files: [{

@@ -1,4 +1,4 @@
-//Autoprefixer
+// Parse CSS and add vendor-prefixed CSS properties using the Can I Use database
 module.exports = {
 	options: {
 		//By default >1%, last 2 versions, Firefox ESR, Opera 12.1;

@@ -1,4 +1,4 @@
-//Delete .gitkeep files. If you don't use Bower - just run `grunt clean`
+// Clear files and folders
 module.exports = {
 	gitkeep: ['<%= dev.main %>/**/.gitkeep', '<%= build.main %>/**/.gitkeep'],
 	less: '<%= dev.styles %>/**/*.less',

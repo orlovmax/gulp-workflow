@@ -1,4 +1,4 @@
-//Minify image files
+//Minify images
 module.exports = {
 	main: {
 		options: {

@@ -1,4 +1,4 @@
-//Compile *.sass files
+// Compile Sass to CSS
 module.exports = {
 	main: {
 		options: {

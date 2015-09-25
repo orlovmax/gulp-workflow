@@ -1,4 +1,5 @@
 default:
+    description: 'Default dev task'
     tasks:
         - 'newer:coffee'
         - 'newer:concat'
@@ -12,6 +13,7 @@ default:
 
 
 bower-dev:
+    description: 'Move bower dependencies to main dev folders'
     tasks:
         - 'bower_concat'
         # - 'bowercopy'
@@ -20,6 +22,7 @@ bower-dev:
 
 
 regen:
+    description: 'Regenerate project by running all tasks without newer directive'
     tasks:
         - 'coffee'
         - 'concat'
@@ -32,6 +35,7 @@ regen:
 
 
 build:
+    description: 'Default build task'
     tasks:
         - 'processhtml'
         - 'cmq'
@@ -45,17 +49,21 @@ build:
 
 
 deploy:
+    description: 'Commit changes in dev and build folders and push them to related repositories'
     tasks:
         - 'shell:deploy'
 
 build-deploy:
+    description: 'Commit only build folder and push changes to remote'
     tasks:
         - 'shell:buildDeploy'
 
 zip-all:
+    description: 'Creates archives for dev and build versions'
     tasks:
         - 'compress:all'
 
 server:
+    description: 'Run server for build version'
     tasks:
         - 'browserSync'

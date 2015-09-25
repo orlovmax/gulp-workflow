@@ -1,4 +1,4 @@
-//Assemble bower components in right order
+// Bower components concatenator
 module.exports = {
 	vendor: {
 		dest: '<%= dev.js %>/vendor/vendor.js',

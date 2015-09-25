@@ -1,4 +1,4 @@
-//Compile *.styl files
+// Compile Stylus files to CSS
 module.exports = {
 	main: {
 		options: {

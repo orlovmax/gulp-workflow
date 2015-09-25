@@ -1,4 +1,4 @@
-// Bust static assets from the cache using content hashing
+// Cache bust static assets using content hashing
 module.exports = {
 	options: {
 		encoding: 'utf8',

@@ -1,4 +1,4 @@
-// Compress dev and build version
+// Compress files and folders
 module.exports = {
 	build: {
 		options: {

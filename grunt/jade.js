@@ -1,4 +1,4 @@
-//Compile *.jade files
+// Compile Jade templates
 module.exports = {
 	main: {
 		options: {

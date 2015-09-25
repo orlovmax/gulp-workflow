@@ -1,4 +1,4 @@
-//Copy bower components to the custom folder
+// Scrupulously manage file locations for bower dependencies
 module.exports = {
   options: {
     clean: true,

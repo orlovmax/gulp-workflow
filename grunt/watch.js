@@ -1,4 +1,4 @@
-//Watch for changes
+// Run tasks whenever watched files change
 module.exports = {
 	all: {
 		files: ['<%= dev.html %>/**/*.html',

@@ -1,4 +1,4 @@
-// Compile CoffeeScript
+// Compile CoffeeScript files to JavaScript
 module.exports = {
 	main: {
 		expand: true,
