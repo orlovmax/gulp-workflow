@@ -127,6 +127,7 @@ This project have .editorconfig file at the root that used by your code editor w
 * ["grunt-bower-concat"](https://github.com/sapegin/grunt-bower-concat)
 * ["grunt-bowercopy"](https://github.com/timmywil/grunt-bowercopy)
 * ["grunt-browser-sync"](https://github.com/BrowserSync/grunt-browser-sync)
+* ["grunt-cache-bust"](https://github.com/hollandben/grunt-cache-bust)
 * ["grunt-combine-media-queries"](https://github.com/buildingblocks/grunt-combine-media-queries)
 * ["grunt-contrib-clean"](https://github.com/gruntjs/grunt-contrib-clean)
 * ["grunt-contrib-concat"](https://github.com/gruntjs/grunt-contrib-concat)

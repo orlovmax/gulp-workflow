@@ -7,10 +7,10 @@ module.exports = {
 	stylus: '<%= dev.styles %>/**/*.styl',
 	jade: '<%= dev.templates %>/**/*.jade',
 	debug: ['<%= build.js %>/**/*.js',
-			'!<%= build.js %>/**/*.min.js',
+			'!<%= build.js %>/**/*.min.*',
 			'<%= build.css %>/**/*.css',
-			'!<%= build.css %>/**/*.min.css'],
-	build: ['<%= build.js %>/**/*.min.js',
-			'<%= build.css %>/**/*.min.css'],
+			'!<%= build.css %>/**/*.min.*'],
+	build: ['<%= build.js %>/**/*.min.*',
+			'<%= build.css %>/**/*.min.*'],
 	bower: 'bower_components'
 }

@@ -41,6 +41,7 @@ build:
         - 'csso'
         - 'htmlmin'
         - 'clean:debug'
+        - 'cacheBust'
 
 
 deploy:

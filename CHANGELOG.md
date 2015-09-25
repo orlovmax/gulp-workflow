@@ -1,3 +1,5 @@
+* v1.3.8 (September 25, 2015)
+	- cacheBust task added, main template _ga module fixed
 * v1.3.7 (September 23, 2015)
 	- CSSCOMB task and browser-sync task added
 * v1.3.6 (August 24, 2015)
