@@ -4,9 +4,15 @@ module.exports = {
 		encoding: 'utf8',
 		algorithm: 'md5',
 		length: 16,
-		ignorePatterns: ['ico'],
+		// ignorePatterns: ['ico'],
 		deleteOriginals: true,
-		rename: true
+		rename: true,
+		filters: [{
+			'img':
+			function() {
+				return this.attribs['data-src'];
+			}
+		}]
 	},
 	assets: {
 		files: [{

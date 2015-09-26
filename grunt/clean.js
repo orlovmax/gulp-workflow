@@ -11,6 +11,7 @@ module.exports = {
 			'<%= build.css %>/**/*.css',
 			'!<%= build.css %>/**/*.min.*'],
 	build: ['<%= build.js %>/**/*.min.*',
-			'<%= build.css %>/**/*.min.*'],
+			'<%= build.css %>/**/*.min.*',
+			'<%= build.main %>/**/*.*.{png,jpg,gif,svg,ico}'],
 	bower: 'bower_components'
 }

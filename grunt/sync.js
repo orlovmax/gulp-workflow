@@ -59,5 +59,13 @@ module.exports = {
 			src: ['**/*.*', '**/.htaccess'],
 			dest: '<%= build.main %>'
 		}]
+	},
+	images: {
+		files: [{
+			expand: true,
+			cwd: '<%= dev.img %>',
+			src: ['**/*.*'],
+			dest: '<%= build.img %>'
+		}]
 	}
 }
