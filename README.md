@@ -81,7 +81,10 @@ My front-end boilerplate based on [grunt-boilerplate](https://github.com/orlovma
 │   │   └── *.* 
 │   ├── fonts                                 //font sources
 │   ├── devtools                              //some dev tools
-│   └── design                                // psd layout
+│   └── design                                // psd layout, assets src
+│       ├── psd
+│       ├── img
+│       └── fonts
 │
 └── build                                     // built source
 	├── index.html                            // minified html file
@@ -143,6 +146,7 @@ This project have .editorconfig file at the root that used by your code editor w
 * ["grunt-contrib-watch"](https://github.com/gruntjs/grunt-contrib-watch)
 * ["grunt-csscomb"](https://github.com/csscomb/grunt-csscomb)
 * ["grunt-csso"](https://github.com/t32k/grunt-csso)
+* ["grunt-fontgen"](https://github.com/agentk/grunt-fontgen)
 * ["grunt-newer"](https://github.com/tschaub/grunt-newer)
 * ["grunt-processhtml"](https://github.com/dciccale/grunt-processhtml)
 * ["grunt-shell"](https://github.com/sindresorhus/grunt-shell)
