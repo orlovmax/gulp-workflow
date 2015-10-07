@@ -6,8 +6,8 @@ module.exports = {
 				pretty: true
 		},
 		files: [ {
-			cwd: '<%= dev.templates %>/pages',
-			src: ['**/*.jade'],
+			cwd: '<%= dev.jade %>',
+			src: ['*.jade'],
 			dest: '<%= dev.html %>/',
 			expand: true,
 			ext: '.html'

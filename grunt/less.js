@@ -3,8 +3,8 @@ module.exports = {
 	main: {
 		files: [{
 			expand: true,
-			cwd: '<%= dev.styles %>',
-			src: ['**/*.less', '!components/**/*.*', '!helpers/**/*.*'],
+			cwd: '<%= dev.less %>',
+			src: [ '*.less' ],
 			dest: '<%= dev.css %>',
 			ext: '.css'
 		}]

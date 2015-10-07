@@ -31,77 +31,98 @@ My front-end boilerplate based on [grunt-boilerplate](https://github.com/orlovma
 ├── bower.json
 ├── README.md
 ├── Rakefile
-├── archives                                  // result *.zip archive
+├── archives                                  * result *.zip archive
 |   └── project.zip
-├── grunt                                     //grunt tasks
+├── grunt                                     * grunt tasks
 |   ├── task.js
 │   └── aliases.yml 
-├── dev                                       // site source
-|   ├── coffee                                // coffee scripts
+├── dev                                       * site source
+|   ├── coffee                                * coffee scripts
 │   │   └── script.coffee
-│   ├── css                                   // compiled css
+│   ├── css                                   * compiled css
 │   │   ├── screen.css
 │   │   └── screen_noscript.css
-│   ├── img                                   //image sources
+│   ├── img                                   * image sources
 │   │   └── *.png, *.jpg, *.gif 
-│   ├── templates                             // templates
-│   │   ├── pages                             // main pages templates
+│   ├── jade                                  * templates
+│   │   ├── pages                             * main pages templates
 │   │   │   └── index.jade
-│   │   ├── components                        // page blocks
-│   │   │   ├── _header.jade
-│   │   │   ├── general                       // common src
-│   │   │   │   └── _meta.jade
-│   │   │   └── parked                        // page stub 
-│   │   │       └── parked.html 
-│   │   ├── layouts                           // page layouts
+│   │   ├── blocks                            * page blocks
+│   │   │   ├── header.jade
+│   │   ├── general                           * common src
+│   │   │   └── meta.jade
+│   │   ├── layouts                           * page layouts
 │   │   │   └── main.jade
-│   │   └── helpers                           // mixins and vars
-│   │       └── mixins.jade, variables.jade 
-│   ├── js                                    // compiled and source js
+│   │   └── helpers                           * mixins and vars
+│   │       └── mixins, variables etc
+│   ├── js                                    * compiled and source js
 │   │   ├── compiled.js 
 │   │   ├── custom.js
-│   │   ├── head                              // concatenated head scripts
+│   │   ├── head                              * concatenated head scripts
 │   │   │   └── head.js  
-│   │   └── vendor                            // concatenated vendor scripts
+│   │   └── vendor                            * concatenated vendor scripts
 │   │       └── vendor.js
-│   ├── php                                   // *.php scripts
+│   ├── php                                   * *.php scripts
 │   │   └── script.php 
-│   ├── styles                                // preprocessor styles
-│   │   ├── screen.{sass,scss,less,styl}
-│   │   ├── screen_noscript.{sass,scss,less,styl}
-│   │   ├── components                        // page blocks
-│   │   │   ├── _header.{sass,scss,less,styl}
-│   │   │   └── general                       // general styles
-│   │   │       └── _fonts.{sass,scss,less,styl}
-│   │   └── helpers                           // mixins and vars
-│   │       └── _mixins, _variables, _gs
-│   ├── html                                  // compiled html markup
+│   ├── less                                  * less preprocessor styles
+│   │   ├── screen.less
+│   │   ├── blocks                            * page blocks
+│   │   │   ├── header.less
+│   │   ├── general                           * general styles
+│   │   │   └── fonts.less
+│   │   └── helpers                           * mixins and vars
+│   │       └── _mixins, variables, gs
+│   ├── sass                                  * less preprocessor styles
+│   │   ├── screen.sass
+│   │   ├── blocks                            * page blocks
+│   │   │   ├── header.sass
+│   │   ├── general                           * general styles
+│   │   │   └── fonts.sass
+│   │   └── helpers                           * mixins and vars
+│   │       └── _mixins, variables, gs
+│   ├── scss                                  * less preprocessor styles
+│   │   ├── screen.scss
+│   │   ├── blocks                            * page blocks
+│   │   │   ├── header.scss
+│   │   ├── general                           * general styles
+│   │   │   └── fonts.scss
+│   │   └── helpers                           * mixins and vars
+│   │       └── _mixins, variables, gs
+│   ├── stylus                                * less preprocessor styles
+│   │   ├── screen.styl
+│   │   ├── blocks                            * page blocks
+│   │   │   ├── header.styl
+│   │   ├── general                           * general styles
+│   │   │   └── fonts.styl
+│   │   └── helpers                           * mixins and vars
+│   │       └── _mixins, variables, gs
+│   ├── html                                  * compiled html markup
 │   │   └── index.html
-│   ├── helpers                               // helper files
+│   ├── helpers                               * helper files
 │   │   └── *.* 
-│   ├── fonts                                 //font sources
-│   ├── devtools                              //some dev tools
-│   └── design                                // psd layout, assets src
+│   ├── fonts                                 * font sources
+│   ├── devtools                              * some dev tools
+│   └── mockup                                * psd layout, assets src
 │       ├── psd
 │       ├── img
 │       └── fonts
 │
-└── build                                     // built source
-	├── index.html                            // minified html file
-	├── css                                   // minified styles
+└── build                                     * built source
+	├── index.html                            * minified html file
+	├── css                                   * minified styles
 	│   ├── screen.min.css
 	│   └── screen_noscript.min.css 
-	├── img                                   // minified images
+	├── img                                   * minified images
 	│   └── *.png, *.jpg, *.gif
-	├── js                                    // minified assembled js
+	├── js                                    * minified assembled js
 	│   ├── assembled.min.js
-	│   ├── head                              // minified head js
+	│   ├── head                              * minified head js
 	│   │   └── head.min.js
-	│   └── vendor                            // minified vendor js
+	│   └── vendor                            * minified vendor js
 	│       └── vendor.min.js
-	├── php                                   // *.php scripts
+	├── php                                   * php scripts
 	│   └── script.php
-	└── fonts                                 // @font-face-ready webfonts
+	└── fonts                                 * @font-face-ready webfonts
 
 ```
 Source files  placed in `dev` folder, where you should provide your development process.
@@ -146,7 +167,6 @@ This project have .editorconfig file at the root that used by your code editor w
 * ["grunt-contrib-watch"](https://github.com/gruntjs/grunt-contrib-watch)
 * ["grunt-csscomb"](https://github.com/csscomb/grunt-csscomb)
 * ["grunt-csso"](https://github.com/t32k/grunt-csso)
-* ["grunt-fontgen"](https://github.com/agentk/grunt-fontgen)
 * ["grunt-newer"](https://github.com/tschaub/grunt-newer)
 * ["grunt-processhtml"](https://github.com/dciccale/grunt-processhtml)
 * ["grunt-shell"](https://github.com/sindresorhus/grunt-shell)
