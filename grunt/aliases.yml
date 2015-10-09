@@ -67,3 +67,8 @@ server:
     description: 'Run server for build version'
     tasks:
         - 'browserSync'
+
+sprite:
+    description: 'Sprite creation task. Should be configured before running'
+    tasks:
+        - 'sprite'

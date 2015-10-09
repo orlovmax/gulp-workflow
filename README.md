@@ -16,6 +16,8 @@ My front-end boilerplate based on [grunt-boilerplate](https://github.com/orlovma
 	- [Clean task](#clean-task)
 	- [Build task](#build-task)
 	- [Deploy task](#deploy-task)
+	- [Server task](#server-task)
+	- [Sprite task](#sprite-task)
 * [Live reload](#live-reload)
 * [Additional things](#additional-things)
 * [TODO](#todo)
@@ -48,7 +50,7 @@ My front-end boilerplate based on [grunt-boilerplate](https://github.com/orlovma
 │   │   ├── pages                             * main pages templates
 │   │   │   └── index.jade
 │   │   ├── blocks                            * page blocks
-│   │   │   ├── header.jade
+│   │   │   └── header.jade
 │   │   ├── general                           * common src
 │   │   │   └── meta.jade
 │   │   ├── layouts                           * page layouts
@@ -67,7 +69,7 @@ My front-end boilerplate based on [grunt-boilerplate](https://github.com/orlovma
 │   ├── less                                  * less preprocessor styles
 │   │   ├── screen.less
 │   │   ├── blocks                            * page blocks
-│   │   │   ├── header.less
+│   │   │   └── header.less
 │   │   ├── general                           * general styles
 │   │   │   └── fonts.less
 │   │   └── helpers                           * mixins and vars
@@ -75,7 +77,7 @@ My front-end boilerplate based on [grunt-boilerplate](https://github.com/orlovma
 │   ├── sass                                  * less preprocessor styles
 │   │   ├── screen.sass
 │   │   ├── blocks                            * page blocks
-│   │   │   ├── header.sass
+│   │   │   └── header.sass
 │   │   ├── general                           * general styles
 │   │   │   └── fonts.sass
 │   │   └── helpers                           * mixins and vars
@@ -83,7 +85,7 @@ My front-end boilerplate based on [grunt-boilerplate](https://github.com/orlovma
 │   ├── scss                                  * less preprocessor styles
 │   │   ├── screen.scss
 │   │   ├── blocks                            * page blocks
-│   │   │   ├── header.scss
+│   │   │   └── header.scss
 │   │   ├── general                           * general styles
 │   │   │   └── fonts.scss
 │   │   └── helpers                           * mixins and vars
@@ -91,7 +93,7 @@ My front-end boilerplate based on [grunt-boilerplate](https://github.com/orlovma
 │   ├── stylus                                * less preprocessor styles
 │   │   ├── screen.styl
 │   │   ├── blocks                            * page blocks
-│   │   │   ├── header.styl
+│   │   │   └── header.styl
 │   │   ├── general                           * general styles
 │   │   │   └── fonts.styl
 │   │   └── helpers                           * mixins and vars
@@ -170,6 +172,7 @@ This project have .editorconfig file at the root that used by your code editor w
 * ["grunt-newer"](https://github.com/tschaub/grunt-newer)
 * ["grunt-processhtml"](https://github.com/dciccale/grunt-processhtml)
 * ["grunt-shell"](https://github.com/sindresorhus/grunt-shell)
+* ["grunt-spritesmith"](https://github.com/Ensighten/grunt-spritesmith)
 * ["grunt-sync"](https://github.com/tomusdrw/grunt-sync)
 
 ## Bower
@@ -229,6 +232,10 @@ For this project I use live.js which minified version and  and link to this scri
 
 ## Server
 BrowserSync task to run local server. Maybe in future it will replace live.js, but now there is no need in this feature. Also for now this task is standalone and wasn't included in common dev flow. To run server just type `grunt server`
+
+## Sprite
+This task runs sprite generator. By default it uses `dev\img\sprite\` folder and generates *.css file in it, but feel free to add your own folders for custom sprites. Just type `grunt sprite` and it will build your sprite from images and will generate related stylesheet.
+Please note, that this task is standalone, so if you want to run it in complex with other tasks - edit aliases.yml and add it to desired alias.
 
 ## Additional things
 In this scaffold were used some third-part components like:
