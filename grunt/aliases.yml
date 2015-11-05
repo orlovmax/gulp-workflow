@@ -7,7 +7,7 @@ default:
         - 'newer:less'
         - 'newer:stylus'
         - 'newer:jade'
-        - 'newer:imagemin'
+        # - 'newer:imagemin'
         - 'sync'
         - 'watch'
 
@@ -18,7 +18,7 @@ bower-dev:
         - 'bower_concat'
         # - 'bowercopy'
         - 'clean:gitkeep'
-        - 'clean:bower'
+        # - 'clean:bower'
 
 
 regen:
@@ -45,7 +45,7 @@ build:
         - 'csso'
         - 'htmlmin'
         - 'clean:debug'
-        - 'cacheBust'
+        # - 'cacheBust'
 
 
 deploy:

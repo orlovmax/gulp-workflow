@@ -60,7 +60,7 @@ module.exports = {
 			dest: '<%= build.main %>'
 		}]
 	},
-	images: {
+	img: {
 		files: [{
 			expand: true,
 			cwd: '<%= dev.img %>',
