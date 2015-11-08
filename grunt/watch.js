@@ -2,12 +2,15 @@
 module.exports = {
 	all: {
 		files: ['<%= dev.html %>/**/*.html',
-				'<%= dev.styles %>/*.{scss,sass,less,styl}',
+				'<%= dev.less %>/*.less',
+				'<%= dev.scss %>/*.scss',
+				'<%= dev.sass %>/*.sass',
+				'<%= dev.stylus %>/*.styl',
 				'<%= dev.css %>/*.css',
 				'<%= dev.coffee %>/**/*.coffee',
 				'<%= dev.js %>/**/*.js',
 				'<%= dev.img %>/**/*.{png,jpg,gif}',
-				'<%= dev.templates %>/pages/**/*.jade',
+				'<%= dev.jade %>/pages/**/*.jade',
 				'<%= dev.php %>/**/*.php',
 				'<%= dev.fonts %>/**/*.{eot,svg,ttf,otf,woff,woff2}'],
 		tasks: ['default'],
