@@ -40,6 +40,11 @@ module.exports = function(grunt) {
 				main: 'build',
 				files: '<%= server.main %>'
 			}
+		},
+		loadGruntTasks: {
+			pattern: ['grunt-*', 'main-*'],
+			config: require('./package.json'),
+			scope: 'devDependencies'
 		}
 	});
 };

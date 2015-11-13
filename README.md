@@ -150,8 +150,6 @@ This project have .editorconfig file at the root that used by your code editor w
 ### Package.json dependencies 
 * ["grunt"](https://github.com/gruntjs)
 * ["grunt-autoprefixer"](https://github.com/nDmitry/grunt-autoprefixer)
-* ["grunt-bower-concat"](https://github.com/sapegin/grunt-bower-concat)
-* ["grunt-bowercopy"](https://github.com/timmywil/grunt-bowercopy)
 * ["grunt-browser-sync"](https://github.com/BrowserSync/grunt-browser-sync)
 * ["grunt-cache-bust"](https://github.com/hollandben/grunt-cache-bust)
 * ["grunt-combine-media-queries"](https://github.com/buildingblocks/grunt-combine-media-queries)
@@ -174,6 +172,7 @@ This project have .editorconfig file at the root that used by your code editor w
 * ["grunt-shell"](https://github.com/sindresorhus/grunt-shell)
 * ["grunt-spritesmith"](https://github.com/Ensighten/grunt-spritesmith)
 * ["grunt-sync"](https://github.com/tomusdrw/grunt-sync)
+* ["main-bower-files"](https://github.com/ck86/main-bower-files)
 
 ## Bower
 From the version 1.2.0 this boilerplate ready for work with [Bower](https://github.com/bower/bower). So at the root was created `bower.json` file with project dependencies. To install dependencies you need globally instaled Bower. 
