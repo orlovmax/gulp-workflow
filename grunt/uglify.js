@@ -3,13 +3,28 @@ module.exports = {
 	options: {
 		mangle: false
 	},
-	build: {
-		files:[{
-			expand: true,
-			cwd: '<%= build.js %>/',
-			src: ['**/*.js', '!**/*.min.js', '!live.js'],
-			dest: '<%= build.js %>/',
-			ext: '.min.js'
+	main: {
+		files: [{
+			src: ['<%= build.js %>/assembled.js'],
+			dest: '<%= build.js %>/assembled.min.js'
+		}]
+	},
+	head: {
+		files: [{
+			src: ['<%= build.js %>/head/head.js'],
+			dest: '<%= build.js %>/head/head.min.js'
+		}]
+	},
+	ie: {
+		files: [{
+			src: ['<%= build.js %>/ie/ie.js'],
+			dest: '<%= build.js %>/ie/ie.min.js'
+		}]
+	},
+	vendor: {
+		files: [{
+			src: ['<%= build.js %>/vendor/vendor.js'],
+			dest: '<%= build.js %>/vendor/vendor.min.js'
 		}]
 	}
 }

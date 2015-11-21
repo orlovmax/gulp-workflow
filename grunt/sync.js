@@ -21,10 +21,10 @@ module.exports = {
 			expand: true,
 			cwd: '<%= dev.js %>/',
 			src: [
-				'**/assembled.js',
-				'**/vendor.js',
-				'**/head.js',
-				'**/ie.js'],
+				'/assembled.js',
+				'vendor/vendor.js',
+				'head/head.js',
+				'ie/ie.js'],
 			dest: '<%= build.js %>/'
 		}]
 	},
@@ -32,7 +32,7 @@ module.exports = {
 		files: [{
 			expand: true,
 			cwd: '<%= dev.devtools %>/',
-			src: '**/live.js',
+			src: '/live.js',
 			dest: '<%= build.js %>/'
 		}]
 	},
@@ -40,7 +40,7 @@ module.exports = {
 		files: [{
 			expand: true,
 			cwd: '<%= dev.css %>',
-			src: ['**/*.css'],
+			src: ['*.css'],
 			dest: '<%= build.css %>/'
 		}]
 	},
@@ -48,7 +48,7 @@ module.exports = {
 		files: [{
 			expand: true,
 			cwd: '<%= dev.html %>',
-			src: ['**/*.html'],
+			src: ['*.html'],
 			dest: '<%= build.main %>'
 		}]
 	},
@@ -60,12 +60,12 @@ module.exports = {
 			dest: '<%= build.main %>'
 		}]
 	},
-	img: {
+	images: {
 		files: [{
 			expand: true,
-			cwd: '<%= dev.img %>',
+			cwd: '<%= dev.images %>',
 			src: ['**/*.*'],
-			dest: '<%= build.img %>'
+			dest: '<%= build.images %>'
 		}]
 	}
 }

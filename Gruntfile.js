@@ -13,7 +13,7 @@ module.exports = function(grunt) {
 				stylus: '<%= dev.main %>/stylus',
 				css: '<%= dev.main %>/css',
 				html: '<%= dev.main %>/html',
-				img: '<%= dev.main %>/img',
+				images: '<%= dev.main %>/images',
 				fonts: '<%= dev.main %>/fonts',
 				helpers: '<%= dev.main %>/helpers',
 				php: '<%= dev.main %>/php',
@@ -25,16 +25,14 @@ module.exports = function(grunt) {
 				main: 'build',
 				css: '<%= build.main %>/css',
 				fonts: '<%= build.main %>/fonts',
-				img: '<%= build.main %>/img',
+				images: '<%= build.main %>/images',
 				php: '<%= build.main %>/php',
 				js: '<%= build.main %>/js'
 			},
 			// Zip result
-			archives: {
-				main: 'archives',
-				build: '<%= archives.main %>/build-ver.zip',
-				dev: '<%= archives.main %>/dev-ver.zip',
-				all: '<%= archives.main %>/project.zip'
+			zip: {
+				main: 'zip',
+				theme: '<%= zip.main %>/theme.zip'
 			},
 			server: {
 				main: 'build',

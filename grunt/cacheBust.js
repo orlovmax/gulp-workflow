@@ -4,14 +4,14 @@ module.exports = {
 		encoding: 'utf8',
 		algorithm: 'md5',
 		length: 16,
-		// ignorePatterns: ['ico'],
+		// ignorePatterns: ['icons'],
 		deleteOriginals: true,
 		rename: true,
 		filters: [{
-			'img':
-			function() {
-				return this.attribs['data-src'];
-			}
+			// 'img':
+			// function() {
+			// 	return this.attribs['data-src'];
+			// }
 		}]
 	},
 	assets: {
@@ -19,7 +19,7 @@ module.exports = {
 			expand: true,
         	cwd: '<%= build.main %>',
         	baseDir: '<%= build.main %>',
-			src: ['**/*.html']
+			src: ['*.html']
 		}]
 	}
 }

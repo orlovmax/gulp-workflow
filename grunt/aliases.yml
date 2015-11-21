@@ -15,10 +15,8 @@ default:
 bower-dev:
     description: 'Move bower dependencies to main dev folders'
     tasks:
-        - 'bower_concat'
-        # - 'bowercopy'
+        - 'bower'
         - 'clean:gitkeep'
-        # - 'clean:bower'
 
 
 regen:
@@ -30,6 +28,7 @@ regen:
         - 'less'
         - 'stylus'
         - 'jade'
+        - 'imagemin'
         - 'sync'
         - 'clean:build'
 
@@ -44,27 +43,22 @@ build:
         - 'uglify'
         - 'csso'
         - 'htmlmin'
-        - 'clean:debug'
+        - 'clean:dev'
         # - 'cacheBust'
 
 
 deploy:
-    description: 'Commit changes in dev and build folders and push them to related repositories'
+    description: 'Commit build folder and push changes to remote'
     tasks:
         - 'shell:deploy'
 
-build-deploy:
-    description: 'Commit only build folder and push changes to remote'
+zip:
+    description: 'Creates archive with static build'
     tasks:
-        - 'shell:buildDeploy'
-
-zip-all:
-    description: 'Creates archives for dev and build versions'
-    tasks:
-        - 'compress:all'
+        - 'compress:build'
 
 server:
-    description: 'Run server for build version'
+    description: 'Run server for static build'
     tasks:
         - 'browserSync'
 

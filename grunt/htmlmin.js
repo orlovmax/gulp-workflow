@@ -8,7 +8,7 @@ module.exports = {
 		},
 		files: [ {
 			cwd: '<%= build.main %>',
-			src: '**/*.html',
+			src: '*.html',
 			dest: '<%= build.main %>',
 			expand: true,
 			ext: '.html'

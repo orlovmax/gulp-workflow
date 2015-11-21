@@ -2,8 +2,8 @@
 module.exports = {
 	main: {
 		options: {
-				client: false,
-				pretty: true
+			client: false,
+			pretty: true
 		},
 		files: [ {
 			cwd: '<%= dev.jade %>',

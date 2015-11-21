@@ -4,7 +4,7 @@ module.exports = {
 		expand: true,
 		flatten: true,
 		cwd: '<%= dev.coffee %>',
-		src: ['**/*.coffee', '!components/**/*.*'],
+		src: ['*.coffee'],
 		dest: '<%= dev.js %>',
 		ext: '.js',
 		extDot: 'last'
