@@ -8,8 +8,21 @@ module.exports = {
 		files: [{
 			expand: true,
 			cwd: '<%= dev.sass %>',
-			src: [ '*.{sass, scss}' ],
-			dest: '<%= dev.css %>',
+			src: [ '*.sass' ],
+			dest: '<%= build.css %>',
+			ext: '.css'
+		}]
+	},
+	scss: {
+		options: {
+			style: 'expanded',
+			sourcemap: 'none'
+		},
+		files: [{
+			expand: true,
+			cwd: '<%= dev.scss %>',
+			src: [ '*.scss' ],
+			dest: '<%= build.css %>',
 			ext: '.css'
 		}]
 	}

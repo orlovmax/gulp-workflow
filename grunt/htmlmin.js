@@ -7,9 +7,9 @@ module.exports = {
 			minifyCSS: true
 		},
 		files: [ {
-			cwd: '<%= build.main %>',
+			cwd: '<%= build.html %>',
 			src: '*.html',
-			dest: '<%= build.main %>',
+			dest: '<%= build.html %>',
 			expand: true,
 			ext: '.html'
 		} ]

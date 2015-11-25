@@ -5,7 +5,7 @@ module.exports = {
 			expand: true,
 			cwd: '<%= dev.less %>',
 			src: [ '*.less' ],
-			dest: '<%= dev.css %>',
+			dest: '<%= build.css %>',
 			ext: '.css'
 		}]
 	}

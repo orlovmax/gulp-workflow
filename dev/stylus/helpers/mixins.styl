@@ -10,8 +10,9 @@ hidentext()
 	overflow hidden
 
 clearfix()
+	&:before,
 	&:after
-		content ''
 		display block
+		content ''
 		clear both
 		height 0

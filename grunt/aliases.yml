@@ -28,7 +28,7 @@ regen:
         - 'less'
         - 'stylus'
         - 'jade'
-        - 'imagemin'
+        # - 'imagemin'
         - 'sync'
         - 'clean:build'
 

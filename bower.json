@@ -1,6 +1,6 @@
 {
   "name": "front-end-scaffold",
-  "description": "front-end-scaffold",
+  "description": "Front-end scaffold",
   "license": "MIT",
   "dependencies": {
     "jquery": "latest",

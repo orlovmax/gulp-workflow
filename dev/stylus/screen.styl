@@ -1,57 +1,61 @@
-/////////////////////////////////
-/// $Contents
-/////////////////////////////////
+////////////////////////////////////////
+/// $CONTENTS
+////////////////////////////////////////
 //
-// Contents......................Here we are!
+// CONTENTS.............................Here we are!
 //
-// Dev tools.....................Useful deveopment tools
+// DEV TOOLS............................Useful deveopment tools
 //
-// Helpers.......................useful things, mixins, elements
-//   Elements....................External scss mixins
-//   Grid system.................Import fluid gs
-//   Variables...................Settings and variables
+// HELPERS..............................Variables, mixins, elements
+//   Mixins.............................External scss mixins
+//   Grid system........................Import fluid gs
+//   Typographic rhythm.................Import vertical rhythm mixin
+//   Variables..........................Settings and variables
 //
-// General.......................General components and settings
-//   Fonts.......................Offline and online fonts
-//   Reset.......................Reset defaults
-//   General.....................Site containers and common layout blocks
+// GENERAL..............................General components and settings
+//   Fonts..............................Offline and online fonts
+//   Reset..............................Reset defaults
+//   General............................Site containers and common layout blocks
 //
-// Blocks........................Page components
-//   Main header.................Site header
-//   Common section..............Page section
-//   Main footer.................Site footer
+// BLOCKS...............................Page components
+//   Main header........................Site header
+//   Common section.....................Page section
+//   Main footer........................Site footer
 //
-// Media queries.................Media queries section
+// MEDIA QUERIES........................Media queries section
 
 
-/////////////////////////////////
-/// $Dev tools
-/////////////////////////////////
+////////////////////////////////////////
+/// $DEV TOOLS
+////////////////////////////////////////
 
 // $Layout-tools
-@import '../devtools/layout-tools'
+// @import '../devtools/layout-tools'
 
 // $Ignition tools
-@import '../devtools/ignition-tools'
+// @import '../devtools/ignition-tools'
 
 
-/////////////////////////////////
-/// $Helpers
-/////////////////////////////////
+////////////////////////////////////////
+/// $HELPERS
+////////////////////////////////////////
 
-// $Elements
+// $Mixins
 @import 'helpers/mixins'
 
 // $Grid system
 @import 'helpers/gs'
 
+// $Typographic rhythm
+@import 'helpers/typographic-rhythm'
+
 // $Variables
 @import 'helpers/variables'
 
 
-/////////////////////////////////
-/// $General
-/////////////////////////////////
+////////////////////////////////////////
+/// $GENERAL
+////////////////////////////////////////
 
 // $Fonts
 @import 'general/fonts'
@@ -63,20 +67,20 @@
 @import 'general/general'
 
 
-/////////////////////////////////
-/// $Blocks
-/////////////////////////////////
+////////////////////////////////////////
+/// $BLOCKS
+////////////////////////////////////////
 
 // $Main header
-@import 'blocks/header'
+@import 'blocks/header/header'
 
 // $Common section
-@import 'blocks/section'
+@import 'blocks/section/section'
 
 // $Main footer
-@import 'blocks/footer'
+@import 'blocks/footer/footer'
 
 
-/////////////////////////////////
-/// $Media queries
-/////////////////////////////////
+////////////////////////////////////////
+/// $MEDIA QUERIES
+////////////////////////////////////////

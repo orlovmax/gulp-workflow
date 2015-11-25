@@ -1,43 +1,44 @@
-/////////////////////////////////
-/// $Contents
-/////////////////////////////////
+////////////////////////////////////////
+/// $CONTENTS
+////////////////////////////////////////
 //
-// Contents......................Here we are!
+// CONTENTS.............................Here we are!
 //
-// Dev tools.....................Useful deveopment tools
+// DEV TOOLS............................Useful deveopment tools
 //
-// Helpers.......................useful things, mixins, elements
-//   Elements....................External scss mixins
-//   Grid system.................Import fluid gs
-//   Variables...................Settings and variables
+// HELPERS..............................Variables, mixins, elements
+//   Mixins.............................External scss mixins
+//   Grid system........................Import fluid gs
+//   Typographic rhythm.................Import vertical rhythm mixin
+//   Variables..........................Settings and variables
 //
-// General.......................General components and settings
-//   Fonts.......................Offline and online fonts
-//   Reset.......................Reset defaults
-//   General.....................Site containers and common layout blocks
+// GENERAL..............................General components and settings
+//   Fonts..............................Offline and online fonts
+//   Reset..............................Reset defaults
+//   General............................Site containers and common layout blocks
 //
-// Blocks........................Page components
-//   Main header.................Site header
-//   Common section..............Page section
-//   Main footer.................Site footer
+// BLOCKS...............................Page components
+//   Main header........................Site header
+//   Common section.....................Page section
+//   Main footer........................Site footer
 //
-// Media queries.................Media queries section
+// MEDIA QUERIES........................Media queries section
 
 
-/////////////////////////////////
+////////////////////////////////////////
 /// $Dev tools
-/////////////////////////////////
+////////////////////////////////////////
 
 // $Layout-tools
-@import "../devtools/layout-tools.scss";
+// @import "../devtools/layout-tools.scss";
 
 // $Ignition tools
-@import "../devtools/ignition-tools.scss";
+// @import "../devtools/ignition-tools.scss";
 
 
-/////////////////////////////////
+////////////////////////////////////////
 /// $Helpers
-/////////////////////////////////
+////////////////////////////////////////
 
 // $Elements
 @import "helpers/mixins.scss";
@@ -45,13 +46,16 @@
 // $Grid system
 @import "helpers/gs.scss";
 
+// $Typographic rhythm
+@import "helpers/typographic-rhythm.scss";
+
 // $Variables
 @import "helpers/variables.scss";
 
 
-/////////////////////////////////
+////////////////////////////////////////
 /// $General
-/////////////////////////////////
+////////////////////////////////////////
 
 // $Fonts
 @import "general/fonts.scss";
@@ -63,9 +67,9 @@
 @import "general/general.scss";
 
 
-/////////////////////////////////
+////////////////////////////////////////
 /// $Blocks
-/////////////////////////////////
+////////////////////////////////////////
 
 // $Main header
 @import "blocks/header.scss";
@@ -77,6 +81,6 @@
 @import "blocks/footer.scss";
 
 
-/////////////////////////////////
+////////////////////////////////////////
 /// $Media queries
-/////////////////////////////////
+////////////////////////////////////////

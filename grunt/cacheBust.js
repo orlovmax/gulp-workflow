@@ -4,7 +4,7 @@ module.exports = {
 		encoding: 'utf8',
 		algorithm: 'md5',
 		length: 16,
-		// ignorePatterns: ['icons'],
+		ignorePatterns: ['favicon.ico'],
 		deleteOriginals: true,
 		rename: true,
 		filters: [{
@@ -17,9 +17,18 @@ module.exports = {
 	assets: {
 		files: [{
 			expand: true,
-        	cwd: '<%= build.main %>',
-        	baseDir: '<%= build.main %>',
+        	cwd: '<%= build.html %>',
+        	baseDir: '<%= build.html %>',
 			src: ['*.html']
 		}]
+	},
+	styles: {
+		files: [{
+			expand: true,
+			cwd: '<%= build.css %>',
+			baseDir: '<%= build.css %>',
+			src: ['*.css']
+		}]
+
 	}
 }

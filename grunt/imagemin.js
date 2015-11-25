@@ -8,7 +8,7 @@ module.exports = {
 			expand: true,
 			cwd: '<%= dev.images %>',
 			src: ['**/*.{png,jpg,gif,svg}'],
-			dest: '<%= dev.images %>'
+			dest: '<%= build.images %>'
 		}]
 	}
 }

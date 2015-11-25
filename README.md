@@ -1,8 +1,14 @@
-# Grunt Front-end scaffold
+# Front-end scaffold - PLAYGROUND - Grunt
 
 My front-end boilerplate based on [grunt-boilerplate](https://github.com/orlovmax/grunt-boilerplate), have the same folder structure but have predefined dependencies for Bower and boileplate-files for styles, markup and javascript
 
 Please note, this README relates to Grunt template that placed in `master` folder, if you want to use Gulp template  - you can find it in `gulp` branch of this repository.
+
+## Stable scaffolds
+* General template: [https://github.com/synteagle/synt-general-template](https://github.com/synteagle/synt-general-template)
+* Component template: [https://github.com/synteagle/synt-component-template](https://github.com/synteagle/synt-component-template)
+* CMS template: [https://github.com/synteagle/synteagle-cms-template](https://github.com/synteagle/synteagle-cms-template)
+
 
 ## Contents
 * [Folder structure](#folder-and-file-structure)
@@ -27,114 +33,107 @@ Please note, this README relates to Grunt template that placed in `master` folde
 ## Folder and file structure
 
 ```
-.
+./
+├── .editorconfig
 ├── Gruntfile.js
 ├── package.json
 ├── bower.json
 ├── README.md
 ├── CHANGELOG.md
 ├── Rakefile
-├──grunt                                       * grunt tasks
+├──grunt/                                      * grunt tasks
 |   ├── task.js
 │   └── aliases.yml 
-├── test_screenshots                           * responsive test screenshots
-├── zip                                        * zipped theme bundle
-├── dev                                        * site source
-|   ├── coffee                                 * coffee scripts
-│   │   └── script.coffee
-│   ├── css                                    * compiled css
-│   │   ├── screen.css
-│   │   └── screen_noscript.css
-│   ├── images                                 * image sources
-│   │   └── *.png, *.jpg, *.gif 
-│   ├── jade                                   * templates
-|	|	├── blocks                             * blocks library
+|
+├── test_screenshots/                          * responsive test screenshots
+|
+├── zip/                                       * zipped theme bundle
+|
+├── dev/                                       * site source
+|   ├── coffee/                                * coffee scripts
+|	│
+│   ├── images/                                * image sources
+|	│
+│   ├── jade/                                  * templates
+|	|	├── blocks/                            * blocks library
 |	│   |   └── block.jade
-|	│   ├── pages                              * main pages templates
-|	│   │   └── index.jade
-|	│   ├── general                            * common src
-|	│   ├── helpers                            * helper mixins
-|	│   └── layouts                            * page layouts
-|	│       └── default.jade
-│   ├── js                                     * compiled and source js
-|	│   ├── assembled.js
-|	│   ├── ie                                 * ie compat scripts
-|	│   │   └── ie.js
-|	│   ├── head                               * head scripts
-|	│   │   └── head.js
-|	│   └── vendor                             * vendor scripts
-|	│       └── vendor.js
-│   ├── php                                    * *.php scripts
-│   │   └── script.php 
-│   ├── less                                   * less preprocessor styles
-|	|	├── blocks                             * blocks library
-|	│   |   └── block.less
-|	│   ├── ie.less
-|	│   ├── custom.less
-|	│   ├── noscript.less
-|	│   ├── screen.less
-|	│   ├── general                            * general styles
-|	│   └── helpers                            * mixins and vars
-│   ├── sass                                   * sass preprocessor styles
-|	|	├── blocks                             * blocks library
+|	│   ├── general/                           * common src
+|	│   ├── helpers/                           * helper mixins
+|	│   ├── layouts/                           * page layouts
+|	│   └── pages/                             * main pages templates
+|	│
+│   ├── js/                                    * compiled and source js
+|	│   ├── ie/                                * ie compat scripts
+|	│   ├── head/                              * head scripts
+|	│   └── vendor/                            * vendor scripts
+|	│
+│   ├── php/                                   * *.php scripts
+|	│
+|	├── sass/                                  * sass preprocessor styles
+|	|	├── blocks/                            * blocks library
 |	│   |   └── block.sass
+|	│   ├── general/                           * general styles
+|	│   ├── helpers/                           * mixins and vars
 |	│   ├── ie.sass
 |	│   ├── custom.sass
 |	│   ├── noscript.sass
-|	│   ├── screen.sass
-|	│   ├── general                            * general styles
-|	│   └── helpers                            * mixins and vars
-│   ├── scss                                   * scss preprocessor styles
-|	|	├── blocks                             * blocks library
+|	│   └── screen.sass
+|	│
+|	├── scss/                                  * scss preprocessor styles
+|	|	├── blocks/                            * blocks library
 |	│   |   └── block.scss
+|	│   ├── general/                           * general styles
+|	│   ├── helpers/                           * mixins and vars
 |	│   ├── ie.scss
 |	│   ├── custom.scss
 |	│   ├── noscript.scss
-|	│   ├── screen.scss
-|	│   ├── general                            * general styles
-|	│   └── helpers                            * mixins and vars
-│   ├── stylus                                 * stylus preprocessor styles
-|	|	├── blocks                             * blocks library
+|	│   └── screen.scss
+|	│
+|	├── stylus/                                * stylus preprocessor styles
+|	|	├── blocks/                            * blocks library
 |	│   |   └── block.styl
+|	│   ├── general/                           * general styles
+|	│   ├── helpers/                           * mixins and vars
 |	│   ├── ie.styl
 |	│   ├── custom.styl
 |	│   ├── noscript.styl
-|	│   ├── screen.styl
-|	│   ├── general                            * general styles
-|	│   └── helpers                            * mixins and vars
-│   ├── html                                   * compiled html markup
-│   │   └── index.html
-│   ├── helpers                                * helper files
+|	│   └── screen.styl
+|	│
+|	├── less/                                  * less preprocessor styles
+|	|	├── blocks/                            * blocks library
+|	│   |   └── block.less
+|	│   ├── general/                           * general styles
+|	│   ├── helpers/                           * mixins and vars
+|	│   ├── ie.less
+|	│   ├── custom.less
+|	│   ├── noscript.less
+|	│   └── screen.less
+|	│
+│   ├── helpers/                               * helper files
 |	|	├── favicon.ico
 |	|	├── .htaccess
 |	|	└── robots.txt
-│   ├── fonts                                  * font sources
-│   ├── devtools                               * some dev tools
-│   └── mockup                                 * psd layout, assets src
+|	│
+│   ├── fonts/                                 * font sources
+|	│
+│   ├── devtools/                              * some dev tools
+|	│
+│   └── mockup/                                * psd layout, assets src
 │       ├── psd
 │       ├── images
 │       └── fonts
 │
-└── build                                      * built source
-	├── index.html                             * minified html file
-	├── css                                    * minified styles
-	|	│   ├── custom.min.css
-	|	│   ├── ie.min.css
-	|	│   ├── noscript.min.css
-	|	│   └── screen.min.css
-	├── images                                 * minified images
-	│   └── *.png, *.jpg, *.gif
-	├── js                                     * minified assembled js
-	│   ├── assembled.min.js
-	│   ├── ie                                 * minified ie compat scripts
-	│   │   └── ie.min.js
-	│   ├── head                               * minified head scripts
-	│   │   └── head.min.js
-	│   └── vendor                             * minified vendor scripts
-	│       └── vendor.min.js
-	├── php                                    * php scripts
-	│   └── script.php
-	└── fonts                                  * @font-face-ready webfonts
+└── build/                                     * built source
+	├── index.html
+	├── css/                                   * minified styles
+	|
+	├── images/                                * minified images
+	│
+	├── js/                                    * minified assembled js
+	|
+	├── php/                                   * php scripts
+	│
+	└── fonts/                                 * @font-face-ready webfonts
 
 ```
 

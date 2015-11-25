@@ -1,12 +1,10 @@
 // Run tasks whenever watched files change
 module.exports = {
 	all: {
-		files: ['<%= dev.html %>/*.html',
-				'<%= dev.less %>/*.less',
+		files: ['<%= dev.less %>/*.less',
 				'<%= dev.scss %>/*.scss',
 				'<%= dev.sass %>/*.sass',
 				'<%= dev.stylus %>/*.styl',
-				'<%= dev.css %>/*.css',
 				'<%= dev.coffee %>/**/*.coffee',
 				'<%= dev.js %>/**/*.js',
 				'<%= dev.images %>/**/*.{png,jpg,gif}',

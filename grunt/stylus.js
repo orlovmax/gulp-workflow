@@ -9,7 +9,7 @@ module.exports = {
 			expand: true,
 			cwd: '<%= dev.stylus %>',
 			src: [ '*.styl' ],
-			dest: '<%= dev.css %>',
+			dest: '<%= build.css %>',
 			ext: '.css'
 		}]
 	}

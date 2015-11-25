@@ -1,13 +1,6 @@
-//- Here comes the next mixins:
-//- outdated browser message (depends of page language)
-//- bemto mixin for Jade and BEM magic
-include ../helpers/_mixins
-
-//- Common used mixin-blocks
-include ../general/_general
-
-//- Common used mixin-blocks
-include ../blocks/_blocks
+//- Include all blocks from one file
+//- Because it's impossible to use recursive folder include
+include _blocks
 
 //- This block will be filled with required variables
 block variables
@@ -26,7 +19,7 @@ html(lang=pageLang)
 		block content
 
 		// Browser update screen
-		+ie-out()
+		+ie-out({theme: 'light', lang: pageLang, version: 8})
 
 		// Body external resources
 		+body-src()
