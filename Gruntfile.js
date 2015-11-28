@@ -11,8 +11,6 @@ module.exports = function(grunt) {
 				sass: '<%= dev.main %>/sass',
 				scss: '<%= dev.main %>/scss',
 				stylus: '<%= dev.main %>/stylus',
-				css: '<%= dev.main %>/css',
-				html: '<%= dev.main %>/html',
 				images: '<%= dev.main %>/images',
 				fonts: '<%= dev.main %>/fonts',
 				helpers: '<%= dev.main %>/helpers',
@@ -23,6 +21,7 @@ module.exports = function(grunt) {
 			// Build paths
 			build: {
 				main: 'build',
+				html: '<%= build.main %>',
 				css: '<%= build.main %>/css',
 				fonts: '<%= build.main %>/fonts',
 				images: '<%= build.main %>/images',
