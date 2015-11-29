@@ -31,7 +31,7 @@ module.exports = function(grunt) {
 			// Zip result
 			zip: {
 				main: 'zip',
-				theme: '<%= zip.main %>/theme.zip'
+				build: '<%= zip.main %>/build.zip'
 			},
 			server: {
 				main: 'build',
