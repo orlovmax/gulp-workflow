@@ -6,9 +6,9 @@ module.exports = {
 	main: {
 		files:[{
 			expand: true,
-			cwd: '<%= build.js %>/',
+			cwd: '<%= build.js %>',
 			src: ['*.js', '!live.js', '!*.min.js'],
-			dest: '<%= build.js %>/',
+			dest: '<%= build.js %>',
 			ext: '.min.js'
 		}]
 	}

@@ -3,7 +3,7 @@ module.exports = {
 	php: {
 		files: [{
 			expand: true,
-			cwd: '<%= dev.php %>/',
+			cwd: '<%= dev.php %>',
 			src: '*.*',
 			dest: '<%= build.php %>'
 		}]
@@ -11,7 +11,7 @@ module.exports = {
 	fonts: {
 		files: [{
 			expand: true,
-			cwd: '<%= dev.fonts %>/',
+			cwd: '<%= dev.fonts %>',
 			src: ['**/*.{eot,svg,ttf,otf,woff,woff2}'],
 			dest: '<%= build.fonts %>'
 		}]
@@ -19,9 +19,9 @@ module.exports = {
 	livejs: {
 		files: [{
 			expand: true,
-			cwd: '<%= dev.devtools %>/',
+			cwd: '<%= dev.devtools %>',
 			src: '/live.js',
-			dest: '<%= build.js %>/'
+			dest: '<%= build.js %>'
 		}]
 	},
 	helpers: {

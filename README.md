@@ -19,12 +19,12 @@ Please note, this README relates to Grunt template that placed in `master` folde
 	- [bower.json dependencies](#bowerjson-dependencies)
 * [Tasks](#tasks)
 	- [Default](#default)
+	- [Dev](#dev)
 	- [Start](#start)
 	- [Regenerate](#regenerate)
 	- [Build](#build)
 	- [Deploy](#deploy)
 	- [Zip](#zip)
-	- [Server](#server)
 	- [Sprite](#sprite)
 * [Live reload](#live-reload)
 * [Changelog](#changelog)
@@ -207,20 +207,25 @@ Here comes groups of grunt tasks with some explanations
 #### Default 
 `grunt`
 ```
+- 'browserSync:dev'                     Run server on `http://localhost:3000`
+- 'watch'                               Watch for changes and run dev task
+```
+
+#### Dev 
+Internal task that runs during `default` task to process changed files
+```
 - 'newer:coffee'                        Compile newer coffescript
 - 'newer:concat'                        Concatenate newer javascript
 - 'newer:sass'                          Compile newer Sass stylesheets
-- 'newer:less'                          Compile newer Less stylesheets
 - 'newer:stylus'                        Compile newer Stylus stylesheets
 - 'newer:jade'                          Compile newer Jade templates
-- 'newer:imagemin'                      Minify newer images
 - 'sync'                                Sync helpers and other assets
-- 'watch'                               Watch for changes
 ```
 
 #### Start 
 `grunt start`
 ```
+- 'shell:bower'                         Install bower components
 - 'bower'                               Copy bower components to dev folders
 - 'clean:gitkeep'                       Remove gitkeep files
 ```
@@ -231,10 +236,8 @@ Here comes groups of grunt tasks with some explanations
 - 'coffee'                               Compile coffescript
 - 'concat'                               Concatenate javascript
 - 'sass'                                 Compile Sass stylesheets
-- 'less'                                 Compile Less stylesheets
 - 'stylus'                               Compile Stylus stylesheets
 - 'jade'                                 Compile Jade templates
-- 'imagemin'                             Minify images
 - 'sync'                                 Sync helpers and other assets
 - 'clean:build'                          Remove minified files with timestamps
 ```
@@ -242,6 +245,7 @@ Here comes groups of grunt tasks with some explanations
 #### Build 
 `grunt build`
 ```
+- 'imagemin'                             Minify images
 - 'processhtml'                          Replace assets paths in html
 - 'cmq'                                  Combine media queries in css files
 - 'autoprefixer'                         Add vendor prefixes in css
@@ -251,6 +255,7 @@ Here comes groups of grunt tasks with some explanations
 - 'htmlmin'                              Minify html
 - 'clean:dev'                            Remove dev things, live.js
 - 'cacheBust'                            Cache static and add timestamps
+- 'browserSync:build'                    Run server on `http://localhost:3000`
 ```
 
 #### Deploy 
@@ -265,10 +270,77 @@ Here comes groups of grunt tasks with some explanations
 - 'compress'                             Compress build version
 ```
 
-#### Server 
-`grunt server`
+#### Sprite 
+`grunt sprite`
 ```
-- 'browserSync'                          Run server on `http://localhost:3000`
+- 'sprite'                               Create images sprite and related css
+```
+
+## Live reload 
+New version of this scaffold uses browserSync for live reload after processing. However there is a live.js that could be used with general watch task for live page reload. It useful for dynamic templates an LAMP/WAMP servers.#### Default 
+`grunt`
+```
+- 'browserSync:dev'                     Run server on `http://localhost:3000`
+- 'watch'                               Watch for changes and run dev task
+```
+
+#### Dev 
+Internal task that runs during `default` task to process changed files
+```
+- 'newer:coffee'                        Compile newer coffescript
+- 'newer:concat'                        Concatenate newer javascript
+- 'newer:sass'                          Compile newer Sass stylesheets
+- 'newer:stylus'                        Compile newer Stylus stylesheets
+- 'newer:jade'                          Compile newer Jade templates
+- 'sync'                                Sync helpers and other assets
+```
+
+#### Start 
+`grunt start`
+```
+- 'shell:bower'                         Install bower components
+- 'bower'                               Copy bower components to dev folders
+- 'clean:gitkeep'                       Remove gitkeep files
+```
+
+#### Regenerate 
+`grunt regen`
+```
+- 'coffee'                               Compile coffescript
+- 'concat'                               Concatenate javascript
+- 'sass'                                 Compile Sass stylesheets
+- 'stylus'                               Compile Stylus stylesheets
+- 'jade'                                 Compile Jade templates
+- 'sync'                                 Sync helpers and other assets
+- 'clean:build'                          Remove minified files with timestamps
+```
+
+#### Build 
+`grunt build`
+```
+- 'imagemin'                             Minify images
+- 'processhtml'                          Replace assets paths in html
+- 'cmq'                                  Combine media queries in css files
+- 'autoprefixer'                         Add vendor prefixes in css
+- 'csscomb'                              Applie styleguide to stylesheets
+- 'uglify'                               Minify javascripts
+- 'csso'                                 Minify stylesheets
+- 'htmlmin'                              Minify html
+- 'clean:dev'                            Remove dev things, live.js
+- 'cacheBust'                            Cache static and add timestamps
+- 'browserSync:build'                    Run server on `http://localhost:3000`
+```
+
+#### Deploy 
+`grunt deploy`
+```
+- 'shell:deploy'                         Deploy build version to github
+```
+
+#### Zip 
+`grunt zip`
+```
+- 'compress'                             Compress build version
 ```
 
 #### Sprite 
@@ -278,7 +350,7 @@ Here comes groups of grunt tasks with some explanations
 ```
 
 ## Live reload 
-For this project I use live.js which minified version and  and link to this script in final html will be removed after running build task.
+New version of this scaffold uses browserSync for live reload after processing. However there is a live.js that could be used with general watch task for live page reload. It useful for dynamic templates an LAMP/WAMP servers.
 
 ## Changelog
 Youc can find full changelog [HERE](https://github.com/orlovmax/front-end-scaffold/blob/master/CHANGELOG.md)

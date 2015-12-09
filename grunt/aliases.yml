@@ -1,20 +1,25 @@
 default:
-    description: 'Default dev task'
+    description: 'Default dev task with static server'
+    tasks:
+        - 'browserSync:dev'
+        - 'watch'
+
+
+dev:
+    description: 'Internal task: process changed files during the watch task'
     tasks:
         - 'newer:coffee'
         - 'newer:concat'
         - 'newer:sass'
-        - 'newer:less'
         - 'newer:stylus'
         - 'newer:jade'
-        # - 'newer:imagemin'
         - 'sync'
-        - 'watch'
 
 
-bower-dev:
+start:
     description: 'Move bower dependencies to main dev folders'
     tasks:
+        - 'shell:bower'
         - 'bower'
         - 'clean:gitkeep'
 
@@ -25,10 +30,8 @@ regen:
         - 'coffee'
         - 'concat'
         - 'sass'
-        - 'less'
         - 'stylus'
         - 'jade'
-        # - 'imagemin'
         - 'sync'
         - 'clean:build'
 
@@ -36,6 +39,7 @@ regen:
 build:
     description: 'Default build task'
     tasks:
+        - 'imagemin'
         - 'processhtml'
         - 'cmq'
         - 'autoprefixer'
@@ -44,7 +48,8 @@ build:
         - 'csso'
         - 'htmlmin'
         - 'clean:dev'
-        # - 'cacheBust'
+        - 'cacheBust'
+        - 'browserSync:build'
 
 
 deploy:
@@ -56,11 +61,6 @@ zip:
     description: 'Creates archive with static build'
     tasks:
         - 'compress:build'
-
-server:
-    description: 'Run server for static build'
-    tasks:
-        - 'browserSync'
 
 sprite:
     description: 'Sprite creation task. Should be configured before running'
