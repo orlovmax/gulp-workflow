@@ -15,8 +15,7 @@ module.exports = function(grunt) {
 				fonts: '<%= dev.main %>/fonts',
 				helpers: '<%= dev.main %>/helpers',
 				php: '<%= dev.main %>/php',
-				devtools: '<%= dev.main %>/devtools',
-				mockup: '<%= dev.main %>/mockup'
+				devtools: '<%= dev.main %>/devtools'
 			},
 			// Build paths
 			build: {
