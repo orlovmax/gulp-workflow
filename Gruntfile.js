@@ -27,11 +27,6 @@ module.exports = function(grunt) {
 				php: '<%= build.main %>/php',
 				js: '<%= build.main %>/js'
 			},
-			// Zip result
-			zip: {
-				main: 'zip',
-				build: '<%= zip.main %>/build.zip'
-			},
 			server: {
 				main: 'build',
 				files: '<%= server.main %>'
