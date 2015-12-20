@@ -4,9 +4,9 @@ My front-end boilerplate based on [grunt-boilerplate](https://github.com/orlovma
 
 Please note, this README relates to Grunt template that placed in `master` folder, if you want to use Gulp template  - you can find it in `gulp` branch of this repository.
 
-## Stable scaffolds
+## Stable front-end templates
 * General template: [https://github.com/synteagle/synt-general-template](https://github.com/synteagle/synt-general-template)
-* Component template: [https://github.com/synteagle/synt-component-template](https://github.com/synteagle/synt-component-template)
+* Block template: [https://github.com/synteagle/synt-block-template](https://github.com/synteagle/synt-block-template)
 * CMS template: [https://github.com/synteagle/synteagle-cms-template](https://github.com/synteagle/synteagle-cms-template)
 
 
