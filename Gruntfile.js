@@ -29,7 +29,10 @@ module.exports = function(grunt) {
 			},
 			server: {
 				main: 'build',
-				files: '<%= server.main %>'
+				js: '<%= server.main %>/js',
+				css: '<%= server.main %>/css',
+				html: '<%= server.main %>',
+				php: '<%= build.main %>/php'
 			}
 		},
 		loadGruntTasks: {

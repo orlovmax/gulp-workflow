@@ -2,7 +2,12 @@
 module.exports = {
 	dev:{
 		bsFiles: {
-			src: '<%= server.files %>/**/*'
+			src: [
+				'<%= server.js %>/*.js',
+				'<%= server.css %>/*.css',
+				'<%= server.php %>/*.php',
+				'<%= server.html %>/*.html'
+			]
 		},
 		options: {
 			watchTask: true,

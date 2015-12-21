@@ -1,8 +1,9 @@
 *::selection {
-	background: #fff;
-	color: #000;
+	background: $c-selection_bg;
+	color: $c-selection_text;
 }
+
 *::-moz-selection {
-	background: #fff;
-	color: #000;	
-}     
+	background: $c-selection_bg;
+	color: $c-selection_text;
+}

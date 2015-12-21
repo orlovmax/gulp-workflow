@@ -24,6 +24,14 @@ module.exports = {
 			dest: '<%= build.js %>'
 		}]
 	},
+	intro: {
+		files: [{
+			expand: true,
+			cwd: '<%= dev.devtools %>',
+			src: 'index.html',
+			dest: '<%= build.main %>'
+		}]
+	},
 	helpers: {
 		files: [{
 			expand: true,

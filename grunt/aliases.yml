@@ -24,7 +24,7 @@ start:
         - 'clean:gitkeep'
 
 
-regen:
+regenerate:
     description: 'Regenerate project by running all tasks without newer directive'
     tasks:
         - 'coffee'
@@ -56,11 +56,6 @@ deploy:
     description: 'Commit build folder and push changes to remote'
     tasks:
         - 'shell:deploy'
-
-zip:
-    description: 'Creates archive with static build'
-    tasks:
-        - 'compress:build'
 
 sprite:
     description: 'Sprite creation task. Should be configured before running'
