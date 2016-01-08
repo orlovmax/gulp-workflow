@@ -1,28 +1,26 @@
 // Grunt Task for keeping multiple browsers & devices in sync when building websites
 module.exports = {
+	test:{
+		options: {
+			server: {
+				baseDir: '<%= build.main %>'
+			}
+		}
+	},
 	dev:{
 		bsFiles: {
 			src: [
-				'<%= server.js %>/*.js',
-				'<%= server.css %>/*.css',
-				'<%= server.php %>/*.php',
-				'<%= server.html %>/*.html'
+				'<%= build.js %>/*.js',
+				'<%= build.css %>/*.css',
+				'<%= build.php %>/**/*.php',
+				'<%= build.images %>/**/*.*',
+				'<%= build.html %>/*.html'
 			]
 		},
 		options: {
 			watchTask: true,
 			server: {
-				baseDir: '<%= server.main %>'
-			}
-		}
-	},
-	build:{
-		bsFiles: {
-			src: '<%= server.files %>/**/*'
-		},
-		options: {
-			server: {
-				baseDir: '<%= server.main %>'
+				baseDir: '<%= build.main %>'
 			}
 		}
 	}

@@ -4,7 +4,7 @@ module.exports = {
 		files: [{
 			expand: true,
 			cwd: '<%= dev.php %>',
-			src: '*.*',
+			src: '**/*.*',
 			dest: '<%= build.php %>'
 		}]
 	},
@@ -14,14 +14,6 @@ module.exports = {
 			cwd: '<%= dev.fonts %>',
 			src: ['**/*.{eot,svg,ttf,otf,woff,woff2}'],
 			dest: '<%= build.fonts %>'
-		}]
-	},
-	livejs: {
-		files: [{
-			expand: true,
-			cwd: '<%= dev.devtools %>',
-			src: '/live.js',
-			dest: '<%= build.js %>'
 		}]
 	},
 	intro: {
@@ -36,7 +28,7 @@ module.exports = {
 		files: [{
 			expand: true,
 			cwd: '<%= dev.helpers %>',
-			src: ['**/*.*', '**/.htaccess'],
+			src: ['*.*', '.htaccess'],
 			dest: '<%= build.main %>'
 		}]
 	},

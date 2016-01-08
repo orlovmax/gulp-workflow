@@ -2,8 +2,8 @@
 module.exports = {
 	main: {
 		files: [{
-			src: ['<%= dev.js %>/*.js'],
-			dest: '<%= build.js %>/assembled.js'
+			src: ['<%= dev.js %>/main/*.js'],
+			dest: '<%= build.js %>/main.js'
 		}]
 	},
 	head: {

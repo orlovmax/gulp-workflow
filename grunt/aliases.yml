@@ -1,43 +1,37 @@
-default:
-    description: 'Default dev task with static server'
-    tasks:
-        - 'browserSync:dev'
-        - 'watch'
-
-
-dev:
-    description: 'Internal task: process changed files during the watch task'
-    tasks:
-        - 'newer:coffee'
-        - 'newer:concat'
-        - 'newer:sass'
-        - 'newer:stylus'
-        - 'newer:jade'
-        - 'sync'
-
-
 start:
     description: 'Move bower dependencies to main dev folders'
     tasks:
         - 'shell:bower'
-        - 'bower'
+        - 'bower:ie'
+        - 'bower:vendor'
         - 'clean:gitkeep'
 
 
-regenerate:
-    description: 'Regenerate project by running all tasks without newer directive'
+dev:
+    description: 'Dev task with static server'
     tasks:
-        - 'coffee'
-        - 'concat'
+        - 'coffee:main'
+        - 'coffee:head'
+        - 'coffee:vendor'
+        - 'concat:main'
+        - 'concat:head'
+        - 'concat:ie'
+        - 'concat:vendor'
         - 'sass'
+        - 'less'
         - 'stylus'
         - 'jade'
-        - 'sync'
-        - 'clean:build'
+        - 'sync:intro'
+        - 'sync:helpers'
+        - 'sync:fonts'
+        - 'sync:php'
+        - 'sync:images'
+        - 'browserSync:dev'
+        - 'watch'
 
 
 build:
-    description: 'Default build task'
+    description: 'Build task'
     tasks:
         - 'imagemin'
         - 'processhtml'
@@ -48,14 +42,48 @@ build:
         - 'csso'
         - 'htmlmin'
         - 'clean:dev'
-        - 'cacheBust'
-        - 'browserSync:build'
+        - 'browserSync:test'
+
+
+rebuild:
+    description: 'Regenerate and build project by running all tasks'
+    tasks:
+        - 'coffee:main'
+        - 'coffee:head'
+        - 'coffee:vendor'
+        - 'concat:main'
+        - 'concat:head'
+        - 'concat:ie'
+        - 'concat:vendor'
+        - 'sass'
+        - 'less'
+        - 'stylus'
+        - 'jade'
+        - 'sync:intro'
+        - 'sync:helpers'
+        - 'sync:fonts'
+        - 'sync:php'
+        - 'sync:images'
+        - 'imagemin'
+        - 'processhtml'
+        - 'cmq'
+        - 'autoprefixer'
+        - 'csscomb'
+        - 'uglify'
+        - 'csso'
+        - 'htmlmin'
+        - 'clean:dev'
 
 
 deploy:
-    description: 'Commit build folder and push changes to remote'
+    description: 'Commit theme folder and push changes to remote'
     tasks:
         - 'shell:deploy'
+
+server:
+    description: 'Run server for static theme'
+    tasks:
+        - 'browserSync:test'
 
 sprite:
     description: 'Sprite creation task. Should be configured before running'

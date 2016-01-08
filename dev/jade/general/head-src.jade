@@ -37,11 +37,10 @@ mixin head-src()
 	// CSS3 media queries and HTML5 tags support for old IE
 	<!--[if lt IE 9]><script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv-printshiv.min.js"></script><script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script><![endif]-->
 
-	<!-- Or you can use these two scripts from local folder, dont forget for conditional comments for old IE
-	<script src="js/ie.min.js"></script> -->
+	<!-- Or you can use these two scripts from local folder, dont forget for conditional comments for old IE js/ie.min.js -->
 
 	// Head javascript
-	<!-- build:js /js/head.min.js -->
+	<!-- build:js js/head.min.js -->
 	script(src='js/head.js')
 	<!-- /build -->
 
@@ -50,5 +49,5 @@ mixin head-src()
 	//- Page refresh script for live coding, useful if you want to achieve live coding on LAMP/WAMP server
 	//- Disabled in favor of BrowserSync.
 	//- <!-- build:remove -->
-	//- script(src='js/live.js')
+	//- script(src='devtools/live.js')
 	//- <!-- /build -->

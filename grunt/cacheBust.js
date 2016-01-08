@@ -5,7 +5,7 @@ module.exports = {
 		algorithm: 'md5',
 		length: 16,
 		ignorePatterns: ['favicon.ico'],
-		deleteOriginals: true,
+		// deleteOriginals: true,
 		rename: true,
 		filters: [{
 			// 'img':
@@ -14,7 +14,7 @@ module.exports = {
 			// }
 		}]
 	},
-	assets: {
+	markup: {
 		files: [{
 			expand: true,
         	cwd: '<%= build.html %>',

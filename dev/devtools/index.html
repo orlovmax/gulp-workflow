@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Front-end scaffold</title>
+		<title>Synteagle General Template</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="shortcut icon" href="favicon.ico">
 		<!--[if lt IE 9]><script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv-printshiv.min.js"></script><script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script><![endif]-->
@@ -13,12 +13,12 @@
 			a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,input,ins,kbd,label,legend,li,mark,main,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;margin:0;padding:0;border:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section{display:block}nav ol,nav ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:"";content:none}table{border-spacing:0;border-collapse:collapse}button,input[type=submit]{cursor:pointer}
 
 			*::selection{
-				background: #fff;
-				color: #f1c40f;
+				background: transparent;
+				color: #333;
 			}
 			*::-moz-selection{
-				background: #fff;
-				color: #f1c40f;
+				background: transparent;
+				color: #333;
 			}
 			html, body{
 				width: 100%;
@@ -72,6 +72,10 @@
 			.project-pages__item{
 				text-align: left;
 			}
+			.project-pages__item ul,
+			.project-pages__item ol{
+				margin-left: 20px;
+			}
 			.project-pages__link{
 				font-family: Georgia, Times, "Times New Roman", serif;
 				font-size: 25px;
@@ -84,6 +88,9 @@
 				     -o-transition: all .5s;
 				        transition: all .5s;
 			}
+			.project-pages__link_empty{
+				cursor: default;
+			}
 			.project-pages__link:hover{
 				color: #ddd;
 			}
@@ -91,7 +98,7 @@
 
 		<main class="project">
 			<h1 class="project-name">
-				<span id="fit" class="project-name__title">Front-end scaffold</span>
+				<span id="fit" class="project-name__title">Synteagle General Template</span>
 			</h1>
 
 			<ul class="project-pages">

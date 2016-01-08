@@ -15,8 +15,8 @@ html(lang=pageLang)
 		+head-src()
 
 	body
-		// Here comes page content
-		block content
+		//- Include content from other layouts
+		block general-content
 
 		// Browser update screen
 		+ie-out({theme: 'light', lang: pageLang, version: 8})

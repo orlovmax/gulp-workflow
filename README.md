@@ -1,6 +1,6 @@
 # Front-end scaffold - PLAYGROUND - Grunt
 
-My front-end boilerplate based on [grunt-boilerplate](https://github.com/orlovmax/grunt-boilerplate), have the same folder structure but have predefined dependencies for Bower and boileplate-files for styles, markup and javascript
+My front-end boilerplate with predefined dependencies for Bower and boileplate-files for styles, markup and javascript
 
 Please note, this README relates to Grunt template that placed in `master` folder, if you want to use Gulp template  - you can find it in `gulp` branch of this repository.
 
@@ -18,15 +18,14 @@ Please note, this README relates to Grunt template that placed in `master` folde
 	- [Package.json dependencies](#packagejson-dependencies)
 	- [bower.json dependencies](#bowerjson-dependencies)
 * [Tasks](#tasks)
-	- [Default](#default)
-	- [Dev](#dev)
 	- [Start](#start)
-	- [Regenerate](#regenerate)
+	- [Dev](#dev)
 	- [Build](#build)
+	- [Rebuild](#rebuild)
 	- [Deploy](#deploy)
+	- [Server](#server)
 	- [Sprite](#sprite)
 * [Live reload](#live-reload)
-* [Changelog](#changelog)
 * [License](#license)
 
 ## Folder and file structure
@@ -47,19 +46,27 @@ Please note, this README relates to Grunt template that placed in `master` folde
 ├── test_screenshots/                          * responsive test screenshots
 |
 ├── dev/                                       * site source
+|	├── blocks/                                * website blocks library
+|	│   └── block/
+|	│       ├── block.sass
+|	│       ├── block.styl
+|	│       └── block.jade
+|	│
 |   ├── coffee/                                * coffee scripts
+|	│   ├── main/                              * main scripts
+|	│   ├── head/                              * head scripts
+|	│   └── vendor/                            * vendor scripts
 |	│
 │   ├── images/                                * image sources
 |	│
 │   ├── jade/                                  * templates
-|	|	├── blocks/                            * blocks library
-|	│   |   └── block.jade
 |	│   ├── general/                           * common src
 |	│   ├── helpers/                           * helper mixins
 |	│   ├── layouts/                           * page layouts
 |	│   └── pages/                             * main pages templates
 |	│
 │   ├── js/                                    * compiled and source js
+|	|   ├── main/                              * main site scripts
 |	│   ├── ie/                                * ie compat scripts
 |	│   ├── head/                              * head scripts
 |	│   └── vendor/                            * vendor scripts
@@ -67,8 +74,6 @@ Please note, this README relates to Grunt template that placed in `master` folde
 │   ├── php/                                   * *.php scripts
 |	│
 |	├── sass/                                  * sass preprocessor styles
-|	|	├── blocks/                            * blocks library
-|	│   |   └── block.sass
 |	│   ├── general/                           * general styles
 |	│   ├── helpers/                           * mixins and vars
 |	│   ├── ie.sass
@@ -77,8 +82,6 @@ Please note, this README relates to Grunt template that placed in `master` folde
 |	│   └── screen.sass
 |	│
 |	├── scss/                                  * scss preprocessor styles
-|	|	├── blocks/                            * blocks library
-|	│   |   └── block.scss
 |	│   ├── general/                           * general styles
 |	│   ├── helpers/                           * mixins and vars
 |	│   ├── ie.scss
@@ -87,8 +90,6 @@ Please note, this README relates to Grunt template that placed in `master` folde
 |	│   └── screen.scss
 |	│
 |	├── stylus/                                * stylus preprocessor styles
-|	|	├── blocks/                            * blocks library
-|	│   |   └── block.styl
 |	│   ├── general/                           * general styles
 |	│   ├── helpers/                           * mixins and vars
 |	│   ├── ie.styl
@@ -97,8 +98,6 @@ Please note, this README relates to Grunt template that placed in `master` folde
 |	│   └── screen.styl
 |	│
 |	├── less/                                  * less preprocessor styles
-|	|	├── blocks/                            * blocks library
-|	│   |   └── block.less
 |	│   ├── general/                           * general styles
 |	│   ├── helpers/                           * mixins and vars
 |	│   ├── ie.less
@@ -108,17 +107,11 @@ Please note, this README relates to Grunt template that placed in `master` folde
 |	│
 │   ├── helpers/                               * helper files
 |	|	├── favicon.ico
-|	|	├── .htaccess
-|	|	└── robots.txt
+|	|	└── .htaccess
 |	│
 │   ├── fonts/                                 * font sources
 |	│
-│   ├── devtools/                              * some dev tools
-|	│
-│   └── mockup/                                * psd layout, assets src
-│       ├── psd
-│       ├── images
-│       └── fonts
+│   └── devtools/                              * some dev tools
 │
 └── build/                                     * built source
 	├── index.html
@@ -147,7 +140,6 @@ If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out th
 * Before start you need to have _npm_ installed now, as well as a _grunt_.
 * Then you need to download this files. You can chose `Download zip` option or clone this repo to your local maschine.
 * Now go to this project folder in terminal. Once you're familiar with grunt installation process, you may install all this things with this command: `npm install`.This will create `node_moduldes` folder, that's normal.
-* Run `grunt`, and it will compile your files and watch for all changes. See [Tasks](#tasks) chapter for more details.
 
 This template is ready for work with [Bower](https://github.com/bower/bower). So at the root was created `bower.json` file with project dependencies. To install dependencies you need globally instaled Bower. 
 Bower depends on [Node.js](http://nodejs.org/) and [npm](http://npmjs.org/). Also make sure that [git](http://git-scm.com/) is installed as some bower
@@ -201,77 +193,103 @@ This project have .editorconfig file at the root that used by your code editor w
 ## Tasks
 Here comes groups of grunt tasks with some explanations
 
-#### Default 
-`grunt`
-```
-- 'browserSync:dev'                     Run server on `http://localhost:3000`
-- 'watch'                               Watch for changes and run dev task
-```
-
-#### Dev 
-Internal task that runs during `default` task to process changed files
-```
-- 'newer:coffee'                        Compile newer coffescript
-- 'newer:concat'                        Concatenate newer javascript
-- 'newer:sass'                          Compile newer Sass stylesheets
-- 'newer:stylus'                        Compile newer Stylus stylesheets
-- 'newer:jade'                          Compile newer Jade templates
-- 'sync'                                Sync helpers and other assets
-```
-
 #### Start 
 `grunt start`
 ```
-- 'shell:bower'                         Install bower components
-- 'bower'                               Copy bower components to dev folders
-- 'clean:gitkeep'                       Remove gitkeep files
+- 'shell:bower'                          Install bower components
+- 'bower:ie'                             Copy ie components to js folder
+- 'bower:vendor'                         Copy vendor  components to js folder
+- 'clean:gitkeep'                        Remove gitkeep files
 ```
 
-#### Regenerate 
-`grunt regen`
+#### Dev
+`gulp dev` - Dev task with static server
 ```
-- 'coffee'                               Compile coffescript
-- 'concat'                               Concatenate javascript
+- 'coffee:main'                          Compile main coffescripts
+- 'coffee:head'                          Compile head coffescripts
+- 'coffee:vendor'                        Compile vendor coffescripts
+- 'concat:main'                          Concatenate main javascripts
+- 'concat:head'                          Concatenate head javascripts
+- 'concat:ie'                            Concatenate ie javascripts
+- 'concat:vendor'                        Concatenate vendor javascripts
 - 'sass'                                 Compile Sass stylesheets
+- 'less'                                 Compile Less stylesheets
 - 'stylus'                               Compile Stylus stylesheets
 - 'jade'                                 Compile Jade templates
-- 'sync'                                 Sync helpers and other assets
-- 'clean:build'                          Remove minified files with timestamps
+- 'sync:intro'                           Sync intro page with page list
+- 'sync:helpers'                         Sync helpers and other assets
+- 'sync:fonts'                           Sync fonts
+- 'sync:php'                             Sync *.php scripts
+- 'sync:images'                          Sync images
+- 'browserSync:dev'                      Run dev server with watch option
+- 'watch'                                Watch for changes and run dev task
 ```
 
 #### Build 
-`grunt build`
+`grunt build` - Build task
 ```
 - 'imagemin'                             Minify images
 - 'processhtml'                          Replace assets paths in html
 - 'cmq'                                  Combine media queries in css files
 - 'autoprefixer'                         Add vendor prefixes in css
 - 'csscomb'                              Applie styleguide to stylesheets
-- 'uglify'                               Minify javascripts
+- 'uglify'                               Minify javascript files
 - 'csso'                                 Minify stylesheets
 - 'htmlmin'                              Minify html
-- 'clean:dev'                            Remove dev things, live.js
-- 'cacheBust'                            Cache static and add timestamps
-- 'browserSync:build'                    Run server on `http://localhost:3000`
+- 'clean:dev'                            Remove dev things
+- 'browserSync:test'                     Run test server without watch
+```
+
+#### Rebuild 
+`grunt rebuild` - Regenerate and build project by running all tasks
+```
+- 'coffee:main'                          Compile main coffescripts
+- 'coffee:head'                          Compile head coffescripts
+- 'coffee:vendor'                        Compile vendor coffescripts
+- 'concat:main'                          Concatenate main javascripts
+- 'concat:head'                          Concatenate head javascripts
+- 'concat:ie'                            Concatenate ie javascripts
+- 'concat:vendor'                        Concatenate vendor javascripts
+- 'sass'                                 Compile Sass stylesheets
+- 'less'                                 Compile Less stylesheets
+- 'stylus'                               Compile Stylus stylesheets
+- 'jade'                                 Compile Jade templates
+- 'sync:intro'                           Sync intro page with page list
+- 'sync:helpers'                         Sync helpers and other assets
+- 'sync:fonts'                           Sync fonts
+- 'sync:php'                             Sync *.php scripts
+- 'sync:images'                          Sync images
+- 'imagemin'                             Minify images
+- 'processhtml'                          Replace assets paths in html
+- 'cmq'                                  Combine media queries in css files
+- 'autoprefixer'                         Add vendor prefixes in css
+- 'csscomb'                              Applie styleguide to stylesheets
+- 'uglify'                               Minify javascript files
+- 'csso'                                 Minify stylesheets
+- 'htmlmin'                              Minify html
+- 'clean:dev'                            Remove dev things
 ```
 
 #### Deploy 
-`grunt deploy`
+`grunt deploy` - Commit theme folder and push changes to remote
 ```
 - 'shell:deploy'                         Deploy build version to github
 ```
 
+#### Server 
+`grunt server` - Run server for static theme
+```
+- 'browserSync:test'                     Run test server without watch
+```
+
 #### Sprite 
-`grunt sprite`
+`grunt sprite` - Sprite creation task. Should be configured before running
 ```
 - 'sprite'                               Create images sprite and related css
 ```
 
 ## Live reload 
-New version of this scaffold uses browserSync for live reload after processing. However there is a live.js that could be used with general watch task for live page reload. It useful for dynamic templates an LAMP/WAMP servers.
-
-## Changelog
-Youc can find full changelog [HERE](https://github.com/orlovmax/front-end-scaffold/blob/master/CHANGELOG.md)
+For this project I use BrowserSync with page reload after assets changing. You can use live.js instead if you want to achieve live coding on LAMP/WAMP server.
 
 ## License
 [MIT](http://opensource.org/licenses/MIT)

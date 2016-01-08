@@ -9,7 +9,6 @@ module.exports = function(grunt) {
 				jade: '<%= dev.main %>/jade/pages',
 				less: '<%= dev.main %>/less',
 				sass: '<%= dev.main %>/sass',
-				scss: '<%= dev.main %>/scss',
 				stylus: '<%= dev.main %>/stylus',
 				images: '<%= dev.main %>/images',
 				fonts: '<%= dev.main %>/fonts',
@@ -27,13 +26,14 @@ module.exports = function(grunt) {
 				php: '<%= build.main %>/php',
 				js: '<%= build.main %>/js'
 			},
-			server: {
-				main: 'build',
-				js: '<%= server.main %>/js',
-				css: '<%= server.main %>/css',
-				html: '<%= server.main %>',
-				php: '<%= build.main %>/php'
-			}
+			// By default >1%, last 2 versions, Firefox ESR, Opera 12.1;
+			browserlist: [
+				'> 1%',
+				'last 20 versions',
+				'Opera 12.1',
+				'Explorer > 7',
+				'Safari >= 5'
+			]
 		},
 		loadGruntTasks: {
 			pattern: ['grunt-*', 'main-*'],

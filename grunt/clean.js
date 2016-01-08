@@ -5,7 +5,7 @@ module.exports = {
 			'!<%= build.js %>/*.min.*',
 			'<%= build.css %>/*.css',
 			'!<%= build.css %>/*.min.*'],
-	build: ['<%= build.js %>/*.min.*',
-			'<%= build.css %>/*.min.*',
-			'<%= build.main %>/**/*.*.{png,jpg,gif,svg,ico}']
+	cache: ['<%= theme.js %>/*.min.*.js',
+			'<%= theme.css %>/*.min.*.css',
+			'<%= theme.main %>/**/*.*.{png,jpg,gif,svg,ico}']
 }
