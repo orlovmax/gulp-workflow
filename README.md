@@ -7,7 +7,7 @@ Please note, this README relates to Grunt template that placed in `master` folde
 ## Stable front-end templates
 * General template: [https://github.com/synteagle/synt-general-template](https://github.com/synteagle/synt-general-template)
 * Block template: [https://github.com/synteagle/synt-block-template](https://github.com/synteagle/synt-block-template)
-* CMS template: [https://github.com/synteagle/synteagle-cms-template](https://github.com/synteagle/synteagle-cms-template)
+* CMS template: [https://github.com/synteagle/synt-cms-template](https://github.com/synteagle/synt-cms-template)
 
 
 ## Contents
