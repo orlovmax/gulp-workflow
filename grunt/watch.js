@@ -2,7 +2,6 @@
 module.exports = {
 	main: {
 		files: [
-			'<%= dev.less %>/*.less',
 			'<%= dev.sass %>/*.{sass,scss}',
 			'<%= dev.stylus %>/*.styl',
 			'<%= dev.coffee %>/**/*.coffee',
@@ -23,7 +22,6 @@ module.exports = {
 			'newer:concat:head',
 			'newer:concat:ie',
 			'newer:concat:vendor',
-			'newer:less',
 			'newer:sass',
 			'newer:stylus',
 			'newer:jade',
@@ -33,7 +31,6 @@ module.exports = {
 			'sync:fonts',
 			'sync:images'
 		],
-		tasks: ['dev'],
 		options: {
 			spawn: false,
 		},

@@ -37,7 +37,6 @@ Please note, this README relates to Grunt template that placed in `master` folde
 ├── package.json
 ├── bower.json
 ├── README.md
-├── CHANGELOG.md
 ├── Rakefile
 ├──grunt/                                      * grunt tasks
 |   ├── task.js
@@ -115,6 +114,7 @@ Please note, this README relates to Grunt template that placed in `master` folde
 │
 └── build/                                     * built source
 	├── index.html
+	├── page.html
 	├── css/                                   * minified styles
 	|
 	├── images/                                * minified images

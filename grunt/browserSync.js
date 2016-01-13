@@ -12,7 +12,7 @@ module.exports = {
 			src: [
 				'<%= build.js %>/*.js',
 				'<%= build.css %>/*.css',
-				'<%= build.php %>/**/*.php',
+				'<%= build.php %>/**/*.*',
 				'<%= build.images %>/**/*.*',
 				'<%= build.html %>/*.html'
 			]
