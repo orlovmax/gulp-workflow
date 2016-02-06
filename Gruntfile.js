@@ -7,7 +7,6 @@ module.exports = function(grunt) {
 				coffee: '<%= dev.main %>/coffee',
 				js: '<%= dev.main %>/js',
 				jade: '<%= dev.main %>/jade/pages',
-				less: '<%= dev.main %>/less',
 				sass: '<%= dev.main %>/sass',
 				stylus: '<%= dev.main %>/stylus',
 				images: '<%= dev.main %>/images',
@@ -20,11 +19,11 @@ module.exports = function(grunt) {
 			build: {
 				main: 'build',
 				html: '<%= build.main %>',
-				css: '<%= build.main %>/css',
-				fonts: '<%= build.main %>/fonts',
-				images: '<%= build.main %>/images',
 				php: '<%= build.main %>/php',
-				js: '<%= build.main %>/js'
+				css: '<%= build.main %>/static/css',
+				fonts: '<%= build.main %>/static/fonts',
+				images: '<%= build.main %>/static/images',
+				js: '<%= build.main %>/static/js'
 			},
 			// By default >1%, last 2 versions, Firefox ESR, Opera 12.1;
 			browserlist: [

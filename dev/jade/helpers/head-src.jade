@@ -1,0 +1,53 @@
+mixin head-src()
+	//- ICONS
+	link(rel='shortcut icon', href='favicon.ico')
+	link(rel='shortcut icon', href='static/images/icons/favicon.png', type='image/x-icon')
+	link(rel='apple-touch-icon-precomposed', sizes='144x144', href='static/images/icons/apple-touch-icon-144x144-precomposed.png')
+	link(rel='apple-touch-icon-precomposed', sizes='114x114', href='static/images/icons/apple-touch-icon-114x114-precomposed.png')
+	link(rel='apple-touch-icon-precomposed', sizes='72x72', href='static/images/icons/apple-touch-icon-72x72-precomposed.png')
+	link(rel='apple-touch-icon-precomposed', href='static/images/icons/apple-touch-icon-precomposed.png')
+
+
+	//- STYLESHEETS
+	// Main stylesheet
+	<!-- build:css static/css/screen.min.css -->
+	link(rel='stylesheet', href='static/css/screen.css')
+	<!-- /build -->
+
+	// IE fix stylesheet
+	<!-- build:remove -->
+	<!--[if lt IE 9]><link rel="stylesheet" href="static/css/ie.css"><![endif]-->
+	<!-- /build -->
+
+	// IE fix stylesheet
+	<!--[if lt IE 9]><link rel="stylesheet" href="static/css/ie.min.css"><![endif]-->
+
+	// Custom stylesheet
+	<!-- build:css static/css/custom.min.css -->
+	link(rel='stylesheet', href='static/css/custom.css')
+	<!-- /build -->
+
+	noscript
+		// Noscript stylesheet
+		<!-- build:css static/css/noscript.min.css -->
+		link(rel='stylesheet', href='static/css/noscript.css')
+
+
+	//- SCRIPTS
+	// CSS3 media queries and HTML5 tags support for old IE
+	<!--[if lt IE 9]><script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv-printshiv.min.js"></script><script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script><![endif]-->
+
+	<!-- Or you can use these two scripts from local folder, dont forget for conditional comments for old IE static/js/ie.min.js -->
+
+	// Head javascript
+	<!-- build:js static/js/head.min.js -->
+	script(src='static/js/head.js')
+	<!-- /build -->
+
+	// Helper dev js
+	// THIS IS DEV HELPER. USE BUILD TASK TO REMOVE IT FOR PRODUCTION.
+	//- Page refresh script for live coding, useful if you want to achieve live coding on LAMP/WAMP server
+	//- Disabled in favor of BrowserSync.
+	//-<!-- build:remove -->
+	//- script(src='static/devtools/live.js')
+	//-<!-- /build -->

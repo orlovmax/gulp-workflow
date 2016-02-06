@@ -1,5 +1,5 @@
 start:
-    description: 'Move bower dependencies to main dev folders'
+    description: 'Install bower dependencies and place them to dev folders'
     tasks:
         - 'shell:bower'
         - 'bower:ie'
@@ -18,7 +18,6 @@ dev:
         - 'concat:ie'
         - 'concat:vendor'
         - 'sass'
-        - 'less'
         - 'stylus'
         - 'jade'
         - 'sync:intro'
@@ -27,19 +26,19 @@ dev:
         - 'sync:php'
         - 'sync:images'
         - 'browserSync:dev'
-        - 'watch'
+        - 'watch:dev'
 
 
 build:
     description: 'Build task'
     tasks:
         - 'imagemin'
-        - 'processhtml'
         - 'cmq'
         - 'autoprefixer'
         - 'csscomb'
         - 'uglify'
         - 'csso'
+        - 'processhtml'
         - 'htmlmin'
         - 'clean:dev'
         - 'browserSync:test'
@@ -56,7 +55,6 @@ rebuild:
         - 'concat:ie'
         - 'concat:vendor'
         - 'sass'
-        - 'less'
         - 'stylus'
         - 'jade'
         - 'sync:intro'
@@ -65,23 +63,23 @@ rebuild:
         - 'sync:php'
         - 'sync:images'
         - 'imagemin'
-        - 'processhtml'
         - 'cmq'
         - 'autoprefixer'
         - 'csscomb'
         - 'uglify'
         - 'csso'
+        - 'processhtml'
         - 'htmlmin'
         - 'clean:dev'
 
 
 deploy:
-    description: 'Commit theme folder and push changes to remote'
+    description: 'Deploy project by running Rakefile: git or ftp push'
     tasks:
         - 'shell:deploy'
 
 server:
-    description: 'Run server for static theme'
+    description: 'Run server without watching for changes'
     tasks:
         - 'browserSync:test'
 

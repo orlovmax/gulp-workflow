@@ -1,6 +1,6 @@
 // Run tasks whenever watched files change
 module.exports = {
-	main: {
+	dev: {
 		files: [
 			'<%= dev.sass %>/*.{sass,scss}',
 			'<%= dev.stylus %>/*.styl',
@@ -33,6 +33,6 @@ module.exports = {
 		],
 		options: {
 			spawn: false,
-		},
+		}
 	}
 }

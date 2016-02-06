@@ -1,9 +1,13 @@
-extends ../layouts/general
+extends ../layouts/base
 
 block variables
 	- var pageLang = 'en';
 
-block general-content
+block head-content
+	// Meta information
+	+head-meta()
+
+block body-content
 	// Main header
 	+header()
 

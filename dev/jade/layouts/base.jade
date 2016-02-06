@@ -1,0 +1,36 @@
+//- Mixins:
+//- bemto mixin for Jade and BEM magic
+//- outdated ie stub
+include ../_vendor-list
+
+//- website helpers: meta information, head and body assets src
+include ../_helpers-list
+
+//- Common used mixin-blocks
+include ../_blocks-list
+
+//- This block will be filled with page variables
+block variables
+
+doctype html
+html(lang=pageLang)
+	head
+		//- Include page specific content
+		block head-content
+
+		// Head external resources
+		+head-src()
+
+	body
+		//- Include page specific content
+		block body-content
+
+		// Browser update screen
+		+ie-out({theme: 'light', lang: pageLang, version: 8})
+
+		// Body external resources
+		+body-src()
+
+		// GA code
+		| <!-- build:template
+		| /build -->

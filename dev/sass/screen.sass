@@ -6,16 +6,16 @@
 //
 // DEV TOOLS............................Useful deveopment tools
 //
-// HELPERS..............................Variables, mixins, elements
+// VENDOR
 //   Mixins.............................External scss mixins
 //   Grid system........................Import fluid gs
 //   Typographic rhythm.................Import vertical rhythm mixin
-//   Variables..........................Settings and variables
 //
-// GENERAL..............................General components and settings
+// HELPERS..............................Variables, mixins, elements
+//   Variables..........................Settings and variables
 //   Fonts..............................Offline and online fonts
 //   Reset..............................Reset defaults
-//   General............................Site containers and common layout blocks
+//   Base...............................Some general styles
 //
 // BLOCKS...............................Page components
 //   Main header........................Site header
@@ -31,34 +31,34 @@
 
 
 ////////////////////////////////////////
-/// $HELPERS
+/// $VENDOR
 ////////////////////////////////////////
 
 // $Mixins
-@import helpers/mixins
+@import vendor/mixins
 
 // $Grid system
-@import helpers/gs
+@import vendor/gs
 
 // $Typographic rhythm
-@import helpers/typographic-rhythm
+@import vendor/typographic-rhythm
+
+
+////////////////////////////////////////
+/// $HELPERS
+////////////////////////////////////////
 
 // $Variables
 @import helpers/variables
 
-
-////////////////////////////////////////
-/// $GENERAL
-////////////////////////////////////////
-
 // $Fonts
-@import general/fonts
+@import helpers/fonts
 
 // $Reset
-@import general/reset
+@import helpers/reset
 
-// $General
-@import general/general
+// $Base
+@import helpers/base
 
 
 ////////////////////////////////////////

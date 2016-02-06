@@ -9,8 +9,8 @@ Please note, this README relates to Grunt template that placed in `master` folde
 * Block template: [https://github.com/synteagle/synt-block-template](https://github.com/synteagle/synt-block-template)
 * CMS template: [https://github.com/synteagle/synt-cms-template](https://github.com/synteagle/synt-cms-template)
 
-
 ## Contents
+* [Live project examples](live-project-examples)
 * [Folder structure](#folder-and-file-structure)
 * [Requirements](#requirements)
 * [How to start](#how-to-start)
@@ -27,6 +27,8 @@ Please note, this README relates to Grunt template that placed in `master` folde
 	- [Sprite](#sprite)
 * [Live reload](#live-reload)
 * [License](#license)
+
+## Live project examples
 
 ## Folder and file structure
 
@@ -59,8 +61,8 @@ Please note, this README relates to Grunt template that placed in `master` folde
 │   ├── images/                                * image sources
 |	│
 │   ├── jade/                                  * templates
-|	│   ├── general/                           * common src
 |	│   ├── helpers/                           * helper mixins
+|	│   ├── vendor/                            * third-party code
 |	│   ├── layouts/                           * page layouts
 |	│   └── pages/                             * main pages templates
 |	│
@@ -73,36 +75,20 @@ Please note, this README relates to Grunt template that placed in `master` folde
 │   ├── php/                                   * *.php scripts
 |	│
 |	├── sass/                                  * sass preprocessor styles
-|	│   ├── general/                           * general styles
 |	│   ├── helpers/                           * mixins and vars
+|	│   ├── vendor/                            * third-party code
 |	│   ├── ie.sass
 |	│   ├── custom.sass
 |	│   ├── noscript.sass
 |	│   └── screen.sass
 |	│
-|	├── scss/                                  * scss preprocessor styles
-|	│   ├── general/                           * general styles
-|	│   ├── helpers/                           * mixins and vars
-|	│   ├── ie.scss
-|	│   ├── custom.scss
-|	│   ├── noscript.scss
-|	│   └── screen.scss
-|	│
 |	├── stylus/                                * stylus preprocessor styles
-|	│   ├── general/                           * general styles
 |	│   ├── helpers/                           * mixins and vars
+|	│   ├── vendor/                            * third-party code
 |	│   ├── ie.styl
 |	│   ├── custom.styl
 |	│   ├── noscript.styl
 |	│   └── screen.styl
-|	│
-|	├── less/                                  * less preprocessor styles
-|	│   ├── general/                           * general styles
-|	│   ├── helpers/                           * mixins and vars
-|	│   ├── ie.less
-|	│   ├── custom.less
-|	│   ├── noscript.less
-|	│   └── screen.less
 |	│
 │   ├── helpers/                               * helper files
 |	|	├── favicon.ico
@@ -115,15 +101,16 @@ Please note, this README relates to Grunt template that placed in `master` folde
 └── build/                                     * built source
 	├── index.html
 	├── page.html
-	├── css/                                   * minified styles
-	|
-	├── images/                                * minified images
-	│
-	├── js/                                    * minified assembled js
-	|
 	├── php/                                   * php scripts
-	│
-	└── fonts/                                 * @font-face-ready webfonts
+	|
+	└── static/                                * static assets
+		├── css/                               * minified styles
+		|
+		├── images/                            * minified images
+		│
+		├── js/                                * minified assembled js
+		|
+		└── fonts/                             * @font-face-ready webfonts
 
 ```
 
@@ -154,6 +141,8 @@ $ bower install
 $ bower install <package> --save
 ```
 
+Also bower install included into internal start task using shell plugin. Same thing but uses task runner.
+
 #### Editorconfig
 This project have .editorconfig file at the root that used by your code editor with editorconfig plugin. It describes codestyle like indent style, trailing whitespaces etc. See more details [here](http://editorconfig.org/) 
 
@@ -165,11 +154,10 @@ This project have .editorconfig file at the root that used by your code editor w
 * ["grunt-combine-media-queries"](https://github.com/buildingblocks/grunt-combine-media-queries)
 * ["grunt-contrib-clean"](https://github.com/gruntjs/grunt-contrib-clean)
 * ["grunt-contrib-concat"](https://github.com/gruntjs/grunt-contrib-concat)
-* ["grunt-contrib-coffee"](https://github.com/gruntjs/grunt-contrib-coffee)
 * ["grunt-contrib-htmlmin"](https://github.com/gruntjs/grunt-contrib-htmlmin)
+* ["grunt-contrib-coffee"](https://github.com/gruntjs/grunt-contrib-coffee)
 * ["grunt-contrib-imagemin"](https://github.com/gruntjs/grunt-contrib-imagemin)
 * ["grunt-contrib-jade"](https://github.com/gruntjs/grunt-contrib-jade)
-* ["grunt-contrib-less"](https://github.com/gruntjs/grunt-contrib-less)
 * ["grunt-contrib-sass"](https://github.com/gruntjs/grunt-contrib-sass)
 * ["grunt-contrib-stylus"](https://github.com/gruntjs/grunt-contrib-stylus)
 * ["grunt-contrib-uglify"](https://github.com/gruntjs/grunt-contrib-uglify)
@@ -194,7 +182,7 @@ This project have .editorconfig file at the root that used by your code editor w
 Here comes groups of grunt tasks with some explanations
 
 #### Start 
-`grunt start`
+`grunt start` - Install bower dependencies and place them to dev folders
 ```
 - 'shell:bower'                          Install bower components
 - 'bower:ie'                             Copy ie components to js folder
@@ -213,7 +201,6 @@ Here comes groups of grunt tasks with some explanations
 - 'concat:ie'                            Concatenate ie javascripts
 - 'concat:vendor'                        Concatenate vendor javascripts
 - 'sass'                                 Compile Sass stylesheets
-- 'less'                                 Compile Less stylesheets
 - 'stylus'                               Compile Stylus stylesheets
 - 'jade'                                 Compile Jade templates
 - 'sync:intro'                           Sync intro page with page list
@@ -222,7 +209,7 @@ Here comes groups of grunt tasks with some explanations
 - 'sync:php'                             Sync *.php scripts
 - 'sync:images'                          Sync images
 - 'browserSync:dev'                      Run dev server with watch option
-- 'watch'                                Watch for changes and run dev task
+- 'watch:dev'                            Watch for changes and run dev task
 ```
 
 #### Build 
@@ -251,7 +238,6 @@ Here comes groups of grunt tasks with some explanations
 - 'concat:ie'                            Concatenate ie javascripts
 - 'concat:vendor'                        Concatenate vendor javascripts
 - 'sass'                                 Compile Sass stylesheets
-- 'less'                                 Compile Less stylesheets
 - 'stylus'                               Compile Stylus stylesheets
 - 'jade'                                 Compile Jade templates
 - 'sync:intro'                           Sync intro page with page list
@@ -271,13 +257,13 @@ Here comes groups of grunt tasks with some explanations
 ```
 
 #### Deploy 
-`grunt deploy` - Commit theme folder and push changes to remote
+`grunt deploy` - Deploy project by running Rakefile: git or ftp push
 ```
 - 'shell:deploy'                         Deploy build version to github
 ```
 
 #### Server 
-`grunt server` - Run server for static theme
+`grunt server` - Run server without watching for changes
 ```
 - 'browserSync:test'                     Run test server without watch
 ```
