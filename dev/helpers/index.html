@@ -3,10 +3,8 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Front-end scaffold</title>
+		<title>ProjectName</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="shortcut icon" href="favicon.ico">
-		<!--[if lt IE 9]><script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv-printshiv.min.js"></script><script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script><![endif]-->
 	</head>
 	<body>
 		<style>
@@ -22,17 +20,60 @@
 			}
 			html, body{
 				width: 100%;
-				min-height: 100%;
+				height: 100%;
 				margin: 0;
 				padding: 0;
 			}
-			body{
+			body {
+				display: block;
+				position: relative;
+				overflow: hidden;
+				text-align: center;
+			}
+			.background {
+				position: absolute;
+				min-width: 100%;
+				min-height: 100%;
+			}
+			.background_gradient {
 				background: #ffa500;
 				background: -webkit-linear-gradient(170deg, #f1c40f, #ffa500);
 				   background: -moz-linear-gradient(170deg, #f1c40f, #ffa500);
-				     background: -o-linear-gradient(170deg, #f1c40f, #ffa500);
-				        background: linear-gradient(170deg, #f1c40f, #ffa500);
+					 background: -o-linear-gradient(170deg, #f1c40f, #ffa500);
+						background: linear-gradient(170deg, #f1c40f, #ffa500);
 				background-attachment: fixed;
+			}
+			.background_image {
+				-webkit-background-size: cover;
+					 -o-background-size: cover;
+						background-size: cover;
+				background-position: center center;
+				background-repeat: no-repeat;
+				background-attachment: fixed;
+				background-image: url('bg.jpg');
+			}
+			.background_blur {
+				filter: url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg"><filter id="blur"><feGaussianBlur stdDeviation="5" /></filter></svg>#blur');
+				-webkit-filter: blur(5px);
+				filter: blur(5px);
+				filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='5');
+			}
+			.overlay {
+				position: relative;
+				width: 100%;
+				height: 100%;
+				min-height: 100%;
+				overflow: auto;
+			}
+			.overlay_dark {
+				background-color: transparent;
+				background-color: rgba(43, 43, 43, 0.35);
+				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endColorstr=#4C000000);
+				zoom: 1;
+				background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDoAABSCAABFVgAADqXAAAXb9daH5AAAAAZSURBVHjaYmCAAGM0GjfHGEMGAAAA//8DACm0ATMe8beGAAAAAElFTkSuQmCC");
+				background-repeat: repeat;
+				background-attachment: fixed;
+				box-shadow: inset 0 3px 3px -2px #000, inset 0 -3px 3px -2px #000;
 			}
 			.project {
 				display: block;
@@ -40,8 +81,13 @@
 				max-width: 1200px;
 				min-height: 100%;
 				margin: 0 auto;
-				padding: 8% 0;
 				text-align: center;
+			}
+			.project_top {
+				padding: 8% 0;
+			}
+			.project_middle {
+				padding-top: 20%;
 			}
 			.project-name {
 				display: block;
@@ -53,6 +99,9 @@
 				line-height: 1;
 				color: #fff;
 				text-align: center;
+			}
+			.project-name_shadow {
+				text-shadow: 1px 1px 2px #333;
 			}
 			.project-pages{
 				display: inline-block;
@@ -77,27 +126,42 @@
 				outline: none;
 				-webkit-transition: all .5s;
 				   -moz-transition: all .5s;
-				    -ms-transition: all .5s;
-				     -o-transition: all .5s;
-				        transition: all .5s;
+					-ms-transition: all .5s;
+					 -o-transition: all .5s;
+						transition: all .5s;
 			}
 			.project-pages__link_empty{
 				cursor: default;
 			}
 			.project-pages__link:hover{
-				color: #ddd;
+				text-decoration: none;
 			}
 		</style>
 
-		<main class="project">
-			<h1 id="fit" class="project-name">Front-end scaffold</h1>
+		<div class="background background_gradient"></div>
+		<div class="overlay">
+			<main class="project project_top">
+				<h1 id="fit" class="project-name">ProjectName</h1>
 
-			<ul class="project-pages">
-				<li class="project-pages__item">
-					<a href="home.html" class="project-pages__link">Home Page</a>
-				</li>
-			</ul>
-		</main>
+				<ul class="project-pages">
+					<li class="project-pages__item">
+						<a href="#" class="project-pages__link">Home Page</a>
+					</li>
+					<li class="project-pages__item">
+						<a href="#" class="project-pages__link">About Page</a>
+					</li>
+					<li class="project-pages__item">
+						<a href="#" class="project-pages__link">Portfolio Page</a>
+					</li>
+					<li class="project-pages__item">
+						<a href="#" class="project-pages__link">Blog Page</a>
+					</li>
+					<li class="project-pages__item">
+						<a href="#" class="project-pages__link">Contact Page</a>
+					</li>
+				</ul>
+			</main>
+		</div>
 
 		<script>
 			/*!

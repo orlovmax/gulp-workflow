@@ -11,8 +11,7 @@ module.exports = {
 			'<%= dev.images %>/**/*.*',
 			'<%= dev.fonts %>/**/*.{eot,svg,ttf,otf,woff,woff2}',
 			'<%= dev.helpers %>/**/*.*',
-			'<%= dev.helpers %>/.htaccess',
-			'<%= dev.devtools %>/index.html'
+			'<%= dev.helpers %>/.htaccess'
 		],
 		tasks: [
 			'newer:coffee:main',
@@ -25,7 +24,6 @@ module.exports = {
 			'newer:sass',
 			'newer:stylus',
 			'newer:jade',
-			'sync:intro',
 			'sync:helpers',
 			'sync:php',
 			'sync:fonts',
