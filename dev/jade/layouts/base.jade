@@ -15,11 +15,14 @@ block variables
 doctype html
 html(lang=pageLang)
 	head
-		//- Include page specific content
-		block head-content
+		// Meta information
+		+head-meta()
 
 		// Head external resources
 		+head-src()
+
+		//- Include page specific content
+		block head-content
 
 	body
 		//- Include page specific content

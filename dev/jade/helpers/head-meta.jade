@@ -3,21 +3,21 @@ mixin head-meta()
 	meta(http-equiv='X-UA-Compatible', content='IE=edge')
 	meta(name='viewport', content='width=device-width, initial-scale=1')
 
-	title Synteagle Project Template
-	meta(name='description', content='Project template based on Grunt/Gulp task runners')
-	meta(name='keywords', content='project boilerplate, front-end template, psd-to-html template, front-end scaffold')
+	title #{pageTitle}
+	meta(name='description', content=pageDescription)
+	meta(name='keywords', content=pageKeywords)
 
 	// Opengraph
 	meta(property='og:type', content='website')
-	meta(property='og:title', content='Synteagle Project Template')
-	meta(property='og:description', content='Project template based on Grunt/Gulp task runners')
+	meta(property='og:title', content='#{pageTitle}')
+	meta(property='og:description', content=pageDescription)
 	// meta(property='og:image', content='===url===/static/images/card.jpg')
 	// meta(property='og:url', content='===url===')
 
 	// TwitterCard
 	meta(name='twitter:card', content='summary')
-	meta(name='twitter:title', content='Synteagle Project Template')
-	meta(name='twitter:description', content='Project template based on Grunt/Gulp task runners')
+	meta(name='twitter:title', content='#{pageTitle}')
+	meta(name='twitter:description', content=pageDescription)
 	// meta(name='twitter:image:src', content='===url===/static/images/card.jpg')
 	// meta(name='twitter:creator', content='===twittercard-validation-account===')
 	// meta(name='twitter:site', content='===twitter-url===')
