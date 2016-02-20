@@ -203,6 +203,7 @@ Here comes groups of grunt tasks with some explanations
 - 'concat:vendor'                        Concatenate vendor javascripts
 - 'sass'                                 Compile Sass stylesheets
 - 'stylus'                               Compile Stylus stylesheets
+- 'cmq'                                  Combine media queries in css files
 - 'jade'                                 Compile Jade templates
 - 'sync:helpers'                         Sync helpers and other assets
 - 'sync:fonts'                           Sync fonts
@@ -217,7 +218,6 @@ Here comes groups of grunt tasks with some explanations
 ```
 - 'imagemin'                             Minify images
 - 'processhtml'                          Replace assets paths in html
-- 'cmq'                                  Combine media queries in css files
 - 'autoprefixer'                         Add vendor prefixes in css
 - 'csscomb'                              Applie styleguide to stylesheets
 - 'uglify'                               Minify javascript files
@@ -239,6 +239,7 @@ Here comes groups of grunt tasks with some explanations
 - 'concat:vendor'                        Concatenate vendor javascripts
 - 'sass'                                 Compile Sass stylesheets
 - 'stylus'                               Compile Stylus stylesheets
+- 'cmq'                                  Combine media queries in css files
 - 'jade'                                 Compile Jade templates
 - 'sync:helpers'                         Sync helpers and other assets
 - 'sync:fonts'                           Sync fonts
@@ -246,7 +247,6 @@ Here comes groups of grunt tasks with some explanations
 - 'sync:images'                          Sync images
 - 'imagemin'                             Minify images
 - 'processhtml'                          Replace assets paths in html
-- 'cmq'                                  Combine media queries in css files
 - 'autoprefixer'                         Add vendor prefixes in css
 - 'csscomb'                              Applie styleguide to stylesheets
 - 'uglify'                               Minify javascript files
