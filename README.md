@@ -6,7 +6,6 @@ Please note, this README relates to Grunt template that placed in `master` folde
 
 ## Stable front-end templates
 * General template: [https://github.com/synteagle/synt-general-template](https://github.com/synteagle/synt-general-template)
-* Block template: [https://github.com/synteagle/synt-block-template](https://github.com/synteagle/synt-block-template)
 * CMS template: [https://github.com/synteagle/synt-cms-template](https://github.com/synteagle/synt-cms-template)
 
 ## Contents
@@ -97,7 +96,7 @@ Please note, this README relates to Grunt template that placed in `master` folde
 |	│
 │   ├── fonts/                                 * font sources
 |	│
-│   └── devtools/                              * some dev tools
+│   └── data/                                  * configs and data for templates
 │
 └── build/                                     * built source
 	├── index.html
@@ -274,7 +273,7 @@ Here comes groups of grunt tasks with some explanations
 ```
 
 ## Live reload 
-For this project I use BrowserSync with page reload after assets changing. You can use live.js instead if you want to achieve live coding on LAMP/WAMP server.
+For this project I use BrowserSync with page reload after assets changing.
 
 ## License
 [MIT](http://opensource.org/licenses/MIT)

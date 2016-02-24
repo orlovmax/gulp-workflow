@@ -13,7 +13,7 @@ module.exports = function(grunt) {
 				fonts: '<%= dev.main %>/fonts',
 				helpers: '<%= dev.main %>/helpers',
 				php: '<%= dev.main %>/php',
-				devtools: '<%= dev.main %>/devtools'
+				data: '<%= dev.main %>/data'
 			},
 			// Build paths
 			build: {
