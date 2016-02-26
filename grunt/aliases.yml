@@ -70,12 +70,6 @@ rebuild:
         - 'htmlmin'
         - 'clean:dev'
 
-
-deploy:
-    description: 'Deploy project by running Rakefile: git or ftp push'
-    tasks:
-        - 'shell:deploy'
-
 server:
     description: 'Run server without watching for changes'
     tasks:
