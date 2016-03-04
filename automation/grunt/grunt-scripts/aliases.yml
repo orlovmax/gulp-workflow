@@ -74,8 +74,3 @@ server:
     description: 'Run server without watching for changes'
     tasks:
         - 'browserSync:test'
-
-sprite:
-    description: 'Sprite creation task. Should be configured before running'
-    tasks:
-        - 'sprite'

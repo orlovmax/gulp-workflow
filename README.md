@@ -1,8 +1,6 @@
-# Front-end scaffold - PLAYGROUND - Grunt
+# Front-end scaffold - PLAYGROUND
 
-My front-end boilerplate with predefined dependencies for Bower and boileplate-files for styles, markup and javascript
-
-Please note, this README relates to Grunt template that placed in `master` folder, if you want to use Gulp template  - you can find it in `gulp` branch of this repository.
+My front-end boilerplate with predefined directory structure and some Bower dependencies.
 
 ## Stable front-end templates
 * General template: [https://github.com/synteagle/synt-general-template](https://github.com/synteagle/synt-general-template)
@@ -12,10 +10,8 @@ Please note, this README relates to Grunt template that placed in `master` folde
 * [Live project examples](live-project-examples)
 * [Folder structure](#folder-and-file-structure)
 * [Requirements](#requirements)
-* [How to start](#how-to-start)
 	- [Editorconfig](#editorconfig)
-	- [Package.json dependencies](#packagejson-dependencies)
-	- [bower.json dependencies](#bowerjson-dependencies)
+* [How to start](#how-to-start)
 * [Tasks](#tasks)
 	- [Start](#start)
 	- [Dev](#dev)
@@ -29,19 +25,31 @@ Please note, this README relates to Grunt template that placed in `master` folde
 ## Live project examples
 
 ## Folder and file structure
-
 ```
 ./
 ├── .editorconfig
-├── Gruntfile.js
-├── package.json
 ├── bower.json
 ├── README.md
-├──grunt/                                      * grunt tasks
-|   ├── task.js
-│   └── aliases.yml 
+├── automation.sh
 |
-├── test_screenshots/                          * responsive test screenshots
+├── automation/                                * build systems
+|	├── grunt/                                 * grunt build system
+|	|	├──grunt-scripts/                      * grunt tasks
+|	|	|   ├── task.js
+|	|	│   └── aliases.yml
+|	|	│
+|	|	├── Gruntfile.js
+|	|	└── package.json
+|	|
+|	└── gulp/                                  * gulp build system
+|		├──gulp-scripts/                       * gulp tasks
+|		|   ├── tasks/
+|		│   └── paths.js
+|		│
+|		├── gulpfile.js
+|		└── package.json
+|
+├── screenshots/                               * responsive test screenshots
 |
 ├── dev/                                       * site source
 |	├── blocks/                                * website blocks library
@@ -113,73 +121,42 @@ Please note, this README relates to Grunt template that placed in `master` folde
 ```
 
 ## Requirements:
-
 - [Node.js](http://nodejs.org/)
-- [Grunt](http://gruntjs.com/) (`npm install -g grunt-cli`)
-- [Bower](http://bower.io/) (`npm install -g bower`)
+- Build sytem: [Grunt](http://gruntjs.com/) or [Gulp](http://gulpjs.com/)
+- [Bower](http://bower.io/)
+- Optionally: [Editorconfig](http://editorconfig.org/)
+
+#### Editorconfig
+This project have .editorconfig file at the root that used by your code editor with editorconfig plugin. It describes codestyle like indent style, trailing whitespaces etc. See more details [here](http://editorconfig.org/)
 
 ## How to start
 If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to use [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins.
 
-* Before start you need to have _npm_ installed now, as well as a _grunt_.
-* Then you need to download this files. You can chose `Download zip` option or clone this repo to your local maschine.
-* Now go to this project folder in terminal. Once you're familiar with grunt installation process, you may install all this things with this command: `npm install`.This will create `node_moduldes` folder, that's normal.
+If you haven't used [Gulp](http://gulpjs.com/) before, be sure to check out the [Getting Started](https://github.com/gulpjs/gulp/blob/master/docs/README.md) guide, as it explains how to use [Gulp.js](https://github.com/google/web-starter-kit/blob/master/gulpfile.js), also check these [recips](https://github.com/gulpjs/gulp/tree/master/docs/recipes#recipes) 
 
-This template is ready for work with [Bower](https://github.com/bower/bower). So at the root was created `bower.json` file with project dependencies. To install dependencies you need globally instaled Bower. 
-Bower depends on [Node.js](http://nodejs.org/) and [npm](http://npmjs.org/). Also make sure that [git](http://git-scm.com/) is installed as some bower
-packages require it to be fetched and installed. To install Bower - just run this `$ npm install -g bower`.
+Before start you need to have installed _npm_ , as well as _grunt_/_gulp_ and _bower_ globally.
 
-Now we are ready to install components:
-```sh
-# install dependencies listed in bower.json
-$ bower install
+**Four simple steps to start:**
+* Download these files. You can chose `Download zip` option or clone this repo to your local maschine.
+* Now go to this project folder in terminal. Run `automation.sh` script by typing `bash automation.sh` or `sh automation.sh` and choose build system - it will extract Grunt or Gulp scripts from the `automation` directory into project folder. Or you can manually copy all necessary files from `automation/build-system-name`
+* Install dependencies from `package.json` by running: `npm install` and bower dependencies from `bower.json`: `bower install`. This will create `node_moduldes` and `bower_components` folders.
+* Run tasks from the list below and start devevelopment! 
 
-# install a package and add it to bower.json
-$ bower install <package> --save
-```
+Also `bower install` included into `start` task using shell plugin. It will install bependencies and copy them to related folder. See tasks for more details.
 
-Also bower install included into internal start task using shell plugin. Same thing but uses task runner.
-
-#### Editorconfig
-This project have .editorconfig file at the root that used by your code editor with editorconfig plugin. It describes codestyle like indent style, trailing whitespaces etc. See more details [here](http://editorconfig.org/) 
-
-#### Package.json dependencies 
-* ["grunt"](https://github.com/gruntjs)
-* ["grunt-autoprefixer"](https://github.com/nDmitry/grunt-autoprefixer)
-* ["grunt-browser-sync"](https://github.com/BrowserSync/grunt-browser-sync)
-* ["grunt-cache-bust"](https://github.com/hollandben/grunt-cache-bust)
-* ["grunt-combine-media-queries"](https://github.com/buildingblocks/grunt-combine-media-queries)
-* ["grunt-contrib-clean"](https://github.com/gruntjs/grunt-contrib-clean)
-* ["grunt-contrib-concat"](https://github.com/gruntjs/grunt-contrib-concat)
-* ["grunt-contrib-htmlmin"](https://github.com/gruntjs/grunt-contrib-htmlmin)
-* ["grunt-contrib-coffee"](https://github.com/gruntjs/grunt-contrib-coffee)
-* ["grunt-contrib-imagemin"](https://github.com/gruntjs/grunt-contrib-imagemin)
-* ["grunt-contrib-jade"](https://github.com/gruntjs/grunt-contrib-jade)
-* ["grunt-contrib-sass"](https://github.com/gruntjs/grunt-contrib-sass)
-* ["grunt-contrib-stylus"](https://github.com/gruntjs/grunt-contrib-stylus)
-* ["grunt-contrib-uglify"](https://github.com/gruntjs/grunt-contrib-uglify)
-* ["grunt-contrib-watch"](https://github.com/gruntjs/grunt-contrib-watch)
-* ["grunt-csscomb"](https://github.com/csscomb/grunt-csscomb)
-* ["grunt-csso"](https://github.com/t32k/grunt-csso)
-* ["grunt-newer"](https://github.com/tschaub/grunt-newer)
-* ["grunt-processhtml"](https://github.com/dciccale/grunt-processhtml)
-* ["grunt-shell"](https://github.com/sindresorhus/grunt-shell)
-* ["grunt-spritesmith"](https://github.com/Ensighten/grunt-spritesmith)
-* ["grunt-sync"](https://github.com/tomusdrw/grunt-sync)
-* ["main-bower-files"](https://github.com/ck86/main-bower-files)
-* ["load-grunt-config"](https://github.com/firstandthird/load-grunt-config)
-
-#### bower.json dependencies 
+**bower.json dependencies**
 * "jquery"
 * "modernizr"
 * "respond"
 * "html5shiv"
 
 ## Tasks
-Here comes groups of grunt tasks with some explanations
+Here comes groups of grunt and gulp tasks with some explanations
 
 #### Start 
-`grunt start` - Install bower dependencies and place them to dev folders
+Install bower dependencies and place them to dev folders.
+Grunt: `grunt start` 
+Gulp: `gulp start`
 ```
 - 'shell:bower'                          Install bower components
 - 'bower:ie'                             Copy ie components to js folder
@@ -188,7 +165,9 @@ Here comes groups of grunt tasks with some explanations
 ```
 
 #### Dev
-`gulp dev` - Dev task with static server
+Dev task with static server.
+Grunt: `grunt dev` 
+Gulp: `gulp dev`
 ```
 - 'coffee:main'                          Compile main coffescripts
 - 'coffee:head'                          Compile head coffescripts
@@ -205,12 +184,14 @@ Here comes groups of grunt tasks with some explanations
 - 'sync:fonts'                           Sync fonts
 - 'sync:php'                             Sync *.php scripts
 - 'sync:images'                          Sync images
-- 'browserSync:dev'                      Run dev server with watch option
+- 'browserSync'                          Run dev server with watch option
 - 'watch:dev'                            Watch for changes and run dev task
 ```
 
 #### Build 
-`grunt build` - Build task
+Build task.
+Grunt: `grunt build` 
+Gulp: `gulp build`
 ```
 - 'imagemin'                             Minify images
 - 'processhtml'                          Replace assets paths in html
@@ -220,11 +201,13 @@ Here comes groups of grunt tasks with some explanations
 - 'csso'                                 Minify stylesheets
 - 'htmlmin'                              Minify html
 - 'clean:dev'                            Remove dev things
-- 'browserSync:test'                     Run test server without watch
+- 'browserSync'                          Run test server without watch
 ```
 
 #### Rebuild 
-`grunt rebuild` - Regenerate and build project by running all tasks
+Regenerate and build project by running all tasks.
+Grunt: `grunt rebuild` 
+Gulp: `gulp rebuild`
 ```
 - 'coffee:main'                          Compile main coffescripts
 - 'coffee:head'                          Compile head coffescripts
@@ -252,19 +235,23 @@ Here comes groups of grunt tasks with some explanations
 ```
 
 #### Server 
-`grunt server` - Run server without watching for changes
+Run server without watching for changes.
+Grunt: `grunt server` 
+Gulp: `gulp server`
 ```
-- 'browserSync:test'                     Run test server without watch
+- 'browserSync'                     Run test server without watch
 ```
 
 #### Sprite 
-`grunt sprite` - Sprite creation task. Should be configured before running
+Sprite creation task. Should be configured before running.
+Grunt: `grunt sprite` 
+Gulp: `gulp sprite`
 ```
 - 'sprite'                               Create images sprite and related css
 ```
 
 ## Live reload 
-For this project I use BrowserSync with page reload after assets changing.
+This project uses BrowserSync as static server with enabled and configured live reload option.
 
 ## License
 [MIT](http://opensource.org/licenses/MIT)

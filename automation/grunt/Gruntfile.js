@@ -1,5 +1,5 @@
 module.exports = function(grunt) {
-	require('load-grunt-config')(grunt, {
+	require('load-grunt-config')(grunt-scripts, {
 		data: {
 			// Dev paths
 			dev: {
