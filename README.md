@@ -7,7 +7,6 @@ My front-end boilerplate with predefined directory structure and some Bower depe
 * CMS template: [https://github.com/synteagle/synt-cms-template](https://github.com/synteagle/synt-cms-template)
 
 ## Contents
-* [Live project examples](live-project-examples)
 * [Folder structure](#folder-and-file-structure)
 * [Requirements](#requirements)
 	- [Editorconfig](#editorconfig)
@@ -21,8 +20,6 @@ My front-end boilerplate with predefined directory structure and some Bower depe
 	- [Sprite](#sprite)
 * [Live reload](#live-reload)
 * [License](#license)
-
-## Live project examples
 
 ## Folder and file structure
 ```
