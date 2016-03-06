@@ -3,7 +3,7 @@ var gulp = require('gulp'),
 	paths = require('../paths'),
 	plumber = require('gulp-plumber'),
 	rename = require('gulp-rename'),
-	minifyCSS = require('gulp-minify-css');
+	csso = require('gulp-minify-css');
 
 
 //Minify *.css files
@@ -13,7 +13,7 @@ gulp.task('csso', function () {
 		'!' + paths.build.css + '/*.min.css'
 	])
 		.pipe(plumber())
-		.pipe(minifyCSS({
+		.pipe(csso({
 			advanced: false,
 			aggressiveMerging: false,
 			restructuring:false,
