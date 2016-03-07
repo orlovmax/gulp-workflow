@@ -181,7 +181,7 @@ Gulp: `gulp dev`
 - 'sync:fonts'                           Sync fonts
 - 'sync:php'                             Sync *.php scripts
 - 'sync:images'                          Sync images
-- 'browserSync'                          Run dev server with watch option
+- 'browserSync:server'                   Run dev server with watch option
 - 'watch:dev'                            Watch for changes and run dev task
 ```
 
@@ -198,7 +198,7 @@ Gulp: `gulp build`
 - 'csso'                                 Minify stylesheets
 - 'htmlmin'                              Minify html
 - 'clean:dev'                            Remove dev things
-- 'browserSync'                          Run test server without watch
+- 'browserSync:server'                   Run test server without watch
 ```
 
 #### Rebuild 
@@ -236,7 +236,7 @@ Run server without watching for changes.
 Grunt: `grunt server` 
 Gulp: `gulp server`
 ```
-- 'browserSync'                     Run test server without watch
+- 'browserSync:server'              Run test server without watch
 ```
 
 #### Sprite 

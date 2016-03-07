@@ -3,9 +3,7 @@ var gulp = require('gulp'),
 	paths = require('../paths'),
 	plumber = require('gulp-plumber'),
 	changed = require('gulp-changed'),
-	stylus = require('gulp-stylus'),
-	browserSync = require('browser-sync').create(),
-	reload = browserSync.reload;
+	stylus = require('gulp-stylus');
 
 
 //Compile *.scss files
@@ -16,11 +14,10 @@ gulp.task('stylus', function () {
 });
 
 //Compile *.scss files within watch task
-gulp.task('stylus:server', function () {
+gulp.task('stylus:changed', function () {
 	return gulp.src(paths.dev.stylus + '/*.styl')
 		.pipe(plumber())
 		.pipe(changed(paths.build.css, {extension: '.css'}))
 		.pipe(stylus())
-		.pipe(gulp.dest(paths.build.css))
-		.pipe(reload({ stream:true }));
+		.pipe(gulp.dest(paths.build.css));
 });

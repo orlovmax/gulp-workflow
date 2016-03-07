@@ -3,9 +3,7 @@ var gulp = require('gulp'),
 	paths = require('../paths'),
 	plumber = require('gulp-plumber'),
 	changed = require('gulp-changed'),
-	coffee = require('gulp-coffee'),
-	browserSync = require('browser-sync').create(),
-	reload = browserSync.reload;
+	coffee = require('gulp-coffee');
 
 
 //Compile main *.coffee files
@@ -33,31 +31,28 @@ gulp.task('coffee:vendor', function() {
 });
 
 //Compile main *.coffee files within watch task
-gulp.task('coffee:main:server', function() {
+gulp.task('coffee:main:changed', function() {
 	return gulp.src([paths.dev.coffee + '/main/*.coffee'])
 		.pipe(plumber())
 		.pipe(changed(paths.dev.js, {extension: '.js'}))
 		.pipe(coffee({bare: true}))
-		.pipe(gulp.dest(paths.dev.js + '/main'))
-		.pipe(reload({ stream:true }));
+		.pipe(gulp.dest(paths.dev.js + '/main'));
 });
 
 //Compile head *.coffee files within watch task
-gulp.task('coffee:head:server', function() {
+gulp.task('coffee:head:changed', function() {
 	return gulp.src([paths.dev.coffee + '/head/*.coffee'])
 		.pipe(plumber())
 		.pipe(changed(paths.dev.js, {extension: '.js'}))
 		.pipe(coffee({bare: true}))
-		.pipe(gulp.dest(paths.dev.js + '/head'))
-		.pipe(reload({ stream:true }));
+		.pipe(gulp.dest(paths.dev.js + '/head'));
 });
 
 //Compile vendor *.coffee files within watch task
-gulp.task('coffee:vendor:server', function() {
+gulp.task('coffee:vendor:changed', function() {
 	return gulp.src([paths.dev.coffee + '/vendor/*.coffee'])
 		.pipe(plumber())
 		.pipe(changed(paths.dev.js, {extension: '.js'}))
 		.pipe(coffee({bare: true}))
-		.pipe(gulp.dest(paths.dev.js + '/vendor'))
-		.pipe(reload({ stream:true }));
+		.pipe(gulp.dest(paths.dev.js + '/vendor'));
 });

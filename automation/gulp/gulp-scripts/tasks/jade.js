@@ -3,9 +3,7 @@ var gulp = require('gulp'),
 	paths = require('../paths'),
 	plumber = require('gulp-plumber'),
 	changed = require('gulp-changed'),
-	jade = require('gulp-jade'),
-	browserSync = require('browser-sync').create(),
-	reload = browserSync.reload;
+	jade = require('gulp-jade');
 
 
 //Compile *.jade files
@@ -22,7 +20,7 @@ gulp.task('jade', function() {
 });
 
 //Compile *.jade files within watch task
-gulp.task('jade:server', function() {
+gulp.task('jade:changed', function() {
 	return gulp.src(paths.dev.jade + '/*.jade')
 		.pipe(plumber())
 		.pipe(changed(paths.build.html, {extension: '.html'}))
@@ -32,6 +30,5 @@ gulp.task('jade:server', function() {
 		}).on('error', function(err) {
 			console.log(err);
 		}))
-		.pipe(gulp.dest(paths.build.html))
-		.pipe(reload({ stream:true }));
+		.pipe(gulp.dest(paths.build.html));
 });

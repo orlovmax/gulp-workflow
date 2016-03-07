@@ -1,8 +1,6 @@
 // Copy assets
 var gulp = require('gulp'),
-	paths = require('../paths'),
-	browserSync = require('browser-sync').create(),
-	reload = browserSync.reload;
+	paths = require('../paths');
 
 
 // Copy some helpers and devtools.
@@ -32,29 +30,25 @@ gulp.task('sync:images', function() {
 
 
 // Copy some helpers and devtools within watch task
-gulp.task('sync:php:server', function() {
+gulp.task('sync:php:changed', function() {
 	return gulp.src([paths.dev.php + '/**/*.*'], {base: paths.dev.php})
-		.pipe(gulp.dest(paths.build.php))
-		.pipe(reload({ stream:true }));
+		.pipe(gulp.dest(paths.build.php));
 });
 
-gulp.task('sync:fonts:server', function() {
+gulp.task('sync:fonts:changed', function() {
 	return gulp.src([paths.dev.fonts + '/**/*.{eot,svg,ttf,otf,woff,woff2}'], {base: paths.dev.fonts})
-		.pipe(gulp.dest(paths.build.fonts))
-		.pipe(reload({ stream:true }));
+		.pipe(gulp.dest(paths.build.fonts));
 });
 
-gulp.task('sync:helpers:server', function() {
+gulp.task('sync:helpers:changed', function() {
 	gulp.src([
 		paths.dev.helpers + '/**/',
 		paths.dev.helpers + '/.htaccess'
 	], {base: paths.dev.helpers})
-		.pipe(gulp.dest(paths.build.main))
-		.pipe(reload({ stream:true }));
+		.pipe(gulp.dest(paths.build.main));
 });
 
-gulp.task('sync:images:server', function() {
+gulp.task('sync:images:changed', function() {
 	return gulp.src([paths.dev.images + '/**/*.*'], {base: paths.dev.images})
-		.pipe(gulp.dest(paths.build.images))
-		.pipe(reload({ stream:true }));
+		.pipe(gulp.dest(paths.build.images));
 });

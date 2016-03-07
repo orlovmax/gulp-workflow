@@ -30,7 +30,7 @@ gulp.task('dev', function() {
 		'sync:fonts',
 		'sync:php',
 		'sync:images',
-		'browserSync',
+		'browserSync:server',
 		'watch:dev'
 	);
 });
@@ -46,7 +46,7 @@ gulp.task('build', function() {
 		'csso',
 		'htmlmin',
 		'clean:dev',
-		'browserSync'
+		'browserSync:server'
 	);
 });
 
@@ -79,4 +79,4 @@ gulp.task('rebuild', function() {
 });
 
 // Run server without watching for changes
-gulp.task('server', ['browserSync']);
+gulp.task('server', ['browserSync:server']);
