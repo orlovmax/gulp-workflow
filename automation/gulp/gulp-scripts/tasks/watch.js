@@ -81,6 +81,7 @@ gulp.task('watch:dev', function() {
 		function() {
 			runSequence(
 			'sass:changed',
+			'autoprefixer',
 			'cmq',
 			'browserSync:reload'
 			);
@@ -145,6 +146,7 @@ gulp.task('watch:dev', function() {
 		],
 		function() {
 			runSequence(
+				'sync:helpers:changed',
 				'browserSync:reload'
 			);
 		}
