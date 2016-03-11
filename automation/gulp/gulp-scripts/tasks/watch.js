@@ -110,16 +110,6 @@ gulp.task('watch:dev', function() {
 	);
 
 	gulp.watch(
-		paths.dev.php + '/**/*.*',
-		function() {
-			runSequence(
-			'sync:php:changed',
-			'browserSync:reload'
-			);
-		}
-	);
-
-	gulp.watch(
 		paths.dev.images + '/**/*.*',
 		function() {
 			runSequence(

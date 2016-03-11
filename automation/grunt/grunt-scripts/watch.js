@@ -7,7 +7,6 @@ module.exports = {
 			'<%= dev.coffee %>/**/*.coffee',
 			'<%= dev.js %>/**/*.js',
 			'<%= dev.jade %>/*.jade',
-			'<%= dev.php %>/**/*.*',
 			'<%= dev.images %>/**/*.*',
 			'<%= dev.fonts %>/**/*.{eot,svg,ttf,otf,woff,woff2}',
 			'<%= dev.helpers %>/**/*.*',
@@ -27,7 +26,6 @@ module.exports = {
         	'cmq',
 			'newer:jade',
 			'sync:helpers',
-			'sync:php',
 			'sync:fonts',
 			'sync:images'
 		],

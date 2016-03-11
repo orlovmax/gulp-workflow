@@ -5,11 +5,6 @@ var gulp = require('gulp'),
 
 // Copy some helpers and devtools.
 // Credits to @jbdemonte https://github.com/gulpjs/gulp/issues/151
-gulp.task('sync:php', function() {
-	return gulp.src([paths.dev.php + '/**/*.*'], {base: paths.dev.php})
-		.pipe(gulp.dest(paths.build.php));
-});
-
 gulp.task('sync:fonts', function() {
 	return gulp.src([paths.dev.fonts + '/**/*.{eot,svg,ttf,otf,woff,woff2}'], {base: paths.dev.fonts})
 		.pipe(gulp.dest(paths.build.fonts));
@@ -30,11 +25,6 @@ gulp.task('sync:images', function() {
 
 
 // Copy some helpers and devtools within watch task
-gulp.task('sync:php:changed', function() {
-	return gulp.src([paths.dev.php + '/**/*.*'], {base: paths.dev.php})
-		.pipe(gulp.dest(paths.build.php));
-});
-
 gulp.task('sync:fonts:changed', function() {
 	return gulp.src([paths.dev.fonts + '/**/*.{eot,svg,ttf,otf,woff,woff2}'], {base: paths.dev.fonts})
 		.pipe(gulp.dest(paths.build.fonts));

@@ -74,8 +74,6 @@ My front-end boilerplate with predefined directory structure and some Bower depe
 |	│   ├── head/                              * head scripts
 |	│   └── vendor/                            * vendor scripts
 |	│
-│   ├── php/                                   * *.php scripts
-|	│
 |	├── sass/                                  * sass preprocessor styles
 |	│   ├── helpers/                           * mixins and vars
 |	│   ├── vendor/                            * third-party code
@@ -104,7 +102,6 @@ My front-end boilerplate with predefined directory structure and some Bower depe
 └── build/                                     * built source
 	├── index.html
 	├── page.html
-	├── php/                                   * php scripts
 	|
 	└── static/                                * static assets
 		├── css/                               * minified styles
@@ -179,7 +176,6 @@ Gulp: `gulp dev`
 - 'jade'                                 Compile Jade templates
 - 'sync:helpers'                         Sync helpers and other assets
 - 'sync:fonts'                           Sync fonts
-- 'sync:php'                             Sync *.php scripts
 - 'sync:images'                          Sync images
 - 'browserSync'                          Run dev server with watch option
 - 'watch:dev'                            Watch for changes and run dev task
@@ -219,7 +215,6 @@ Gulp: `gulp rebuild`
 - 'jade'                                 Compile Jade templates
 - 'sync:helpers'                         Sync helpers and other assets
 - 'sync:fonts'                           Sync fonts
-- 'sync:php'                             Sync *.php scripts
 - 'sync:images'                          Sync images
 - 'imagemin'                             Minify images
 - 'processhtml'                          Replace assets paths in html

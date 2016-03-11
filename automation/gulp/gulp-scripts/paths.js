@@ -16,7 +16,6 @@ module.exports = {
     build: {
         main: 'build',
         html: 'build',
-        php: 'build/php',
         css: 'build/static/css',
         fonts: 'build/static/fonts',
         images: 'build/static/images',

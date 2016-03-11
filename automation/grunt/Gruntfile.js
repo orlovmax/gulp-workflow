@@ -12,14 +12,12 @@ module.exports = function(grunt) {
 				images: '<%= dev.main %>/images',
 				fonts: '<%= dev.main %>/fonts',
 				helpers: '<%= dev.main %>/helpers',
-				php: '<%= dev.main %>/php',
 				data: '<%= dev.main %>/data'
 			},
 			// Build paths
 			build: {
 				main: 'build',
 				html: '<%= build.main %>',
-				php: '<%= build.main %>/php',
 				css: '<%= build.main %>/static/css',
 				fonts: '<%= build.main %>/static/fonts',
 				images: '<%= build.main %>/static/images',

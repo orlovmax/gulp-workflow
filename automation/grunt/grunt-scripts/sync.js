@@ -1,13 +1,5 @@
 // Grunt.js task providing one-way synchronization of directories
 module.exports = {
-	php: {
-		files: [{
-			expand: true,
-			cwd: '<%= dev.php %>',
-			src: '**/*.*',
-			dest: '<%= build.php %>'
-		}]
-	},
 	fonts: {
 		files: [{
 			expand: true,
