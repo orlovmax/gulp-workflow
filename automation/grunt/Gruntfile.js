@@ -1,5 +1,9 @@
 module.exports = function(grunt) {
-	require('load-grunt-config')(grunt-scripts, {
+    var path = require('path');
+	require('load-grunt-config')(grunt, {
+		configPath: [
+			path.join(process.cwd(), 'grunt-scripts')
+		],
 		data: {
 			// Dev paths
 			dev: {
