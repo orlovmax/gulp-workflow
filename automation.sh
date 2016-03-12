@@ -6,8 +6,8 @@ title="Please select the build system you want to use or quit script"
 prompt="Enter option number"
 options=("Grunt" "Gulp" "Quit")
 
-# Check if automation folder with build systems exists
-if [[ -d "./automation/grunt" && -d "./automation/gulp" ]]; then
+# Check if _automation folder with build systems exists
+if [[ -d "./_automation/_grunt" && -d "./_automation/_gulp" ]]; then
 
 	# Check if any build system already used
 	if [[ -f "package.json" || -f "gulpfile.js" || -f "Gruntfile.js" ]]; then
@@ -23,12 +23,12 @@ if [[ -d "./automation/grunt" && -d "./automation/gulp" ]]; then
 		do
 			case $opt in
 				"Grunt")
-					cp -rf ./automation/grunt/. ./
+					cp -rf ./_automation/_grunt/. ./
 					printf "Grunt system was successfully extracted! Go ahead and install all necessary npm package \nExiting...";
 					break;;
 
 				"Gulp")
-					cp -rf ./automation/gulp/. ./
+					cp -rf ./_automation/_gulp/. ./
 					printf "Gulp system was successfully extracted! Go ahead and install all necessary npm packages \nExiting...";
 					break;;
 
@@ -40,7 +40,7 @@ if [[ -d "./automation/grunt" && -d "./automation/gulp" ]]; then
 	fi
 else
 	# Show notification that directory with build systems doesn't exist
-	printf "Error! Build system directory not found. \nMake sure that `automation` directory with grunt and gulp build systems exists. \n";
+	printf "Error! Build system directory not found. \nMake sure that '_automation' directory with grunt and gulp build systems exists. \n";
 fi
 
 

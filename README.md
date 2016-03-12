@@ -29,17 +29,17 @@ My front-end boilerplate with predefined directory structure and some Bower depe
 ├── README.md
 ├── automation.sh
 |
-├── automation/                                * build systems
-|	├── grunt/                                 * grunt build system
-|	|	├──grunt-scripts/                      * grunt tasks
+├── _automation/                               * build systems
+|	├── _grunt/                                * grunt build system
+|	|	├──grunt_scripts/                      * grunt tasks
 |	|	|   ├── task.js
 |	|	│   └── aliases.yml
 |	|	│
 |	|	├── Gruntfile.js
 |	|	└── package.json
 |	|
-|	└── gulp/                                  * gulp build system
-|		├──gulp-scripts/                       * gulp tasks
+|	└── _gulp/                                 * gulp build system
+|		├──gulp_scripts/                       * gulp tasks
 |		|   ├── tasks/
 |		│   └── paths.js
 |		│
@@ -132,7 +132,7 @@ Before start you need to have installed _npm_ , as well as _grunt_/_gulp_ and _b
 
 **Four simple steps to start:**
 * Download these files. You can chose `Download zip` option or clone this repo to your local maschine.
-* Now go to this project folder in terminal. Run `automation.sh` script by typing `bash automation.sh` or `sh automation.sh` and choose build system - it will extract Grunt or Gulp scripts from the `automation` directory into project folder. Or you can manually copy all necessary files from `automation/build-system-name`
+* Now go to this project folder in terminal. Run `automation.sh` script by typing `bash automation.sh` or `sh automation.sh` and choose build system - it will extract Grunt or Gulp scripts from the `_automation` directory into project folder. Or you can manually copy all necessary files from `_automation/_build-system-name`
 * Install dependencies from `package.json` by running: `npm install` and bower dependencies from `bower.json`: `bower install`. This will create `node_moduldes` and `bower_components` folders.
 * Run tasks from the list below and start devevelopment! 
 
