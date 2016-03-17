@@ -23,7 +23,6 @@ module.exports = {
 		'jade',
 		'sync:helpers',
 		'sync:fonts',
-		'sync:php',
 		'sync:images',
 		'browserSync:dev',
 		'watch:dev'
@@ -57,7 +56,6 @@ module.exports = {
 		'jade',
 		'sync:helpers',
 		'sync:fonts',
-		'sync:php',
 		'sync:images',
 		'imagemin',
 		'csscomb',

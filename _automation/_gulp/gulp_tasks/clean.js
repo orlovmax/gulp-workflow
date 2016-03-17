@@ -1,8 +1,8 @@
 // Delete files/folders using globs
 var gulp = require('gulp'),
 	paths = require('./config/paths'),
-		del = require('del'),
-		vinylPaths = require('vinyl-paths');
+	del = require('del'),
+	vinylPaths = require('vinyl-paths');
 
 
 gulp.task('clean:gitkeep', function() {

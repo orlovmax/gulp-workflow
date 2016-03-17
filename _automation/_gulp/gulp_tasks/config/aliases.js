@@ -29,7 +29,6 @@ gulp.task('dev', function() {
 		'jade',
 		'sync:helpers',
 		'sync:fonts',
-		'sync:php',
 		'sync:images',
 		'browserSync:server',
 		'watch:dev'
@@ -67,7 +66,6 @@ gulp.task('rebuild', function() {
 		'jade',
 		'sync:helpers',
 		'sync:fonts',
-		'sync:php',
 		'sync:images',
 		'imagemin',
 		'processhtml',
