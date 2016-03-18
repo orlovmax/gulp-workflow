@@ -171,9 +171,7 @@ Dev task with static server.
 Grunt: `grunt dev` 
 Gulp: `gulp dev`
 ```
-- 'coffee:main'                          Compile main coffescripts
-- 'coffee:head'                          Compile head coffescripts
-- 'coffee:vendor'                        Compile vendor coffescripts
+- 'coffee'                               Compile main coffescripts
 - 'concat:main'                          Concatenate main javascripts
 - 'concat:head'                          Concatenate head javascripts
 - 'concat:ie'                            Concatenate ie javascripts
@@ -210,9 +208,7 @@ Regenerate and build project by running all tasks.
 Grunt: `grunt rebuild` 
 Gulp: `gulp rebuild`
 ```
-- 'coffee:main'                          Compile main coffescripts
-- 'coffee:head'                          Compile head coffescripts
-- 'coffee:vendor'                        Compile vendor coffescripts
+- 'coffee'                               Compile main coffescripts
 - 'concat:main'                          Concatenate main javascripts
 - 'concat:head'                          Concatenate head javascripts
 - 'concat:ie'                            Concatenate ie javascripts

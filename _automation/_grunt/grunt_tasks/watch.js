@@ -13,9 +13,7 @@ module.exports = {
 			'<%= paths.dev.helpers %>/.htaccess'
 		],
 		tasks: [
-			'newer:coffee:main',
-			'newer:coffee:head',
-			'newer:coffee:vendor',
+			'newer:coffee',
 			'newer:concat:main',
 			'newer:concat:head',
 			'newer:concat:ie',

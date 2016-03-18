@@ -7,31 +7,11 @@ var gulp = require('gulp'),
 // Watch Files For Changes
 gulp.task('watch:dev', function() {
 	gulp.watch(
-		paths.dev.coffee + '/main/*.coffee',
+		paths.dev.coffee + '/**/*.coffee',
 		function() {
 			runSequence(
-				'coffee:main:changed',
+				'coffee:changed',
 				'browserSync:reload'
-			);
-		}
-	);
-
-	gulp.watch(
-		paths.dev.coffee + '/head/*.coffee',
-		function() {
-			runSequence(
-			'coffee:head:changed',
-			'browserSync:reload'
-			);
-		}
-	);
-
-	gulp.watch(
-		paths.dev.coffee + '/vendor/*.coffee',
-		function() {
-			runSequence(
-			'coffee:vendor:changed',
-			'browserSync:reload'
 			);
 		}
 	);

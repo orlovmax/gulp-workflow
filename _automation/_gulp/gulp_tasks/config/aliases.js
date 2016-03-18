@@ -15,9 +15,7 @@ gulp.task('start', function() {
 // Dev task with static server
 gulp.task('dev', function() {
 	runSequence(
-		'coffee:main',
-		'coffee:head',
-		'coffee:vendor',
+		'coffee',
 		'concat:main',
 		'concat:head',
 		'concat:ie',
@@ -52,9 +50,7 @@ gulp.task('build', function() {
 // Regenerate and build project by running all tasks
 gulp.task('rebuild', function() {
 	runSequence(
-		'coffee:main',
-		'coffee:head',
-		'coffee:vendor',
+		'coffee',
 		'concat:main',
 		'concat:head',
 		'concat:ie',
