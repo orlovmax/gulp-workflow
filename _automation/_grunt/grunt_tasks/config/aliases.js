@@ -2,18 +2,14 @@ module.exports = {
 	// Install bower dependencies and place them to dev folders
 	'start': [
 		'shell:bower',
-		'bower:ie',
-		'bower:vendor',
+		'bower',
 		'clean:gitkeep'
 	],
 
 	// Dev task with static server
 	'dev': [
 		'coffee',
-		'concat:main',
-		'concat:head',
-		'concat:ie',
-		'concat:vendor',
+		'rigger',
 		'sass',
 		'stylus',
 		'autoprefixer',
@@ -23,7 +19,7 @@ module.exports = {
 		'sync:fonts',
 		'sync:images',
 		'browserSync:dev',
-		'watch:dev'
+		'watch:all'
 	],
 
 	// Build task
@@ -41,10 +37,7 @@ module.exports = {
 	// Regenerate and build project by running all tasks
 	'rebuild': [
 		'coffee',
-		'concat:main',
-		'concat:head',
-		'concat:ie',
-		'concat:vendor',
+		'rigger',
 		'sass',
 		'stylus',
 		'autoprefixer',

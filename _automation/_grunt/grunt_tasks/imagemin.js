@@ -1,6 +1,6 @@
 //Minify images
 module.exports = {
-	main: {
+	all: {
 		options: {
 			optimizationLevel: 7
 		},

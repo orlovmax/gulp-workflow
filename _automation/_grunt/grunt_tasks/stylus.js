@@ -1,6 +1,6 @@
 // Compile Stylus files to CSS
 module.exports = {
-	main: {
+	all: {
 		options: {
 			linenos: false,
 			compress: false

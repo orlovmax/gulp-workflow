@@ -1,6 +1,6 @@
 // Process html files at build time to modify them depending on the release environment
 module.exports = {
-	dist: {
+	all: {
 		files: [{
 			expand: true,
 			cwd: '<%= paths.build.html %>',

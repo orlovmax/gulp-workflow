@@ -12,7 +12,6 @@ module.exports = {
 			src: [
 				'<%= paths.build.js %>/*.js',
 				'<%= paths.build.css %>/*.css',
-				'<%= paths.build.php %>/**/*.*',
 				'<%= paths.build.images %>/**/*.*',
 				'<%= paths.build.html %>/*.html'
 			]

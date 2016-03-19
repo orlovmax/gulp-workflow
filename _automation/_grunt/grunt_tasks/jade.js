@@ -1,6 +1,6 @@
 // Compile Jade templates
 module.exports = {
-	main: {
+	all: {
 		options: {
 			client: false,
 			pretty: true

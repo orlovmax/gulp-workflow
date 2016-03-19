@@ -8,17 +8,17 @@ var gulp = require('gulp'),
 
 //Compile main *.coffee files
 gulp.task('coffee', function() {
-	return gulp.src([paths.dev.coffee + '/**/*.coffee'])
+	return gulp.src([paths.dev.coffee + '/*.coffee'])
 		.pipe(plumber())
 		.pipe(coffee({bare: true}))
-		.pipe(gulp.dest(paths.dev.js));
+		.pipe(gulp.dest(paths.dev.js + '/lib'));
 });
 
 //Compile main *.coffee files within watch task
 gulp.task('coffee:changed', function() {
-	return gulp.src([paths.dev.coffee + '/**/*.coffee'])
+	return gulp.src([paths.dev.coffee + '/*.coffee'])
 		.pipe(plumber())
 		.pipe(changed(paths.dev.js, {extension: '.js'}))
 		.pipe(coffee({bare: true}))
-		.pipe(gulp.dest(paths.dev.js));
+		.pipe(gulp.dest(paths.dev.js + '/lib'));
 });

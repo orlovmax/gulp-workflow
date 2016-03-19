@@ -1,11 +1,11 @@
 // Run tasks whenever watched files change
 module.exports = {
-	dev: {
+	all: {
 		files: [
 			'<%= paths.dev.sass %>/*.{sass,scss}',
 			'<%= paths.dev.stylus %>/*.styl',
 			'<%= paths.dev.coffee %>/**/*.coffee',
-			'<%= paths.dev.js %>/**/*.js',
+			'<%= paths.dev.js %>/*.js',
 			'<%= paths.dev.jade %>/*.jade',
 			'<%= paths.dev.images %>/**/*.*',
 			'<%= paths.dev.fonts %>/**/*.{eot,svg,ttf,otf,woff,woff2}',
@@ -14,10 +14,7 @@ module.exports = {
 		],
 		tasks: [
 			'newer:coffee',
-			'newer:concat:main',
-			'newer:concat:head',
-			'newer:concat:ie',
-			'newer:concat:vendor',
+			'newer:rigger',
 			'newer:sass',
 			'newer:stylus',
 			'autoprefixer',

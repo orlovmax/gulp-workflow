@@ -1,6 +1,6 @@
 // Minify HTML
 module.exports = {
-	main: {
+	all: {
 		options: {
 			collapseWhitespace: true,
 			minifyJS: true,

@@ -64,9 +64,6 @@ My front-end boilerplate with predefined directory structure and some Bower depe
 |	│       └── block.jade
 |	│
 |   ├── coffee/                                * coffee scripts
-|	│   ├── main/                              * main scripts
-|	│   ├── head/                              * head scripts
-|	│   └── vendor/                            * vendor scripts
 |	│
 │   ├── images/                                * image sources
 |	│
@@ -77,10 +74,11 @@ My front-end boilerplate with predefined directory structure and some Bower depe
 |	│   └── pages/                             * main pages templates
 |	│
 │   ├── js/                                    * compiled and source js
-|	|   ├── main/                              * main site scripts
-|	│   ├── ie/                                * ie compat scripts
-|	│   ├── head/                              * head scripts
-|	│   └── vendor/                            * vendor scripts
+|	|   ├── vendor/                            * vendor scripts library
+|	|   ├── lib/                               * site scripts library
+|	│   ├── ie.js                              * ie compat scripts
+|	│   ├── head.js                            * head scripts
+|	│   └── body.js                            * vendor scripts
 |	│
 |	├── sass/                                  * sass preprocessor styles
 |	│   ├── helpers/                           * mixins and vars
@@ -161,8 +159,7 @@ Grunt: `grunt start`
 Gulp: `gulp start`
 ```
 - 'shell:bower'                          Install bower components
-- 'bower:ie'                             Copy ie components to js folder
-- 'bower:vendor'                         Copy vendor  components to js folder
+- 'bower'                                Copy ie components to js folder
 - 'clean:gitkeep'                        Remove gitkeep files
 ```
 
@@ -171,11 +168,8 @@ Dev task with static server.
 Grunt: `grunt dev` 
 Gulp: `gulp dev`
 ```
-- 'coffee'                               Compile main coffescripts
-- 'concat:main'                          Concatenate main javascripts
-- 'concat:head'                          Concatenate head javascripts
-- 'concat:ie'                            Concatenate ie javascripts
-- 'concat:vendor'                        Concatenate vendor javascripts
+- 'coffee'                               Compile coffescripts
+- 'rigger'                               Concatenate javascripts
 - 'sass'                                 Compile Sass stylesheets
 - 'stylus'                               Compile Stylus stylesheets
 - 'cmq'                                  Combine media queries in css files
@@ -208,11 +202,8 @@ Regenerate and build project by running all tasks.
 Grunt: `grunt rebuild` 
 Gulp: `gulp rebuild`
 ```
-- 'coffee'                               Compile main coffescripts
-- 'concat:main'                          Concatenate main javascripts
-- 'concat:head'                          Concatenate head javascripts
-- 'concat:ie'                            Concatenate ie javascripts
-- 'concat:vendor'                        Concatenate vendor javascripts
+- 'coffee'                               Compile coffescripts
+- 'rigger'                               Concatenate javascripts
 - 'sass'                                 Compile Sass stylesheets
 - 'stylus'                               Compile Stylus stylesheets
 - 'cmq'                                  Combine media queries in css files
