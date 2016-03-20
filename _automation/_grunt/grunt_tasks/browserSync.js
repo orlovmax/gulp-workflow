@@ -10,8 +10,8 @@ module.exports = {
 	dev:{
 		bsFiles: {
 			src: [
-				'<%= paths.build.js %>/*.js',
-				'<%= paths.build.css %>/*.css',
+				'<%= paths.build.js %>/*.min.js',
+				'<%= paths.build.css %>/*.min.css',
 				'<%= paths.build.images %>/**/*.*',
 				'<%= paths.build.html %>/*.html'
 			]

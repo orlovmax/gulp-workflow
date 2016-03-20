@@ -8,10 +8,7 @@ var gulp = require('gulp'),
 
 //Autoprefixer
 gulp.task('autoprefixer', function () {
-	return gulp.src([
-		paths.build.css + '/*.css',
-		'!' + paths.build.css + '/*.min.css'
-	])
+	return gulp.src(paths.build.css + '/*.min.css')
 		.pipe(plumber())
 		.pipe(autoprefixer({
 			browsers: settings.browserlist,

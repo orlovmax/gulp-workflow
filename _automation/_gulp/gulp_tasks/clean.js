@@ -10,16 +10,6 @@ gulp.task('clean:gitkeep', function() {
 		.pipe(vinylPaths(del));
 });
 
-gulp.task('clean:dev', function() {
-	return gulp.src([
-		paths.build.js + '/*.js',
-		'!' + paths.build.js + '/*.min.*',
-		paths.build.css + '/*.css',
-		'!' + paths.build.css + '/*.min.*'
-	], { read: false })
-		.pipe(vinylPaths(del));
-});
-
 gulp.task('clean:cache', function() {
 	return gulp.src([
 		paths.build.js + '/**/*.min.*.js',

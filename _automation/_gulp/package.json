@@ -16,7 +16,6 @@
     "gulp-merge-media-queries": "^0.2.1",
     "gulp-minify-css": "^1.0.0",
     "gulp-plumber": "^0.6.5",
-    "gulp-processhtml": "^1.0.2",
     "gulp-rename": "^1.2.0",
     "gulp-rigger": "^0.5.8",
     "gulp-sass": "^0.7.3",

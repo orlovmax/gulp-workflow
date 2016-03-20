@@ -4,7 +4,7 @@ module.exports = {
 		files: [
 			'<%= paths.dev.sass %>/*.{sass,scss}',
 			'<%= paths.dev.stylus %>/*.styl',
-			'<%= paths.dev.coffee %>/**/*.coffee',
+			'<%= paths.dev.coffee %>/*.coffee',
 			'<%= paths.dev.js %>/*.js',
 			'<%= paths.dev.jade %>/*.jade',
 			'<%= paths.dev.images %>/**/*.*',
@@ -14,7 +14,7 @@ module.exports = {
 		],
 		tasks: [
 			'newer:coffee',
-			'newer:rigger',
+			'rigger',
 			'newer:sass',
 			'newer:stylus',
 			'autoprefixer',

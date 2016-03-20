@@ -18,10 +18,13 @@ gulp.task('watch:all', function() {
 	);
 
 	gulp.watch(
-		paths.dev.js + '/*.js',
+		[
+			paths.dev.js + '/*.js',
+			paths.dev.js + '/lib/*.js'
+		],
 		function() {
 			runSequence(
-			'rigger:changed',
+			'rigger',
 			'browserSync:reload'
 			);
 		}

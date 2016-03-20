@@ -7,10 +7,7 @@ var gulp = require('gulp'),
 
 //Combine media queries in result *.css files
 gulp.task('cmq', function () {
-	return gulp.src([
-		paths.build.css + '/*.css',
-		'!' + paths.build.css + '/*.min.css'
-	])
+	return gulp.src(paths.build.css + '/*.min.css')
 		.pipe(plumber())
 		.pipe(cmq({
 			log: false

@@ -33,12 +33,10 @@ gulp.task('dev', function() {
 gulp.task('build', function() {
 	runSequence(
 		'imagemin',
-		'processhtml',
 		'csscomb',
 		'uglify',
 		'csso',
 		'htmlmin',
-		'clean:dev',
 		'browserSync:server'
 	);
 });
@@ -57,7 +55,6 @@ gulp.task('rebuild', function() {
 		'sync:fonts',
 		'sync:images',
 		'imagemin',
-		'processhtml',
 		'csscomb',
 		'uglify',
 		'csso',

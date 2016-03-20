@@ -2,17 +2,12 @@
 var gulp = require('gulp'),
 	paths = require('./config/paths'),
 	plumber = require('gulp-plumber'),
-	uglify = require('gulp-uglify'),
-	rename = require('gulp-rename');
+	uglify = require('gulp-uglify');
 
 
 gulp.task('uglify', function() {
-	return gulp.src([
-		paths.build.js + '/*.js',
-		'!' + paths.build.js + '/*.min.js'
-	])
+	return gulp.src(paths.build.js + '/*.min.js')
 		.pipe(plumber())
 		.pipe(uglify())
-		.pipe(rename({suffix: '.min'}))
 		.pipe(gulp.dest(paths.build.js));
 });

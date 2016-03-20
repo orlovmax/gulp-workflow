@@ -6,7 +6,7 @@ module.exports = {
 		cwd: '<%= paths.dev.coffee %>',
 		src: ['*.coffee'],
 		dest: '<%= paths.dev.js %>/lib',
-		ext: '.js',
+		ext: '.coffee.js',
 		extDot: 'last'
 	}
 }

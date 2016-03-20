@@ -28,9 +28,7 @@ module.exports = {
 		'csscomb',
 		'uglify',
 		'csso',
-		'processhtml',
 		'htmlmin',
-		'clean:dev',
 		'browserSync:test'
 	],
 
@@ -50,9 +48,7 @@ module.exports = {
 		'csscomb',
 		'uglify',
 		'csso',
-		'processhtml',
-		'htmlmin',
-		'clean:dev'
+		'htmlmin'
 	],
 
 	// Run server without watching for changes
