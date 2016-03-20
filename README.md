@@ -159,7 +159,7 @@ Grunt: `grunt start`
 Gulp: `gulp start`
 ```
 - 'shell:bower'                          Install bower components
-- 'bower'                                Copy ie components to js folder
+- 'bower'                                Copy bower components to js folder
 - 'clean:gitkeep'                        Remove gitkeep files
 ```
 
