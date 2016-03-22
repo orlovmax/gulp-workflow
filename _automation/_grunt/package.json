@@ -26,6 +26,5 @@
     "main-bower-files": "^2.9.0",
     "load-grunt-config": "^0.17.1"
   },
-  "dependencies": {},
-  "license": "MIT"
+  "dependencies": {}
 }
