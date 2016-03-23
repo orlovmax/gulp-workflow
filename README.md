@@ -155,83 +155,76 @@ Here comes groups of grunt and gulp tasks with some explanations
 
 #### Start 
 Install bower dependencies and place them to dev folders.
-Grunt: `grunt start` 
-Gulp: `gulp start`
-```
-- 'shell:bower'                          Install bower components
-- 'bower'                                Copy bower components to js folder
-- 'clean:gitkeep'                        Remove gitkeep files
-```
+Grunt: `grunt start` Gulp: `gulp start`
+
+* Install bower components
+* Copy bower components to dev folder
+* Remove gitkeep files
 
 #### Dev
 Dev task with static server.
-Grunt: `grunt dev` 
-Gulp: `gulp dev`
-```
-- 'coffee'                               Compile coffescripts
-- 'rigger'                               Concatenate javascripts
-- 'sass'                                 Compile Sass stylesheets
-- 'stylus'                               Compile Stylus stylesheets
-- 'autoprefixer'                         Add vendor prefixes in css
-- 'cmq'                                  Combine media queries in css files
-- 'jade'                                 Compile Jade templates
-- 'sync:helpers'                         Sync helpers and other assets
-- 'sync:fonts'                           Sync fonts
-- 'sync:images'                          Sync images
-- 'browserSync'                          Run dev server with watch option
-- 'watch:all'                            Watch for changes and run dev task
-```
+Grunt: `grunt dev` Gulp: `gulp dev`
+
+* Compile coffescripts
+* Concatenate javascripts
+* Compile Sass stylesheets
+* Compile Stylus stylesheets
+* Add vendor prefixes in css
+* Combine media queries in css files
+* Compile Jade templates
+* Sync helpers and other assets
+* Sync fonts
+* Sync images
+* Run BrowserSync static server with live reload using 
+* Watch for changes and run dev task
+
 
 #### Build 
 Build task.
-Grunt: `grunt build` 
-Gulp: `gulp build`
-```
-- 'imagemin'                             Minify images
-- 'csscomb'                              Applie styleguide to stylesheets
-- 'uglify'                               Minify javascript files
-- 'csso'                                 Minify stylesheets
-- 'htmlmin'                              Minify html
-- 'browserSync'                          Run test server without watch
-```
+Grunt: `grunt build` Gulp: `gulp build`
+
+* Minify images
+* Apply styleguide to stylesheets
+* Minify javascript files
+* Minify stylesheets
+* Minify html
+* Run BrowserSync static server 
+
 
 #### Rebuild 
 Regenerate and build project by running all tasks.
-Grunt: `grunt rebuild` 
-Gulp: `gulp rebuild`
-```
-- 'coffee'                               Compile coffescripts
-- 'rigger'                               Concatenate javascripts
-- 'sass'                                 Compile Sass stylesheets
-- 'stylus'                               Compile Stylus stylesheets
-- 'autoprefixer'                         Add vendor prefixes in css
-- 'cmq'                                  Combine media queries in css files
-- 'jade'                                 Compile Jade templates
-- 'sync:helpers'                         Sync helpers and other assets
-- 'sync:fonts'                           Sync fonts
-- 'sync:images'                          Sync images
-- 'imagemin'                             Minify images
-- 'csscomb'                              Applie styleguide to stylesheets
-- 'uglify'                               Minify javascript files
-- 'csso'                                 Minify stylesheets
-- 'htmlmin'                              Minify html
-```
+Grunt: `grunt rebuild` Gulp: `gulp rebuild`
+
+* Compile coffescripts
+* Concatenate javascripts
+* Compile Sass stylesheets
+* Compile Stylus stylesheets
+* Add vendor prefixes in css
+* Combine media queries in css files
+* Compile Jade templates
+* Sync helpers and other assets
+* Sync fonts
+* Sync images
+* Minify images
+* Apply styleguide to stylesheets
+* Minify javascript files
+* Minify stylesheets
+* Minify html
+
 
 #### Server 
 Run server without watching for changes.
-Grunt: `grunt server` 
-Gulp: `gulp server`
-```
-- 'browserSync'              Run test server without watch
-```
+Grunt: `grunt server` Gulp: `gulp server`
+
+* Run BrowserSync static server
+
 
 #### Sprite 
 Sprite creation task. Should be configured before running.
-Grunt: `grunt sprite` 
-Gulp: `gulp sprite`
-```
-- 'sprite'                               Create images sprite and related css
-```
+Grunt: `grunt sprite` Gulp: `gulp sprite`
+
+* Create images sprite and related css
+
 
 ## Live reload 
 This project uses BrowserSync as static server with enabled and configured live reload option.
