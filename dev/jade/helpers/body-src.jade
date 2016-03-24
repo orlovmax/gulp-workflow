@@ -5,3 +5,7 @@ mixin body-src()
 
 	//- Body javascript
 	script(src='static/js/body.min.js')
+
+	//- Google analytics code
+	if config.modules.googleAnalytics
+		+google-analytics()
