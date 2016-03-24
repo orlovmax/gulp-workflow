@@ -13,16 +13,13 @@ include ../_blocks-list
 block variables
 
 doctype html
-html(lang=pageLang)
+html(lang="#{config.site.lang}")
 	head
-		// Meta information
+		//- Meta information
 		+head-meta()
 
-		// Head external resources
+		//- Head external resources
 		+head-src()
-
-		// IE specific styles and scripts
-		+ie-fix()
 
 		//- Include page specific content
 		block head-content
@@ -31,12 +28,9 @@ html(lang=pageLang)
 		//- Include page specific content
 		block body-content
 
-		// Browser update screen
-		+ie-out({theme: 'light', lang: pageLang, version: 8})
-
-		// Body external resources
+		//- Body assets
 		+body-src()
 
-		// GA code
-		| <!-- build:template
-		| /build -->
+		if config.modules.googleAnalytics
+			// GA code
+			+google-analytics()

@@ -25,7 +25,7 @@ gulp.task('dev', function() {
 		'sync:fonts',
 		'sync:images',
 		'browserSync:server',
-		'watch:all'
+		'watch'
 	);
 });
 

@@ -5,7 +5,7 @@ var gulp = require('gulp'),
 
 
 // Watch Files For Changes
-gulp.task('watch:all', function() {
+gulp.task('watch', function() {
 	gulp.watch(
 		paths.dev.coffee + '/*.coffee',
 		function() {
@@ -48,6 +48,16 @@ gulp.task('watch:all', function() {
 			runSequence(
 			'stylus:changed',
 			'cmq',
+			'browserSync:reload'
+			);
+		}
+	);
+
+	gulp.watch(
+		paths.dev.data + '/*.*',
+		function() {
+			runSequence(
+			'jade',
 			'browserSync:reload'
 			);
 		}

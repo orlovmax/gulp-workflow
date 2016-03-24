@@ -1,24 +1,27 @@
 mixin head-meta()
-	meta(charset='utf-8')
-	meta(http-equiv='X-UA-Compatible', content='IE=edge')
-	meta(name='viewport', content='width=device-width, initial-scale=1')
+	meta(charset="utf-8")
+	meta(http-equiv="X-UA-Compatible", content="IE=edge")
+	meta(name="viewport", content="width=device-width, initial-scale=1")
 
-	title #{pageTitle}
-	meta(name='description', content=pageDescription)
-	meta(name='keywords', content=pageKeywords)
+	//- Site meta information
+	title #{pageTitle ? pageTitle + config.site.titleDelim + config.site.title : config.site.title}
+	meta(name="description", content="#{pageDescription ? pageDescription : config.site.description}")
+	meta(name="keywords", content="#{pageKeywords ? pageKeywords : config.siteKeywords}")
 
-	// Opengraph
-	meta(property='og:type', content='website')
-	meta(property='og:title', content='#{pageTitle}')
-	meta(property='og:description', content=pageDescription)
-	// meta(property='og:image', content='===url===/static/images/card.jpg')
-	// meta(property='og:url', content='===url===')
+	//- Opengraph
+	if config.modules.openGraph
+		meta(property="og:type", content="website")
+		meta(property="og:title", content="#{pageTitle ? pageTitle + config.site.titleDelim + config.site.title : config.site.title}")
+		meta(property="og:description", content="#{pageDescription ? pageDescription : config.site.description}")
+		meta(property="og:image", content="#{config.site.url + '/static/images/card.jpg'}")
+		meta(property="og:url", content="#{pageUrl ? pageUrl : config.site.url}")
 
-	// TwitterCard
-	meta(name='twitter:card', content='summary')
-	meta(name='twitter:title', content='#{pageTitle}')
-	meta(name='twitter:description', content=pageDescription)
-	// meta(name='twitter:image:src', content='===url===/static/images/card.jpg')
-	// meta(name='twitter:creator', content='===twittercard-validation-account===')
-	// meta(name='twitter:site', content='===twitter-url===')
-	// meta(name='twitter:url', content='===url===')
+	//- TwitterCard
+	if config.modules.twitterCard
+		meta(name="twitter:card", content="summary")
+		meta(name="twitter:title", content="#{pageTitle ? pageTitle + config.site.titleDelim + config.site.title : config.site.title}")
+		meta(name="twitter:description", content="#{pageDescription ? pageDescription : config.site.description}")
+		meta(name="twitter:image:src", content="#{config.site.url + '/static/images/card.jpg'}")
+		meta(name="twitter:creator", content="#{config.links.twitterCard}")
+		meta(name="twitter:site", content="#{config.links.twitterCard}")
+		meta(name="twitter:url", content="#{pageUrl ? pageUrl : config.site.url}")

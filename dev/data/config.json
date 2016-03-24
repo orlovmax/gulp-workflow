@@ -1,0 +1,24 @@
+{
+	"site": {
+		"lang": "en",
+		"title": "Front-end scaffold",
+		"titleDelim": " | ",
+		"description": "Grunt-Gulp and Bower powered frontend boilerplate",
+		"keywords": "Front-end template, project template, boilerplate, web starter kit",
+		"url": "===site-full-url==="
+	},
+	"modules": {
+		"headJs": true,
+		"ieJs": true,
+		"customCss": true,
+		"noscriptCss": true,
+		"ieCss": true,
+		"ieMessage": true,
+		"googleAnalytics": true,
+		"twitterCard": true,
+		"openGraph": true
+	},
+	"links": {
+		"twitterCard": "===twittercard-validation-account==="
+	}
+}

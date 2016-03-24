@@ -14,12 +14,13 @@ module.exports = {
 		'stylus',
 		'autoprefixer',
 		'cmq',
+		'async_jade_data',
 		'jade',
 		'sync:helpers',
 		'sync:fonts',
 		'sync:images',
 		'browserSync:dev',
-		'watch:all'
+		'watch'
 	],
 
 	// Build task
@@ -40,6 +41,7 @@ module.exports = {
 		'stylus',
 		'autoprefixer',
 		'cmq',
+		'async_jade_data',
 		'jade',
 		'sync:helpers',
 		'sync:fonts',
