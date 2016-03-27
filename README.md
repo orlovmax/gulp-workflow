@@ -58,17 +58,13 @@ My front-end boilerplate with predefined directory structure and some Bower depe
 ├── screenshots/                               * responsive test screenshots
 |
 ├── dev/                                       * site source
-|	├── blocks/                                * website blocks library
-|	│   └── block/
-|	│       ├── block.sass
-|	│       ├── block.styl
-|	│       └── block.jade
-|	│
 |   ├── coffee/                                * coffee scripts
 |	│
 │   ├── images/                                * image sources
 |	│
 │   ├── jade/                                  * templates
+|	|	├── blocks/                            * blocks library
+|	│   |   └── block.jade
 |	│   ├── helpers/                           * helper mixins
 |	│   ├── vendor/                            * third-party code
 |	│   ├── layouts/                           * page layouts
@@ -82,6 +78,8 @@ My front-end boilerplate with predefined directory structure and some Bower depe
 |	│   └── body.js                            * vendor scripts
 |	│
 |	├── sass/                                  * sass preprocessor styles
+|	|	├── blocks/                            * blocks library
+|	│   |   └── block.sass
 |	│   ├── helpers/                           * mixins and vars
 |	│   ├── vendor/                            * third-party code
 |	│   ├── ie.sass
@@ -90,6 +88,8 @@ My front-end boilerplate with predefined directory structure and some Bower depe
 |	│   └── screen.sass
 |	│
 |	├── stylus/                                * stylus preprocessor styles
+|	|	├── blocks/                            * blocks library
+|	│   |   └── block.styl
 |	│   ├── helpers/                           * mixins and vars
 |	│   ├── vendor/                            * third-party code
 |	│   ├── ie.styl
@@ -99,6 +99,7 @@ My front-end boilerplate with predefined directory structure and some Bower depe
 |	│
 │   ├── helpers/                               * helper files
 |	|	├── index.html
+|	|	├── index_bg.jpg
 |	|	├── favicon.ico
 |	|	└── .htaccess
 |	│
