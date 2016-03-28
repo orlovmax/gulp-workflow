@@ -4,36 +4,30 @@
 //
 // CONTENTS.............................Here we are!
 //
-// DEV TOOLS............................Useful deveopment tools
-//
 // VENDOR
-//   Mixins.............................External scss mixins
-//   Grid system........................Import fluid gs
-//   Typographic rhythm.................Import vertical rhythm mixin
+//   $Grid system........................Import fluid gs
+//   $Typographic rhythm.................Import vertical rhythm mixin
 //
 // HELPERS..............................Variables, mixins, elements
-//   Variables..........................Settings and variables
-//   Fonts..............................Offline and online fonts
-//   Reset..............................Reset defaults
-//   Base...............................Some general styles
+//   $Mixins.............................Site mixins
+//   $Variables..........................Settings and variables
+//   $Fonts..............................Offline and online fonts
+//   $Reset..............................Reset defaults
+//   $Base...............................Some general styles
 //
 // BLOCKS...............................Page components
-//   Main header........................Site header
-//   Common section.....................Page section
-//   Main footer........................Site footer
-
-
-////////////////////////////////////////
-/// $DEV TOOLS
-////////////////////////////////////////
+//   $Common form.......................
+//   $Image fit to size.................
+//   $Page content......................
+//   $Page footer.......................
+//   $Page header.......................
+//   $Page navigation...................
+//   $Social icons......................
 
 
 ////////////////////////////////////////
 /// $VENDOR
 ////////////////////////////////////////
-
-// $Mixins
-@import vendor/mixins
 
 // $Grid system
 @import vendor/gs
@@ -45,6 +39,9 @@
 ////////////////////////////////////////
 /// $HELPERS
 ////////////////////////////////////////
+
+// $Mixins
+@import vendor/mixins
 
 // $Variables
 @import helpers/variables
@@ -63,11 +60,23 @@
 /// $BLOCKS
 ////////////////////////////////////////
 
-// $Main header
-@import blocks/header
+// $Common form
+@import blocks/form
 
-// $Common section
-@import blocks/section
+// $Image fit to size
+@import blocks/img-fit
 
-// $Main footer
-@import blocks/footer
+// $Page content
+@import blocks/page-content
+
+// $Page footer
+@import blocks/page-footer
+
+// $Page header
+@import blocks/page-header
+
+// $Page navigation
+@import blocks/page-nav
+
+// $Social icons
+@import blocks/social

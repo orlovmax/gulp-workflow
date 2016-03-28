@@ -1,0 +1,23 @@
+// $Image fit to size
+$block: ".img-fit"
+
+#{$block}
+	position: relative
+
+	// Target picture
+	& > img
+		position: absolute
+		display: block
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+
+	// Target picture CONTEXT: STATE: vertical
+	&.is-vertical > img
+		height: 100%
+		max-height: 100%
+
+	// Target picture CONTEXT: STATE: horizontal
+	&.is-horizontal > img
+		width: 100%
+		max-width: 100%

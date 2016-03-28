@@ -1,18 +1,14 @@
 testbg(red = 255, green = 0, blue = 0, alpha = 0.3)
 	background-color rgba(red, green, blue, alpha)
 
-testout(width = 1px, line-type = solid, color = #0074d9)
+testbd(width = 1px, line-type = solid, color = green)
 	outline width line-type color
 
-hidentext()
-	text-indent 100%
-	white-space nowrap
-	overflow hidden
+testout(width = 1px, line-type = solid, color = blue)
+	outline width line-type color
 
 clearfix()
-	&:before,
 	&:after
-		display block
 		content ''
+		display table
 		clear both
-		height 0
