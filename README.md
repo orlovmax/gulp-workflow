@@ -98,8 +98,6 @@ My front-end boilerplate with predefined directory structure and some Bower depe
 |	│   └── screen.styl
 |	│
 │   ├── helpers/                               * helper files
-|	|	├── index.html
-|	|	├── index_bg.jpg
 |	|	├── favicon.ico
 |	|	└── .htaccess
 |	│
