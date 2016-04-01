@@ -1,6 +1,6 @@
 // Compile Sass to CSS
 module.exports = {
-	all: {
+	main: {
 		options: {
 			style: 'expanded',
 			sourcemap: 'none'

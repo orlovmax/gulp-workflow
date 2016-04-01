@@ -4,7 +4,7 @@ module.exports = {
 		keepSpecialComments: '*',
 		restructure: false
 	},
-	all: {
+	main: {
 		files:[{
 			expand: true,
 			cwd: '<%= paths.build.css %>',

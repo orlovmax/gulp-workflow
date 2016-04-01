@@ -1,6 +1,6 @@
 // Compile CoffeeScript files to JavaScript
 module.exports = {
-	all: {
+	main: {
 		expand: true,
 		flatten: true,
 		cwd: '<%= paths.dev.coffee %>',

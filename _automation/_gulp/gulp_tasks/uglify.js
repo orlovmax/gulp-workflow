@@ -5,7 +5,7 @@ var gulp = require('gulp'),
 	uglify = require('gulp-uglify');
 
 
-gulp.task('uglify', function() {
+gulp.task('uglify:main', function() {
 	return gulp.src(paths.build.js + '/*.min.js')
 		.pipe(plumber())
 		.pipe(uglify())

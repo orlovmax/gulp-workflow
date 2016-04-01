@@ -6,7 +6,7 @@ var gulp = require('gulp'),
 
 
 //Combine media queries in result *.css files
-gulp.task('cmq', function () {
+gulp.task('cmq:main', function () {
 	return gulp.src(paths.build.css + '/*.min.css')
 		.pipe(plumber())
 		.pipe(cmq({

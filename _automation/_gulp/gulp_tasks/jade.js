@@ -9,7 +9,7 @@ var gulp = require('gulp'),
 
 
 //Compile *.jade files
-gulp.task('jade', function() {
+gulp.task('jade:main', function() {
 	return gulp.src(paths.dev.jade + '/*.jade')
 		.pipe(plumber())
 		.pipe(data(function(file) {
@@ -25,7 +25,7 @@ gulp.task('jade', function() {
 });
 
 //Compile *.jade files within watch task
-gulp.task('jade:changed', function() {
+gulp.task('jade:main:changed', function() {
 	return gulp.src(paths.dev.jade + '/*.jade')
 		.pipe(plumber())
 		.pipe(changed(paths.build.html, {extension: '.html'}))

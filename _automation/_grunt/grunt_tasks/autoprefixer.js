@@ -5,7 +5,7 @@ module.exports = {
 		browsers: '<%= settings.browserlist %>',
 		cascade: true
 	},
-	all: {
+	main: {
 		files:[{
 			expand: true,
 			cwd: '<%= paths.build.css %>',

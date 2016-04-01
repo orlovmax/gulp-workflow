@@ -6,7 +6,7 @@ var gulp = require('gulp'),
 
 
 // Copy bower files into js vendor folder
-gulp.task('bower', function() {
+gulp.task('bower:main', function() {
 	return gulp.src(mainBowerFiles({
 		overrides: {
 			jquery: {

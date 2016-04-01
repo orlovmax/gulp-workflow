@@ -1,6 +1,6 @@
 // Extend jade templates with json data
 module.exports = {
-	all: {
+	main: {
 		options: {
 			global: true,
 			data: {

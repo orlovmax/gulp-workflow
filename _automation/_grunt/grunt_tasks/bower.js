@@ -1,7 +1,7 @@
 // Manage bower dependencies
 module.exports = {
 	// Copy bower files into js vendor folder
-	all: {
+	main: {
 		dest: '<%= paths.dev.js %>/vendor',
 		options: {
 			checkExistence: true,

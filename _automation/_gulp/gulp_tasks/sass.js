@@ -6,7 +6,7 @@ var gulp = require('gulp'),
 	rename = require('gulp-rename');
 
 //Compile *.scss files
-gulp.task('sass', function () {
+gulp.task('sass:main', function () {
 	return gulp.src(paths.dev.sass + '/*.{sass,scss}')
 		.pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
 		.pipe(rename({suffix: '.min'}))
@@ -14,7 +14,7 @@ gulp.task('sass', function () {
 });
 
 //Compile *.scss files within watch task
-gulp.task('sass:changed', function () {
+gulp.task('sass:main:changed', function () {
 	return gulp.src(paths.dev.sass + '/*.{sass,scss}')
 		.pipe(changed(paths.build.css, {extension: '.min.css'}))
 		.pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))

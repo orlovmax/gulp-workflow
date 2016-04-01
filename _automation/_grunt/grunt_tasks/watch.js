@@ -5,8 +5,8 @@ module.exports = {
 			'<%= paths.dev.coffee %>/*.coffee'
 		],
 		tasks: [
-			'newer:coffee',
-			'rigger'
+			'newer:coffee:main',
+			'rigger:main'
 		],
 		options: {
 			spawn: false
@@ -18,7 +18,7 @@ module.exports = {
 			'<%= paths.dev.js %>/lib/*.js'
 		],
 		tasks: [
-			'rigger'
+			'rigger:main'
 		],
 		options: {
 			spawn: false
@@ -29,9 +29,9 @@ module.exports = {
 			'<%= paths.dev.sass %>/*.{sass,scss}'
 		],
 		tasks: [
-			'newer:sass',
-			'autoprefixer',
-        	'cmq'
+			'newer:sass:main',
+			'autoprefixer:main',
+        	'cmq:main'
 		],
 		options: {
 			spawn: false
@@ -42,9 +42,9 @@ module.exports = {
 			'<%= paths.dev.stylus %>/*.styl'
 		],
 		tasks: [
-			'newer:stylus',
-			'autoprefixer',
-        	'cmq'
+			'newer:stylus:main',
+			'autoprefixer:main',
+        	'cmq:main'
 		],
 		options: {
 			spawn: false
@@ -55,8 +55,8 @@ module.exports = {
 			'<%= paths.dev.data %>/*.*'
 		],
 		tasks: [
-			'async_jade_data',
-			'jade'
+			'async_jade_data:main',
+			'jade:main'
 		],
 		options: {
 			spawn: false
@@ -67,7 +67,7 @@ module.exports = {
 			'<%= paths.dev.jade %>/*.jade'
 		],
 		tasks: [
-			'newer:jade'
+			'newer:jade:main'
 		],
 		options: {
 			spawn: false

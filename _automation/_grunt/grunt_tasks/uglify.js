@@ -3,7 +3,7 @@ module.exports = {
 	options: {
 		mangle: false
 	},
-	all: {
+	main: {
 		files:[{
 			expand: true,
 			cwd: '<%= paths.build.js %>',

@@ -1,6 +1,6 @@
 // Concatenate files.
 module.exports = {
-	all: {
+	main: {
 		files: [{
 			'<%= paths.build.js %>/ie.min.js': '<%= paths.dev.js %>/ie.js',
 			'<%= paths.build.js %>/body.min.js': '<%= paths.dev.js %>/body.js',

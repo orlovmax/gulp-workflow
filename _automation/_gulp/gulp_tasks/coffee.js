@@ -8,7 +8,7 @@ var gulp = require('gulp'),
 
 
 //Compile main *.coffee files
-gulp.task('coffee', function() {
+gulp.task('coffee:main', function() {
 	return gulp.src([paths.dev.coffee + '/*.coffee'])
 		.pipe(plumber())
 		.pipe(coffee({bare: true}))
@@ -17,7 +17,7 @@ gulp.task('coffee', function() {
 });
 
 //Compile main *.coffee files within watch task
-gulp.task('coffee:changed', function() {
+gulp.task('coffee:main:changed', function() {
 	return gulp.src([paths.dev.coffee + '/*.coffee'])
 		.pipe(plumber())
 		.pipe(changed(paths.dev.js + '/lib', {extension: '.coffee.js'}))

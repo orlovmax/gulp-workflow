@@ -6,7 +6,7 @@ var gulp = require('gulp'),
 
 
 //Autoprefixer
-gulp.task('csscomb', function () {
+gulp.task('csscomb:main', function () {
 	return gulp.src(paths.build.css + '/*.min.css')
 		.pipe(plumber())
 		.pipe(csscomb())

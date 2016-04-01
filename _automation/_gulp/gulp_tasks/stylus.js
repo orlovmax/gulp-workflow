@@ -8,7 +8,7 @@ var gulp = require('gulp'),
 
 
 //Compile *.scss files
-gulp.task('stylus', function () {
+gulp.task('stylus:main', function () {
 	return gulp.src(paths.dev.stylus + '/*.styl')
 		.pipe(stylus())
 		.pipe(rename({suffix: '.min'}))
@@ -16,7 +16,7 @@ gulp.task('stylus', function () {
 });
 
 //Compile *.scss files within watch task
-gulp.task('stylus:changed', function () {
+gulp.task('stylus:main:changed', function () {
 	return gulp.src(paths.dev.stylus + '/*.styl')
 		.pipe(plumber())
 		.pipe(changed(paths.build.css, {extension: '.min.css'}))

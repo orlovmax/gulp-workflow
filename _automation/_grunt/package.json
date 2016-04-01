@@ -6,7 +6,6 @@
     "grunt-async-jade-data": "^0.1.1",
     "grunt-autoprefixer": "^1.0.1",
     "grunt-browser-sync": "^2.2.0",
-    "grunt-cache-bust": "^0.6.0",
     "grunt-combine-media-queries": "^1.0.19",
     "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-coffee": "^0.12.0",

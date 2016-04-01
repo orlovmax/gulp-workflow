@@ -3,7 +3,7 @@ module.exports = {
 	options: {
 	    config: './.csscomb.json'
 	},
-	all: {
+	main: {
 		files:[{
 			expand: true,
 			cwd: '<%= paths.build.css %>',

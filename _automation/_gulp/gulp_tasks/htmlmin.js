@@ -6,7 +6,7 @@ var gulp = require('gulp'),
 
 
 //Minify *.html files
-gulp.task('htmlmin', function() {
+gulp.task('htmlmin:main', function() {
     return gulp.src(paths.build.main + '/*.html')
         .pipe(plumber())
         .pipe(htmlmin({collapseWhitespace: true}))
