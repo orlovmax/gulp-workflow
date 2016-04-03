@@ -8,6 +8,7 @@
 		"url": "===site-full-url==="
 	},
 	"modules": {
+		"googleFonts": "https://fonts.googleapis.com/css?family=PT+Sans&subset=latin,cyrillic%7CPT+Serif&subset=latin,cyrillic",
 		"headJs": true,
 		"ieJs": true,
 		"customCss": true,
