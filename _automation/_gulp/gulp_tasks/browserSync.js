@@ -11,6 +11,5 @@ gulp.task('browserSync:server', function() {
 });
 
 gulp.task('browserSync:reload', function() {
-	return gulp.src('', {read: false})
-		.pipe(browserSync.reload({stream:true}));
+	return browserSync.reload();
 });
