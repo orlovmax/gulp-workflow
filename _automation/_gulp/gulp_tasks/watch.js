@@ -64,7 +64,7 @@ gulp.task('watch', function() {
 	);
 
 	gulp.watch(
-		paths.dev.jade + '/*.jade',
+		paths.dev.jade + '/pages/*.jade',
 		function() {
 			runSequence(
 			'jade:main:changed',

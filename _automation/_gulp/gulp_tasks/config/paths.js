@@ -4,7 +4,7 @@ module.exports = {
 		main: 'dev',
 		coffee: 'dev/coffee',
 		js: 'dev/js',
-		jade: 'dev/jade/pages',
+		jade: 'dev/jade',
 		sass: 'dev/sass',
 		stylus: 'dev/stylus',
 		images: 'dev/images',

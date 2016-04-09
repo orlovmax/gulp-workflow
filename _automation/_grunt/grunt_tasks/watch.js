@@ -64,7 +64,7 @@ module.exports = {
 	},
 	jade: {
 		files: [
-			'<%= paths.dev.jade %>/*.jade'
+			'<%= paths.dev.jade %>/pages/*.jade'
 		],
 		tasks: [
 			'newer:jade:main'
