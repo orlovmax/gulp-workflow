@@ -9,6 +9,7 @@
 	},
 	"modules": {
 		"googleFonts": "https://fonts.googleapis.com/css?family=PT+Sans&subset=latin,cyrillic%7CPT+Serif&subset=latin,cyrillic",
+		"bodyJs": true,
 		"headJs": true,
 		"ieJs": true,
 		"customCss": true,

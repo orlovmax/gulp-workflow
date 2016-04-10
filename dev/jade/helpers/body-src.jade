@@ -4,7 +4,8 @@ mixin body-src()
 		+ie-out({theme: 'light', lang: config.site.lang, version: 8})
 
 	//- Body javascript
-	script(src="static/js/body.min.js")
+	if config.modules.bodyJs
+		script(src="static/js/body.min.js")
 
 	//- Google analytics code
 	if config.modules.googleAnalytics
