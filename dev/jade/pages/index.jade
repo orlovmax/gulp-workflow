@@ -5,7 +5,7 @@ html(lang="#{config.site.lang}")
 		meta(http-equiv="X-UA-Compatible", content="IE=edge")
 		meta(name="viewport", content="width=device-width, initial-scale=1")
 
-		title ProjectName
+		title #{config.site.title}
 
 	body
 		style
@@ -145,7 +145,7 @@ html(lang="#{config.site.lang}")
 		div.background.background_image.background_blur
 		div.overlay.overlay_dark
 			main.project
-				h1.project__name.project__name_shadow ProjectName
+				h1.project__name.project__name_shadow #{config.site.title}
 
 				ul.project__list
 					li.project__item
