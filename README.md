@@ -189,7 +189,6 @@ Build task.
 Grunt: `grunt build` Gulp: `gulp build`
 
 * Minify images
-* Apply styleguide to stylesheets
 * Minify javascript files
 * Minify stylesheets
 * Minify html
@@ -211,7 +210,6 @@ Grunt: `grunt rebuild` Gulp: `gulp rebuild`
 * Sync fonts
 * Sync images
 * Minify images
-* Apply styleguide to stylesheets
 * Minify javascript files
 * Minify stylesheets
 * Minify html

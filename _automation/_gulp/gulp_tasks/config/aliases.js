@@ -18,8 +18,7 @@ gulp.task('dev', function() {
 		'rigger:main',
 		'sass:main',
 		'stylus:main',
-		'autoprefixer:main',
-		'cmq:main',
+		'postcss:dev',
 		'jade:main',
 		'sync:helpers',
 		'sync:fonts',
@@ -33,9 +32,8 @@ gulp.task('dev', function() {
 gulp.task('build', function() {
 	runSequence(
 		'imagemin:main',
-		'csscomb:main',
 		'uglify:main',
-		'csso:main',
+		'postcss:build',
 		'htmlmin:main',
 		'browserSync:server'
 	);
@@ -48,16 +46,14 @@ gulp.task('rebuild', function() {
 		'rigger:main',
 		'sass:main',
 		'stylus:main',
-		'autoprefixer:main',
-		'cmq:main',
+		'postcss:dev',
 		'jade:main',
 		'sync:helpers',
 		'sync:fonts',
 		'sync:images',
 		'imagemin:main',
-		'csscomb:main',
 		'uglify:main',
-		'csso:main',
+		'postcss:build',
 		'htmlmin:main'
 	);
 });
