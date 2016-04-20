@@ -1,17 +1,17 @@
 extends ../layouts/base
 
 block variables
-	- pageTitle = 'Home'
+	- pageTitle = 'Page name'
 	- pageDescription = 'Page-specific description'
 	- pageKeywords = 'Page-specific keywords'
 
 
 block body-content
-	//- Main header
-	+header()
+	//- Block name
+	+block-name({
+		block-name: {
+			role: "main",
+			class: "js-main"
+		}
+	})
 
-	//- Common section
-	+section()
-
-	//- Main footer
-	+footer()

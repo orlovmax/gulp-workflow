@@ -1,0 +1,9 @@
+//- Block name
+mixin block-name(args)
+	- block-name = args.block-name || {}
+
+
+	.block-name&attributes(block-name)
+		//- ...
+
+		block block-name-content

@@ -1,0 +1,7 @@
+// ModuleName
+"use strict";
+(function () {
+
+	// ...
+
+})();

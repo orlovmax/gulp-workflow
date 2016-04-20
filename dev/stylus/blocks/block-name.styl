@@ -1,0 +1,97 @@
+////////////////////////////////////////
+// $Block name
+////////////////////////////////////////
+
+//////////////////////////////////////// Block variables
+// Colors
+$c-block-name_var-name = "value"
+$c-block-name_var-name_state = "value"
+
+$c-block-name_mod_var-name = "value"
+$c-block-name_mod_var-name_state = "value"
+
+// Fonts
+$f-block-name_text = "value"
+
+//////////////////////////////////////// Block mixins and functions
+mixin-name()
+	// ...
+
+//////////////////////////////////////// Block styles
+$block = ".block-name"
+
+{$block}
+	// ...
+
+	mixin-name()
+
+	@media screen and (max-width: 960px)
+		// ...
+
+	&::before
+		// ...
+
+	&:hover
+		// ...
+
+		&:after
+			// ...
+
+	// Block-name STATE: active state
+	&.is-active
+		// ...
+
+	// Block-name MOD: modifier name
+	&_key_val
+		// ...
+
+		// Block-name MOD: modifier name STATE: active state
+		&.is-active
+			// ...
+
+
+	// Block element name
+	&__element
+		// ...
+
+		mixin-name()
+
+		@media screen and (max-width: 960px)
+			// ...
+
+		&::before
+			// ...
+
+		&:empty
+			// ...
+
+			&:after
+				// ...
+
+		// Block element name CONTEXT: block-name STATE: active state
+		{$block}.is-active &
+			// ...
+
+		// Block element name CONTEXT: block-name MOD: modifier name
+		{$block}_key_val &
+			// ...
+
+		// Block element name STATE: active state
+		&.is-active
+			// ...
+
+		&_key_val
+			// ...
+
+			// Block element name MOD: modifier name CONTEXT: block-name STATE: active state
+			{$block}.is-active &
+				// ...
+
+			// Block element name MOD: modifier name CONTEXT: block-name MOD: modifier name
+			{$block}_key_val &
+				// ...
+
+
+	// Other block element name
+	&__other-element
+		// ...
