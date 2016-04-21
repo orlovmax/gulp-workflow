@@ -1,9 +1,8 @@
 //- Block name
 mixin block-name(args)
-	- block-name = args.block-name || {}
+	- opts = args || {}
 
-
-	.block-name&attributes(block-name)
+	.block-name&attributes(opts.blockName || {})
 		//- ...
 
 		block block-name-content
