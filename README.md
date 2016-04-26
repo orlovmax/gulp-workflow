@@ -33,7 +33,7 @@ My front-end boilerplate with predefined directory structure and some Bower depe
 ├── _automation/                               * build systems
 |	├── _grunt/                                * grunt build system
 |	|	├── grunt_tasks/                       * grunt tasks
-|		|   ├── config/                        * grunt tasks config
+|	|	|   ├── config/                        * grunt tasks config
 |	|	│   |	├── paths.js
 |	|	│   |	├── settings.js
 |	|	│   |	└── aliases.js
@@ -62,9 +62,9 @@ My front-end boilerplate with predefined directory structure and some Bower depe
 |	│
 │   ├── images/                                * image sources
 |	│
-│   ├── jade/                                  * templates
+│   ├── pug/                                   * templates
 |	|	├── blocks/                            * blocks library
-|	│   |   └── block.jade
+|	│   |   └── block.pug
 |	│   ├── helpers/                           * helper mixins
 |	│   ├── vendor/                            * third-party code
 |	│   ├── layouts/                           * page layouts
@@ -152,7 +152,7 @@ Also `bower install` included into `start` task using shell plugin. It will inst
 * "html5shiv"
 
 ## Site configuration
-This boilerplate use Jade templates with external data configs. 
+This boilerplate uses Pug templates with external data configs. 
 Main settings can be found in `dev/data/config.json` file. And they're available for usage in templates with `config.key-name`
 
 ## Tasks
@@ -176,7 +176,7 @@ Grunt: `grunt dev` Gulp: `gulp dev`
 * Compile Stylus stylesheets
 * Add vendor prefixes in css
 * Combine media queries in css files
-* Compile Jade templates
+* Compile Pug templates
 * Sync helpers and other assets
 * Sync fonts
 * Sync images
@@ -205,7 +205,7 @@ Grunt: `grunt rebuild` Gulp: `gulp rebuild`
 * Compile Stylus stylesheets
 * Add vendor prefixes in css
 * Combine media queries in css files
-* Compile Jade templates
+* Compile Pug templates
 * Sync helpers and other assets
 * Sync fonts
 * Sync images

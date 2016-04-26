@@ -56,17 +56,20 @@ gulp.task('watch', function() {
 		paths.dev.data + '/*.*',
 		function() {
 			runSequence(
-			'jade:main',
+			'pug:main',
 			'browserSync:reload'
 			);
 		}
 	);
 
 	gulp.watch(
-		paths.dev.jade + '/pages/*.jade',
+		[
+			paths.dev.pug + '/pages/*.pug',
+			paths.dev.jade + '/pages/*.jade'
+		],
 		function() {
 			runSequence(
-			'jade:main:changed',
+			'pug:main:changed',
 			'browserSync:reload'
 			);
 		}

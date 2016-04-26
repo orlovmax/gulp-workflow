@@ -1,21 +1,21 @@
-// Compile Jade templates with gulp build tool
+// Compile pug/jade templates with gulp build tool
 var gulp = require('gulp'),
 	paths = require('./config/paths'),
 	plumber = require('gulp-plumber'),
 	changed = require('gulp-changed'),
 	data = require('gulp-data'),
 	fs = require('fs'),
-	jade = require('gulp-jade');
+	pug = require('gulp-pug');
 
 
-//Compile *.jade files
-gulp.task('jade:main', function() {
-	return gulp.src(paths.dev.jade + '/pages/*.jade')
+//Compile *.pug files
+gulp.task('pug:main', function() {
+	return gulp.src([paths.dev.jade + '/pages/*.jade', paths.dev.pug + '/pages/*.pug'])
 		.pipe(plumber())
 		.pipe(data(function(file) {
 			return { 'config': JSON.parse(fs.readFileSync(paths.dev.data + '/config.json'))}
 		}))
-		.pipe(jade({
+		.pipe(pug({
 			client: false,
 			pretty: true
 		}).on('error', function(err) {
@@ -24,15 +24,15 @@ gulp.task('jade:main', function() {
 		.pipe(gulp.dest(paths.build.html));
 });
 
-//Compile *.jade files within watch task
-gulp.task('jade:main:changed', function() {
-	return gulp.src(paths.dev.jade + '/pages/*.jade')
+//Compile *.pug files within watch task
+gulp.task('pug:main:changed', function() {
+	return gulp.src([paths.dev.jade + '/pages/*.jade', paths.dev.pug + '/pages/*.pug'])
 		.pipe(plumber())
 		.pipe(changed(paths.build.html, {extension: '.html'}))
 		.pipe(data(function(file) {
 			return { 'config': JSON.parse(fs.readFileSync(paths.dev.data + '/config.json'))}
 		}))
-		.pipe(jade({
+		.pipe(pug({
 			client: false,
 			pretty: true
 		}).on('error', function(err) {
