@@ -5,16 +5,27 @@ var gulp = require('gulp'),
 	changed = require('gulp-changed'),
 	data = require('gulp-data'),
 	fs = require('fs'),
-	pug = require('gulp-pug');
+	pug = require('gulp-pug'),
+	dataObject = function() {
+		var files = fs.readdirSync(paths.dev.data),
+			obj = {};
+
+		for (var i in files) {
+			var key = files[i].substr(0, files[i].lastIndexOf('.')),
+				val = JSON.parse(fs.readFileSync(paths.dev.data + '/' + files[i]));
+
+			obj[key] = val;
+		}
+
+		return obj;
+	};
 
 
 //Compile *.pug files
 gulp.task('pug:main', function() {
 	return gulp.src([paths.dev.jade + '/pages/*.jade', paths.dev.pug + '/pages/*.pug'])
 		.pipe(plumber())
-		.pipe(data(function(file) {
-			return { 'config': JSON.parse(fs.readFileSync(paths.dev.data + '/config.json'))}
-		}))
+		.pipe(data(dataObject))
 		.pipe(pug({
 			client: false,
 			pretty: true
@@ -29,9 +40,7 @@ gulp.task('pug:main:changed', function() {
 	return gulp.src([paths.dev.jade + '/pages/*.jade', paths.dev.pug + '/pages/*.pug'])
 		.pipe(plumber())
 		.pipe(changed(paths.build.html, {extension: '.html'}))
-		.pipe(data(function(file) {
-			return { 'config': JSON.parse(fs.readFileSync(paths.dev.data + '/config.json'))}
-		}))
+		.pipe(data(dataObject))
 		.pipe(pug({
 			client: false,
 			pretty: true
