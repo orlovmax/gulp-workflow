@@ -224,9 +224,14 @@ Grunt: `grunt server` Gulp: `gulp server`
 
 #### Sprite 
 Sprite creation task. Should be configured before running.
-Grunt: `grunt sprite` Gulp: `gulp sprite`
+Grunt: `grunt sprite:sass` Gulp: `gulp sprite:sass`
 
-* Create images sprite and related css
+* Create images sprite and related sass files
+
+
+Grunt: `grunt sprite:stylus` Gulp: `gulp sprite:stylus`
+
+* Create images sprite and related stylus files
 
 
 ## Live reload 

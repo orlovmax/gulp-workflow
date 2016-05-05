@@ -25,6 +25,7 @@
     "gulp-watch": "^1.0.5",
     "gulp.spritesmith": "^6.0.0",
     "main-bower-files": "^2.8.0",
+    "merge-stream": "^1.0.0",
     "postcss-csso": "^1.1.1",
     "require-dir": "^0.3.0",
     "run-sequence": "^1.1.0",
