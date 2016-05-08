@@ -11,12 +11,6 @@ module.exports = {
 				},
 				modernizr: {
 					main: "modernizr.js"
-				},
-				html5shiv: {
-					main: "dist/html5shiv.js"
-				},
-				respond: {
-					main: "src/respond.js"
 				}
 			}
 		}

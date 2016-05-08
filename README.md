@@ -73,7 +73,6 @@ My front-end boilerplate with predefined directory structure and some Bower depe
 │   ├── js/                                    * compiled and source js
 |	|   ├── vendor/                            * vendor scripts library
 |	|   ├── lib/                               * site scripts library
-|	│   ├── ie.js                              * ie compat scripts
 |	│   ├── head.js                            * head scripts
 |	│   └── body.js                            * vendor scripts
 |	│
@@ -82,7 +81,6 @@ My front-end boilerplate with predefined directory structure and some Bower depe
 |	│   |   └── block.sass
 |	│   ├── helpers/                           * mixins and vars
 |	│   ├── vendor/                            * third-party code
-|	│   ├── ie.sass
 |	│   ├── custom.sass
 |	│   ├── noscript.sass
 |	│   └── screen.sass
@@ -92,7 +90,6 @@ My front-end boilerplate with predefined directory structure and some Bower depe
 |	│   |   └── block.styl
 |	│   ├── helpers/                           * mixins and vars
 |	│   ├── vendor/                            * third-party code
-|	│   ├── ie.styl
 |	│   ├── custom.styl
 |	│   ├── noscript.styl
 |	│   └── screen.styl
@@ -148,8 +145,6 @@ Also `bower install` included into `start` task using shell plugin. It will inst
 **bower.json dependencies**
 * "jquery"
 * "modernizr"
-* "respond"
-* "html5shiv"
 
 ## Site configuration
 This boilerplate uses Pug templates with external data configs. 
