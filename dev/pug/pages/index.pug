@@ -5,7 +5,7 @@ html(lang="#{config.site.lang}")
 		meta(http-equiv="X-UA-Compatible", content="IE=edge")
 		meta(name="viewport", content="width=device-width, initial-scale=1")
 
-		title #{config.site.title}
+		title= config.site.title
 
 	body
 		style
@@ -145,7 +145,7 @@ html(lang="#{config.site.lang}")
 		div.background.background_image.background_blur
 		div.overlay.overlay_dark
 			main.project
-				h1.project__name.project__name_shadow #{config.site.title}
+				h1.project__name.project__name_shadow= config.site.title
 
 				ul.project__list
 					li.project__item
@@ -162,4 +162,4 @@ html(lang="#{config.site.lang}")
 						a.project__link(href="#") Contact Page
 
 		script
-			| !function(){var n=function(n,t,e){n.addEventListener?n.addEventListener(t,e,!1):n.attachEvent("on"+t,e)},t=function(n,t){for(key in t)t.hasOwnProperty(key)&&(n[key]=t[key]);return n};window.fitText=function(e,i,o){var a=t({minFontSize:-1/0,maxFontSize:1/0},o),r=function(t){var e=i||1,o=function(){t.style.fontSize=Math.max(Math.min(t.clientWidth/(10*e),parseFloat(a.maxFontSize)),parseFloat(a.minFontSize))+"px"};o(),n(window,"resize",o)};if(e.length)for(var f=0;f<e.length;f++)r(e[f]);else r(e);return e}}(),window.fitText(document.getElementsByClassName("project__name_fit"),1);
+			| !function(){var n=function(n,t,e){n.addEventListener?n.addEventListener(t,e,!1):n.attachEvent("on"+t,e)},t=function(n,t){for(key in t)t.hasOwnProperty(key)&&(n[key]=t[key]);return n};window.fitText=function(e,i,o){if(e.length){var a=t({minFontSize:-1/0,maxFontSize:1/0},o),r=function(t){var e=i||1,o=function(){t.style.fontSize=Math.max(Math.min(t.clientWidth/(10*e),parseFloat(a.maxFontSize)),parseFloat(a.minFontSize))+"px"};o(),n(window,"resize",o)};if(e.length)for(var f=0;f<e.length;f++)r(e[f]);else r(e);return e}}}(),function(){window.fitText(document.getElementsByClassName("project__name_fit"),1)}();
