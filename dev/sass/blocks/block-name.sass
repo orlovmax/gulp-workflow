@@ -5,14 +5,23 @@
 //////////////////////////////////////// Block variables
 
 // Colors
-$c-block-name_var-name: "value"
-$c-block-name_var-name_state: "value"
+$c-block-name_el-name_cl: "value"
+$c-block-name_el-name_state_cl: "value"
 
-$c-block-name_mod_var-name: "value"
-$c-block-name_mod_var-name_state: "value"
+$c-block-name_el-name_bg: "value"
+$c-block-name_el-name_state_bg: "value"
+
+$c-block-name_el-name_bd: "value"
+$c-block-name_el-name_state_bd: "value"
+
+$c-block-name_mod-name_el-name_cl: "value"
+$c-block-name_mod-name_el-name_state_cl: "value"
 
 // Fonts
-$f-block-name_text: "value"
+$f-block-name_el-name: "value"
+
+// Icons BASE64
+$i-block-name_icon-name: "value"
 
 
 //////////////////////////////////////// Block mixins and functions
@@ -29,6 +38,7 @@ $block: ".block-name"
 
 	+mixin-name()
 
+	// Media queries
 	@media screen and (max-width: 960px)
 		// ...
 
@@ -49,8 +59,14 @@ $block: ".block-name"
 	&_key_val
 		// ...
 
-		// Block-name MOD: modifier name STATE: active state
-		&.is-active
+		@media screen and (max-width: 960px)
+			// ...
+
+	// Block-name MOD: modifier name STATE: active state
+	&_key_val.is-active
+		// ...
+
+		@media screen and (max-width: 960px)
 			// ...
 
 
@@ -60,7 +76,21 @@ $block: ".block-name"
 
 		+mixin-name()
 
+		// Block element name CONTEXT: block-name STATE: active state
+		#{$block}.is-active &
+			// ...
+
+		// Block element name CONTEXT: block-name MOD: modifier name
+		#{$block}_key_val &
+			// ...
+
 		@media screen and (max-width: 960px)
+			// ...
+
+			#{$block}.is-active &
+				// ...
+
+			#{$block}_key_val &
 			// ...
 
 		&::before
@@ -71,14 +101,6 @@ $block: ".block-name"
 
 			&:after
 				// ...
-
-		// Block element name CONTEXT: block-name STATE: active state
-		#{$block}.is-active &
-			// ...
-
-		// Block element name CONTEXT: block-name MOD: modifier name
-		#{$block}_key_val &
-			// ...
 
 		// Block element name STATE: active state
 		&.is-active
@@ -94,6 +116,15 @@ $block: ".block-name"
 			// Block element name MOD: modifier name CONTEXT: block-name MOD: modifier name
 			#{$block}_key_val &
 				// ...
+
+			@media screen and (max-width: 960px)
+				// ...
+
+				#{$block}.is-active &
+					// ...
+
+				#{$block}_key_val &
+					// ...
 
 
 	// Other block element name
