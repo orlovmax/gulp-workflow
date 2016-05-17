@@ -17,6 +17,7 @@
 		"openGraph": true
 	},
 	"links": {
-		"twitterCard": "===twittercard-validation-account==="
+		"twitterCardCreator": "===twittercard-creator-account===",
+		"twitterCardAccount": "===twittercard-main-account==="
 	}
 }
