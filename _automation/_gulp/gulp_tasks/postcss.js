@@ -4,7 +4,6 @@ var gulp = require('gulp'),
 	plumber = require('gulp-plumber'),
 	postcss = require('gulp-postcss'),
 	autoprefixer = require('autoprefixer'),
-	cmq = require('gulp-merge-media-queries'),
 	csso = require('postcss-csso');
 
 
