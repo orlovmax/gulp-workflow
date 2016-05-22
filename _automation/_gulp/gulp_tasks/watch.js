@@ -36,6 +36,7 @@ gulp.task('watch', function() {
 			runSequence(
 			'sass:main:changed',
 			'postcss:dev',
+			'cmq:main',
 			'browserSync:reload'
 			);
 		}
@@ -47,6 +48,7 @@ gulp.task('watch', function() {
 			runSequence(
 			'stylus:main:changed',
 			'postcss:dev',
+			'cmq:main',
 			'browserSync:reload'
 			);
 		}

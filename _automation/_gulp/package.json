@@ -4,7 +4,6 @@
   "devDependencies": {
     "autoprefixer": "^6.3.6",
     "browser-sync": "^2.9.10",
-    "css-mqpacker": "^4.0.1",
     "del": "^1.1.1",
     "fs": "0.0.2",
     "gulp": "^3.8.8",
@@ -13,6 +12,7 @@
     "gulp-data": "^1.2.1",
     "gulp-htmlmin": "^0.2.0",
     "gulp-imagemin": "^1.0.1",
+    "gulp-merge-media-queries": "^0.2.1",
     "gulp-plumber": "^0.6.5",
     "gulp-postcss": "^6.1.0",
     "gulp-pug": "^3.0.2",
