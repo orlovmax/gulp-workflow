@@ -31,10 +31,10 @@ gulp.task('watch', function() {
 	);
 
 	gulp.watch(
-		paths.dev.sass + '/*.{sass,scss}',
+		paths.dev.sass + '/**/*.{sass,scss}',
 		function() {
 			runSequence(
-			'sass:main:changed',
+			'sass:main',
 			'postcss:dev',
 			'cmq:main',
 			'browserSync:reload'
@@ -43,10 +43,10 @@ gulp.task('watch', function() {
 	);
 
 	gulp.watch(
-		paths.dev.stylus + '/*.styl',
+		paths.dev.stylus + '/**/*.styl',
 		function() {
 			runSequence(
-			'stylus:main:changed',
+			'stylus:main',
 			'postcss:dev',
 			'cmq:main',
 			'browserSync:reload'
