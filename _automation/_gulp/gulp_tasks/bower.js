@@ -8,14 +8,7 @@ var gulp = require('gulp'),
 // Copy bower files into js vendor folder
 gulp.task('bower:main', function() {
 	return gulp.src(mainBowerFiles({
-		overrides: {
-			jquery: {
-				main: "dist/jquery.js"
-			},
-			modernizr: {
-				main: "modernizr.js"
-			}
-		}
+		overrides: {}
 	}))
 		.pipe(plumber())
 		.pipe(gulp.dest(paths.dev.js + '/vendor'));
