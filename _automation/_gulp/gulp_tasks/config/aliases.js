@@ -6,7 +6,7 @@ var gulp = require('gulp'),
 gulp.task('start', function() {
 	runSequence(
 		'shell:bower',
-		'bower:main',
+		// 'bower:main',
 		'clean:gitkeep'
 	);
 });
