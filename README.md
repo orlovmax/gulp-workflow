@@ -1,6 +1,6 @@
 # Front-end scaffold - PLAYGROUND
 
-My front-end boilerplate with predefined directory structure and some Bower dependencies.
+My front-end boilerplate with predefined directory structure.
 
 ## Stable front-end templates
 * General template: [https://github.com/synteagle/synt-general-template](https://github.com/synteagle/synt-general-template)
@@ -26,7 +26,6 @@ My front-end boilerplate with predefined directory structure and some Bower depe
 ```
 ./
 ├── .editorconfig
-├── bower.json
 ├── README.md
 ├── automation.sh
 |
@@ -120,7 +119,6 @@ My front-end boilerplate with predefined directory structure and some Bower depe
 ## Requirements:
 - [Node.js](http://nodejs.org/)
 - Build sytem: [Grunt](http://gruntjs.com/) or [Gulp](http://gulpjs.com/)
-- [Bower](http://bower.io/)
 - Optionally: [Editorconfig](http://editorconfig.org/)
 
 #### Editorconfig
@@ -131,20 +129,14 @@ If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out th
 
 If you haven't used [Gulp](http://gulpjs.com/) before, be sure to check out the [Getting Started](https://github.com/gulpjs/gulp/blob/master/docs/README.md) guide, as it explains how to use [Gulp.js](https://github.com/google/web-starter-kit/blob/master/gulpfile.js), also check these [recips](https://github.com/gulpjs/gulp/tree/master/docs/recipes#recipes) 
 
-Before start you need to have installed _npm_ , as well as _grunt_/_gulp_ and _bower_ globally.
+Before start you need to have installed _npm_ , as well as _grunt_/_gulp_  globally.
 
 **A few simple steps to start:**
 * Download these files. You can chose `Download zip` option or clone this repo to your local maschine.
 * Now go to this project folder in terminal. Run `automation.sh` script by typing `bash automation.sh` or `sh automation.sh` and choose build system - it will extract Grunt or Gulp scripts from the `_automation` directory into project folder. Or you can manually copy all necessary files from `_automation/_build-system-name`
-* Install dependencies from `package.json` by running: `npm install` and bower dependencies from `bower.json`: `bower install`. This will create `node_moduldes` and `bower_components` folders.
+* Install dependencies from `package.json` by running: `npm install`.
 * Run tasks from the list below and start devevelopment!
 * Edit general settings in `dev/data/config.json` See [Site configuration](#site-configuration) section
-
-Also `bower install` included into `start` task using shell plugin. It will install bependencies and copy them to related folder. See tasks for more details.
-
-**bower.json dependencies**
-* "jquery"
-* "modernizr"
 
 ## Site configuration
 This boilerplate uses Pug templates with external data configs. 
@@ -154,11 +146,9 @@ Main settings can be found in `dev/data/config.json` file. And they're available
 Here comes groups of grunt and gulp tasks with some explanations
 
 #### Start 
-Install bower dependencies and place them to dev folders.
+Remove placeholders from work directories.
 Grunt: `grunt start` Gulp: `gulp start`
 
-* Install bower components
-* Copy bower components to dev folder
 * Remove gitkeep files
 
 #### Dev

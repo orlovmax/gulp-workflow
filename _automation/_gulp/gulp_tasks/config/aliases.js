@@ -5,8 +5,6 @@ var gulp = require('gulp'),
 // Install bower dependencies and place them to dev folders
 gulp.task('start', function() {
 	runSequence(
-		'shell:bower',
-		// 'bower:main',
 		'clean:gitkeep'
 	);
 });

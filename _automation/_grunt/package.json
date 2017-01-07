@@ -19,11 +19,9 @@
     "grunt-newer": "^1.2.0",
     "grunt-postcss": "^0.8.0",
     "grunt-rigger": "^0.6.0",
-    "grunt-shell": "^2.0.0",
     "grunt-spritesmith": "^6.3.1",
     "grunt-sync": "^0.6.2",
     "load-grunt-config": "^0.19.2",
-    "main-bower-files": "^2.13.1",
     "postcss-csso": "^1.1.2"
   },
   "dependencies": {}
