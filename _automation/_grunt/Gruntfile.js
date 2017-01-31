@@ -6,7 +6,7 @@ module.exports = function(grunt) {
 			path.join(process.cwd(), 'grunt_tasks/config')
 		],
 		loadGruntTasks: {
-			pattern: ['grunt-*', 'main-*'],
+			pattern: ['grunt-*'],
 			config: require('./package.json'),
 			scope: 'devDependencies'
 		}
