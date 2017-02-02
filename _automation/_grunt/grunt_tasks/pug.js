@@ -1,12 +1,13 @@
 // Compile Pug/Jade templates
+var fs = require("fs");
+
 module.exports = {
 	main: {
 		options: {
 			client: false,
 			pretty: true,
 			data: function(dest, src) {
-				var fs = require("fs"),
-					paths = require(__dirname + '/config/paths.js'),
+				var paths = require(__dirname + '/config/paths.js'),
 					files = fs.readdirSync(paths.dev.data),
 					obj = {};
 
