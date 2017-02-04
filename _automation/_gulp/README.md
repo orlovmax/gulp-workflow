@@ -133,6 +133,7 @@ Gulp: `gulp dev`
 
 * Compile coffescripts
 * Concatenate javascripts
+* Compile ES6
 * Compile Sass stylesheets
 * Compile Stylus stylesheets
 * Add vendor prefixes in css
@@ -162,6 +163,7 @@ Gulp: `gulp rebuild`
 
 * Compile coffescripts
 * Concatenate javascripts
+* Compile ES6
 * Compile Sass stylesheets
 * Compile Stylus stylesheets
 * Add vendor prefixes in css

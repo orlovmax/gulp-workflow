@@ -133,6 +133,7 @@ Grunt: `grunt dev`
 
 * Compile coffescripts
 * Concatenate javascripts
+* Compile ES6
 * Compile Sass stylesheets
 * Compile Stylus stylesheets
 * Add vendor prefixes in css
@@ -162,6 +163,7 @@ Grunt: `grunt rebuild`
 
 * Compile coffescripts
 * Concatenate javascripts
+* Compile ES6
 * Compile Sass stylesheets
 * Compile Stylus stylesheets
 * Add vendor prefixes in css
