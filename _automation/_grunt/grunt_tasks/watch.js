@@ -6,8 +6,7 @@ module.exports = {
 		],
 		tasks: [
 			'newer:coffee:main',
-			'rigger:main',
-			'babel:main'
+			'rollup:main'
 		],
 		options: {
 			spawn: false
@@ -19,8 +18,7 @@ module.exports = {
 			'<%= paths.dev.js %>/lib/*.js'
 		],
 		tasks: [
-			'rigger:main',
-			'babel:main'
+			'rollup:main'
 		],
 		options: {
 			spawn: false

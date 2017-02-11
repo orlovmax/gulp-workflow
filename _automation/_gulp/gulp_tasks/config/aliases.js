@@ -13,8 +13,7 @@ gulp.task('start', function() {
 gulp.task('dev', function() {
 	runSequence(
 		'coffee:main',
-		'rigger:main',
-		'babel:main',
+		'rollup:main',
 		'sass:main',
 		'stylus:main',
 		'postcss:dev',
@@ -43,8 +42,9 @@ gulp.task('build', function() {
 gulp.task('rebuild', function() {
 	runSequence(
 		'coffee:main',
-		'rigger:main',
-		'babel:main',
+		'rollup:main',
+		// 'rigger:main',
+		// 'babel:main',
 		'sass:main',
 		'stylus:main',
 		'postcss:dev',

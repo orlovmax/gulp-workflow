@@ -156,8 +156,7 @@ Dev task with static server.
 Grunt: `grunt dev` Gulp: `gulp dev`
 
 * Compile coffescripts
-* Concatenate javascripts
-* Compile ES6
+* Bundle javascripts
 * Compile Sass stylesheets
 * Compile Stylus stylesheets
 * Add vendor prefixes in css
@@ -186,8 +185,7 @@ Regenerate and build project by running all tasks.
 Grunt: `grunt rebuild` Gulp: `gulp rebuild`
 
 * Compile coffescripts
-* Concatenate javascripts
-* Compile ES6
+* Bundle javascripts
 * Compile Sass stylesheets
 * Compile Stylus stylesheets
 * Add vendor prefixes in css
