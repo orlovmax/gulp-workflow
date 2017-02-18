@@ -69,11 +69,11 @@ My front-end boilerplate with predefined directory structure.
 |	│   ├── layouts/                           * page layouts
 |	│   └── pages/                             * main pages templates
 |	│
-│   ├── js/                                    * compiled and source js
+│   ├── js/                                    * source js
 |	|   ├── vendor/                            * vendor scripts library
 |	|   ├── lib/                               * site scripts library
 |	│   ├── head.js                            * head scripts
-|	│   └── body.js                            * vendor scripts
+|	│   └── body.js                            * body scripts
 |	│
 |	├── sass/                                  * sass preprocessor styles
 |	|	├── blocks/                            * blocks library
