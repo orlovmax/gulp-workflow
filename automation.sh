@@ -4,6 +4,12 @@
 # Flags
 while test $# -gt 0; do
 	case "$1" in
+		-h|--help)
+            echo "Available options:"
+            echo "-h, --help               show brief help"
+            echo "-c, --clear              remove _automation directory and automation.sh"
+            exit 0 ;;
+
 		-c|--clear)
 			echo "This option will remove _automation directory and automation.sh script?"
 			read -p "Are you sure you want to continue? (y/n)" choice
@@ -12,13 +18,16 @@ while test $# -gt 0; do
 					rm -rf ./_automation ./automation.sh
 					exit 0 ;;
 				n|N )
+					printf "Exiting... \n";
 					exit 0 ;;
 				* )
+					printf "Invalid option, try to enter the correct y or n answer \nExiting...\n";
 					exit 0 ;;
 			esac
-			break;;
+			exit 0 ;;
 		*)
-			break;;
+			printf "Invalid option, try to use -h or --help  to get a list of all the available commands.  \nExiting...\n";
+			exit 0 ;;
 	esac
 done
 
@@ -45,17 +54,21 @@ if [[ -d "./_automation/_grunt" && -d "./_automation/_gulp" ]]; then
 			case $opt in
 				"Grunt")
 					cp -rf ./_automation/_grunt/. ./
-					printf "Grunt system was successfully extracted! Go ahead and install all necessary npm package \nExiting...";
-					break;;
+					printf "Grunt system was successfully extracted! Go ahead and install all necessary npm package using npm install \nExiting...";
+					exit 0 ;;
 
 				"Gulp")
 					cp -rf ./_automation/_gulp/. ./
-					printf "Gulp system was successfully extracted! Go ahead and install all necessary npm packages \nExiting...";
-					break;;
+					printf "Gulp system was successfully extracted! Go ahead and install all necessary npm packages using npm install \nExiting...";
+					exit 0 ;;
 
-				"Quit") printf "Exiting... \n"; break;;
+				"Quit")
+					printf "Exiting... \n";
+					exit 0 ;;
 
-				*) printf "Invalid option, try to enter the correct number from the list above \nExiting...\n"; break;;
+				*)
+					printf "Invalid option, try to enter the correct number from the list above \nExiting...\n";
+					exit 0 ;;
 			esac
 		done
 	fi
