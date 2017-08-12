@@ -3,8 +3,8 @@
 My front-end boilerplate with predefined directory structure.
 
 ## Stable front-end templates
-* General template: [https://github.com/synteagle/synt-general-template](https://github.com/synteagle/synt-general-template)
-* CMS template: [https://github.com/synteagle/synt-cms-template](https://github.com/synteagle/synt-cms-template)
+* General template: [https://github.com/synteagle/se-general-template](https://github.com/synteagle/se-general-template)
+* CMS template: [https://github.com/synteagle/se-cms-template](https://github.com/synteagle/se-cms-template)
 
 ## Contents
 * [Folder structure](#folder-and-file-structure)
