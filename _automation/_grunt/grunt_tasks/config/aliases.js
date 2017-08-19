@@ -8,6 +8,7 @@ module.exports = {
     'dev': [
         'coffee:main',
         'rollup:main',
+        // 'babel:main',
         'sass:main',
         'stylus:main',
         'postcss:dev',
@@ -33,6 +34,7 @@ module.exports = {
     'rebuild': [
         'coffee:main',
         'rollup:main',
+        // 'babel:main',
         'sass:main',
         'stylus:main',
         'postcss:dev',
