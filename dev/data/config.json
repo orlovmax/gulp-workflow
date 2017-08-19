@@ -1,23 +1,23 @@
 {
-	"site": {
-		"lang": "en",
-		"title": "Front-end scaffold",
-		"titleDelim": " | ",
-		"description": "Grunt-Gulp and Bower powered frontend boilerplate",
-		"keywords": "Front-end template, project template, boilerplate, web starter kit",
-		"url": "===site-full-url==="
-	},
-	"modules": {
-		"googleFonts": "https://fonts.googleapis.com/css?family=PT+Sans&subset=latin,cyrillic%7CPT+Serif&subset=latin,cyrillic",
-		"bodyJs": true,
-		"headJs": true,
-		"customCss": true,
-		"noscriptCss": true,
-		"twitterCard": true,
-		"openGraph": true
-	},
-	"links": {
-		"twitterCardCreator": "===twittercard-creator-account===",
-		"twitterCardAccount": "===twittercard-main-account==="
-	}
+    "site": {
+        "lang": "en",
+        "title": "Front-end scaffold",
+        "titleDelim": " | ",
+        "description": "Grunt-Gulp and Bower powered frontend boilerplate",
+        "keywords": "Front-end template, project template, boilerplate, web starter kit",
+        "url": "===site-full-url==="
+    },
+    "modules": {
+        "googleFonts": "https://fonts.googleapis.com/css?family=PT+Sans&subset=latin,cyrillic%7CPT+Serif&subset=latin,cyrillic",
+        "bodyJs": true,
+        "headJs": true,
+        "customCss": true,
+        "noscriptCss": true,
+        "twitterCard": true,
+        "openGraph": true
+    },
+    "links": {
+        "twitterCardCreator": "===twittercard-creator-account===",
+        "twitterCardAccount": "===twittercard-main-account==="
+    }
 }

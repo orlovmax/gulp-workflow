@@ -27,106 +27,106 @@ $i-block-name_icon-name: "value"
 //////////////////////////////////////// Block mixins and functions
 
 =mixin-name()
-	// ...
+    // ...
 
 
 //////////////////////////////////////// Block styles
 $block: ".block-name"
 
 #{$block}
-	// ...
+    // ...
 
-	+mixin-name()
+    +mixin-name()
 
-	// Media queries
-	@media screen and (max-width: 960px)
-		// ...
+    // Media queries
+    @media screen and (max-width: 960px)
+        // ...
 
-	&::before
-		// ...
+    &::before
+        // ...
 
-	&:hover
-		// ...
+    &:hover
+        // ...
 
-		&:after
-			// ...
+        &:after
+            // ...
 
-	// Block-name STATE: active state
-	&.is-active
-		// ...
+    // Block-name STATE: active state
+    &.is-active
+        // ...
 
-	// Block-name MOD: modifier name
-	&_key_val
-		// ...
+    // Block-name MOD: modifier name
+    &_key_val
+        // ...
 
-		@media screen and (max-width: 960px)
-			// ...
+        @media screen and (max-width: 960px)
+            // ...
 
-	// Block-name MOD: modifier name STATE: active state
-	&_key_val.is-active
-		// ...
+    // Block-name MOD: modifier name STATE: active state
+    &_key_val.is-active
+        // ...
 
-		@media screen and (max-width: 960px)
-			// ...
-
-
-	// Block element name
-	&__element
-		// ...
-
-		+mixin-name()
-
-		// Block element name CONTEXT: block-name STATE: active state
-		#{$block}.is-active &
-			// ...
-
-		// Block element name CONTEXT: block-name MOD: modifier name
-		#{$block}_key_val &
-			// ...
-
-		@media screen and (max-width: 960px)
-			// ...
-
-			#{$block}.is-active &
-				// ...
-
-			#{$block}_key_val &
-				// ...
-
-		&::before
-			// ...
-
-		&:empty
-			// ...
-
-			&:after
-				// ...
-
-		// Block element name STATE: active state
-		&.is-active
-			// ...
-
-		&_key_val
-			// ...
-
-			// Block element name MOD: modifier name CONTEXT: block-name STATE: active state
-			#{$block}.is-active &
-				// ...
-
-			// Block element name MOD: modifier name CONTEXT: block-name MOD: modifier name
-			#{$block}_key_val &
-				// ...
-
-			@media screen and (max-width: 960px)
-				// ...
-
-				#{$block}.is-active &
-					// ...
-
-				#{$block}_key_val &
-					// ...
+        @media screen and (max-width: 960px)
+            // ...
 
 
-	// Other block element name
-	&__other-element
-		// ...
+    // Block element name
+    &__element
+        // ...
+
+        +mixin-name()
+
+        // Block element name CONTEXT: block-name STATE: active state
+        #{$block}.is-active &
+            // ...
+
+        // Block element name CONTEXT: block-name MOD: modifier name
+        #{$block}_key_val &
+            // ...
+
+        @media screen and (max-width: 960px)
+            // ...
+
+            #{$block}.is-active &
+                // ...
+
+            #{$block}_key_val &
+                // ...
+
+        &::before
+            // ...
+
+        &:empty
+            // ...
+
+            &:after
+                // ...
+
+        // Block element name STATE: active state
+        &.is-active
+            // ...
+
+        &_key_val
+            // ...
+
+            // Block element name MOD: modifier name CONTEXT: block-name STATE: active state
+            #{$block}.is-active &
+                // ...
+
+            // Block element name MOD: modifier name CONTEXT: block-name MOD: modifier name
+            #{$block}_key_val &
+                // ...
+
+            @media screen and (max-width: 960px)
+                // ...
+
+                #{$block}.is-active &
+                    // ...
+
+                #{$block}_key_val &
+                    // ...
+
+
+    // Other block element name
+    &__other-element
+        // ...
