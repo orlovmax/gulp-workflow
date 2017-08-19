@@ -63,11 +63,11 @@ module.exports = {
 	},
 	pug: {
 		files: [
-			'<%= paths.dev.pug %>/pages/*.pug',
-			'<%= paths.dev.jade %>/pages/*.jade'
+			'<%= paths.dev.pug %>/**/*.pug',
+			'<%= paths.dev.jade %>/**/*.jade'
 		],
 		tasks: [
-			'newer:pug:main'
+			'pug:main'
 		],
 		options: {
 			spawn: false

@@ -228,71 +228,71 @@ body {
   display: none;
 }
 @font-face {
-      font-family: 'site_icons';
-      src: url('./site_icons.eot?68835673');
-      src: url('./site_icons.eot?68835673#iefix') format('embedded-opentype'),
-           url('./site_icons.woff?68835673') format('woff'),
-           url('./site_icons.ttf?68835673') format('truetype'),
-           url('./site_icons.svg?68835673#site_icons') format('svg');
+      font-family: 'site-icons';
+      src: url('./font/site-icons.eot?87517759');
+      src: url('./font/site-icons.eot?87517759#iefix') format('embedded-opentype'),
+           url('./font/site-icons.woff?87517759') format('woff'),
+           url('./font/site-icons.ttf?87517759') format('truetype'),
+           url('./font/site-icons.svg?87517759#site-icons') format('svg');
       font-weight: normal;
       font-style: normal;
     }
-
-
+     
+     
     .demo-icon
     {
-      font-family: "site_icons";
+      font-family: "site-icons";
       font-style: normal;
       font-weight: normal;
       speak: none;
-
+     
       display: inline-block;
       text-decoration: inherit;
       width: 1em;
       margin-right: .2em;
       text-align: center;
       /* opacity: .8; */
-
+     
       /* For safety - reset parent styles, that can break glyph codes*/
       font-variant: normal;
       text-transform: none;
-
+     
       /* fix buttons height, for twitter bootstrap */
       line-height: 1em;
-
+     
       /* Animation center compensation - margins should be symmetric */
       /* remove if not needed */
       margin-left: .2em;
-
+     
       /* You can be more comfortable with increased icons size */
       /* font-size: 120%; */
-
+     
       /* Font smoothing. That was taken from TWBS */
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-
+     
       /* Uncomment for 3D effect */
       /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
     }
      </style>
-
+    <link rel="stylesheet" href="css/animation.css"><!--[if IE 7]><link rel="stylesheet" href="css/site-icons-ie7.css"><![endif]-->
     <script>
       function toggleCodes(on) {
         var obj = document.getElementById('icons');
-
+      
         if (on) {
           obj.className += ' codesOn';
         } else {
           obj.className = obj.className.replace(' codesOn', '');
         }
       }
-
+      
     </script>
   </head>
   <body>
     <div class="container header">
       <h1>
-        site_icons
+        site-icons
          <small>font demo</small>
       </h1>
       <label class="switch">
