@@ -7,17 +7,6 @@ var gulp = require('gulp'),
 // Watch Files For Changes
 gulp.task('watch', function() {
     gulp.watch(
-        paths.dev.coffee + '/*.coffee',
-        function() {
-            runSequence(
-                'coffee:main:changed',
-                'rollup:main',
-                'browserSync:reload'
-            );
-        }
-    );
-
-    gulp.watch(
         [
             paths.dev.js + '/*.js',
             paths.dev.js + '/lib/*.js'

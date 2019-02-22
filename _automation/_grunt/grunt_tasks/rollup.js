@@ -3,11 +3,13 @@ var babel = require('rollup-plugin-babel');
 
 module.exports = {
     options: {
+        format: 'umd',
         plugins: function () {
             return [
                 babel({
                     exclude: './node_modules/**',
-                    presets: ['es2015-rollup'],
+                    presets: ['@babel/preset-env'],
+                    babelrc: false
                 })
             ]
         }

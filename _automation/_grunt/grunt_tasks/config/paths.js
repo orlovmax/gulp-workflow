@@ -2,7 +2,6 @@ module.exports = {
     // Dev paths
     dev: {
         main: 'dev',
-        coffee: 'dev/coffee',
         js: 'dev/js',
         jade: 'dev/jade',
         pug: 'dev/pug',

@@ -1,13 +1,12 @@
 module.exports = {
-    // Install bower dependencies and place them to dev folders
-    'start': [
+    'cleanup': [
         'clean:gitkeep'
     ],
 
     // Dev task with static server
     'dev': [
-        'coffee:main',
         'rollup:main',
+        // 'rigger:main',
         // 'babel:main',
         'sass:main',
         'stylus:main',
@@ -32,8 +31,8 @@ module.exports = {
 
     // Regenerate and build project by running all tasks
     'rebuild': [
-        'coffee:main',
         'rollup:main',
+        // 'rigger:main',
         // 'babel:main',
         'sass:main',
         'stylus:main',

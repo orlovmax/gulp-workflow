@@ -1,10 +1,10 @@
 {
     "site": {
         "lang": "en",
-        "title": "Front-end scaffold",
+        "title": "General Frontend Boilerplate",
         "titleDelim": " | ",
-        "description": "Grunt-Gulp and Bower powered frontend boilerplate",
-        "keywords": "Front-end template, project template, boilerplate, web starter kit",
+        "description": "Grunt/Gulp, Babel, Rollup, Pug, Sass, Stylus, Imagemin, Autoprefixer, PostCSS",
+        "keywords": "Frontend template, project template, boilerplate, web starter kit",
         "url": "===site-full-url==="
     },
     "modules": {

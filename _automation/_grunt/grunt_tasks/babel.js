@@ -1,7 +1,7 @@
 // Compile ES6 code
 module.exports = {
     options: {
-        presets: ['es2015'],
+        presets: ['@babel/preset-env'],
         babelrc: false
     },
     main: {

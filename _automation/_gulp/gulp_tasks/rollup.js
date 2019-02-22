@@ -12,6 +12,7 @@ gulp.task('rollup:main', function() {
     return gulp.src(paths.dev.js + '/**/*.js')
         .pipe(plumber())
         .pipe(rollup({
+            format: 'umd',
             entry: [
                 paths.dev.js + '/body.js',
                 paths.dev.js + '/head.js'
@@ -19,7 +20,8 @@ gulp.task('rollup:main', function() {
             plugins: [
                 babel({
                     exclude: 'node_modules/**',
-                    presets: ['es2015-rollup']
+                    presets: ['@babel/preset-env'],
+                    babelrc: false
                 })
             ]
         }))

@@ -2,8 +2,7 @@
 var gulp = require('gulp'),
     runSequence = require('run-sequence');
 
-// Install bower dependencies and place them to dev folders
-gulp.task('start', function() {
+gulp.task('cleanup', function() {
     runSequence(
         'clean:gitkeep'
     );
@@ -12,8 +11,8 @@ gulp.task('start', function() {
 // Dev task with static server
 gulp.task('dev', function() {
     runSequence(
-        'coffee:main',
         'rollup:main',
+        // 'rigger:main',
         // 'babel:main',
         'sass:main',
         'stylus:main',
@@ -42,8 +41,8 @@ gulp.task('build', function() {
 // Regenerate and build project by running all tasks
 gulp.task('rebuild', function() {
     runSequence(
-        'coffee:main',
         'rollup:main',
+        // 'rigger:main',
         // 'babel:main',
         'sass:main',
         'stylus:main',
@@ -61,4 +60,4 @@ gulp.task('rebuild', function() {
 });
 
 // Run server without watching for changes
-gulp.task('server', ['browserSync:server']);
+gulp.task('server', function() {'browserSync:server'});

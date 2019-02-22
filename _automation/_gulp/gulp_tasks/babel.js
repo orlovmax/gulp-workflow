@@ -12,7 +12,7 @@ gulp.task('babel:main', function() {
     ])
         .pipe(plumber())
         .pipe(babel({
-            presets: ['es2015'],
+            presets: ['@babel/preset-env'],
             babelrc: false
         }))
         .pipe(gulp.dest(paths.build.js));

@@ -1,17 +1,5 @@
 // Run tasks whenever watched files change
 module.exports = {
-    coffee: {
-        files: [
-            '<%= paths.dev.coffee %>/*.coffee'
-        ],
-        tasks: [
-            'newer:coffee:main',
-            'rollup:main'
-        ],
-        options: {
-            spawn: false
-        }
-    },
     js: {
         files: [
             '<%= paths.dev.js %>/*.js',
