@@ -7,13 +7,13 @@ var gulp = require('gulp'),
 
 // Compile ES6
 gulp.task('babel:main', function() {
-    return gulp.src([
-        paths.build.js + '/*.min.js'
-    ])
-        .pipe(plumber())
-        .pipe(babel({
-            presets: ['@babel/preset-env'],
-            babelrc: false
-        }))
-        .pipe(gulp.dest(paths.build.js));
+  return gulp.src([
+    paths.build.js + '/*.min.js'
+  ])
+    .pipe(plumber())
+    .pipe(babel({
+      presets: ['@babel/preset-env'],
+      babelrc: false
+    }))
+    .pipe(gulp.dest(paths.build.js));
 });
