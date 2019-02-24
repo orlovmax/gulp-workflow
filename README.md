@@ -24,33 +24,32 @@ Grunt/Gulp, Babel, Rollup, Pug, Sass, Stylus, Imagemin, Autoprefixer, PostCSS
 ```
 ./
 ├── .editorconfig
-├── README.md
 ├── automation.sh
+├── README.md
 |
 ├── _automation/                               * build systems
+|   │
 |   ├── _grunt/                                * grunt build system
-|   |   ├── grunt_tasks/                       * grunt tasks
-|   |   |   ├── config/                        * grunt tasks config
-|   |   │   |   ├── paths.js
-|   |   │   |   ├── settings.js
-|   |   │   |   └── aliases.js
-|   |   │   |
-|   |   |   └── task.js
-|   |   │
 |   |   ├── Gruntfile.js
-|   |   └── package.json
+|   |   ├── package.json
+|   |   ├── README.md
+|   |   └── grunt_tasks/                       * grunt tasks
+|   |       ├── config/                        * grunt tasks config
+|   |       |   ├── paths.js
+|   |       |   └── aliases.js
+|   |       |
+|   |       └── task.js
 |   |
 |   └── _gulp/                                 * gulp build system
-|       ├── gulp_tasks/                        * gulp tasks
-|       |   ├── config/                        * gulp tasks config
-|       │   |   ├── paths.js
-|       │   |   ├── settings.js
-|       │   |   └── aliases.js
-|       │   |
-|       |   └── task.js
-|       │
 |       ├── gulpfile.js
-|       └── package.json
+|       ├── package.json
+|       ├── README.md
+|       └── gulp_tasks/                        * gulp tasks
+|           ├── config/                        * gulp tasks config
+|           |   ├── paths.js
+|           |   └── aliases.js
+|           |
+|           └── task.js
 |
 ├── screenshots/                               * responsive test screenshots
 |

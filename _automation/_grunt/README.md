@@ -22,18 +22,16 @@
 ```
 ./
 ├── .editorconfig
+├── Gruntfile.js
+├── package.json
 ├── README.md
 |
 ├── grunt_tasks/                               * grunt tasks
 |   ├── config/                                * grunt tasks config
 │   |   ├── paths.js
-│   |   ├── settings.js
 │   |   └── aliases.js
 │   |
 |   └── task.js
-│
-├── Gruntfile.js
-├── package.json
 |
 ├── screenshots/                               * responsive test screenshots
 |
