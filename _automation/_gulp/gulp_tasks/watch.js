@@ -14,6 +14,8 @@ gulp.task('watch', function() {
     function() {
       runSequence(
         'rollup:main',
+        // 'rigger:main',
+        // 'babel:main',
         'browserSync:reload'
       );
     }
