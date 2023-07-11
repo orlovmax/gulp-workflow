@@ -1,0 +1,54 @@
+{
+  "site": {
+    "lang": "en",
+    "title": "Gulp Workflow",
+    "titleDelimiter": " | ",
+    "description": "Gulp-based build tool with Pug, Sass, Rollup, PostCSS, BrowserSync",
+    "keywords": "Gulp 4, Pug, Sass, Rollup, PostCSS, BrowserSync",
+    "url": "",
+    "imageUrl": "",
+    "openGraph": true
+  },
+  "stylesheets": [
+    {
+      "url": "https://fonts.googleapis.com",
+      "preconnect": true
+    },
+    {
+      "url": "https://fonts.gstatic.com",
+      "preconnect": true,
+      "crossorigin": "anonymous"
+    },
+    {
+      "url": "https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    },
+    {
+      "file": "screen.css"
+    },
+    {
+      "file": "noscript.css"
+    }
+  ],
+  "scripts": {
+    "head": [
+      {
+        "file": "head.js"
+      },
+      {
+        "url": "",
+        "integrity": "",
+        "crossorigin": ""
+      }
+    ],
+    "body": [
+      {
+        "file": "body.js"
+      },
+      {
+        "url": "",
+        "integrity": "",
+        "crossorigin": ""
+      }
+    ]
+  }
+}

@@ -1,0 +1,136 @@
+////////////////////////////////////////
+// Service page
+////////////////////////////////////////
+
+// $Reset
+*, *:before, *:after
+  box-sizing: border-box
+  margin: 0
+  padding: 0
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, main, menu, nav, section
+  display: block
+
+*::selection
+  background: #f0f0f0
+  color: #0f0f0f
+
+*::-moz-selection
+  background: #f0f0f0
+  color: #0f0f0f
+
+
+// Base styles
+html,
+body
+  width: 100%
+
+.body
+  display: block
+  position: relative
+  background-color: #ffa500
+
+
+// Background
+.background
+  position: fixed
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  z-index: 1
+
+  &_type_gradient
+    background: linear-gradient(180deg, #FFA500 0%, #ff7b00 100%)
+
+  &_type_image
+    background-image: url(../images/service_bg.jpg)
+    background-size: cover
+    background-position: center center
+    background-repeat: no-repeat
+    background-attachment: fixed
+
+  &_filter_blur
+    filter: url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg"><filter id="blur"><feGaussianBlur stdDeviation="5" /></filter></svg>#blur')
+    filter: blur(3px)
+
+
+// Overlay
+.overlay
+  position: fixed
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  z-index: 10
+  display: block
+  overflow: auto
+
+  &_type_dark
+    background-color: rgba(0,0,0,.5)
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDoAABSCAABFVgAADqXAAAXb9daH5AAAAAZSURBVHjaYmCAAGM0GjfHGEMGAAAA//8DACm0ATMe8beGAAAAAElFTkSuQmCC)
+    background-repeat: repeat
+    background-attachment: fixed
+    box-shadow: inset 0 3px 3px -2px #0f0f0f,inset 0 -3px 3px -2px #0f0f0f
+
+
+// Project
+.project
+  display: block
+  width: 100%
+  max-width: 1200px
+  margin: 0 auto
+  padding: 0 20px
+  text-align: center
+
+  &__name
+    display: block
+    width: 100%
+    max-width: 640px
+    margin: 10% auto 5%
+    font-family: Tahoma,Verdana,Arial,sans-serif
+    font-size: 45px
+    line-height: 1
+    color: #f0f0f0
+    text-align: center
+    text-shadow: 0 1px 2px rgba(0,0,0,.5)
+
+  &__list
+    display: inline-block
+    list-style: none
+    color: #f0f0f0
+    text-align: center
+
+  &__item
+    position: relative
+    display: block
+    font-family: Georgia,Times,"Times New Roman",serif
+    font-size: 25px
+    line-height: 1
+    text-align: left
+    color: #f0f0f0
+
+    &:not(:last-child)
+      margin-bottom: 20px
+
+    & ul,
+    & ol
+      margin-left: 40px
+      list-style: none
+
+  &__link
+    display: inline-block
+    font-size: inherit
+    color: #f0f0f0
+    outline: 0
+    text-decoration: underline
+
+    &:hover
+      text-decoration: none
+
+  &__label
+    display: block
+    margin-bottom: 20px
+    font-size: inherit
+    color: #c0c0c0

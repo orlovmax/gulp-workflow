@@ -1,0 +1,19 @@
+doctype html
+html(lang= config.site.lang)
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    link(rel="icon", href="favicon.ico", sizes="any")
+    link(rel="stylesheet", href="static/css/service.css")
+    title= config.site.title
+
+  body.body
+    div.background.background_type_image.background_filter_blur
+    div.overlay.overlay_type_dark
+      main.project
+        h1.project__name.project__name_shadow= config.site.title
+
+        ul.project__list
+          li.project__item
+            a.project__link(href="page-name.html") Page name

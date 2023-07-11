@@ -1,7 +1,0 @@
-// ModuleName
-"use strict";
-(function () {
-
-  // ...
-
-})();

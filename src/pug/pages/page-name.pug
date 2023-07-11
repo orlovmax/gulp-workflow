@@ -1,0 +1,22 @@
+extends ../layouts/base
+
+block variables
+  - pageLang = ""
+  - pageTitle = "Page Name"
+  - pageDescription = "Page-specific description"
+  - pageKeywords = "Page-specific keywords"
+  - pageUrl = ""
+
+
+block body-content
+  //- Block name
+  +block-name({
+    blockName: {
+      role: "main",
+      class: "js-block-name"
+    },
+    __elementName: {
+      class: "is-active"
+    },
+    key: "value"
+  })

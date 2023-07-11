@@ -1,77 +1,66 @@
-# General Frontend Boilerplate
+# Gulp Workflow
 
-Grunt/Gulp, Babel, Rollup, Pug, Sass, Stylus, Imagemin, Autoprefixer, PostCSS
+Gulp-based build tool with Pug, Sass, Rollup, PostCSS, BrowserSync
 
 ## Contents
 
-- [Folder and file structure](#folder-and-file-structure)
-- [Requirements:](#requirements)
-    - [Editorconfig](#editorconfig)
-- [How to start](#how-to-start)
-- [Site configuration](#site-configuration)
+- [Requirements](#requirements)
+- [How To Start](#how-to-start)
+- [Folder And File Structure](#folder-and-file-structure)
+    - [Reserved Folders](#reserved-folders)
+- [Configuration](#configuration)
 - [Tasks](#tasks)
     - [Cleanup](#cleanup)
-    - [Dev](#dev)
-    - [Build](#build)
-    - [Rebuild](#rebuild)
-    - [Server](#server)
-    - [Sprite](#sprite)
-- [Live reload](#live-reload)
+    - [Development](#development)
+    - [Production](#production)
+    - [Demonstration](#demonstration)
+- [Inactive Tasks](#inactive-tasks)
 - [License](#license)
 
-## Folder and file structure
+## Requirements
+
+- [Node.js](http://nodejs.org/) **v16 or later**
+- [Gulp](http://gulpjs.com/) **v4 or later**
+
+## How To Start
+
+- Install Node.js >=16
+- Install gulp-cli globally `npm install --global gulp-cli`
+- Download this repo using git `git clone https://github.com/orlovmax/gulp-workflow.git`
+- Go to downloaded folder `cd gulp-workflow`
+- Install dependencies from `package.json` by running: `npm install`
+- Start development by running `npm start` or `gulp`
+- See [Tasks](#tasks) and [Configuration](#configuration) for more details
+
+If you haven't used Gulp before, be sure to check out the [Gulp - Getting Started](https://gulpjs.com/docs/en/getting-started/quick-start).
+
+## Folder And File Structure
 
 ```
 ./
 ├── .editorconfig
-├── automation.sh
+├── .gitignore
+├── gulpfile.js
+├── package.json
 ├── README.md
+├── LICENSE.md
 |
-├── _automation/                               * build systems
-|   │
-|   ├── _grunt/                                * grunt build system
-|   |   ├── Gruntfile.js
-|   |   ├── package.json
-|   |   ├── README.md
-|   |   └── grunt_tasks/                       * grunt tasks
-|   |       ├── config/                        * grunt tasks config
-|   |       |   ├── paths.js
-|   |       |   └── aliases.js
-|   |       |
-|   |       └── task.js
-|   |
-|   └── _gulp/                                 * gulp build system
-|       ├── gulpfile.js
-|       ├── package.json
-|       ├── README.md
-|       └── gulp_tasks/                        * gulp tasks
-|           ├── config/                        * gulp tasks config
-|           |   ├── paths.js
-|           |   └── aliases.js
-|           |
-|           └── task.js
+├── gulp/                                      * gulp tasks
+|   ├── _config.js                             * tasks config
+|   └── task.js
 |
-├── screenshots/                               * responsive test screenshots
-|
-├── dev/                                       * site source
-│   ├── images/                                * image sources
-|   │
-│   ├── pug/                                   * templates
-|   |   ├── blocks/                            * blocks library
+├── src/                                       * site source
+|   ├── pug/                                   * pug templates
+|   |   ├── blocks/                            * blocks
 |   │   |   └── block.pug
 |   │   ├── helpers/                           * helper mixins
 |   │   ├── vendor/                            * third-party code
 |   │   ├── layouts/                           * page layouts
-|   │   └── pages/                             * main pages templates
+|   │   ├── pages/                             * page templates
+|   │   └── config.json                        * site config
 |   │
-│   ├── js/                                    * source js
-|   |   ├── vendor/                            * vendor scripts library
-|   |   ├── lib/                               * site scripts library
-|   │   ├── head.js                            * head scripts
-|   │   └── body.js                            * body scripts
-|   │
-|   ├── sass/                                  * sass preprocessor styles
-|   |   ├── blocks/                            * blocks library
+|   ├── sass/                                  * sass stylesheets
+|   |   ├── blocks/                            * blocks
 |   │   |   └── block.sass
 |   │   ├── helpers/                           * mixins and vars
 |   │   ├── vendor/                            * third-party code
@@ -79,157 +68,161 @@ Grunt/Gulp, Babel, Rollup, Pug, Sass, Stylus, Imagemin, Autoprefixer, PostCSS
 |   │   ├── noscript.sass
 |   │   └── screen.sass
 |   │
-|   ├── stylus/                                * stylus preprocessor styles
-|   |   ├── blocks/                            * blocks library
-|   │   |   └── block.styl
-|   │   ├── helpers/                           * mixins and vars
-|   │   ├── vendor/                            * third-party code
-|   │   ├── custom.styl
-|   │   ├── noscript.styl
-|   │   └── screen.styl
-|   │
-│   ├── helpers/                               * helper files
-|   |   ├── favicon.ico
-|   |   └── .htaccess
+│   ├── js/                                    * scripts
+|   |   ├── vendor/                            * third-party code
+|   |   ├── modules/                           * modules
+|   │   ├── head.js                            * head scripts
+|   │   └── body.js                            * body scripts
 |   │
 │   ├── fonts/                                 * font sources
 |   │
-│   └── data/                                  * configs and data for templates
+│   ├── images/                                * image sources
+|   │
+│   └── helpers/                               * helper files
+│       └── favicon.ico
+|
+├── build/                                     * site build
+│   ├── index.html
+│   ├── page.html
+│   └── static/                                * static assets
+│       ├── css/                               * compiled stylesheets with sourcemaps
+│       ├── js/                                * bundled scripts
+│       ├── fonts/                             * webfonts
+│       └── images/                            * images
 │
-└── build/                                     * built source
+└── dist/                                      * site distribution (Ignored by GIT)
     ├── index.html
     ├── page.html
-    |
     └── static/                                * static assets
-        ├── css/                               * minified styles
-        |
-        ├── images/                            * minified images
-        │
-        ├── js/                                * minified assembled js
-        |
-        └── fonts/                             * @font-face-ready webfonts
-
+        ├── css/                               * minified compiled stylesheets
+        ├── js/                                * minified bundled scripts
+        ├── fonts/                             * webfonts
+        └── images/                            * images
 ```
 
-## Requirements
+#### Reserved Folders
 
-- [Node.js](http://nodejs.org/)
-- Build sytem: [Grunt](http://gruntjs.com/) or [Gulp](http://gulpjs.com/)
-- Optionally:
-  * [Editorconfig](http://editorconfig.org/)
-  * [Ruby](https://www.ruby-lang.org/en/) and [Ruby Sass](https://sass-lang.com/ruby-sass)
+`html`, `css`, `stylus`, `videos` folder names in `src` are reserved by preconfigured inactive tasks, see [Inactive Tasks](#inactive-tasks).
 
-#### Editorconfig
+## Configuration
 
-This project has an .editorconfig file at the root. It describes indent style, trailing whitespaces etc. See more details [here](http://editorconfig.org/)
-
-## How to start
-
-If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to use [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins.
-
-If you haven't used [Gulp](http://gulpjs.com/) before, be sure to check out the [Getting Started]([https://github.com/gulpjs/gulp/blob/master/docs/README.md](https://gulpjs.com/docs/en/getting-started/quick-start)) guide, also check these [recips](https://github.com/gulpjs/gulp/tree/master/docs/recipes#recipes)
-
-Before start you need to have installed _npm_ , as well as _grunt_/_gulp_ globally (in case you're trying to use Grunt and Sass you have to install _ruby_ and _ruby-sass_).
-
-**A few simple steps to start:**
-* Download these files. You can chose `Download zip` option or clone this repo to your local maschine.
-* Now go to this project folder in terminal. Run `automation.sh` script by typing `bash automation.sh` or `sh automation.sh` and choose build system - it will extract Grunt or Gulp scripts from the `_automation` directory into project folder. Or you can manually copy all necessary files from `_automation/_build-system-name`
-* Remove `_automation` folder and `automation.sh` script by typing `bash automation.sh --clear` or `sh automation.sh --clear`
-* Install dependencies from `package.json` by running: `npm install`.
-* Run tasks from the list below and start devevelopment!
-* Edit general settings in `dev/data/config.json` See [Site configuration](#site-configuration) section
-
-## Site configuration
-
-This boilerplate uses Pug templates with external data configs.
-Main settings can be found in `dev/data/config.json` file. And they're available for usage in templates with `config.key-name`
+- `.editorconfig` file at the root of the project describes indentation style, trailing whitespaces etc. See [EditorCofig](http://editorconfig.org/) site for more details.
+- `src/pug/config.json` contains data for pug templates: site settings, meta information, links to css / js files or external fonts.
 
 ## Tasks
 
-Here comes groups of grunt and gulp tasks with some explanations
-
 #### Cleanup
 
-Remove placeholders from work directories.
-Grunt: `grunt cleanup` Gulp: `gulp cleanup`
+`npm run cleanup` or `gulp cleanup`
 
-* Remove gitkeep files
+- Removes .gitkeep placeholders from work directories.
 
-#### Dev
+#### Development
 
-Dev task with static server.
-Grunt: `grunt dev` Gulp: `gulp dev`
+`npm start` or `npm run dev` or `gulp dev`
 
-* Bundle javascripts
-* Compile Sass stylesheets
-* Compile Stylus stylesheets
-* Add vendor prefixes in css
-* Combine media queries in css files
-* Compile Pug templates
-* Sync helpers and other assets
-* Sync fonts
-* Sync images
-* Run BrowserSync static server with live reload using
-* Watch for changes and run dev task
+- Compiles pug templates
+- Compiles sass stylesheets, combines media queries, adds vendor prefixes, generates sourcemaps
+- Bundles scripts
+- Copies fonts
+- Copies images
+- Copies helpers
+- Runs BrowserSync static server with live reload
+- Watches for changes and run dev tasks
 
+#### Production
 
-#### Build
+`npm run prod` or `gulp prod`
 
-Build task.
-Grunt: `grunt build` Gulp: `gulp build`
+- Empties `dist` folder
+- Compiles pug templates, minifies markup
+- Compiles sass stylesheets, combines media queries, adds vendor prefixes, minifies stylesheets
+- Bundles scripts, minifies scripts
+- Copies fonts
+- Copies images
+- Copies helpers
+- Runs BrowserSync static server
 
-* Minify images
-* Minify javascript files
-* Minify stylesheets
-* Minify html
-* Run BrowserSync static server
+#### Demonstration
 
+`npm run demo` or `gulp demo` \
 
-#### Rebuild
+- Runs static server.
 
-Regenerate and build project by running all tasks.
-Grunt: `grunt rebuild` Gulp: `gulp rebuild`
+## Inactive Tasks
 
-* Bundle javascripts
-* Compile Sass stylesheets
-* Compile Stylus stylesheets
-* Add vendor prefixes in css
-* Combine media queries in css files
-* Compile Pug templates
-* Sync helpers and other assets
-* Sync fonts
-* Sync images
-* Minify images
-* Minify javascript files
-* Minify stylesheets
-* Minify html
+Preconfigured tasks but disabled in current version (commented-out and not imported), see [gulpfile.js](https://github.com/orlovmax/gulp-workflow/blob/master/gulpfile.js) and [watch.js](https://github.com/orlovmax/gulp-workflow/blob/master/gulp/watch.js).
 
+**html** ([html.js](https://github.com/orlovmax/gulp-workflow/blob/master/gulp/html.js)) \
+Dev: copies html markup \
+Prod: copies and minifies html markup \
+How To Activate:
+- uncomment `import { htmlDev, htmlProd } from './gulp/html.js';` section in `gulpfile.js`
+- add `htmlDev` to `dev` and `htmlProd` to `prod` series in `gulpfile.js`
+- uncomment `import { htmlDevChanged } from './html.js';` and `Watch HTML` sections in `./gulp/watch.js`
+- create `html` folder in `src`
+  ```
+  ./
+  └── src/
+      └── html/                                  * html markup
+          └── file.html
+  ```
 
-#### Server
+**css** ([css.js](https://github.com/orlovmax/gulp-workflow/blob/master/gulp/css.js)) \
+Dev: copies css stylesheets, inlines imports, combines media queries, adds vendor prefixes \
+Prod: copies css stylesheets, inlines imports, combines media queries, adds vendor prefixes, minifies stylesheets \
+How To Activate:
+- uncomment `import { cssDev, cssProd } from './gulp/css.js';` section in `gulpfile.js`
+- add `cssDev` to `dev` and `cssProd` to `prod` series in `gulpfile.js`
+- uncomment `import { cssDev } from './css.js';` and `Watch css` sections in `./gulp/watch.js`
+- create `css` folder in `src`
+  ```
+  ./
+  └── src/
+      └── css/                                   * css stylsheets
+          ├── blocks/
+          |   └── block.css
+          ├── helpers/
+          ├── vendor/
+          ├── custom.css
+          ├── noscript.css
+          └── screen.css
+  ```
 
-Run server without watching for changes.
-Grunt: `grunt server` Gulp: `gulp server`
+**stylus** ([stylus.js](https://github.com/orlovmax/gulp-workflow/blob/master/gulp/stylus.js)) \
+Dev: compiles stylus stylesheets, combines media queries, adds vendor prefixes, generates sourcemaps \
+Prod: compiles stylus stylesheets, combines media queries, adds vendor prefixes, minifies stylesheets \
+How To Activate:
+- uncomment `import { stylusDev, stylusProd } from './gulp/stylus.js';` section in `gulpfile.js`
+- add `stylusDev` to `dev` and `stylusProd` to `prod` series in `gulpfile.js`
+- uncomment `import { stylusDev } from './stylus.js';` and `Watch stylus` sections in `./gulp/watch.js`
+- create `stylus` folder in `src`
+```
+./
+└── src/
+    └── stylus/                                * stylus stylesheets
+        ├── blocks/
+        |   └── block.styl
+        ├── helpers/
+        ├── vendor/
+        ├── custom.styl
+        ├── noscript.styl
+        └── screen.styl
+```
 
-* Run BrowserSync static server
-
-
-#### Sprite
-
-Sprite creation task. Should be configured before running.
-Grunt: `grunt sprite:sass` Gulp: `gulp sprite:sass`
-
-* Create images sprite and related sass files
-
-
-Grunt: `grunt sprite:stylus` Gulp: `gulp sprite:stylus`
-
-* Create images sprite and related stylus files
-
-
-## Live reload
-
-This project uses BrowserSync as static server with enabled and configured live reload option.
+**videos** ([videos.js](https://github.com/orlovmax/gulp-workflow/blob/master/gulp/videos.js)) \
+Dev / Prod: copies videos \
+How To Activate:
+- uncomment `import { videosDev, videosProd } from './gulp/videos.js';` section in `gulpfile.js`
+- add `videosDev` to `dev` and `videosProd` to `prod` series in `gulpfile.js`
+- uncomment `import { videosDevChanged } from './videos.js';` and `Watch videos` sections in `./gulp/watch.js`
+- create `videos` folder in `src`
+```
+./
+└── src/
+    └── videos/                                * video sources
+```
 
 ## License
 
-[MIT](https://github.com/orlovmax/general-frontend-boilerplate/blob/master/LICENSE.md)
+[MIT](https://github.com/orlovmax/gulp-workflow/blob/master/LICENSE.md)

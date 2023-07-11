@@ -1,0 +1,120 @@
+////////////////////////////////////////
+// Project mixins
+////////////////////////////////////////
+
+//////////////////////////////////////// Test Mixins
+
+=testbg($red: 255, $green: 0, $blue: 0, $alpha: 0.3)
+  background-color: rgba($red, $green, $blue, $alpha)
+
+=testbd($width: 1px, $line-type: solid, $color: green)
+  border: $width $line-type $color
+
+=testout($width: 1px, $line-type: solid, $color: blue)
+  outline: $width $line-type $color
+
+=testcount($element: "*", $depth: 1)
+  counter-reset: test-counter
+
+  %counter-number
+    position: absolute
+    top: 5px
+    right: 5px
+    z-index: 100
+    counter-increment: test-counter
+    content: counter(test-counter)
+    display: block
+    font-size: 12px !important
+    line-height: 1 !important
+    font-weight: 400 !important
+    color: red !important
+
+  @if $depth == 1
+    & > #{$element}
+      position: relative
+
+      &:before
+        @extend %counter-number
+
+  @else
+    & #{$element}
+      position: relative
+
+      &:before
+        @extend %counter-number
+
+
+//////////////////////////////////////// Fixes
+
+=clearfix
+  &:after
+    content: ''
+    display: table
+    clear: both
+
+
+//////////////////////////////////////// Media Queries
+
+=media-max-xs($breakpoint: $breakpoint-xs)
+  @media screen and (max-width: $breakpoint)
+    @content
+
+=media-min-xs($breakpoint: $breakpoint-xs)
+  @media screen and (min-width: $breakpoint + 1)
+    @content
+
+=media-max-s-minor($breakpoint: $breakpoint-s-minor)
+  @media screen and (max-width: $breakpoint)
+    @content
+
+=media-min-s-minor($breakpoint: $breakpoint-s-minor)
+  @media screen and (min-width: $breakpoint + 1)
+    @content
+
+=media-max-s-major($breakpoint: $breakpoint-s-major)
+  @media screen and (max-width: $breakpoint)
+    @content
+
+=media-min-s-major($breakpoint: $breakpoint-s-major)
+  @media screen and (min-width: $breakpoint + 1)
+    @content
+
+=media-max-m-minor($breakpoint: $breakpoint-m-minor)
+  @media screen and (max-width: $breakpoint)
+    @content
+
+=media-min-m-minor($breakpoint: $breakpoint-m-minor)
+  @media screen and (min-width: $breakpoint + 1)
+    @content
+
+=media-max-m-major($breakpoint: $breakpoint-m-major)
+  @media screen and (max-width: $breakpoint)
+    @content
+
+=media-min-m-major($breakpoint: $breakpoint-m-major)
+  @media screen and (min-width: $breakpoint + 1)
+    @content
+
+=media-max-l-minor($breakpoint: $breakpoint-l-minor)
+  @media screen and (max-width: $breakpoint)
+    @content
+
+=media-min-l-minor($breakpoint: $breakpoint-l-minor)
+  @media screen and (min-width: $breakpoint + 1)
+    @content
+
+=media-max-l-major($breakpoint: $breakpoint-l-major)
+  @media screen and (max-width: $breakpoint)
+    @content
+
+=media-min-l-major($breakpoint: $breakpoint-l-major)
+  @media screen and (min-width: $breakpoint + 1)
+    @content
+
+=media-max-xl($breakpoint: $breakpoint-xl)
+  @media screen and (max-width: $breakpoint)
+    @content
+
+=media-min-xl($breakpoint: $breakpoint-xl)
+  @media screen and (min-width: $breakpoint + 1)
+    @content

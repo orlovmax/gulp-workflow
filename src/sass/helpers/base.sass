@@ -1,0 +1,38 @@
+////////////////////////////////////////
+// Common styles
+////////////////////////////////////////
+
+////////////////////////////////////////Variables
+
+// Colors
+$c-selection_text: #fff
+$c-selection_bg: #000
+
+
+//////////////////////////////////////// Mixins and functions
+
+
+//////////////////////////////////////// Styles
+
+*::selection
+  background: $c-selection_bg
+  color: $c-selection_text
+
+*::-moz-selection
+  background: $c-selection_bg
+  color: $c-selection_text
+
+
+// Visibility helpers
+
+$breakpoints: ("xs": $breakpoint-xs, "s-minor": $breakpoint-s-minor, "s-major": $breakpoint-s-major, "m-minor": $breakpoint-m-minor, "m-major": $breakpoint-m-major, "l-minor": $breakpoint-l-minor, "l-major": $breakpoint-l-major, "xl": $breakpoint-xl)
+
+@each $name, $breakpoint in $breakpoints
+  .is-hidden-screen-#{$name}
+    @media screen and (max-width: $breakpoint)
+      display: none !important
+
+@each $name, $breakpoint in $breakpoints
+  .is-visible-screen-#{$name}
+    @media screen and (min-width: $breakpoint + 1)
+      display: none !important

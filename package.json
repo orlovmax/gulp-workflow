@@ -1,0 +1,50 @@
+{
+  "name": "gulp-workflow",
+  "description": "Gulp-based build tool with Pug, Sass, Rollup, PostCSS, BrowserSync",
+  "type": "module",
+  "engines": {
+    "node": ">=16"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "@babel/core": "^7.22.8",
+    "@babel/preset-env": "^7.22.7",
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-commonjs": "^25.0.2",
+    "@rollup/plugin-node-resolve": "^15.1.0",
+    "@rollup/plugin-terser": "^0.4.3",
+    "autoprefixer": "^10.4.14",
+    "browser-sync": "^2.29.3",
+    "gulp": "^4.0.2",
+    "gulp-changed": "^4.0.3",
+    "gulp-html-minifier-terser": "^7.1.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^9.0.1",
+    "gulp-pug": "^5.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-stylus": "^3.0.0",
+    "postcss": "^8.4.25",
+    "postcss-csso": "^6.0.1",
+    "postcss-import": "^15.1.0",
+    "postcss-import-ext-glob": "^2.1.1",
+    "postcss-sort-media-queries": "^5.2.0",
+    "rimraf": "^5.0.1",
+    "rollup": "^3.26.2",
+    "sass": "^1.63.6"
+  },
+  "scripts": {
+    "cleanup": "gulp cleanup",
+    "start": "gulp",
+    "dev": "gulp dev",
+    "prod": "gulp prod",
+    "demo": "gulp demo"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "> 0.5%",
+    "Firefox ESR",
+    "not dead"
+  ]
+}

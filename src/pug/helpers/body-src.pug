@@ -1,0 +1,9 @@
+mixin body-src()
+  //- SCRIPTS
+  each resource in config.scripts.body
+    if resource.file && !resource.url
+      script(src="static/js/" + resource.file)
+    if resource.url && !resource.integrity && !resource.crossorigin
+      script(src= resource.url)
+    if resource.url && resource.integrity && resource.crossorigin
+      script(src= resource.url integrity= resource.integrity crossorigin= resource.crossorigin)

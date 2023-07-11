@@ -1,0 +1,21 @@
+mixin head-meta()
+  meta(charset="utf-8")
+  meta(http-equiv="X-UA-Compatible", content="IE=edge")
+  meta(name="viewport", content="width=device-width, initial-scale=1")
+
+  //- Site meta information
+  title= pageTitle ? pageTitle + config.site.titleDelimiter + config.site.title : config.site.title
+
+  if pageDescription || config.site.description
+    meta(name="description", content= pageDescription ? pageDescription : config.site.description)
+
+  if pageKeywords || config.site.keywords
+    meta(name="keywords", content= pageKeywords ? pageKeywords : config.site.keywords)
+
+  //- Opengraph
+  if config.site.openGraph
+    meta(property="og:type", content="website")
+    meta(property="og:title", content= pageTitle ? pageTitle + config.site.titleDelimiter + config.site.title : config.site.title)
+    meta(property="og:description", content= pageDescription ? pageDescription : config.site.description)
+    meta(property="og:image", content= siteImageUrl ? siteImageUrl : config.site.url + "/static/images/card.jpg")
+    meta(property="og:url", content= pageUrl ? pageUrl : config.site.url)
