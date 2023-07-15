@@ -1,26 +1,26 @@
 mixin head-src()
   //- ICONS
-  link(rel="icon", href="favicon.ico", sizes="any")
-  link(rel="icon", href="static/images/favicons/icon.svg", type="image/svg+xml")
-  link(rel="apple-touch-icon", href="static/images/favicons/apple-touch-icon.png")
-  link(rel="manifest", href="manifest.webmanifest")
+  link(rel='icon', href='favicon.ico', sizes='any')
+  link(rel='icon', href='static/images/favicons/icon.svg', type='image/svg+xml')
+  link(rel='apple-touch-icon', href='static/images/favicons/apple-touch-icon.png')
+  link(rel='manifest', href='manifest.webmanifest')
 
   //- STYLESHEETS
   each resource in config.stylesheets
     if resource.url && resource.preconnect && !resource.crossorigin && !resource.file
-      link(rel="preconnect", href= resource.url)
+      link(rel='preconnect', href=resource.url)
     if resource.url && resource.preconnect && resource.crossorigin && !resource.file
-      link(rel="preconnect", href= resource.url crossorigin= resource.crossorigin)
+      link(rel='preconnect', href=resource.url crossorigin=resource.crossorigin)
     if resource.url && !resource.preconnect && !resource.crossorigin && !resource.file
-      link(rel="stylesheet", href= resource.url)
+      link(rel='stylesheet', href=resource.url)
     if resource.file && !resource.url && !resource.preconnect && !resource.crossorigin
-      link(rel="stylesheet", href="static/css/" + resource.file)
+      link(rel='stylesheet', href='static/css/' + resource.file)
 
   //- SCRIPTS
   each resource in config.scripts.head
     if resource.file && !resource.url
-      script(src="static/js/" + resource.file)
+      script(src='static/js/' + resource.file)
     if resource.url && !resource.integrity && !resource.crossorigin
-      script(src= resource.url)
+      script(src=resource.url)
     if resource.url && resource.integrity && resource.crossorigin
-      script(src= resource.url integrity= resource.integrity crossorigin= resource.crossorigin)
+      script(src=resource.url integrity=resource.integrity crossorigin=resource.crossorigin)

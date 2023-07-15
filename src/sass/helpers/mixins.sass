@@ -2,10 +2,10 @@
 // Project mixins
 ////////////////////////////////////////
 
-//////////////////////////////////////// Test Mixins
+//////////////////////////////////////// Test mixins
 
-=testbg($red: 255, $green: 0, $blue: 0, $alpha: 0.3)
-  background-color: rgba($red, $green, $blue, $alpha)
+=testbg($color: red, $alpha: 0.3)
+  background-color: rgba($color, $alpha: $alpha)
 
 =testbd($width: 1px, $line-type: solid, $color: green)
   border: $width $line-type $color
@@ -13,7 +13,7 @@
 =testout($width: 1px, $line-type: solid, $color: blue)
   outline: $width $line-type $color
 
-=testcount($element: "*", $depth: 1)
+=testcount($element: '*', $depth: 1)
   counter-reset: test-counter
 
   %counter-number
@@ -53,68 +53,132 @@
     clear: both
 
 
-//////////////////////////////////////// Media Queries
+//////////////////////////////////////// Media queries
 
-=media-max-xs($breakpoint: $breakpoint-xs)
-  @media screen and (max-width: $breakpoint)
-    @content
+=media-screen-max-xs($orientation: '', $breakpoint: $breakpoint-xs)
+  @if $orientation != ''
+    @media screen and (max-width: $breakpoint) and (orientation: $orientation)
+      @content
+  @else
+    @media screen and (max-width: $breakpoint)
+      @content
 
-=media-min-xs($breakpoint: $breakpoint-xs)
-  @media screen and (min-width: $breakpoint + 1)
-    @content
+=media-screen-min-xs($orientation: '', $breakpoint: $breakpoint-xs)
+  @if $orientation != ''
+    @media screen and (min-width: $breakpoint + 1) and (orientation: $orientation)
+      @content
+  @else
+    @media screen and (min-width: $breakpoint + 1)
+      @content
 
-=media-max-s-minor($breakpoint: $breakpoint-s-minor)
-  @media screen and (max-width: $breakpoint)
-    @content
+=media-screen-max-s-minor($orientation: '', $breakpoint: $breakpoint-s-minor)
+  @if $orientation != ''
+    @media screen and (max-width: $breakpoint) and (orientation: $orientation)
+      @content
+  @else
+    @media screen and (max-width: $breakpoint)
+      @content
 
-=media-min-s-minor($breakpoint: $breakpoint-s-minor)
-  @media screen and (min-width: $breakpoint + 1)
-    @content
+=media-screen-min-s-minor($orientation: '', $breakpoint: $breakpoint-s-minor)
+  @if $orientation != ''
+    @media screen and (min-width: $breakpoint + 1) and (orientation: $orientation)
+      @content
+  @else
+    @media screen and (min-width: $breakpoint + 1)
+      @content
 
-=media-max-s-major($breakpoint: $breakpoint-s-major)
-  @media screen and (max-width: $breakpoint)
-    @content
+=media-screen-max-s-major($orientation: '', $breakpoint: $breakpoint-s-major)
+  @if $orientation != ''
+    @media screen and (max-width: $breakpoint) and (orientation: $orientation)
+      @content
+  @else
+    @media screen and (max-width: $breakpoint)
+      @content
 
-=media-min-s-major($breakpoint: $breakpoint-s-major)
-  @media screen and (min-width: $breakpoint + 1)
-    @content
+=media-screen-min-s-major($orientation: '', $breakpoint: $breakpoint-s-major)
+  @if $orientation != ''
+    @media screen and (min-width: $breakpoint + 1) and (orientation: $orientation)
+      @content
+  @else
+    @media screen and (min-width: $breakpoint + 1)
+      @content
 
-=media-max-m-minor($breakpoint: $breakpoint-m-minor)
-  @media screen and (max-width: $breakpoint)
-    @content
+=media-screen-max-m-minor($orientation: '', $breakpoint: $breakpoint-m-minor)
+  @if $orientation != ''
+    @media screen and (max-width: $breakpoint) and (orientation: $orientation)
+      @content
+  @else
+    @media screen and (max-width: $breakpoint)
+      @content
 
-=media-min-m-minor($breakpoint: $breakpoint-m-minor)
-  @media screen and (min-width: $breakpoint + 1)
-    @content
+=media-screen-min-m-minor($orientation: '', $breakpoint: $breakpoint-m-minor)
+  @if $orientation != ''
+    @media screen and (min-width: $breakpoint + 1) and (orientation: $orientation)
+      @content
+  @else
+    @media screen and (min-width: $breakpoint + 1)
+      @content
 
-=media-max-m-major($breakpoint: $breakpoint-m-major)
-  @media screen and (max-width: $breakpoint)
-    @content
+=media-screen-max-m-major($orientation: '', $breakpoint: $breakpoint-m-major)
+  @if $orientation != ''
+    @media screen and (max-width: $breakpoint) and (orientation: $orientation)
+      @content
+  @else
+    @media screen and (max-width: $breakpoint)
+      @content
 
-=media-min-m-major($breakpoint: $breakpoint-m-major)
-  @media screen and (min-width: $breakpoint + 1)
-    @content
+=media-screen-min-m-major($orientation: '', $breakpoint: $breakpoint-m-major)
+  @if $orientation != ''
+    @media screen and (min-width: $breakpoint + 1) and (orientation: $orientation)
+      @content
+  @else
+    @media screen and (min-width: $breakpoint + 1)
+      @content
 
-=media-max-l-minor($breakpoint: $breakpoint-l-minor)
-  @media screen and (max-width: $breakpoint)
-    @content
+=media-screen-max-l-minor($orientation: '', $breakpoint: $breakpoint-l-minor)
+  @if $orientation != ''
+    @media screen and (max-width: $breakpoint) and (orientation: $orientation)
+      @content
+  @else
+    @media screen and (max-width: $breakpoint)
+      @content
 
-=media-min-l-minor($breakpoint: $breakpoint-l-minor)
-  @media screen and (min-width: $breakpoint + 1)
-    @content
+=media-screen-min-l-minor($orientation: '', $breakpoint: $breakpoint-l-minor)
+  @if $orientation != ''
+    @media screen and (min-width: $breakpoint + 1) and (orientation: $orientation)
+      @content
+  @else
+    @media screen and (min-width: $breakpoint + 1)
+      @content
 
-=media-max-l-major($breakpoint: $breakpoint-l-major)
-  @media screen and (max-width: $breakpoint)
-    @content
+=media-screen-max-l-major($orientation: '', $breakpoint: $breakpoint-l-major)
+  @if $orientation != ''
+    @media screen and (max-width: $breakpoint) and (orientation: $orientation)
+      @content
+  @else
+    @media screen and (max-width: $breakpoint)
+      @content
 
-=media-min-l-major($breakpoint: $breakpoint-l-major)
-  @media screen and (min-width: $breakpoint + 1)
-    @content
+=media-screen-min-l-major($orientation: '', $breakpoint: $breakpoint-l-major)
+  @if $orientation != ''
+    @media screen and (min-width: $breakpoint + 1) and (orientation: $orientation)
+      @content
+  @else
+    @media screen and (min-width: $breakpoint + 1)
+      @content
 
-=media-max-xl($breakpoint: $breakpoint-xl)
-  @media screen and (max-width: $breakpoint)
-    @content
+=media-screen-max-xl($orientation: '', $breakpoint: $breakpoint-xl)
+  @if $orientation != ''
+    @media screen and (max-width: $breakpoint) and (orientation: $orientation)
+      @content
+  @else
+    @media screen and (max-width: $breakpoint)
+      @content
 
-=media-min-xl($breakpoint: $breakpoint-xl)
-  @media screen and (min-width: $breakpoint + 1)
-    @content
+=media-screen-min-xl($orientation: '', $breakpoint: $breakpoint-xl)
+  @if $orientation != ''
+    @media screen and (min-width: $breakpoint + 1) and (orientation: $orientation)
+      @content
+  @else
+    @media screen and (min-width: $breakpoint + 1)
+      @content

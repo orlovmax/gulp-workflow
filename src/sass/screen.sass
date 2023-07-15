@@ -2,20 +2,52 @@
 /// $CONTENTS
 ////////////////////////////////////////
 //
-// CONTENTS.............................Here we are!
+// SASS MODULES.........................Built-in modules and mixins
+//  $Color..............................Generates new colors based on existing ones
+//  $List...............................Access and modify values in lists
+//  $Map................................Makes it possible to look up the value associated with a key in a map
+//  $Math...............................Provides functions that operate on numbers
+//  $Meta...............................Exposes the details of Sass’s inner workings
+//  $Selector...........................Provides access to Sass’s powerful selector engine
+//  $String.............................Makes it easy to combine, search, or split apart strings
 //
-// VENDOR
+// VENDOR...............................Third-party code
 //
-// HELPERS...............................Variables, mixins, elements
-//   $Mixins.............................Site mixins
-//   $Variables..........................Settings and variables
-//   $Fonts..............................Offline and online fonts
-//   $Reset..............................Reset defaults
-//   $Base...............................Some general styles
-//   $Sprite.............................Spite mixin
+// HELPERS..............................Variables, mixins, elements
+//  $Variables..........................Settings and variables
+//  $Mixins.............................Site mixins
+//  $Fonts..............................Custom fonts
+//  $Reset..............................Reset defaults
+//  $Base...............................Some general styles
 //
 // BLOCKS...............................Page components
-//   $Block name........................
+//  $Block name.........................
+
+
+////////////////////////////////////////
+/// $SASS MODULES
+////////////////////////////////////////
+
+// $Color
+@use 'sass:color'
+
+// $List
+@use 'sass:list'
+
+// $Map
+@use 'sass:map'
+
+// $Math
+@use 'sass:math'
+
+// $Meta
+@use 'sass:meta'
+
+// $Selector
+@use 'sass:selector'
+
+// $String
+@use 'sass:string'
 
 
 ////////////////////////////////////////
@@ -27,11 +59,11 @@
 /// $HELPERS
 ////////////////////////////////////////
 
-// $Mixins
-@import './helpers/mixins'
-
 // $Variables
 @import './helpers/variables'
+
+// $Mixins
+@import './helpers/mixins'
 
 // $Fonts
 @import './helpers/fonts'

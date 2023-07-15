@@ -106,7 +106,7 @@ If you haven't used Gulp before, be sure to check out the [Gulp - Getting Starte
 
 ## Configuration
 
-- `.editorconfig` file at the root of the project describes indentation style, trailing whitespaces etc. See [EditorCofig](http://editorconfig.org/) site for more details.
+- `.editorconfig` file at the root of the project describes indentation style, trailing whitespaces etc. See [EditorConfig](http://editorconfig.org/) site for more details.
 - `src/pug/config.json` contains data for pug templates: site settings, meta information, links to css / js files or external fonts.
 
 ## Tasks

@@ -2,11 +2,14 @@
 // Common styles
 ////////////////////////////////////////
 
-////////////////////////////////////////Variables
+//////////////////////////////////////// Variables
 
 // Colors
 $c-selection_text: #fff
 $c-selection_bg: #000
+
+// Breakpoints
+$breakpoints: ('xs': $breakpoint-xs, 's-minor': $breakpoint-s-minor, 's-major': $breakpoint-s-major, 'm-minor': $breakpoint-m-minor, 'm-major': $breakpoint-m-major, 'l-minor': $breakpoint-l-minor, 'l-major': $breakpoint-l-major, 'xl': $breakpoint-xl)
 
 
 //////////////////////////////////////// Mixins and functions
@@ -14,6 +17,7 @@ $c-selection_bg: #000
 
 //////////////////////////////////////// Styles
 
+// Selection color
 *::selection
   background: $c-selection_bg
   color: $c-selection_text
@@ -22,11 +26,7 @@ $c-selection_bg: #000
   background: $c-selection_bg
   color: $c-selection_text
 
-
 // Visibility helpers
-
-$breakpoints: ("xs": $breakpoint-xs, "s-minor": $breakpoint-s-minor, "s-major": $breakpoint-s-major, "m-minor": $breakpoint-m-minor, "m-major": $breakpoint-m-major, "l-minor": $breakpoint-l-minor, "l-major": $breakpoint-l-major, "xl": $breakpoint-xl)
-
 @each $name, $breakpoint in $breakpoints
   .is-hidden-screen-#{$name}
     @media screen and (max-width: $breakpoint)

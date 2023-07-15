@@ -1,6 +1,6 @@
-import sortMediaQueries from 'postcss-sort-media-queries';
 import autoprefixer from 'autoprefixer';
 import csso from 'postcss-csso';
+import sortMediaQueries from 'postcss-sort-media-queries';
 import postcssImport from 'postcss-import';
 import postcssImportExtGlob from 'postcss-import-ext-glob';
 import gulp from 'gulp';
